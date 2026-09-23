@@ -102,7 +102,6 @@ var CONFIG = {
       grillades: [
         { nom: "Côte de bœuf au feu de bois", description: "Pour 2 · sauce bordelaise · gratin dauphinois", prix: 34 },
         { nom: "Agneau de l'Ardèche",          description: "Épaule confite, herbes de garrigue, ratatouille provençale",  prix: 28 },
-        { nom: "Cuisse de Poulet",  description: "élevé en plein air",                     prix: 45 },
       ],
       desserts: [
         { nom: "Mont Blanc revisité",        description: "", prix: 10 },

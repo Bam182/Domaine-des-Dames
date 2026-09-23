@@ -444,19 +444,19 @@ body { padding-top: 100px; }
     <p class="section-text" data-i18n="resto-text">Cuisine de terroir ardéchois autour des braises du four Josper. Produits locaux, recettes d'antan, et vins de la région.</p>
     <div class="josper-badge" style="margin-top:22px;" data-i18n="josper-badge">🔥 Grillades au feu de bois · Four Josper</div>
     <div class="menu-section">
-      <div class="menu-category">Entrées du terroir</div>
+      <div class="menu-category">Entrées du terroir</div><div id="menu-entrees">
       <div class="menu-item"><span class="menu-item-name">Planche ardéchoise</span><span class="menu-item-dots"></span><span class="menu-item-price">18€</span></div>
       <p class="menu-item-desc">Caillette ardéchoise, picodo, charcuteries du pays, condiments maison</p>
       <div class="menu-item"><span class="menu-item-name">Soupe de châtaignes</span><span class="menu-item-dots"></span><span class="menu-item-price">12€</span></div>
       <p class="menu-item-desc">Crème de châtaigne, lardons fumés, huile de noix</p>
 
-      <div class="menu-category">Grillades au Josper</div>
+      </div><div class="menu-category">Grillades au Josper</div><div id="menu-grillades">
       <div class="menu-item"><span class="menu-item-name">Côte de bœuf au feu de bois</span><span class="menu-item-dots"></span><span class="menu-item-price">34€</span></div>
       <p class="menu-item-desc">Pour 2 · sauce bordelaise · gratin dauphinois</p>
       <div class="menu-item"><span class="menu-item-name">Agneau de l'Ardèche</span><span class="menu-item-dots"></span><span class="menu-item-price">28€</span></div>
       <p class="menu-item-desc">Épaule confite, herbes de garrigue, ratatouille provençale</p>
 
-      <div class="menu-category">Desserts</div>
+      </div><div class="menu-category">Desserts</div><div id="menu-desserts">
       <div class="menu-item"><span class="menu-item-name">Mont Blanc revisité</span><span class="menu-item-dots"></span><span class="menu-item-price">10€</span></div>
       <div class="menu-item"><span class="menu-item-name">Tarte aux myrtilles sauvages</span><span class="menu-item-dots"></span><span class="menu-item-price">9€</span></div>
     </div>
@@ -544,10 +544,28 @@ body { padding-top: 100px; }
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   if (typeof CONFIG === 'undefined') return;
-  document.querySelectorAll('[data-cfg="zenchef"]').forEach(el => el.href = CONFIG.domaine.zenchef);
-  document.querySelectorAll('[data-cfg="telephone"]').forEach(el => el.textContent = CONFIG.domaine.telephone);
-  document.querySelectorAll('[data-cfg="adresse"]').forEach(el => el.textContent = CONFIG.domaine.adresse);
-  document.querySelectorAll('[data-cfg="resto-horaires"]').forEach(el => el.textContent = CONFIG.restaurant.horaires);
+  var c = CONFIG;
+
+  // Infos
+  document.querySelectorAll('[data-cfg="zenchef"]').forEach(el => el.href = c.domaine.zenchef);
+  document.querySelectorAll('[data-cfg="telephone"]').forEach(el => el.textContent = c.domaine.telephone);
+  document.querySelectorAll('[data-cfg="adresse"]').forEach(el => el.textContent = c.domaine.adresse);
+  document.querySelectorAll('[data-cfg="resto-horaires"]').forEach(el => el.textContent = c.restaurant.horaires);
+  document.querySelectorAll('[data-cfg="resto-desc"]').forEach(el => el.textContent = c.restaurant.description);
+
+  // Rebuild menu from config
+  var buildMenu = function(items, containerId) {
+    var container = document.getElementById(containerId);
+    if (!container || !items) return;
+    container.innerHTML = '';
+    items.forEach(function(item) {
+      container.innerHTML += '<div class="menu-item"><span class="menu-item-name">' + item.nom + '</span><span class="menu-item-dots"></span><span class="menu-item-price">' + item.prix + '€</span></div>' +
+        (item.description ? '<p class="menu-item-desc">' + item.description + '</p>' : '');
+    });
+  };
+  buildMenu(c.restaurant.menu.entrees,   'menu-entrees');
+  buildMenu(c.restaurant.menu.grillades, 'menu-grillades');
+  buildMenu(c.restaurant.menu.desserts,  'menu-desserts');
 });
 </script>
 
