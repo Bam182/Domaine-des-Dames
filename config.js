@@ -107,6 +107,7 @@ var CONFIG = {
       desserts: [
         { nom: "Mont Blanc revisité",        description: "", prix: 10 },
         { nom: "Tarte aux myrtilles sauvages", description: "", prix: 9  },
+        { nom: "Soupe de bite", description: "Miel de lavande, noix", prix: 14 },
       ],
     },
   },
