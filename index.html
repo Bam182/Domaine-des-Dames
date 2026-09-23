@@ -337,6 +337,7 @@
   }
 </style>
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script src="/config.js"></script>
 </head>
 <body>
 <nav style="position:relative;">
@@ -441,7 +442,7 @@
           <span class="gite-spec">⊞ 45 m²</span>
           <span class="gite-spec">⊕ 2 personnes max</span>
         </div>
-        <p class="gite-desc" data-i18n="glycine-desc">Studio cosy et romantique, idéal pour un séjour en duo au cœur du mas.</p>
+        <p class="gite-desc" data-i18n="glycine-desc" data-cfg="desc-glycine">Studio cosy et romantique, idéal pour un séjour en duo au cœur du mas.</p>
         <div class="gite-footer">
           <div class="gite-price"><span data-i18n="from">à partir de</span> 120€ <span>/nuit</span></div>
           <button class="btn-sm" data-i18n="btn-reserver" onclick="event.stopPropagation(); openReservation('La Glycine', '45 m² · 2 personnes', 120)">Réserver</button>
@@ -463,7 +464,7 @@
           <span class="gite-spec">⊞ 70 m²</span>
           <span class="gite-spec">⊕ 5 personnes max</span>
         </div>
-        <p class="gite-desc" data-i18n="chapelle-desc">Plafonds voûtés, murs en pierre taillée — un espace chargé d'histoire et de caractère.</p>
+        <p class="gite-desc" data-i18n="chapelle-desc" data-cfg="desc-chapelle">Plafonds voûtés, murs en pierre taillée — un espace chargé d'histoire et de caractère.</p>
         <div class="gite-footer">
           <div class="gite-price"><span data-i18n="from">à partir de</span> 180€ <span>/nuit</span></div>
           <button class="btn-sm" data-i18n="btn-reserver" onclick="event.stopPropagation(); openReservation('La Chapelle', '70 m² · 5 personnes', 180)">Réserver</button>
@@ -485,7 +486,7 @@
           <span class="gite-spec">⊞ 90 m²</span>
           <span class="gite-spec">⊕ 8 personnes max</span>
         </div>
-        <p class="gite-desc" data-i18n="vignes-desc">Le plus grand gîte du domaine, avec mezzanine et grand séjour pour familles et groupes.</p>
+        <p class="gite-desc" data-i18n="vignes-desc" data-cfg="desc-vignes">Le plus grand gîte du domaine, avec mezzanine et grand séjour pour familles et groupes.</p>
         <div class="gite-footer">
           <div class="gite-price"><span data-i18n="from">à partir de</span> 260€ <span>/nuit</span></div>
           <button class="btn-sm" data-i18n="btn-reserver" onclick="event.stopPropagation(); openReservation('Les Vignes', '90 m² · 8 personnes', 260)">Réserver</button>
@@ -509,7 +510,7 @@
           <span class="gite-spec">⊞ 75 m²</span>
           <span class="gite-spec">⊕ 5 personnes max</span>
         </div>
-        <p class="gite-desc" data-i18n="laurier-desc">Lumineux et fleuri, avec terrasse privée et vue sur la garrigue ardéchoise.</p>
+        <p class="gite-desc" data-i18n="laurier-desc" data-cfg="desc-laurier">Lumineux et fleuri, avec terrasse privée et vue sur la garrigue ardéchoise.</p>
         <div class="gite-footer">
           <div class="gite-price"><span data-i18n="from">à partir de</span> 195€ <span>/nuit</span></div>
           <button class="btn-sm" data-i18n="btn-reserver" onclick="event.stopPropagation(); openReservation('Le Laurier Rose', '75 m² · 5 personnes', 195)">Réserver</button>
@@ -531,7 +532,7 @@
           <span class="gite-spec">⊞ 75 m²</span>
           <span class="gite-spec">⊕ 5 personnes max</span>
         </div>
-        <p class="gite-desc" data-i18n="sampzon-desc">Vue panoramique sur le rocher de Sampzon et les collines environnantes.</p>
+        <p class="gite-desc" data-i18n="sampzon-desc" data-cfg="desc-sampzon">Vue panoramique sur le rocher de Sampzon et les collines environnantes.</p>
         <div class="gite-footer">
           <div class="gite-price"><span data-i18n="from">à partir de</span> 195€ <span>/nuit</span></div>
           <button class="btn-sm" data-i18n="btn-reserver" onclick="event.stopPropagation(); openReservation('Sampzon', '75 m² · 5 personnes', 195)">Réserver</button>
@@ -637,10 +638,10 @@
       <h2 class="section-title" data-i18n="contact-title">Venir au<br><em>Domaine</em></h2>
       <p class="section-text" data-i18n="contact-text">Situé à 5 minutes de Vallon-Pont-d'Arc, au cœur des Gorges de l'Ardèche.</p>
       <div class="contact-details">
-        <div class="contact-detail"><div class="contact-icon">📍</div><div class="contact-detail-text"><p data-i18n="contact-addr-label">Adresse</p><p data-i18n="contact-addr">316 route de la Roubine, 07150 Vallon-Pont-d'Arc</p></div></div>
-        <div class="contact-detail"><div class="contact-icon">📞</div><div class="contact-detail-text"><p data-i18n="contact-phone-label">Téléphone</p><p>06 26 47 73 95</p></div></div>
+        <div class="contact-detail"><div class="contact-icon">📍</div><div class="contact-detail-text"><p data-i18n="contact-addr-label">Adresse</p><p data-i18n="contact-addr" data-cfg="adresse">316 route de la Roubine, 07150 Vallon-Pont-d'Arc</p></div></div>
+        <div class="contact-detail"><div class="contact-icon">📞</div><div class="contact-detail-text"><p data-i18n="contact-phone-label">Téléphone</p><p data-cfg="telephone">06 26 47 73 95</p></div></div>
         <div class="contact-detail"><div class="contact-icon">✉</div><div class="contact-detail-text"><p data-i18n="contact-email-label">Email</p><p>contact@domainedesdames.fr</p></div></div>
-        <div class="contact-detail"><div class="contact-icon">🕐</div><div class="contact-detail-text"><p data-i18n="contact-hours-label">Restaurant</p><p data-i18n="contact-hours">Ouvert de mai à septembre · Midi & Soir</p></div></div>
+        <div class="contact-detail"><div class="contact-icon">🕐</div><div class="contact-detail-text"><p data-i18n="contact-hours-label">Restaurant</p><p data-i18n="contact-hours" data-cfg="resto-horaires">Ouvert de mai à septembre · Midi & Soir</p></div></div>
       </div>
     </div>
     <div class="contact-form">
@@ -662,7 +663,7 @@
   <div class="footer-logo">Domaine des Dames</div>
   <p style="font-size:11px;">© 2025 · Vallon-Pont-d'Arc · <span data-i18n="footer-dev">⚠ Site en développement — non indexé</span></p>
   <div style="display:flex;gap:18px;align-items:center;">
-    <a href="https://www.facebook.com/ledomainedesdames/" target="_blank" style="display:flex;align-items:center;gap:6px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Facebook</a>
+    <a href="https://www.facebook.com/ledomainedesdames/" data-cfg="facebook" target="_blank" style="display:flex;align-items:center;gap:6px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Facebook</a>
     <a href="#" data-i18n="footer-legal">Mentions légales</a>
     <a href="#" data-i18n="footer-privacy">Confidentialité</a>
   </div>
@@ -860,6 +861,68 @@ document.addEventListener('click', function(e) {
   }
 });
 </script>
+<script>
+// Application automatique de la config
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof CONFIG === 'undefined') return;
+  var c = CONFIG;
+
+  // Infos générales
+  document.querySelectorAll('[data-cfg="telephone"]').forEach(el => el.textContent = c.domaine.telephone);
+  document.querySelectorAll('[data-cfg="email"]').forEach(el => { el.textContent = c.domaine.email; el.href = 'mailto:' + c.domaine.email; });
+  document.querySelectorAll('[data-cfg="adresse"]').forEach(el => el.textContent = c.domaine.adresse);
+  document.querySelectorAll('[data-cfg="facebook"]').forEach(el => el.href = c.domaine.facebook);
+  document.querySelectorAll('[data-cfg="zenchef"]').forEach(el => el.href = c.domaine.zenchef);
+
+  // Présentation
+  document.querySelectorAll('[data-cfg="presentation-desc"]').forEach(el => el.textContent = c.presentation.description);
+
+  // Prix gîtes
+  Object.keys(c.gites).forEach(function(key) {
+    var g = c.gites[key];
+    document.querySelectorAll('[data-cfg="prix-' + key + '"]').forEach(el => el.textContent = 'à partir de ' + g.prix + '€');
+    document.querySelectorAll('[data-cfg="desc-' + key + '"]').forEach(el => el.textContent = g.description);
+    document.querySelectorAll('[data-cfg="capacite-' + key + '"]').forEach(el => el.textContent = g.capacite);
+    document.querySelectorAll('[data-cfg="superficie-' + key + '"]').forEach(el => el.textContent = g.superficie);
+  });
+
+  // Restaurant
+  document.querySelectorAll('[data-cfg="resto-desc"]').forEach(el => el.textContent = c.restaurant.description);
+  document.querySelectorAll('[data-cfg="resto-horaires"]').forEach(el => el.textContent = c.restaurant.horaires);
+
+  // Menu - vide et recharge
+  var buildMenu = function(items, containerId) {
+    var container = document.getElementById(containerId);
+    if (!container || !items) return;
+    container.innerHTML = '';
+    items.forEach(function(item) {
+      container.innerHTML += '<div class="menu-item"><span class="menu-item-name">' + item.nom + '</span><span class="menu-item-dots"></span><span class="menu-item-price">' + item.prix + '€</span></div>' +
+        (item.description ? '<p class="menu-item-desc">' + item.description + '</p>' : '');
+    });
+  };
+  buildMenu(c.restaurant.menu.entrees,   'menu-entrees');
+  buildMenu(c.restaurant.menu.grillades, 'menu-grillades');
+  buildMenu(c.restaurant.menu.desserts,  'menu-desserts');
+
+  // Séjours - badge disponible/bientôt
+  var sejours = document.querySelectorAll('[data-cfg-sejour]');
+  sejours.forEach(function(el, i) {
+    if (!c.sejours[i]) return;
+    var s = c.sejours[i];
+    el.querySelector('[data-cfg="sejour-titre"]').textContent = s.titre;
+    el.querySelector('[data-cfg="sejour-desc"]').textContent = s.description;
+    var badge = el.querySelector('.sejour-badge');
+    var soon = el.querySelector('.sejour-soon');
+    if (s.disponible) {
+      badge.textContent = 'Disponible';
+      badge.style.background = '#4a5c3a';
+      if (s.prix) soon.textContent = s.prix + ' →';
+    }
+    if (s.prix && s.disponible) soon.textContent = s.prix + ' →';
+  });
+});
+</script>
+
 <script>
   if (window.netlifyIdentity) {
     window.netlifyIdentity.on("init", user => {

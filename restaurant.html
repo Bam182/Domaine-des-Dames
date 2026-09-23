@@ -376,6 +376,7 @@ body { padding-top: 100px; }
   .cta-gites { padding: 48px 20px; }
 }
 </style>
+<script src="/config.js"></script>
 </head>
 <body>
 
@@ -491,7 +492,7 @@ body { padding-top: 100px; }
       </div>
     </div>
 
-    <a href="https://www.zenchef.com/VOTRE-ID-ZENCHEF"
+    <a href="https://www.zenchef.com/VOTRE-ID-ZENCHEF" data-cfg="zenchef"
        target="_blank"
        style="display:inline-flex; align-items:center; gap:12px; padding:16px 36px;
               background:var(--burgundy); color:white; text-decoration:none;
@@ -540,6 +541,15 @@ body { padding-top: 100px; }
 </footer>
 
 <div class="notif" id="notif"></div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof CONFIG === 'undefined') return;
+  document.querySelectorAll('[data-cfg="zenchef"]').forEach(el => el.href = CONFIG.domaine.zenchef);
+  document.querySelectorAll('[data-cfg="telephone"]').forEach(el => el.textContent = CONFIG.domaine.telephone);
+  document.querySelectorAll('[data-cfg="adresse"]').forEach(el => el.textContent = CONFIG.domaine.adresse);
+  document.querySelectorAll('[data-cfg="resto-horaires"]').forEach(el => el.textContent = CONFIG.restaurant.horaires);
+});
+</script>
 
 <script>
   const observer = new IntersectionObserver(entries => {
