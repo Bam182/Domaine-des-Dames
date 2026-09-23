@@ -1,0 +1,164 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+locale: 'fr'
+
+collections:
+
+  # ===== DOMAINE =====
+  - name: "domaine"
+    label: "🏡 Le Domaine"
+    files:
+      - name: "infos"
+        label: "Informations générales"
+        file: "data/domaine.json"
+        fields:
+          - { label: "Nom du domaine", name: "nom", widget: "string" }
+          - { label: "Adresse", name: "adresse", widget: "string" }
+          - { label: "Téléphone", name: "telephone", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Description courte (hero)", name: "description_hero", widget: "text" }
+          - { label: "Description longue (section domaine)", name: "description_longue", widget: "text" }
+          - { label: "Photo hero (piscine panoramique)", name: "photo_hero", widget: "image" }
+          - { label: "Photo façade", name: "photo_facade", widget: "image" }
+          - { label: "Photo piscine", name: "photo_piscine", widget: "image" }
+
+  # ===== GITES =====
+  - name: "gites"
+    label: "🛏️ Gîtes"
+    files:
+      - name: "glycine"
+        label: "La Glycine"
+        file: "data/gite-glycine.json"
+        fields:
+          - { label: "Nom", name: "nom", widget: "string", default: "La Glycine" }
+          - { label: "Superficie", name: "superficie", widget: "string", default: "45 m²" }
+          - { label: "Capacité", name: "capacite", widget: "string", default: "2 personnes" }
+          - { label: "Prix par nuit (€)", name: "prix", widget: "number", default: 120 }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Photo extérieure", name: "photo_ext", widget: "image" }
+          - { label: "Photo intérieure", name: "photo_int", widget: "image" }
+
+      - name: "chapelle"
+        label: "La Chapelle"
+        file: "data/gite-chapelle.json"
+        fields:
+          - { label: "Nom", name: "nom", widget: "string", default: "La Chapelle" }
+          - { label: "Superficie", name: "superficie", widget: "string", default: "70 m²" }
+          - { label: "Capacité", name: "capacite", widget: "string", default: "5 personnes" }
+          - { label: "Prix par nuit (€)", name: "prix", widget: "number", default: 180 }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Photo extérieure", name: "photo_ext", widget: "image" }
+          - { label: "Photo intérieure", name: "photo_int", widget: "image" }
+
+      - name: "vignes"
+        label: "Les Vignes"
+        file: "data/gite-vignes.json"
+        fields:
+          - { label: "Nom", name: "nom", widget: "string", default: "Les Vignes" }
+          - { label: "Superficie", name: "superficie", widget: "string", default: "90 m²" }
+          - { label: "Capacité", name: "capacite", widget: "string", default: "8 personnes" }
+          - { label: "Prix par nuit (€)", name: "prix", widget: "number", default: 260 }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Photo extérieure", name: "photo_ext", widget: "image" }
+          - { label: "Photo intérieure", name: "photo_int", widget: "image" }
+
+      - name: "laurier"
+        label: "Le Laurier Rose"
+        file: "data/gite-laurier.json"
+        fields:
+          - { label: "Nom", name: "nom", widget: "string", default: "Le Laurier Rose" }
+          - { label: "Superficie", name: "superficie", widget: "string", default: "75 m²" }
+          - { label: "Capacité", name: "capacite", widget: "string", default: "5 personnes" }
+          - { label: "Prix par nuit (€)", name: "prix", widget: "number", default: 195 }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Photo extérieure", name: "photo_ext", widget: "image" }
+          - { label: "Photo intérieure", name: "photo_int", widget: "image" }
+
+      - name: "sampzon"
+        label: "Sampzon"
+        file: "data/gite-sampzon.json"
+        fields:
+          - { label: "Nom", name: "nom", widget: "string", default: "Sampzon" }
+          - { label: "Superficie", name: "superficie", widget: "string", default: "75 m²" }
+          - { label: "Capacité", name: "capacite", widget: "string", default: "5 personnes" }
+          - { label: "Prix par nuit (€)", name: "prix", widget: "number", default: 195 }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Photo extérieure", name: "photo_ext", widget: "image" }
+          - { label: "Photo intérieure", name: "photo_int", widget: "image" }
+
+  # ===== RESTAURANT =====
+  - name: "restaurant"
+    label: "🍽️ Restaurant"
+    files:
+      - name: "infos"
+        label: "Informations restaurant"
+        file: "data/restaurant.json"
+        fields:
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Horaires", name: "horaires", widget: "string" }
+          - { label: "Lien ZenChef (réservation)", name: "zenchef_url", widget: "string" }
+          - { label: "Photo principale", name: "photo", widget: "image" }
+
+      - name: "menu"
+        label: "Carte du restaurant"
+        file: "data/menu.json"
+        fields:
+          - label: "Entrées"
+            name: "entrees"
+            widget: "list"
+            fields:
+              - { label: "Plat", name: "nom", widget: "string" }
+              - { label: "Description", name: "description", widget: "string" }
+              - { label: "Prix (€)", name: "prix", widget: "number" }
+          - label: "Grillades"
+            name: "grillades"
+            widget: "list"
+            fields:
+              - { label: "Plat", name: "nom", widget: "string" }
+              - { label: "Description", name: "description", widget: "string" }
+              - { label: "Prix (€)", name: "prix", widget: "number" }
+          - label: "Desserts"
+            name: "desserts"
+            widget: "list"
+            fields:
+              - { label: "Plat", name: "nom", widget: "string" }
+              - { label: "Description", name: "description", widget: "string" }
+              - { label: "Prix (€)", name: "prix", widget: "number" }
+
+  # ===== ACTIVITES =====
+  - name: "activites"
+    label: "🏄 Activités & Séjours"
+    files:
+      - name: "sejours"
+        label: "Offres séjours"
+        file: "data/sejours.json"
+        fields:
+          - label: "Séjours"
+            name: "sejours"
+            widget: "list"
+            fields:
+              - { label: "Titre", name: "titre", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Disponible", name: "disponible", widget: "boolean", default: false }
+              - { label: "Prix indicatif", name: "prix", widget: "string", required: false }
+
+  # ===== CONTACT =====
+  - name: "contact"
+    label: "📍 Contact & Infos pratiques"
+    files:
+      - name: "infos"
+        label: "Coordonnées"
+        file: "data/contact.json"
+        fields:
+          - { label: "Adresse", name: "adresse", widget: "string" }
+          - { label: "Téléphone", name: "telephone", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Lien Facebook", name: "facebook", widget: "string" }
+          - { label: "Horaires restaurant", name: "horaires_resto", widget: "string" }
+          - { label: "Lien ZenChef", name: "zenchef", widget: "string" }
+
