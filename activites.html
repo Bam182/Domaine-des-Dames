@@ -208,6 +208,30 @@
   .notif { position:fixed; bottom:28px; left:50%; transform:translateX(-50%) translateY(60px); background:#4a5c3a; color:white; padding:14px 26px; border-radius:4px; font-size:14px; z-index:300; transition:transform 0.4s,opacity 0.4s; opacity:0; }
   .notif.show { transform:translateX(-50%) translateY(0); opacity:1; }
 
+  /* GOOGLE REVIEWS */
+  .nav-reviews {
+    position: absolute; left: 56px; top: 50%; transform: translateY(-50%);
+  }
+  .nav-reviews-link {
+    display: flex; flex-direction: column; align-items: center;
+    text-decoration: none; gap: 2px;
+  }
+  .nav-reviews-stars {
+    color: #e8a020; font-size: 14px; letter-spacing: 1px; line-height: 1;
+  }
+  .nav-reviews-info {
+    display: flex; flex-direction: column; align-items: center; gap: 0;
+  }
+  .nav-reviews-score {
+    font-family: 'Cinzel', serif; font-size: 15px; font-weight: 600;
+    color: var(--earth); line-height: 1.2;
+  }
+  .nav-reviews-count {
+    font-family: 'Lato', sans-serif; font-size: 9px; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--muted); line-height: 1;
+  }
+  @media (max-width: 768px) { .nav-reviews { display: none; } }
+
   /* LANG SWITCHER */
   .lang-switcher {
     position:absolute; left:56px; top:50%; transform:translateY(-50%);
@@ -474,6 +498,15 @@ body { padding-top: 0; }
 <body>
 
 <nav style="position:relative;">
+  <div class="nav-reviews">
+    <a href="https://goo.gl/maps/ShNcgfNnu6GznUWe9" target="_blank" class="nav-reviews-link">
+      <div class="nav-reviews-stars">★★★★★</div>
+      <div class="nav-reviews-info">
+        <span class="nav-reviews-score">4.4</span>
+        <span class="nav-reviews-count">657 avis Google</span>
+      </div>
+    </a>
+  </div>
   <div class="lang-switcher">
     <button class="lang-btn active" id="btn-fr" onclick="setLang('fr')">FR</button>
     <div class="lang-sep"></div>
