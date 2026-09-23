@@ -420,36 +420,52 @@ body { padding-top: 0; }
   position: relative; z-index: 2; padding: 0 80px 64px; max-width: 680px;
 }
 .resto-menu-section {
-  background: #f7ece0; padding: 80px;
-  display: grid; grid-template-columns: 1fr auto 1fr; gap: 60px; align-items: start;
+  background: #f7ece0; padding: 80px clamp(20px, 4.3vw, 80px);
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 40px clamp(32px, 4.3vw, 80px); align-items: start;
 }
+.resto-menu-copy { min-width: 0; }
 .resto-plats {
-  display: flex; flex-direction: column; gap: 24px;
-  padding-top: 8px;
+  display: flex; flex-direction: column; justify-content: space-between;
+  align-self: stretch; gap: 40px; padding: 36px 0 8px;
+  min-width: 0;
 }
+.resto-plat {
+  width: 64%; max-width: 390px; aspect-ratio: 6 / 5;
+  margin: 0; border-radius: 3px;
+  box-shadow: 0 12px 32px rgba(107,58,31,0.13);
+}
+.resto-plat:nth-child(2) { align-self: flex-end; }
 .resto-plat-img {
-  width: 200px; height: 200px; object-fit: cover;
-  border-radius: 2px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
-  transition: transform 0.4s;
+  display: block; width: 100%; height: 100%; object-fit: cover;
+  border-radius: inherit; transition: transform 0.4s ease;
 }
-.resto-plat-img:hover { transform: scale(1.03); }
+.resto-plat-img:hover { transform: scale(1.025); }
 .resto-plat-placeholder {
-  width: 200px; height: 200px;
-  background: #e0d0b8; border-radius: 2px;
+  width: 100%; height: 100%; background: #e0d0b8; border-radius: inherit;
   display: flex; align-items: center; justify-content: center;
-  flex-direction: column; gap: 8px;
-  border: 2px dashed #c4a882;
+  flex-direction: column; gap: 8px; border: 2px dashed #c4a882;
 }
 .resto-plat-placeholder span:first-child { font-size: 32px; opacity: 0.5; }
 .resto-plat-placeholder span:last-child {
   font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.15em;
   text-transform: uppercase; color: var(--muted); text-align: center;
 }
+.resto-plat.is-waiting { opacity: 0; transform: translate(32px, 20px); }
+.resto-plat.is-revealing {
+  transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+#reservation { grid-column: 1; min-width: 0; scroll-margin-top: 24px; }
 @media (max-width: 768px) {
-  .resto-menu-section { grid-template-columns: 1fr; padding: 48px 20px; gap: 40px; }
-  .resto-plats { flex-direction: row; justify-content: center; }
-  .resto-plat-img, .resto-plat-placeholder { width: 150px; height: 150px; }
+  .resto-menu-section { grid-template-columns: minmax(0, 1fr); padding: 48px 20px; gap: 36px; }
+  .resto-plats { flex-direction: row; align-items: flex-start; gap: 16px; padding: 0; }
+  .resto-plat { width: calc(50% - 8px); max-width: none; }
+  .resto-plat:nth-child(2) { margin-top: 32px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .resto-plat.is-waiting { opacity: 1; transform: none; }
+  .resto-plat.is-revealing, .resto-plat-img { transition: none; }
+  .resto-plat-img:hover { transform: none; }
 }
 .resto-ambiance-grid {
   display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px;
@@ -533,10 +549,10 @@ body { padding-top: 0; }
 </div>
 
 <!-- MENU + RESERVATION -->
-<section class="resto-menu-section fade-up" id="menu">
+<section class="resto-menu-section" id="menu">
 
   <!-- MENU -->
-  <div>
+  <div class="resto-menu-copy">
     <p class="section-label" data-i18n="resto-label">Gastronomie</p>
     <h2 class="section-title" data-i18n="resto-title">Le <em>Restaurant</em><br>du Domaine</h2>
     <p class="section-text" data-i18n="resto-text">Cuisine de terroir ardéchois autour des braises du four Josper. Produits locaux, recettes d'antan, et vins de la région.</p>
@@ -560,20 +576,26 @@ body { padding-top: 0; }
     </div>
   </div>
 
+  </div><!-- fin du bloc menu -->
+
   <!-- PHOTOS PLATS -->
   <div class="resto-plats">
+    <figure class="resto-plat">
     <img src="/images/plat1.jpg" alt="Plat du restaurant" class="resto-plat-img"
          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
     <div class="resto-plat-placeholder" style="display:none;">
       <span>🍽️</span>
       <span>Photo<br>Plat 1</span>
     </div>
+    </figure>
+    <figure class="resto-plat">
     <img src="/images/plat2.jpg" alt="Plat du restaurant" class="resto-plat-img"
          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
     <div class="resto-plat-placeholder" style="display:none;">
       <span>🍽️</span>
       <span>Photo<br>Plat 2</span>
     </div>
+    </figure>
   </div>
 
   <!-- RESERVATION ZENCHEF -->
@@ -702,7 +724,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('reservationModal').classList.remove('active');
     document.body.style.overflow = '';
   }
-  document.getElementById('reservationModal').addEventListener('click', function(e) {
+  document.getElementById('reservationModal')?.addEventListener('click', function(e) {
     if(e.target === this) closeModal();
   });
   function calcTotal() {
@@ -733,9 +755,9 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(() => n.classList.remove('show'), 4000);
   }
   const today = new Date().toISOString().split('T')[0];
-  document.getElementById('check-in').min = today;
-  document.getElementById('check-out').min = today;
-  document.getElementById('check-in').addEventListener('change', function() {
+  if (document.getElementById('check-in')) document.getElementById('check-in').min = today;
+  if (document.getElementById('check-out')) document.getElementById('check-out').min = today;
+  document.getElementById('check-in')?.addEventListener('change', function() {
     document.getElementById('check-out').min = this.value;
   });
 </script>
@@ -873,6 +895,25 @@ document.addEventListener('click', function(e) {
     closeMenu();
   }
 });
+</script>
+<script>
+// Each photograph appears once as it enters the viewport; visible without JavaScript.
+(function () {
+  const photos = document.querySelectorAll('.resto-plat');
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const photoObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-revealing');
+      entry.target.classList.remove('is-waiting');
+      photoObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.15 });
+  photos.forEach(function (photo) {
+    photo.classList.add('is-waiting');
+    photoObserver.observe(photo);
+  });
+})();
 </script>
 </body>
 </html>
