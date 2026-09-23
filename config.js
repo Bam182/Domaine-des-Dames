@@ -98,7 +98,6 @@ var CONFIG = {
       entrees: [
         { nom: "Planche ardéchoise",   description: "Caillette ardéchoise, picodo, charcuteries du pays, condiments maison", prix: 18 },
         { nom: "Soupe de châtaignes",  description: "Crème de châtaigne, lardons fumés, huile de noix",                     prix: 12 },
-        { nom: "Salade de chèvre chaud", description: "Miel de lavande, noix", prix: 14 },
       ],
       grillades: [
         { nom: "Côte de bœuf au feu de bois", description: "Pour 2 · sauce bordelaise · gratin dauphinois", prix: 34 },
@@ -107,7 +106,6 @@ var CONFIG = {
       desserts: [
         { nom: "Mont Blanc revisité",        description: "", prix: 10 },
         { nom: "Tarte aux myrtilles sauvages", description: "", prix: 9  },
-        { nom: "Soupe de bite", description: "Miel de lavande, noix", prix: 14 },
       ],
     },
   },
