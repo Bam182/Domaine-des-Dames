@@ -425,6 +425,19 @@ body { padding-top: 0; }
   gap: 40px clamp(32px, 4.3vw, 80px); align-items: start;
 }
 .resto-menu-copy { min-width: 0; }
+.resto-heading {
+  display: flex; align-items: center; flex-wrap: wrap;
+  gap: 20px clamp(24px, 3.2vw, 60px); margin-bottom: 20px;
+}
+.resto-heading .section-title { margin-bottom: 0; }
+.resto-logo {
+  display: block; width: clamp(100px, 10vw, 150px); height: auto;
+  aspect-ratio: 1; object-fit: contain; flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .resto-heading { gap: 16px 24px; }
+  .resto-logo { width: 100px; }
+}
 .resto-plats {
   display: flex; flex-direction: column; justify-content: space-between;
   align-self: stretch; gap: 40px; padding: 36px 0 8px;
@@ -554,7 +567,12 @@ body { padding-top: 0; }
   <!-- MENU -->
   <div class="resto-menu-copy">
     <p class="section-label" data-i18n="resto-label">Gastronomie</p>
-    <h2 class="section-title" data-i18n="resto-title">Le <em>Restaurant</em><br>du Domaine</h2>
+    <div class="resto-heading">
+      <h2 class="section-title" data-i18n="resto-title">Le <em>Restaurant</em><br>du Domaine</h2>
+      <img class="resto-logo" src="/images/logorestaurant.jpg"
+           alt="Logo du restaurant du Domaine" width="150" height="150"
+           decoding="async" onerror="this.style.display='none';">
+    </div>
     <p class="section-text" data-i18n="resto-text">Cuisine de terroir ardéchois autour des braises du four Josper. Produits locaux, recettes d'antan, et vins de la région.</p>
     <div class="josper-badge" style="margin-top:22px;" data-i18n="josper-badge">🔥 Grillades au feu de bois · Four Josper</div>
     <div class="menu-section">
