@@ -521,6 +521,7 @@ body { padding-top: 0; }
   .common-infos { grid-template-columns: 1fr 1fr; padding: 40px 20px; gap: 24px; }
 }
 </style>
+<script async src="https://storage.googleapis.com/lodgify-public-assets/search-bar/stable/bundle.js"></script>
 </head>
 <body>
 
@@ -589,6 +590,60 @@ body { padding-top: 0; }
   <a href="#laurier" class="anchor-btn">Le Laurier Rose</a>
   <a href="#sampzon" class="anchor-btn">Sampzon</a>
 </div>
+
+<!-- LODGIFY SEARCH BAR -->
+<section style="background:#f0e4d0; padding:32px 80px;">
+  <p style="font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:var(--burgundy); margin-bottom:10px; text-align:center;">Vérifiez les disponibilités & réservez</p>
+  <style>
+  :root {
+    --ldg-psb-background: #fdf5ea;
+    --ldg-psb-border-radius: 0.42em;
+    --ldg-psb-box-shadow: 0px 24px 54px 0px rgba(0, 0, 0, 0.1);
+    --ldg-psb-padding: 14px;
+    --ldg-psb-input-background: #ffffff;
+    --ldg-psb-button-border-radius: 0.2em;
+    --ldg-psb-color-primary: #6b1a35;
+    --ldg-psb-color-primary-lighter: #9b4a65;
+    --ldg-psb-color-primary-darker: #3d0a1a;
+    --ldg-psb-color-primary-contrast: #ffffff;
+    --ldg-semantic-color-primary: #6b1a35;
+    --ldg-semantic-color-primary-lighter: #9b4a65;
+    --ldg-semantic-color-primary-darker: #3d0a1a;
+    --ldg-semantic-color-primary-contrast: #ffffff;
+    --ldg-component-modal-z-index: 999;
+  }
+  #lodgify-search-bar { width: 100%; }
+</style>
+<div
+  id="lodgify-search-bar"
+  data-website-id="683825"
+  data-language-code="fr"
+  data-checkout-page-url="https://checkout.lodgify.com/axel-de-leo/fr/#/16403"
+  data-dates-check-in-label="Arrivée"
+  data-dates-check-out-label="Départ"
+  data-guests-counter-label="Invités"
+  data-guests-input-singular-label="{{NumberOfGuests}} invité"
+  data-guests-input-plural-label="{{NumberOfGuests}} invités"
+  data-location-input-label="Emplacement"
+  data-search-button-label="Rechercher"
+  data-dates-input-min-stay-tooltip-text='{"one":"Minimum {minStay} nuit","other":"Minimum de {minStay} nuits"}'
+  data-guests-breakdown-label="Invités"
+  data-adults-label='{"one":"adulte","other":"adultes"}'
+  data-adults-description="Âges {minAge} ou plus"
+  data-children-label='{"one":"enfant","other":"enfants"}'
+  data-children-description="Âges {minAge} - {maxAge}"
+  data-children-not-allowed-label="Non adapté aux enfants"
+  data-infants-label='{"one":"bébé","other":"bébés"}'
+  data-infants-description="Moins de {maxAge}"
+  data-infants-not-allowed-label="Non adapté aux bébés"
+  data-pets-label='{"one":"animal de compagnie","other":"animaux de compagnie"}'
+  data-pets-not-allowed-label="Non autorisé"
+  data-done-label="Terminé"
+  data-new-tab="true"
+  data-version="stable"
+  data-has-guests-breakdown
+></div>
+</section>
 
 <!-- GITES -->
 <div class="gite-row" id="glycine">
