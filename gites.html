@@ -521,8 +521,6 @@ body { padding-top: 0; }
   .common-infos { grid-template-columns: 1fr 1fr; padding: 40px 20px; gap: 24px; }
 }
 </style>
-<script async src="https://storage.googleapis.com/lodgify-public-assets/search-bar/stable/bundle.js"></script>
-<script src="https://app.lodgify.com/book-now-box/stable/renderBookNowBox.js" defer></script>
 </head>
 <body>
 
@@ -592,69 +590,6 @@ body { padding-top: 0; }
   <a href="#sampzon" class="anchor-btn">Sampzon</a>
 </div>
 
-<!-- LODGIFY BOOK NOW BOX -->
-<section style="background:#f0e4d0; padding:40px 80px;">
-  <p style="font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:var(--burgundy); margin-bottom:12px; text-align:center;">Réservation en ligne</p>
-  <h2 style="font-family:'Playfair Display',serif; font-size:26px; font-weight:400; color:var(--earth); text-align:center; margin-bottom:24px;">Vérifiez les disponibilités & réservez</h2>
-  <style>
-  .ldg-bnb-wrapper {
-    margin-top: 32px;
-    border-top: 1px solid #d4b896;
-    padding-top: 24px;
-  }
-  :root {
-    --ldg-bnb-background: #f7ece0;
-    --ldg-bnb-border-radius: 0.3em;
-    --ldg-bnb-box-shadow: 0px 8px 24px 0px rgba(0,0,0,0.08);
-    --ldg-bnb-padding: 14px;
-    --ldg-bnb-input-background: #ffffff;
-    --ldg-bnb-button-border-radius: 0.2em;
-    --ldg-bnb-color-primary: #6b1a35;
-    --ldg-bnb-color-primary-lighter: #9b4a65;
-    --ldg-bnb-color-primary-darker: #3d0a1a;
-    --ldg-bnb-color-primary-contrast: #ffffff;
-    --ldg-component-calendar-cell-selection-bg-color: #6b1a35;
-    --ldg-component-calendar-cell-selection-color: #ffffff;
-    --ldg-component-calendar-cell-selected-bg-color: #9b4a65;
-    --ldg-component-calendar-cell-selected-color: #ffffff;
-    --ldg-bnb-font-family: inherit;
-  }
-  #lodgify-book-now-box { width: 100%; }
-</style>
-<div
-  id="lodgify-book-now-box"
-  data-rental-id="16403"
-  data-website-id="683825"
-  data-slug="axel-de-leo"
-  data-language-code="fr"
-  data-new-tab="false"
-  data-version="stable"
-  data-has-guests-breakdown
-  data-check-in-label="Arrivée"
-  data-check-out-label="Départ"
-  data-guests-label="Invités"
-  data-guests-singular-label="{{NumberOfGuests}} invité"
-  data-guests-plural-label="{{NumberOfGuests}} invités"
-  data-total-price-label="Prix total :"
-  data-select-dates-to-see-price-label="Sélectionnez les dates pour voir le prix total"
-  data-minimum-price-per-night-first-label="À partir de"
-  data-minimum-price-per-night-second-label="par nuit"
-  data-book-button-label="Réservez maintenant"
-  data-guests-breakdown-label="Invités"
-  data-adults-label='{"one":"adulte","other":"adultes"}'
-  data-adults-description="Âges {minAge} ou plus"
-  data-children-label='{"one":"enfant","other":"enfants"}'
-  data-children-description="Âges {minAge} - {maxAge}"
-  data-children-not-allowed-label="Non adapté aux enfants"
-  data-infants-label='{"one":"bébé","other":"bébés"}'
-  data-infants-description="Moins de {maxAge}"
-  data-infants-not-allowed-label="Non adapté aux bébés"
-  data-pets-label='{"one":"animal de compagnie","other":"animaux de compagnie"}'
-  data-pets-not-allowed-label="Non autorisé"
-  data-done-label="Terminé"
-></div>
-</section>
-
 <!-- GITES -->
 <div class="gite-row" id="glycine">
     <div class="gite-gallery">
@@ -679,7 +614,7 @@ body { padding-top: 0; }
       </div>
       <p class="gite-page-desc">Niché dans un angle secret du mas, La Glycine est le gîte idéal pour un séjour en amoureux. Lumineux et cosy, il offre une atmosphère intime avec ses murs en pierre apparente et ses volets bordeaux caractéristiques du domaine.</p>
       <div class="equip-grid"><span class="equip-tag">✓ Cuisine équipée</span><span class="equip-tag">✓ Salon avec TV</span><span class="equip-tag">✓ Salle de bain</span><span class="equip-tag">✓ Terrasse privée</span><span class="equip-tag">✓ Accès piscine</span><span class="equip-tag">✓ Parking</span></div>
-      <a href="#lodgify-book-now-box" class="btn-primary" style="margin-top:32px; display:inline-block;" onclick="document.getElementById('lodgify-book-now-box').scrollIntoView({behavior:'smooth'})">Réserver ce gîte</a>
+      <a href="gites.html" class="btn-primary" style="margin-top:32px; display:inline-block;">Réserver ce gîte</a>
     </div></div><div class="gite-row gite-row-reverse" id="chapelle">
     <div class="gite-info">
       <p class="section-label">70 m² · 5 personnes</p>
@@ -691,7 +626,7 @@ body { padding-top: 0; }
       </div>
       <p class="gite-page-desc">L'ancien espace dédié à la prière du mas a été transformé en un gîte d'exception. Ses plafonds voûtés, ses murs en pierre de taille et sa porte cintrée d'origine lui confèrent une atmosphère unique, chargée d'histoire et de sérénité.</p>
       <div class="equip-grid"><span class="equip-tag">✓ Cuisine équipée</span><span class="equip-tag">✓ Grand salon voûté</span><span class="equip-tag">✓ 2 salles de bain</span><span class="equip-tag">✓ Terrasse</span><span class="equip-tag">✓ Accès piscine</span><span class="equip-tag">✓ Parking</span></div>
-      <a href="#lodgify-book-now-box" class="btn-primary" style="margin-top:32px; display:inline-block;" onclick="document.getElementById('lodgify-book-now-box').scrollIntoView({behavior:'smooth'})">Réserver ce gîte</a>
+      <a href="gites.html" class="btn-primary" style="margin-top:32px; display:inline-block;">Réserver ce gîte</a>
     </div>
     <div class="gite-gallery">
       <div class="carousel-track" id="track-chapelle">
@@ -727,7 +662,7 @@ body { padding-top: 0; }
       </div>
       <p class="gite-page-desc">Le plus grand et le plus lumineux des gîtes du domaine. Avec sa mezzanine ouverte sur le grand séjour en pierre, ses trois chambres spacieuses et sa vue sur les vignes, il est parfait pour les familles et groupes d'amis cherchant du volume et du caractère.</p>
       <div class="equip-grid"><span class="equip-tag">✓ Cuisine américaine</span><span class="equip-tag">✓ Grand séjour + mezzanine</span><span class="equip-tag">✓ 3 salles de bain</span><span class="equip-tag">✓ Grande terrasse</span><span class="equip-tag">✓ Accès piscine</span><span class="equip-tag">✓ Parking</span></div>
-      <a href="#lodgify-book-now-box" class="btn-primary" style="margin-top:32px; display:inline-block;" onclick="document.getElementById('lodgify-book-now-box').scrollIntoView({behavior:'smooth'})">Réserver ce gîte</a>
+      <a href="gites.html" class="btn-primary" style="margin-top:32px; display:inline-block;">Réserver ce gîte</a>
     </div></div><div class="gite-row gite-row-reverse" id="laurier">
     <div class="gite-info">
       <p class="section-label">75 m² · 5 personnes</p>
@@ -739,7 +674,7 @@ body { padding-top: 0; }
       </div>
       <p class="gite-page-desc">Entouré de lauriers-roses en fleurs, ce gîte bénéficie d'une terrasse privée ensoleillée face à la garrigue ardéchoise. Lumineux et aéré, il marie le confort contemporain au charme authentique de la pierre du pays.</p>
       <div class="equip-grid"><span class="equip-tag">✓ Cuisine équipée</span><span class="equip-tag">✓ Salon avec TV</span><span class="equip-tag">✓ 2 salles de bain</span><span class="equip-tag">✓ Terrasse privée fleurie</span><span class="equip-tag">✓ Accès piscine</span><span class="equip-tag">✓ Parking</span></div>
-      <a href="#lodgify-book-now-box" class="btn-primary" style="margin-top:32px; display:inline-block;" onclick="document.getElementById('lodgify-book-now-box').scrollIntoView({behavior:'smooth'})">Réserver ce gîte</a>
+      <a href="gites.html" class="btn-primary" style="margin-top:32px; display:inline-block;">Réserver ce gîte</a>
     </div>
     <div class="gite-gallery">
       <div class="carousel-track" id="track-laurier">
@@ -775,7 +710,7 @@ body { padding-top: 0; }
       </div>
       <p class="gite-page-desc">Nommé en hommage au rocher emblématique visible depuis ses fenêtres, Sampzon offre une vue panoramique sur les collines ardéchoises environnantes. Un gîte élégant aux tons chauds, idéalement situé au cœur du mas.</p>
       <div class="equip-grid"><span class="equip-tag">✓ Cuisine équipée</span><span class="equip-tag">✓ Salon avec TV</span><span class="equip-tag">✓ 2 salles de bain</span><span class="equip-tag">✓ Vue panoramique</span><span class="equip-tag">✓ Accès piscine</span><span class="equip-tag">✓ Parking</span></div>
-      <a href="#lodgify-book-now-box" class="btn-primary" style="margin-top:32px; display:inline-block;" onclick="document.getElementById('lodgify-book-now-box').scrollIntoView({behavior:'smooth'})">Réserver ce gîte</a>
+      <a href="gites.html" class="btn-primary" style="margin-top:32px; display:inline-block;">Réserver ce gîte</a>
     </div></div>
 
 <!-- INFOS COMMUNES -->

@@ -427,7 +427,6 @@
 </style>
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script src="/config.js"></script>
-<script async src="https://storage.googleapis.com/lodgify-public-assets/search-bar/stable/bundle.js"></script>
 </head>
 <body>
 <nav style="position:relative;">
@@ -514,61 +513,6 @@
 </section>
 
 
-<!-- LODGIFY SEARCH BAR -->
-<section style="background:#f0e4d0; padding:40px 80px;">
-  <p style="font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:var(--burgundy); margin-bottom:12px; text-align:center;">Réservation en ligne</p>
-  <h2 style="font-family:'Playfair Display',serif; font-size:28px; font-weight:400; color:var(--earth); text-align:center; margin-bottom:24px;">Vérifiez les disponibilités</h2>
-  <style>
-  :root {
-    --ldg-psb-background: #fdf5ea;
-    --ldg-psb-border-radius: 0.42em;
-    --ldg-psb-box-shadow: 0px 24px 54px 0px rgba(0, 0, 0, 0.1);
-    --ldg-psb-padding: 14px;
-    --ldg-psb-input-background: #ffffff;
-    --ldg-psb-button-border-radius: 0.2em;
-    --ldg-psb-color-primary: #6b1a35;
-    --ldg-psb-color-primary-lighter: #9b4a65;
-    --ldg-psb-color-primary-darker: #3d0a1a;
-    --ldg-psb-color-primary-contrast: #ffffff;
-    --ldg-semantic-color-primary: #6b1a35;
-    --ldg-semantic-color-primary-lighter: #9b4a65;
-    --ldg-semantic-color-primary-darker: #3d0a1a;
-    --ldg-semantic-color-primary-contrast: #ffffff;
-    --ldg-component-modal-z-index: 999;
-  }
-  #lodgify-search-bar { width: 100%; }
-</style>
-<div
-  id="lodgify-search-bar"
-  data-website-id="683825"
-  data-language-code="fr"
-  data-checkout-page-url="https://checkout.lodgify.com/axel-de-leo/fr/#/16403"
-  data-dates-check-in-label="Arrivée"
-  data-dates-check-out-label="Départ"
-  data-guests-counter-label="Invités"
-  data-guests-input-singular-label="{{NumberOfGuests}} invité"
-  data-guests-input-plural-label="{{NumberOfGuests}} invités"
-  data-location-input-label="Emplacement"
-  data-search-button-label="Rechercher"
-  data-dates-input-min-stay-tooltip-text='{"one":"Minimum {minStay} nuit","other":"Minimum de {minStay} nuits"}'
-  data-guests-breakdown-label="Invités"
-  data-adults-label='{"one":"adulte","other":"adultes"}'
-  data-adults-description="Âges {minAge} ou plus"
-  data-children-label='{"one":"enfant","other":"enfants"}'
-  data-children-description="Âges {minAge} - {maxAge}"
-  data-children-not-allowed-label="Non adapté aux enfants"
-  data-infants-label='{"one":"bébé","other":"bébés"}'
-  data-infants-description="Moins de {maxAge}"
-  data-infants-not-allowed-label="Non adapté aux bébés"
-  data-pets-label='{"one":"animal de compagnie","other":"animaux de compagnie"}'
-  data-pets-not-allowed-label="Non autorisé"
-  data-done-label="Terminé"
-  data-new-tab="true"
-  data-version="stable"
-  data-has-guests-breakdown
-></div>
-</section>
-
 <!-- GITES -->
 <section class="gites fade-up" id="gites">
   <div class="gites-header">
@@ -597,7 +541,7 @@
         <p class="gite-desc" data-i18n="glycine-desc" data-cfg="desc-glycine">Studio cosy et romantique, idéal pour un séjour en duo au cœur du mas.</p>
         <div class="gite-footer">
           <div class="gite-price"><span data-i18n="from">à partir de</span> 120€ <span>/nuit</span></div>
-          <button class="btn-sm" data-i18n="btn-reserver" onclick="event.stopPropagation(); window.open('https://checkout.lodgify.com/axel-de-leo/fr/#/16403', '_blank'); //openReservation('La Glycine', '45 m² · 2 personnes', 120)">Réserver</button>
+          <button class="btn-sm" data-i18n="btn-reserver" onclick="event.stopPropagation(); openReservation('La Glycine', '45 m² · 2 personnes', 120)">Réserver</button>
         </div>
       </div>
     </div>
@@ -619,7 +563,7 @@
         <p class="gite-desc" data-i18n="chapelle-desc" data-cfg="desc-chapelle">Plafonds voûtés, murs en pierre taillée — un espace chargé d'histoire et de caractère.</p>
         <div class="gite-footer">
           <div class="gite-price"><span data-i18n="from">à partir de</span> 180€ <span>/nuit</span></div>
-          <button class="btn-sm" data-i18n="btn-reserver" onclick="event.stopPropagation(); window.open('https://checkout.lodgify.com/axel-de-leo/fr/#/16403', '_blank'); //openReservation('La Chapelle', '70 m² · 5 personnes', 180)">Réserver</button>
+          <button class="btn-sm" data-i18n="btn-reserver" onclick="event.stopPropagation(); openReservation('La Chapelle', '70 m² · 5 personnes', 180)">Réserver</button>
         </div>
       </div>
     </div>
@@ -641,7 +585,7 @@
         <p class="gite-desc" data-i18n="vignes-desc" data-cfg="desc-vignes">Le plus grand gîte du domaine, avec mezzanine et grand séjour pour familles et groupes.</p>
         <div class="gite-footer">
           <div class="gite-price"><span data-i18n="from">à partir de</span> 260€ <span>/nuit</span></div>
-          <button class="btn-sm" data-i18n="btn-reserver" onclick="event.stopPropagation(); window.open('https://checkout.lodgify.com/axel-de-leo/fr/#/16403', '_blank'); //openReservation('Les Vignes', '90 m² · 8 personnes', 260)">Réserver</button>
+          <button class="btn-sm" data-i18n="btn-reserver" onclick="event.stopPropagation(); openReservation('Les Vignes', '90 m² · 8 personnes', 260)">Réserver</button>
         </div>
       </div>
     </div>
@@ -665,7 +609,7 @@
         <p class="gite-desc" data-i18n="laurier-desc" data-cfg="desc-laurier">Lumineux et fleuri, avec terrasse privée et vue sur la garrigue ardéchoise.</p>
         <div class="gite-footer">
           <div class="gite-price"><span data-i18n="from">à partir de</span> 195€ <span>/nuit</span></div>
-          <button class="btn-sm" data-i18n="btn-reserver" onclick="event.stopPropagation(); window.open('https://checkout.lodgify.com/axel-de-leo/fr/#/16403', '_blank'); //openReservation('Le Laurier Rose', '75 m² · 5 personnes', 195)">Réserver</button>
+          <button class="btn-sm" data-i18n="btn-reserver" onclick="event.stopPropagation(); openReservation('Le Laurier Rose', '75 m² · 5 personnes', 195)">Réserver</button>
         </div>
       </div>
     </div>
@@ -687,7 +631,7 @@
         <p class="gite-desc" data-i18n="sampzon-desc" data-cfg="desc-sampzon">Vue panoramique sur le rocher de Sampzon et les collines environnantes.</p>
         <div class="gite-footer">
           <div class="gite-price"><span data-i18n="from">à partir de</span> 195€ <span>/nuit</span></div>
-          <button class="btn-sm" data-i18n="btn-reserver" onclick="event.stopPropagation(); window.open('https://checkout.lodgify.com/axel-de-leo/fr/#/16403', '_blank'); //openReservation('Sampzon', '75 m² · 5 personnes', 195)">Réserver</button>
+          <button class="btn-sm" data-i18n="btn-reserver" onclick="event.stopPropagation(); openReservation('Sampzon', '75 m² · 5 personnes', 195)">Réserver</button>
         </div>
       </div>
     </div>
