@@ -3,24 +3,24 @@
 
 /notre-restaurant           /restaurant.html  301
 /notre-restaurant/          /restaurant.html  301
-/nos-gites                  /#gites           301
-/nos-gites/                 /#gites           301
-/nos-gites/la-chapelle      /#gites           301
-/nos-gites/la-chapelle/     /#gites           301
-/nos-gites/le-laurier-rose  /#gites           301
-/nos-gites/le-laurier-rose/ /#gites           301
-/nos-gites/la-glycine-45m   /#gites           301
-/nos-gites/la-glycine-45m/  /#gites           301
-/nos-gites/sampzon-75m      /#gites           301
-/nos-gites/sampzon-75m/     /#gites           301
-/nos-gites/les-vignes-90m   /#gites           301
-/nos-gites/les-vignes-90m/  /#gites           301
+/nos-gites                  /gites.html       301
+/nos-gites/                 /gites.html       301
+/nos-gites/la-chapelle      /gites.html       301
+/nos-gites/la-chapelle/     /gites.html       301
+/nos-gites/le-laurier-rose  /gites.html       301
+/nos-gites/le-laurier-rose/ /gites.html       301
+/nos-gites/la-glycine-45m   /gites.html       301
+/nos-gites/la-glycine-45m/  /gites.html       301
+/nos-gites/sampzon-75m      /gites.html       301
+/nos-gites/sampzon-75m/     /gites.html       301
+/nos-gites/les-vignes-90m   /gites.html       301
+/nos-gites/les-vignes-90m/  /gites.html       301
 /accueil-de-groupes         /#evenementiel    301
 /accueil-de-groupes/        /#evenementiel    301
-/nos-tarifs                 /#gites           301
-/nos-tarifs/                /#gites           301
-/activites-a-proximite      /                 301
-/activites-a-proximite/     /                 301
+/nos-tarifs                 /gites.html       301
+/nos-tarifs/                /gites.html       301
+/activites-a-proximite      /activites.html   301
+/activites-a-proximite/     /activites.html   301
 /photos                     /#galerie         301
 /photos/                    /#galerie         301
 /video                      /                 301
@@ -29,9 +29,3 @@
 /avis-des-internautes/      /                 301
 /contact                    /#contact         301
 /contact/                   /#contact         301
-
-/activites                  /activites.html   301
-/activites/                 /activites.html   301
-
-/gites                      /gites.html       301
-/gites/                     /gites.html       301
