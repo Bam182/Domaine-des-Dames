@@ -495,6 +495,8 @@
     color: var(--muted); margin-top: 4px;
   }
   @media (max-width: 768px) {
+    #restaurant-home { padding: 48px 20px !important; }
+    #restaurant-home > div { grid-template-columns: 1fr !important; gap: 36px !important; }
     .gites-home { padding: 48px 20px; }
     .gites-home-inner { grid-template-columns: 1fr; gap: 36px; }
     .gites-home-equip { grid-template-columns: 1fr 1fr; }
@@ -637,6 +639,41 @@
       </div>
 
       <a href="gites.html" class="btn-primary" style="display:inline-block; margin-top:32px;" data-i18n="hero-btn1">Découvrir nos gîtes</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- RESTAURANT HOME -->
+<section class="fade-up" id="restaurant-home" style="background:#ece0ce; padding:100px 80px;">
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center;">
+
+    <!-- Texte -->
+    <div>
+      <p class="section-label" data-i18n="resto-label">Gastronomie</p>
+      <h2 class="section-title">Le Restaurant du Domaine</h2>
+      <p style="font-size:16px; font-weight:300; color:var(--muted); line-height:1.8; margin-bottom:24px;">Sous les voûtes en pierre du mas, notre restaurant vous propose une cuisine de terroir ardéchois ancrée dans les traditions du Sud. Grillades au four Josper, planche ardéchoise, caillette, picodo — des saveurs authentiques dans un cadre exceptionnel.</p>
+      <p style="font-size:16px; font-weight:300; color:var(--muted); line-height:1.8; margin-bottom:32px;">Ouvert de mai à septembre, midi et soir. Réservation conseillée.</p>
+
+      <!-- Badges -->
+      <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:36px;">
+        <span style="font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--earth); background:rgba(92,74,42,0.08); border:1px solid #d4b896; padding:7px 14px; border-radius:2px;">🔥 Four Josper</span>
+        <span style="font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--earth); background:rgba(92,74,42,0.08); border:1px solid #d4b896; padding:7px 14px; border-radius:2px;">🥩 Grillades au feu de bois</span>
+        <span style="font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--earth); background:rgba(92,74,42,0.08); border:1px solid #d4b896; padding:7px 14px; border-radius:2px;">🌿 Produits locaux</span>
+        <span style="font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--earth); background:rgba(92,74,42,0.08); border:1px solid #d4b896; padding:7px 14px; border-radius:2px;">🍷 Vins de la région</span>
+      </div>
+
+      <a href="restaurant.html" class="btn-primary" style="display:inline-block;">Découvrir le restaurant</a>
+    </div>
+
+    <!-- Photo -->
+    <div style="position:relative; border-radius:2px; overflow:hidden; aspect-ratio:4/3;">
+      <img src="/images/restaurant.jpg" alt="Restaurant du Domaine des Dames"
+           style="width:100%; height:100%; object-fit:cover;">
+      <div style="position:absolute; bottom:20px; left:-20px; background:#f7ece0; padding:16px 20px; border-radius:2px; border:1px solid #e0d4c0;">
+        <div style="font-family:'Playfair Display',serif; font-size:32px; color:var(--burgundy); line-height:1;">🔥</div>
+        <div style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted); margin-top:4px;">Four Josper</div>
+      </div>
     </div>
 
   </div>
