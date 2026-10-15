@@ -424,6 +424,82 @@
     .hamburger { display: flex; }
     .mobile-menu { display: flex; }
   }
+
+  /* GITES HOME */
+  .gites-home { background: var(--cream); padding: 100px 80px; }
+  .gites-home-inner {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 72px; align-items: center;
+  }
+  .gites-home-carousel {
+    position: relative; border-radius: 2px; overflow: hidden;
+    aspect-ratio: 4/3;
+  }
+  .ghc-track {
+    display: flex; height: 100%;
+    transition: transform 0.5s ease;
+  }
+  .ghc-slide {
+    min-width: 100%; height: 100%;
+  }
+  .ghc-slide img {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+  .ghc-btn {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: rgba(255,255,255,0.85); border: none; cursor: pointer;
+    width: 44px; height: 44px; border-radius: 50%;
+    font-size: 20px; color: var(--earth); z-index: 10;
+    transition: all 0.2s; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  .ghc-btn:hover { background: white; transform: translateY(-50%) scale(1.05); }
+  .ghc-prev { left: 12px; }
+  .ghc-next { right: 12px; }
+  .ghc-dots {
+    position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%);
+    display: flex; gap: 6px;
+  }
+  .ghc-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: rgba(255,255,255,0.5); border: none; cursor: pointer;
+    transition: background 0.2s;
+  }
+  .ghc-dot.active { background: white; }
+  .gites-home-text { }
+  .gites-home-desc {
+    font-size: 16px; font-weight: 300; color: var(--muted);
+    line-height: 1.8; margin-bottom: 28px;
+  }
+  .gites-home-equip {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 10px; margin-bottom: 28px;
+  }
+  .ghe-item {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 13px; color: var(--earth);
+    font-family: 'Lato', sans-serif;
+  }
+  .ghe-icon { font-size: 16px; }
+  .gites-home-caps {
+    display: flex; gap: 32px;
+    padding: 20px 0; border-top: 1px solid #e0d4c0; border-bottom: 1px solid #e0d4c0;
+  }
+  .ghc-cap { display: flex; flex-direction: column; align-items: center; }
+  .ghc-num {
+    font-family: 'Playfair Display', serif; font-size: 36px;
+    font-weight: 400; color: var(--burgundy); line-height: 1;
+  }
+  .ghc-label {
+    font-family: 'Cinzel', serif; font-size: 10px;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--muted); margin-top: 4px;
+  }
+  @media (max-width: 768px) {
+    .gites-home { padding: 48px 20px; }
+    .gites-home-inner { grid-template-columns: 1fr; gap: 36px; }
+    .gites-home-equip { grid-template-columns: 1fr 1fr; }
+    .gites-home-caps { gap: 20px; }
+  }
 </style>
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script src="/config.js"></script>
@@ -514,157 +590,57 @@
 
 
 <!-- GITES -->
-<section class="gites fade-up" id="gites">
-  <div class="gites-header">
-    <div>
+<section class="gites-home fade-up" id="gites">
+  <div class="gites-home-inner">
+
+    <!-- Carrousel -->
+    <div class="gites-home-carousel">
+      <div class="ghc-track" id="ghc-track">
+        <div class="ghc-slide"><img src="/images/terrasse.jpg" alt="Domaine des Dames"></div>
+        <div class="ghc-slide"><img src="/images/gite-vignes-2.png" alt="Les Vignes intérieur"></div>
+        <div class="ghc-slide"><img src="/images/gite-chapelle-1.png" alt="La Chapelle"></div>
+        <div class="ghc-slide"><img src="/images/gite-glycine-1.png" alt="La Glycine"></div>
+        <div class="ghc-slide"><img src="/images/gite-sampzon-1.png" alt="Sampzon"></div>
+      </div>
+      <button class="ghc-btn ghc-prev" onclick="ghcSlide(-1)">‹</button>
+      <button class="ghc-btn ghc-next" onclick="ghcSlide(1)">›</button>
+      <div class="ghc-dots" id="ghc-dots">
+        <button class="ghc-dot active" onclick="ghcGo(0)"></button>
+        <button class="ghc-dot" onclick="ghcGo(1)"></button>
+        <button class="ghc-dot" onclick="ghcGo(2)"></button>
+        <button class="ghc-dot" onclick="ghcGo(3)"></button>
+        <button class="ghc-dot" onclick="ghcGo(4)"></button>
+      </div>
+    </div>
+
+    <!-- Texte -->
+    <div class="gites-home-text">
       <p class="section-label" data-i18n="gites-label">Hébergement</p>
-      <h2 class="section-title" data-i18n="gites-title">Nos Gîtes</h2>
+      <h2 class="section-title">Nos Gîtes</h2>
+      <p class="gites-home-desc">Chaque gîte a sa propre personnalité, tout en partageant le charme authentique de la pierre ardéchoise. Niché dans un mas du XVIIe siècle entièrement restauré, nos cinq gîtes peuvent vous accueillir de 2 à 8 personnes.</p>
+
+      <!-- Équipements -->
+      <div class="gites-home-equip">
+        <div class="ghe-item"><span class="ghe-icon">🍳</span><span>Cuisine équipée</span></div>
+        <div class="ghe-item"><span class="ghe-icon">🏊</span><span>Piscine partagée</span></div>
+        <div class="ghe-item"><span class="ghe-icon">📺</span><span>Salon & TV</span></div>
+        <div class="ghe-item"><span class="ghe-icon">🚗</span><span>Parking gratuit</span></div>
+        <div class="ghe-item"><span class="ghe-icon">🌿</span><span>Terrasse privée</span></div>
+        <div class="ghe-item"><span class="ghe-icon">🛁</span><span>Salle de bain</span></div>
+      </div>
+
+      <!-- Capacités -->
+      <div class="gites-home-caps">
+        <div class="ghc-cap"><span class="ghc-num">5</span><span class="ghc-label">Gîtes</span></div>
+        <div class="ghc-cap"><span class="ghc-num">2→8</span><span class="ghc-label">Personnes</span></div>
+        <div class="ghc-cap"><span class="ghc-num">30</span><span class="ghc-label">Max. total</span></div>
+      </div>
+
+      <a href="gites.html" class="btn-primary" style="display:inline-block; margin-top:32px;" data-i18n="hero-btn1">Découvrir nos gîtes</a>
     </div>
-    <p class="section-text" data-i18n="gites-sub" style="max-width:320px;font-size:16px;font-weight:400;color:#5c3a1e;">Chaque gîte a sa propre personnalité, tout en partageant le charme authentique de la pierre ardéchoise.</p>
-  </div>
-  <div class="gites-grid">
-    
-    <div class="gite-card" onclick="openReservation('La Glycine', '45 m² · 2 personnes', 120)">
-      <div class="gite-img">
-        <img src="/images/gite-glycine-1.png" alt="La Glycine">
-        <div class="gite-img-overlay">
-          <img src="/images/gite-glycine-2.png" alt="La Glycine intérieur">
-        </div>
-        <span class="gite-badge">2 pers.</span>
-      </div>
-      <div class="gite-body">
-        <h3 class="gite-name">La Glycine</h3>
-        <div class="gite-specs">
-          <span class="gite-spec">⊞ 45 m²</span>
-          <span class="gite-spec">⊕ 2 personnes max</span>
-        </div>
-        <p class="gite-desc" data-i18n="glycine-desc" data-cfg="desc-glycine">Studio cosy et romantique, idéal pour un séjour en duo au cœur du mas.</p>
-        <div class="gite-footer">
-          <div class="gite-price"><span data-i18n="from">à partir de</span> 120€ <span>/nuit</span></div>
-          <button class="btn-sm" data-i18n="btn-reserver" onclick="event.stopPropagation(); openReservation('La Glycine', '45 m² · 2 personnes', 120)">Réserver</button>
-        </div>
-      </div>
-    </div>
-    
-    <div class="gite-card" onclick="openReservation('La Chapelle', '70 m² · 5 personnes', 180)">
-      <div class="gite-img">
-        <img src="/images/gite-chapelle-1.png" alt="La Chapelle">
-        <div class="gite-img-overlay">
-          <img src="/images/gite-chapelle-2.png" alt="La Chapelle intérieur">
-        </div>
-        <span class="gite-badge">5 pers.</span>
-      </div>
-      <div class="gite-body">
-        <h3 class="gite-name">La Chapelle</h3>
-        <div class="gite-specs">
-          <span class="gite-spec">⊞ 70 m²</span>
-          <span class="gite-spec">⊕ 5 personnes max</span>
-        </div>
-        <p class="gite-desc" data-i18n="chapelle-desc" data-cfg="desc-chapelle">Plafonds voûtés, murs en pierre taillée — un espace chargé d'histoire et de caractère.</p>
-        <div class="gite-footer">
-          <div class="gite-price"><span data-i18n="from">à partir de</span> 180€ <span>/nuit</span></div>
-          <button class="btn-sm" data-i18n="btn-reserver" onclick="event.stopPropagation(); openReservation('La Chapelle', '70 m² · 5 personnes', 180)">Réserver</button>
-        </div>
-      </div>
-    </div>
-    
-    <div class="gite-card" onclick="openReservation('Les Vignes', '90 m² · 8 personnes', 260)">
-      <div class="gite-img">
-        <img src="/images/gite-vignes-1.png" alt="Les Vignes">
-        <div class="gite-img-overlay">
-          <img src="/images/gite-vignes-2.png" alt="Les Vignes intérieur">
-        </div>
-        <span class="gite-badge">8 pers.</span>
-      </div>
-      <div class="gite-body">
-        <h3 class="gite-name">Les Vignes</h3>
-        <div class="gite-specs">
-          <span class="gite-spec">⊞ 90 m²</span>
-          <span class="gite-spec">⊕ 8 personnes max</span>
-        </div>
-        <p class="gite-desc" data-i18n="vignes-desc" data-cfg="desc-vignes">Le plus grand gîte du domaine, avec mezzanine et grand séjour pour familles et groupes.</p>
-        <div class="gite-footer">
-          <div class="gite-price"><span data-i18n="from">à partir de</span> 260€ <span>/nuit</span></div>
-          <button class="btn-sm" data-i18n="btn-reserver" onclick="event.stopPropagation(); openReservation('Les Vignes', '90 m² · 8 personnes', 260)">Réserver</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="gites-last-row">
-    
-    <div class="gite-card" onclick="openReservation('Le Laurier Rose', '75 m² · 5 personnes', 195)">
-      <div class="gite-img">
-        <img src="/images/gite-laurier-1.png" alt="Le Laurier Rose">
-        <div class="gite-img-overlay">
-          <img src="/images/gite-laurier-2.png" alt="Le Laurier Rose intérieur">
-        </div>
-        <span class="gite-badge">5 pers.</span>
-      </div>
-      <div class="gite-body">
-        <h3 class="gite-name">Le Laurier Rose</h3>
-        <div class="gite-specs">
-          <span class="gite-spec">⊞ 75 m²</span>
-          <span class="gite-spec">⊕ 5 personnes max</span>
-        </div>
-        <p class="gite-desc" data-i18n="laurier-desc" data-cfg="desc-laurier">Lumineux et fleuri, avec terrasse privée et vue sur la garrigue ardéchoise.</p>
-        <div class="gite-footer">
-          <div class="gite-price"><span data-i18n="from">à partir de</span> 195€ <span>/nuit</span></div>
-          <button class="btn-sm" data-i18n="btn-reserver" onclick="event.stopPropagation(); openReservation('Le Laurier Rose', '75 m² · 5 personnes', 195)">Réserver</button>
-        </div>
-      </div>
-    </div>
-    
-    <div class="gite-card" onclick="openReservation('Sampzon', '75 m² · 5 personnes', 195)">
-      <div class="gite-img">
-        <img src="/images/gite-sampzon-1.png" alt="Sampzon">
-        <div class="gite-img-overlay">
-          <img src="/images/gite-sampzon-2.png" alt="Sampzon intérieur">
-        </div>
-        <span class="gite-badge">5 pers.</span>
-      </div>
-      <div class="gite-body">
-        <h3 class="gite-name">Sampzon</h3>
-        <div class="gite-specs">
-          <span class="gite-spec">⊞ 75 m²</span>
-          <span class="gite-spec">⊕ 5 personnes max</span>
-        </div>
-        <p class="gite-desc" data-i18n="sampzon-desc" data-cfg="desc-sampzon">Vue panoramique sur le rocher de Sampzon et les collines environnantes.</p>
-        <div class="gite-footer">
-          <div class="gite-price"><span data-i18n="from">à partir de</span> 195€ <span>/nuit</span></div>
-          <button class="btn-sm" data-i18n="btn-reserver" onclick="event.stopPropagation(); openReservation('Sampzon', '75 m² · 5 personnes', 195)">Réserver</button>
-        </div>
-      </div>
-    </div>
+
   </div>
 </section>
-
-<!-- MODAL RESERVATION -->
-<div class="modal-overlay" id="reservationModal">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal()">✕</button>
-    <p class="section-label" data-i18n="modal-label">Réservation</p>
-    <h2 class="modal-title" id="modal-gite-name">La Glycine</h2>
-    <p class="modal-sub" id="modal-gite-specs">45 m² · 2 personnes</p>
-    <div class="form-row">
-      <div class="form-group"><label data-i18n="modal-arrival">Arrivée</label><input type="date" id="check-in" onchange="calcTotal()"></div>
-      <div class="form-group"><label data-i18n="modal-departure">Départ</label><input type="date" id="check-out" onchange="calcTotal()"></div>
-    </div>
-    <div class="form-row">
-      <div class="form-group"><label data-i18n="modal-firstname">Prénom</label><input type="text" placeholder="Marie"></div>
-      <div class="form-group"><label data-i18n="modal-lastname">Nom</label><input type="text" placeholder="Dupont"></div>
-    </div>
-    <div class="form-group"><label data-i18n="modal-email">Email</label><input type="email" placeholder="marie@email.com"></div>
-    <div class="form-group"><label data-i18n="modal-phone">Téléphone</label><input type="tel" placeholder="+33 6 00 00 00 00"></div>
-    <div class="form-total">
-      <div class="form-total-label" id="total-nights">Sélectionnez vos dates</div>
-      <div class="form-total-price" id="total-price">—</div>
-    </div>
-    <div class="payment-info" data-i18n="modal-payment-info">🔒 Paiement sécurisé · Annulation gratuite 30 jours avant</div>
-    <button class="btn-reserve" onclick="simulatePay()" data-i18n="modal-pay-btn">Procéder au paiement →</button>
-    <p class="stripe-note" data-i18n="modal-stripe">Powered by Stripe · Données protégées</p>
-  </div>
-</div>
-
 
 <!-- EVENEMENTIEL -->
 <section class="evenementiel fade-up" id="evenementiel" style="background:#f7ece0;">
@@ -1029,6 +1005,27 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }
+</script>
+
+<script>
+var ghcCurrent = 0;
+var ghcTotal = 5;
+function ghcSlide(dir) {
+  ghcCurrent = (ghcCurrent + dir + ghcTotal) % ghcTotal;
+  ghcUpdate();
+}
+function ghcGo(index) {
+  ghcCurrent = index;
+  ghcUpdate();
+}
+function ghcUpdate() {
+  document.getElementById('ghc-track').style.transform = 'translateX(-' + (ghcCurrent * 100) + '%)';
+  document.querySelectorAll('.ghc-dot').forEach(function(d, i) {
+    d.classList.toggle('active', i === ghcCurrent);
+  });
+}
+// Auto-advance every 4s
+setInterval(function() { ghcSlide(1); }, 4000);
 </script>
 </body>
 </html>
