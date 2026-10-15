@@ -422,18 +422,20 @@ body { padding-top: 0; }
 
 /* ACTIVITY CARDS */
 .act-grid {
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+  display: grid; grid-template-columns: 1fr; gap: 20px;
   margin-top: 48px;
 }
 .act-card {
   background: #ece0ce; border-radius: 2px;
   overflow: hidden; transition: transform 0.3s;
+  display: grid; grid-template-columns: 280px 1fr;
 }
 .act-img-placeholder {
-  height: 220px; overflow: hidden;
+  height: 100%; min-height: 200px; overflow: hidden;
   background: #d4c4a8;
 }
-.act-card:hover .act-img-placeholder img { transform: scale(1.04); transition: transform 0.5s; }
+.act-img-placeholder img { width:100%; height:100%; object-fit:cover; transition: transform 0.5s; }
+.act-card:hover .act-img-placeholder img { transform: scale(1.04); }
 .act-card:hover { transform: translateY(-4px); }
 
 .act-body { padding: 24px; }
@@ -489,7 +491,8 @@ body { padding-top: 0; }
 
 @media (max-width: 768px) {
   .act-hero-content { padding: 0 20px 40px; }
-  .act-img-placeholder { height: 180px; }
+  .act-card { grid-template-columns: 1fr; }
+  .act-img-placeholder { height: 200px; }
   .act-grid { grid-template-columns: 1fr; gap: 16px; }
   .sejours-grid { grid-template-columns: 1fr; gap: 16px; }
   .act-cta-section { padding: 48px 20px; }
@@ -704,7 +707,7 @@ body { padding-top: 0; }
     <div style="display:flex; flex-direction:column; align-items:center; gap:16px;">
       <img src="/images/logoBlanc.png" alt="Domaine des Dames"
            onerror="this.src='/images/logo.png'; this.style.filter='brightness(0) invert(1)'"
-           style="max-width:280px; width:100%; object-fit:contain;">
+           style="max-width:400px; width:100%; object-fit:contain;">
       <p style="font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:rgba(255,255,255,0.6);">Vallon-Pont-d'Arc · Ardèche</p>
     </div>
 
