@@ -427,14 +427,15 @@ body { padding-top: 0; }
 }
 .act-card {
   background: #ece0ce; border-radius: 2px;
-  display: grid; grid-template-columns: auto 1fr; gap: 0;
   overflow: hidden; transition: transform 0.3s;
 }
-.act-card:hover { transform: translateY(-4px); }
-.act-icon {
-  font-size: 32px; padding: 28px 24px; background: var(--burgundy);
-  display: flex; align-items: flex-start; justify-content: center;
+.act-img-placeholder {
+  height: 220px; overflow: hidden;
+  background: #d4c4a8;
 }
+.act-card:hover .act-img-placeholder img { transform: scale(1.04); transition: transform 0.5s; }
+.act-card:hover { transform: translateY(-4px); }
+
 .act-body { padding: 24px; }
 .act-name {
   font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 500;
@@ -488,6 +489,7 @@ body { padding-top: 0; }
 
 @media (max-width: 768px) {
   .act-hero-content { padding: 0 20px 40px; }
+  .act-img-placeholder { height: 180px; }
   .act-grid { grid-template-columns: 1fr; gap: 16px; }
   .sejours-grid { grid-template-columns: 1fr; gap: 16px; }
   .act-cta-section { padding: 48px 20px; }
@@ -548,7 +550,7 @@ body { padding-top: 0; }
   <div class="act-hero-bg"></div>
   <div class="act-hero-overlay"></div>
   <div class="act-hero-content">
-    <p style="font-family:'Cinzel',serif; font-size:12px; letter-spacing:0.28em; text-transform:uppercase; color:#e8b87a; margin-bottom:14px;" data-i18n="act-label">Activités & Séjours</p>
+    <p style="font-family:'Cinzel',serif; font-size:12px; letter-spacing:0.28em; text-transform:uppercase; color:#e8b87a; margin-bottom:14px;" data-i18n="act-label" style="font-size:15px; font-weight:700; letter-spacing:0.2em;">Activités & Séjours</p>
     <h1 style="font-family:'Playfair Display',serif; font-size:clamp(38px,6vw,70px); font-weight:400; line-height:1.08; color:white; margin-bottom:18px;" data-i18n="act-hero-title">L'Ardèche,<br>un terrain de jeu exceptionnel</h1>
     <p style="font-size:16px; font-weight:300; color:rgba(255,255,255,0.82); line-height:1.75; max-width:500px;" data-i18n="act-hero-sub">Au départ du Domaine des Dames, la nature ardéchoise s'offre à vous dans toute sa splendeur. Gorges, rivières, falaises et forêts — une destination outdoor parmi les plus belles de France.</p>
   </div>
@@ -556,12 +558,14 @@ body { padding-top: 0; }
 
 <!-- ACTIVITES -->
 <section style="background:#f7ece0; padding:80px;">
-  <p class="section-label" data-i18n="act-label">Activités & Découvertes</p>
-  <h2 class="section-title">À faire autour<br>du Domaine</h2>
+  <p class="section-label" data-i18n="act-label" style="font-size:15px; font-weight:700; letter-spacing:0.2em;">Activités & Découvertes</p>
+  <h2 class="section-title">À faire autour du Domaine</h2>
   <div class="act-grid">
-    
+
     <div class="act-card fade-up">
-      <div class="act-icon">🛶</div>
+      <div class="act-img-placeholder">
+        <img src="/images/canoe.jpg" alt="Canoë Ardèche" onerror="this.parentElement.style.background='#d4c4a8';" style="width:100%;height:100%;object-fit:cover;">
+      </div>
       <div class="act-body">
         <h3 class="act-name">Canoë & Kayak</h3>
         <div class="act-meta">
@@ -572,8 +576,11 @@ body { padding-top: 0; }
         <p class="act-desc">Descendez les célèbres Gorges de l'Ardèche en canoë, de Vallon-Pont-d'Arc jusqu'à Saint-Martin. Un parcours mythique de 30 km sous les falaises calcaires, avec l'emblématique Pont d'Arc comme point de départ.</p>
       </div>
     </div>
+
     <div class="act-card fade-up">
-      <div class="act-icon">🧗</div>
+      <div class="act-img-placeholder">
+        <img src="/images/canyoning.jpg" alt="Canyoning Ardèche" onerror="this.parentElement.style.background='#d4c4a8';" style="width:100%;height:100%;object-fit:cover;">
+      </div>
       <div class="act-body">
         <h3 class="act-name">Canyoning</h3>
         <div class="act-meta">
@@ -581,11 +588,14 @@ body { padding-top: 0; }
           <span>⭐ Intermédiaire</span>
           <span>📍 15 min du domaine</span>
         </div>
-        <p class="act-desc">Tobogans naturels, sauts dans les vasques et rappels dans les canyons ardéchois. Une aventure aquatique encadrée par des guides certifiés dans des sites naturels préservés.</p>
+        <p class="act-desc">Toboggans naturels, sauts dans les vasques et rappels dans les canyons ardéchois. Une aventure aquatique encadrée par des guides certifiés dans des sites naturels préservés.</p>
       </div>
     </div>
+
     <div class="act-card fade-up">
-      <div class="act-icon">🌲</div>
+      <div class="act-img-placeholder">
+        <img src="/images/accrobranche.jpg" alt="Accrobranche Ardèche" onerror="this.parentElement.style.background='#d4c4a8';" style="width:100%;height:100%;object-fit:cover;">
+      </div>
       <div class="act-body">
         <h3 class="act-name">Accrobranche</h3>
         <div class="act-meta">
@@ -596,8 +606,11 @@ body { padding-top: 0; }
         <p class="act-desc">Parcours acrobatiques dans les chênes verts de la garrigue ardéchoise. Des circuits adaptés à tous les âges, des plus petits aux adultes en quête de sensations.</p>
       </div>
     </div>
+
     <div class="act-card fade-up">
-      <div class="act-icon">🥾</div>
+      <div class="act-img-placeholder">
+        <img src="/images/randonnee.jpg" alt="Randonnée Ardèche" onerror="this.parentElement.style.background='#d4c4a8';" style="width:100%;height:100%;object-fit:cover;">
+      </div>
       <div class="act-body">
         <h3 class="act-name">Randonnée</h3>
         <div class="act-meta">
@@ -608,46 +621,28 @@ body { padding-top: 0; }
         <p class="act-desc">Des sentiers balisés partent à quelques minutes du domaine vers les plateaux et les belvédères surplombant les Gorges. Vues panoramiques garanties sur l'une des plus belles réserves naturelles de France.</p>
       </div>
     </div>
+
     <div class="act-card fade-up">
-      <div class="act-icon">🚵</div>
+      <div class="act-img-placeholder">
+        <img src="/images/velo.jpg" alt="Vélo Ardèche" onerror="this.parentElement.style.background='#d4c4a8';" style="width:100%;height:100%;object-fit:cover;">
+      </div>
       <div class="act-body">
-        <h3 class="act-name">VTT & Vélo</h3>
+        <h3 class="act-name">Vélo</h3>
         <div class="act-meta">
           <span>📅 Avril — Octobre</span>
           <span>⭐ Tous niveaux</span>
           <span>📍 10 min du domaine</span>
         </div>
-        <p class="act-desc">Pistes VTT et véloroutes à travers la garrigue et les vignes. Location de vélos électriques disponible à proximité pour explorer la région à votre rythme.</p>
+        <p class="act-desc">Véloroutes et pistes cyclables à travers la garrigue et les vignes ardéchoises. Location de vélos électriques disponible à proximité pour explorer la région à votre rythme.</p>
       </div>
     </div>
+
     <div class="act-card fade-up">
-      <div class="act-icon">🕳️</div>
-      <div class="act-body">
-        <h3 class="act-name">Spéléologie</h3>
-        <div class="act-meta">
-          <span>📅 Toute l'année</span>
-          <span>⭐ Initiation</span>
-          <span>📍 20 min du domaine</span>
-        </div>
-        <p class="act-desc">Explorez les entrailles de la garrigue ardéchoise dans des grottes et avens encadrés par des guides spécialisés. Une activité fascinante en toute saison, idéale hors saison estivale.</p>
+      <div class="act-img-placeholder">
+        <img src="/images/grottes.jpg" alt="Grottes Ardèche" onerror="this.parentElement.style.background='#d4c4a8';" style="width:100%;height:100%;object-fit:cover;">
       </div>
-    </div>
-    <div class="act-card fade-up">
-      <div class="act-icon">🏊</div>
       <div class="act-body">
-        <h3 class="act-name">Baignade & Plages</h3>
-        <div class="act-meta">
-          <span>📅 Juin — Septembre</span>
-          <span>⭐ Famille</span>
-          <span>📍 5 min du domaine</span>
-        </div>
-        <p class="act-desc">Les plages et vasques naturelles de l'Ardèche offrent des eaux cristallines dans un cadre sauvage exceptionnel. Plusieurs spots accessibles à pied ou en canoë depuis Vallon-Pont-d'Arc.</p>
-      </div>
-    </div>
-    <div class="act-card fade-up">
-      <div class="act-icon">🏛️</div>
-      <div class="act-body">
-        <h3 class="act-name">Grotte Chauvet</h3>
+        <h3 class="act-name">Grottes</h3>
         <div class="act-meta">
           <span>📅 Toute l'année</span>
           <span>⭐ Culture</span>
@@ -656,12 +651,28 @@ body { padding-top: 0; }
         <p class="act-desc">La Caverne du Pont d'Arc, réplique exacte de la Grotte Chauvet Pont d'Arc (classée UNESCO), abrite les plus anciennes peintures rupestres connues au monde, datant de 36 000 ans. Un site exceptionnel à ne pas manquer.</p>
       </div>
     </div>
+
+    <div class="act-card fade-up">
+      <div class="act-img-placeholder">
+        <img src="/images/villages.jpg" alt="Villages historiques Ardèche" onerror="this.parentElement.style.background='#d4c4a8';" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div class="act-body">
+        <h3 class="act-name">Villages historiques</h3>
+        <div class="act-meta">
+          <span>📅 Toute l'année</span>
+          <span>⭐ Culture</span>
+          <span>📍 15-30 min du domaine</span>
+        </div>
+        <p class="act-desc">L'Ardèche du Sud regorge de villages perchés et de bourgs médiévaux. Balazuc, Vogüé, Labeaume, Ruoms — autant d'étapes incontournables pour découvrir le patrimoine ardéchois.</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- SEJOURS PACKAGES -->
+<!-- SEJOURS -->
 <section style="background:#f0e4d0; padding:80px 80px;">
-  <div style="max-width:600px;">
+  <div style="max-width:600px; margin-bottom:48px;">
     <p class="section-label">Séjours & Escapades</p>
     <h2 class="section-title">Des séjours sur mesure</h2>
     <p class="section-text">Ces exemples vous donnent un aperçu de ce qu'il est possible de composer. Hébergement, activités, restauration — dites-nous ce qui vous fait envie et nous construisons votre séjour ensemble.</p>
@@ -669,259 +680,71 @@ body { padding-top: 0; }
   <div class="sejours-grid">
     <div class="sejour-card fade-up">
       <span class="sejour-badge" style="background:var(--terracotta);">Exemple</span>
-      <h3 class="sejour-title" data-i18n="act-sejour-1-title">Week-end Nature</h3>
-      <p class="sejour-desc" data-i18n="act-sejour-1-desc">2 nuits en gîte + journée canoë dans les Gorges + dîner au restaurant autour du feu Josper.</p>
+      <h3 class="sejour-title">Week-end Nature</h3>
+      <p class="sejour-desc">2 nuits en gîte + journée canoë dans les Gorges + dîner au restaurant autour du feu Josper.</p>
     </div>
     <div class="sejour-card fade-up">
       <span class="sejour-badge" style="background:var(--terracotta);">Exemple</span>
-      <h3 class="sejour-title" data-i18n="act-sejour-2-title">Escapade Gourmande</h3>
-      <p class="sejour-desc" data-i18n="act-sejour-2-desc">1 nuit en gîte + demi-pension + visite de la Grotte Chauvet. Idéal en basse saison.</p>
+      <h3 class="sejour-title">Escapade Gourmande</h3>
+      <p class="sejour-desc">1 nuit en gîte + demi-pension + visite des Grottes. Idéal en basse saison.</p>
     </div>
     <div class="sejour-card fade-up">
       <span class="sejour-badge" style="background:var(--terracotta);">Exemple</span>
-      <h3 class="sejour-title" data-i18n="act-sejour-3-title">Séjour Aventure</h3>
-      <p class="sejour-desc" data-i18n="act-sejour-3-desc">3 nuits + canyoning + accrobranche + randonnée guidée + petit-déjeuner inclus.</p>
+      <h3 class="sejour-title">Séjour Aventure</h3>
+      <p class="sejour-desc">3 nuits + canyoning + accrobranche + randonnée guidée + petit-déjeuner inclus.</p>
     </div>
   </div>
 </section>
 
-<!-- CTA CONTACT -->
-<div class="act-cta-section">
-  <p style="font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.28em; text-transform:uppercase; color:rgba(255,255,255,0.6); margin-bottom:12px;">Sur mesure</p>
-  <h2 style="font-family:'Playfair Display',serif; font-size:clamp(28px,4vw,44px); font-weight:400; color:white; margin-bottom:16px; line-height:1.2;">Votre séjour idéal<br>nous le créons ensemble.</h2>
-  <p style="font-size:15px; color:rgba(255,255,255,0.75); margin-bottom:32px; max-width:460px; margin-left:auto; margin-right:auto; line-height:1.7;" >Chaque séjour est unique. Dites-nous vos envies — durée, activités, budget — et nous composons votre escapade ardéchoise sur mesure.</p>
-  <a href="index.html#contact" class="btn-outline" data-i18n="act-cta">Nous contacter pour une offre sur mesure</a>
-</div>
+<!-- CONTACT -->
+<section style="background:var(--burgundy); padding:80px; color:white;">
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center;">
+    
+    <!-- Logo blanc + nom -->
+    <div style="display:flex; flex-direction:column; align-items:center; gap:16px;">
+      <img src="/images/logoBlanc.jpg" alt="Domaine des Dames" 
+           onerror="this.style.display='none'"
+           style="max-width:280px; width:100%; object-fit:contain;">
+      <p style="font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:rgba(255,255,255,0.6);">Vallon-Pont-d'Arc · Ardèche</p>
+    </div>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-logo">Domaine des Dames</div>
-  <p style="font-size:11px;">© 2025 · Vallon-Pont-d'Arc · <span data-i18n="footer-dev"></span></p>
-  <div style="display:flex;gap:18px;align-items:center;">
-    <a href="https://www.facebook.com/ledomainedesdames/" target="_blank" style="display:flex;align-items:center;gap:6px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Facebook</a>
-    <a href="#" data-i18n="footer-legal">Mentions légales</a>
-    <a href="#" data-i18n="footer-privacy">Confidentialité</a>
+    <!-- Coordonnées -->
+    <div>
+      <p class="section-label" style="color:rgba(255,255,255,0.6);">Nous contacter</p>
+      <h2 style="font-family:'Playfair Display',serif; font-size:36px; font-weight:400; color:white; margin-bottom:28px; line-height:1.2;">Organisons votre séjour ensemble</h2>
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        <div style="display:flex; align-items:center; gap:14px;">
+          <span style="font-size:18px;">📍</span>
+          <div>
+            <p style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:2px;">Adresse</p>
+            <p style="color:white; font-size:15px;">316 route de la Roubine, 07150 Vallon-Pont-d'Arc</p>
+          </div>
+        </div>
+        <div style="display:flex; align-items:center; gap:14px;">
+          <span style="font-size:18px;">📞</span>
+          <div>
+            <p style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:2px;">Téléphone</p>
+            <a href="tel:0626477395" style="color:white; font-size:15px; text-decoration:none;">06 26 47 73 95</a>
+          </div>
+        </div>
+        <div style="display:flex; align-items:center; gap:14px;">
+          <span style="font-size:18px;">✉</span>
+          <div>
+            <p style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:2px;">Email</p>
+            <a href="mailto:contact@ledomainedesdames.com" style="color:white; font-size:15px; text-decoration:none;">contact@ledomainedesdames.com</a>
+          </div>
+        </div>
+        <div style="display:flex; align-items:center; gap:14px;">
+          <span style="font-size:18px;">🕐</span>
+          <div>
+            <p style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:2px;">Restaurant</p>
+            <p style="color:white; font-size:15px;">Ouvert de mai à septembre · Midi & Soir</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
-</footer>
+</section>
 
-<div class="notif" id="notif"></div>
-
-<script>
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
-  }, {threshold:0.1});
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-  let currentPrice = 0;
-  function openReservation(name, specs, price) {
-    currentPrice = price;
-    document.getElementById('modal-gite-name').textContent = name;
-    document.getElementById('modal-gite-specs').textContent = specs;
-    document.getElementById('reservationModal').classList.add('active');
-    document.body.style.overflow = 'hidden';
-    calcTotal();
-  }
-  function closeModal() {
-    document.getElementById('reservationModal').classList.remove('active');
-    document.body.style.overflow = '';
-  }
-  document.getElementById('reservationModal').addEventListener('click', function(e) {
-    if(e.target === this) closeModal();
-  });
-  function calcTotal() {
-    const cin = document.getElementById('check-in').value;
-    const cout = document.getElementById('check-out').value;
-    if(cin && cout) {
-      const nights = Math.round((new Date(cout) - new Date(cin)) / 86400000);
-      if(nights > 0) {
-        document.getElementById('total-nights').textContent = nights + ' nuit' + (nights > 1 ? 's' : '');
-        document.getElementById('total-price').textContent = (nights * currentPrice).toLocaleString('fr-FR') + ' €';
-        return;
-      }
-    }
-    document.getElementById('total-nights').textContent = 'Sélectionnez vos dates';
-    document.getElementById('total-price').textContent = '—';
-  }
-  function simulatePay() {
-    const cin = document.getElementById('check-in').value;
-    const cout = document.getElementById('check-out').value;
-    if(!cin || !cout) { alert('Veuillez sélectionner vos dates de séjour.'); return; }
-    closeModal();
-    showNotif('✓ Redirection vers le paiement sécurisé Stripe...');
-  }
-  function showNotif(msg) {
-    const n = document.getElementById('notif');
-    n.textContent = msg;
-    n.classList.add('show');
-    setTimeout(() => n.classList.remove('show'), 4000);
-  }
-  const today = new Date().toISOString().split('T')[0];
-  document.getElementById('check-in').min = today;
-  document.getElementById('check-out').min = today;
-  document.getElementById('check-in').addEventListener('change', function() {
-    document.getElementById('check-out').min = this.value;
-  });
-</script>
-<script>
-var LANG = {
-  fr: {
-    "nav-domaine":"Le Domaine","nav-gites":"Gîtes","nav-restaurant":"Restaurant",
-    "nav-evenementiel":"Événementiel","nav-galerie":"Galerie","nav-contact":"Contact",
-    "nav-reserver":"Réserver",
-    "hero-eyebrow":"Vallon-Pont-d\'Arc · Ardèche",
-    "hero-title":"Domaine<br>des Dames",
-    "hero-subtitle":"Un mas ardéchois du XVIIe siècle niché au coeur des Gorges de l\'Ardèche. Gîtes de charme, piscine et restaurant de terroir.",
-    "hero-btn1":"Réserver un gîte","hero-btn2":"Découvrir le restaurant","hero-scroll":"Défiler",
-    "domaine-label":"Le Domaine","domaine-title":"Un mas ardéchois<br>hors du temps",
-    "domaine-text":"Perché sur les hauteurs de Vallon-Pont-d\'Arc, à deux pas des Gorges de l\'Ardèche et de la Grotte Chauvet, le Domaine des Dames est un mas en pierre du XVIIe siècle entièrement restauré. Cinq gîtes indépendants, une piscine, un restaurant de terroir et des hectares de nature sauvage vous attendent.",
-    "domaine-f1":"Gîtes","domaine-f2":"Personnes max","domaine-f3":"Siècle",
-    "gites-label":"Hébergement","gites-title":"Nos Gîtes",
-    "gites-sub":"Chaque gîte a sa propre personnalité, tout en partageant le charme authentique de la pierre ardéchoise.",
-    "glycine-desc":"Studio cosy et romantique, idéal pour un séjour en duo au coeur du mas.",
-    "chapelle-desc":"Plafonds voûtés, murs en pierre taillée — un espace chargé d\'histoire et de caractère.",
-    "vignes-desc":"Le plus grand gîte du domaine, avec mezzanine et grand séjour pour familles et groupes.",
-    "laurier-desc":"Lumineux et fleuri, avec terrasse privée et vue sur la garrigue ardéchoise.",
-    "sampzon-desc":"Vue panoramique sur le rocher de Sampzon et les collines environnantes.",
-    "btn-reserver":"Réserver","from":"à partir de","per-night":"/nuit",
-    "modal-label":"Réservation","modal-arrival":"Arrivée","modal-departure":"Départ",
-    "modal-firstname":"Prénom","modal-lastname":"Nom","modal-email":"Email","modal-phone":"Téléphone",
-    "modal-select-dates":"Sélectionnez vos dates",
-    "modal-payment-info":"🔒 Paiement sécurisé · Annulation gratuite 30 jours avant",
-    "modal-pay-btn":"Procéder au paiement →","modal-stripe":"Powered by Stripe · Données protégées",
-    "resto-label":"Gastronomie","resto-title":"Le Restaurant<br>du Domaine",
-    "resto-text":"Cuisine de terroir ardéchois autour des braises du four Josper. Produits locaux, recettes d\'antan, et vins de la région.",
-    "josper-badge":"🔥 Grillades au feu de bois · Four Josper",
-    "event-label":"Événementiel","event-title":"Célébrez au<br>Domaine des Dames",
-    "event-text":"Le Domaine des Dames se prête magnifiquement à l\'organisation de vos événements privés et professionnels. Mariages, séminaires, anniversaires ou repas de famille — nos espaces en pierre et notre cadre naturel exceptionnel créent une atmosphère inoubliable.",
-    "event-btn":"Nous contacter pour un devis","event-max":"personnes max",
-    "galerie-label":"Galerie","galerie-title":"Le Domaine en images",
-    "contact-label":"Nous trouver","contact-title":"Venir au<br>Domaine",
-    "contact-text":"Situé à 5 minutes de Vallon-Pont-d\'Arc, au coeur des Gorges de l\'Ardèche.",
-    "contact-addr-label":"Adresse","contact-addr":"Route des Gorges, 07150 Vallon-Pont-d\'Arc",
-    "contact-phone-label":"Téléphone","contact-email-label":"Email",
-    "contact-hours-label":"Restaurant","contact-hours":"Ouvert de mai à septembre · Midi & Soir",
-    "contact-form-title":"Nous écrire","contact-msg":"Message",
-    "contact-placeholder":"Votre message...","contact-send":"Envoyer le message",
-    "footer-dev":"",
-    "footer-legal":"Mentions légales","footer-privacy":"Confidentialité","act-label":"Activités & Séjours",
-    "act-hero-title":"L\'Ardèche,<br>un terrain de jeu exceptionnel",
-    "act-hero-sub":"Au départ du Domaine des Dames, la nature ardéchoise s\'offre à vous dans toute sa splendeur. Gorges, rivières, falaises et forêts — une destination outdoor parmi les plus belles de France.",
-    "act-sejours-label":"Séjours & Escapades",
-    "act-sejours-title":"Des séjours clés en main",
-    "act-sejours-sub":"Nous préparons des offres combinant hébergement, activités et restauration pour vous permettre de profiter pleinement de l\'Ardèche sans vous soucier de rien. Hors saison, week-ends thématiques — restez informés.",
-    "act-sejour-1-title":"Week-end Nature",
-    "act-sejour-1-desc":"2 nuits en gîte + journée canoë dans les Gorges + dîner au restaurant autour du feu Josper.",
-    "act-sejour-2-title":"Escapade Gourmande",
-    "act-sejour-2-desc":"1 nuit en gîte + demi-pension + visite de la Grotte Chauvet. Idéal en basse saison.",
-    "act-sejour-3-title":"Séjour Aventure",
-    "act-sejour-3-desc":"3 nuits + canyoning + accrobranche + randonnée guidée + petit-déjeuner inclus.",
-    "act-cta":"Nous contacter pour une offre sur mesure",
-    "act-notif-label":"Activités & Découvertes",
-    "resto-resa-label":"Réservation table",
-    "resto-resa-title":"Réservez votre table",
-    "resto-resa-text":"Ouvert de mai à septembre, midi et soir. Réservation conseillée, en particulier le week-end.",
-    "resto-resa-btn":"Réserver une table",
-    "resto-resa-note":"Réservation en ligne via ZenChef · Confirmation immédiate"
-  },
-  en: {
-    "nav-domaine":"The Estate","nav-gites":"Cottages","nav-restaurant":"Restaurant",
-    "nav-evenementiel":"Events","nav-galerie":"Gallery","nav-contact":"Contact",
-    "nav-reserver":"Book now",
-    "hero-eyebrow":"Vallon-Pont-d\'Arc · Ardèche, France",
-    "hero-title":"Domaine<br>des Dames",
-    "hero-subtitle":"A 17th-century Ardèche farmhouse nestled in the heart of the Ardèche Gorges. Charming cottages, pool and farm-to-table restaurant.",
-    "hero-btn1":"Book a cottage","hero-btn2":"Discover the restaurant","hero-scroll":"Scroll",
-    "domaine-label":"The Estate","domaine-title":"An Ardèche farmhouse<br>outside of time",
-    "domaine-text":"Nestled in the hills above Vallon-Pont-d\'Arc, steps from the Ardèche Gorges and the Chauvet Cave, Domaine des Dames is a fully restored 17th-century stone farmhouse. Five independent cottages, a swimming pool, a farm-to-table restaurant and acres of wild nature await you.",
-    "domaine-f1":"Cottages","domaine-f2":"Max guests","domaine-f3":"Century",
-    "gites-label":"Accommodation","gites-title":"Our Cottages",
-    "gites-sub":"Each cottage has its own personality, while sharing the authentic charm of Ardèche stone.",
-    "glycine-desc":"A cosy and romantic studio, ideal for a getaway for two in the heart of the estate.",
-    "chapelle-desc":"Vaulted ceilings, dressed stone walls — a space full of history and character.",
-    "vignes-desc":"The largest cottage on the estate, with mezzanine and large living area for families and groups.",
-    "laurier-desc":"Light-filled and flowering, with a private terrace overlooking the Ardèche garrigue.",
-    "sampzon-desc":"Panoramic view of the Sampzon rock and the surrounding Ardèche hills.",
-    "btn-reserver":"Book","from":"from","per-night":"/night",
-    "modal-label":"Booking","modal-arrival":"Check-in","modal-departure":"Check-out",
-    "modal-firstname":"First name","modal-lastname":"Last name","modal-email":"Email","modal-phone":"Phone",
-    "modal-select-dates":"Select your dates",
-    "modal-payment-info":"🔒 Secure payment · Free cancellation 30 days before",
-    "modal-pay-btn":"Proceed to payment →","modal-stripe":"Powered by Stripe · Your data is protected",
-    "resto-label":"Gastronomy","resto-title":"The Restaurant<br>of the Estate",
-    "resto-text":"Ardèche farmhouse cuisine cooked over the embers of a Josper oven. Local produce, timeless recipes, and regional wines.",
-    "josper-badge":"🔥 Wood-fired grills · Josper Oven",
-    "event-label":"Events","event-title":"Celebrate at<br>Domaine des Dames",
-    "event-text":"Domaine des Dames is a magnificent setting for your private and professional events. Weddings, seminars, birthdays or family gatherings — our stone spaces and exceptional natural surroundings create an unforgettable atmosphere.",
-    "event-btn":"Contact us for a quote","event-max":"guests max",
-    "galerie-label":"Gallery","galerie-title":"The Estate in pictures",
-    "contact-label":"Find us","contact-title":"Visit the<br>Estate",
-    "contact-text":"Located 5 minutes from Vallon-Pont-d\'Arc, in the heart of the Ardèche Gorges.",
-    "contact-addr-label":"Address","contact-addr":"Route des Gorges, 07150 Vallon-Pont-d\'Arc, France",
-    "contact-phone-label":"Phone","contact-email-label":"Email",
-    "contact-hours-label":"Restaurant","contact-hours":"Open May to September · Lunch & Dinner",
-    "contact-form-title":"Write to us","contact-msg":"Message",
-    "contact-placeholder":"Your message...","contact-send":"Send message",
-    "footer-dev":"",
-    "footer-legal":"Legal notice","footer-privacy":"Privacy policy","act-label":"Activities & Stays",
-    "act-hero-title":"Ardèche,<br>an exceptional playground",
-    "act-hero-sub":"From Domaine des Dames, the Ardèche countryside opens up to you in all its splendour. Gorges, rivers, cliffs and forests — one of France\'s most beautiful outdoor destinations.",
-    "act-sejours-label":"Stays & Getaways",
-    "act-sejours-title":"All-inclusive stays",
-    "act-sejours-sub":"We are preparing offers combining accommodation, activities and dining so you can fully enjoy the Ardèche without a care. Off-season breaks, themed weekends — stay tuned.",
-    "act-sejour-1-title":"Nature Weekend",
-    "act-sejour-1-desc":"2 nights in a cottage + canoe day in the Gorges + dinner at the restaurant around the Josper fire.",
-    "act-sejour-2-title":"Gourmet Escape",
-    "act-sejour-2-desc":"1 night in a cottage + half board + visit to the Chauvet Cave. Perfect in low season.",
-    "act-sejour-3-title":"Adventure Stay",
-    "act-sejour-3-desc":"3 nights + canyoning + tree climbing + guided hiking + breakfast included.",
-    "act-cta":"Contact us for a tailored offer",
-    "act-notif-label":"Activities & Discoveries",
-    "resto-resa-label":"Table reservation",
-    "resto-resa-title":"Book your table",
-    "resto-resa-text":"Open May to September, lunch and dinner. Booking recommended, especially on weekends.",
-    "resto-resa-btn":"Book a table",
-    "resto-resa-note":"Online booking via ZenChef · Instant confirmation"
-  }
-};
-
-function setLang(lang) {
-  document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
-  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-  var t = LANG[lang];
-  document.querySelectorAll('[data-i18n]').forEach(function(el) {
-    var key = el.getAttribute('data-i18n');
-    if (!t[key]) return;
-    if (el.hasAttribute('placeholder')) {
-      el.placeholder = t[key];
-    } else if (key.indexOf('-title') > -1 || key === 'josper-badge' || key === 'gites-title' || key === 'event-title' || key === 'galerie-title' || key === 'resto-title' || key === 'hero-title' || key === 'domaine-title' || key === 'contact-title') {
-      el.innerHTML = t[key];
-    } else {
-      el.textContent = t[key];
-    }
-  });
-}
-</script>
-<script>
-function toggleMenu() {
-  const h = document.getElementById('hamburger');
-  const m = document.getElementById('mobileMenu');
-  h.classList.toggle('open');
-  m.classList.toggle('open');
-  document.body.style.overflow = m.classList.contains('open') ? 'hidden' : '';
-}
-function closeMenu() {
-  document.getElementById('hamburger').classList.remove('open');
-  document.getElementById('mobileMenu').classList.remove('open');
-  document.body.style.overflow = '';
-}
-// Close menu on outside click
-document.addEventListener('click', function(e) {
-  const m = document.getElementById('mobileMenu');
-  const h = document.getElementById('hamburger');
-  if (m.classList.contains('open') && !m.contains(e.target) && !h.contains(e.target)) {
-    closeMenu();
-  }
-});
-</script>
-</body>
-</html>
+>
