@@ -184,7 +184,7 @@
   .menu-item-desc { font-size:13px; color:var(--muted); margin-top:-6px; margin-bottom:10px; }
 
   /* GALERIE */
-  .galerie { background:var(--warm-bg); padding:100px 0; }
+  .galerie { background:#f7ece0; padding:100px 0; }
   .galerie-header { padding:0 80px; margin-bottom:40px; }
   .galerie-grid { display:grid; grid-template-columns:2fr 1fr 1fr; grid-template-rows:280px 280px; gap:4px; }
   .galerie-item { overflow:hidden; }
@@ -744,6 +744,11 @@
   <div class="contact-inner">
     <div>
       <p class="section-label" data-i18n="contact-label">Nous trouver</p>
+      <div style="display:flex; align-items:center; gap:24px; margin-bottom:8px;">
+        <img src="/images/logoBlanc.png" alt="Domaine des Dames"
+             onerror="this.src='/images/logo.png'; this.style.filter='brightness(0) invert(1)'"
+             style="max-width:160px; width:100%; object-fit:contain;">
+      </div>
       <h2 class="section-title" data-i18n="contact-title">Venir au<br>Domaine</h2>
       <p class="section-text" data-i18n="contact-text">Situé à 5 minutes de Vallon-Pont-d'Arc, au cœur des Gorges de l'Ardèche.</p>
       <div class="contact-details">
