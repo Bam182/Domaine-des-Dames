@@ -744,11 +744,6 @@
   <div class="contact-inner">
     <div>
       <p class="section-label" data-i18n="contact-label">Nous trouver</p>
-      <div style="display:flex; align-items:center; gap:24px; margin-bottom:8px;">
-        <img src="/images/logoBlanc.png" alt="Domaine des Dames"
-             onerror="this.src='/images/logo.png'; this.style.filter='brightness(0) invert(1)'"
-             style="max-width:160px; width:100%; object-fit:contain;">
-      </div>
       <h2 class="section-title" data-i18n="contact-title">Venir au<br>Domaine</h2>
       <p class="section-text" data-i18n="contact-text">Situé à 5 minutes de Vallon-Pont-d'Arc, au cœur des Gorges de l'Ardèche.</p>
       <div class="contact-details">
@@ -758,7 +753,12 @@
         <div class="contact-detail"><div class="contact-icon">🕐</div><div class="contact-detail-text"><p data-i18n="contact-hours-label">Restaurant</p><p data-i18n="contact-hours" data-cfg="resto-horaires">Ouvert de mai à septembre · Midi & Soir</p></div></div>
       </div>
     </div>
-    <div class="contact-form">
+    <div style="display:flex; align-items:center; justify-content:center;">
+      <img src="/images/logoBlanc.png" alt="Domaine des Dames"
+           onerror="this.src='/images/logo.png'; this.style.filter='brightness(0) invert(1)'"
+           style="max-width:420px; width:100%; object-fit:contain;">
+    </div>
+    <div class="contact-form" style="display:none;">
       <h3 data-i18n="contact-form-title">Nous écrire</h3>
       <div class="form-row">
         <div class="form-group"><label data-i18n="modal-firstname">Prénom</label><input type="text" placeholder="Marie"></div>
