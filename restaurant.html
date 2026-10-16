@@ -11,9 +11,9 @@
 
   :root {
     --stone: #c8a97a; --stone-dark: #8b6d40; --cream: #ede0cc;
-    --earth: #6b3a1f; --green: #5a6e3a; --burgundy: #6b1a35;
+    --earth: #4a2010; --green: #5a6e3a; --burgundy: #5a1228;
     --terracotta: #c4573a; --gold: #b8832a; --sage: #7a8c5a;
-    --warm-bg: #f0e4d0; --white: #ffffff; --text: #2e1a0e; --muted: #8a6a4a;
+    --warm-bg: #f0e4d0; --white: #ffffff; --text: #1a0a04; --muted: #5a3a20;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   html { scroll-behavior:smooth; }
@@ -33,7 +33,7 @@
   .nav-left { display:flex; align-items:center; gap:18px; justify-content:flex-end; padding-right:32px; }
   .nav-left a {
     text-decoration:none; font-size:16px; letter-spacing:0.12em;
-    text-transform:uppercase; color:#2e1a0e; font-weight:600;
+    text-transform:uppercase; color:#0d0604; font-weight:600;
     font-family:'Cinzel',serif; transition:color 0.2s;
   }
   .nav-left a:hover { color:var(--burgundy); }
@@ -50,11 +50,11 @@
     height:100%; width:auto; object-fit:contain; display:block;
   }
   .nav-brand { display:none; }
-  .nav-brand span { display:block; font-size:12px; font-family:'Lato',sans-serif; font-weight:300; letter-spacing:0.18em; text-transform:uppercase; color:var(--muted); margin-top:1px; }
+  .nav-brand span { display:block; font-size:12px; font-family:'Lato',sans-serif; font-weight:400; letter-spacing:0.18em; text-transform:uppercase; color:#4a3020; margin-top:1px; }
   .nav-right { display:flex; align-items:center; gap:18px; justify-content:flex-start; padding-left:32px; }
   .nav-right a {
     text-decoration:none; font-size:16px; letter-spacing:0.12em;
-    text-transform:uppercase; color:#2e1a0e; font-weight:600;
+    text-transform:uppercase; color:#0d0604; font-weight:600;
     font-family:'Cinzel',serif; transition:color 0.2s;
   }
   .nav-right a:hover { color:var(--burgundy); }
@@ -64,7 +64,7 @@
     padding:13px 28px;
     border-radius:2px;
     font-family:'Cinzel',serif!important;
-    font-size:15px!important;
+    font-size:16px!important; font-weight:800!important; letter-spacing:0.2em!important;
     letter-spacing:0.15em!important;
     font-style:normal!important;
     font-weight:700!important;
@@ -76,10 +76,10 @@
   .hero-bg { position:absolute; inset:0; background:url('/images/hero.jpg') center/cover no-repeat; }
   .hero-overlay { position:absolute; inset:0; background:linear-gradient(to top, rgba(20,12,4,0.82) 0%, rgba(20,12,4,0.15) 55%, transparent 100%); }
   .hero-content { position:relative; z-index:2; padding:0 80px 80px; max-width:700px; }
-  .hero-eyebrow { font-size:13px; letter-spacing:0.25em; text-transform:uppercase; color:var(--stone); margin-bottom:16px; font-weight:300; }
+  .hero-eyebrow { font-size:13px; letter-spacing:0.25em; text-transform:uppercase; color:var(--stone); margin-bottom:16px; font-weight:400; }
   .hero-title { font-family:'Playfair Display',serif; font-size:clamp(52px,7vw,88px); font-weight:400; line-height:1.05; color:white; margin-bottom:20px; }
   .hero-title em { font-style:italic; color:#e8c080; }
-  .hero-subtitle { font-size:17px; font-weight:300; color:rgba(255,255,255,0.8); line-height:1.7; margin-bottom:36px; max-width:480px; }
+  .hero-subtitle { font-size:17px; font-weight:400; color:rgba(255,255,255,0.8); line-height:1.7; margin-bottom:36px; max-width:480px; }
   .hero-btns { display:flex; gap:16px; flex-wrap:wrap; }
   .btn-primary { display:inline-block; padding:14px 36px; background:var(--burgundy); color:white; text-decoration:none; font-size:12px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; border-radius:2px; transition:all 0.3s; font-family:'Cinzel',serif; }
   .btn-primary:hover { background:#4e1228; }   transform:translateY(-2px); }
@@ -94,7 +94,7 @@
   .section-label { font-size:12px; letter-spacing:0.22em; text-transform:uppercase; color:var(--terracotta); margin-bottom:12px; font-weight:400; font-family:'Cinzel',serif; }
   .section-title { font-family:'Playfair Display',serif; font-size:clamp(36px,4vw,52px); font-weight:400; line-height:1.2; color:var(--earth); margin-bottom:20px; }
   .section-title em { font-style:italic; color:var(--burgundy); }
-  .section-text { font-size:16px; font-weight:300; line-height:1.8; color:var(--muted); max-width:560px; }
+  .section-text { font-size:16px; font-weight:400; line-height:1.8; color:#4a3020; max-width:560px; }
 
   /* DOMAINE */
   .domaine { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; background:#f5e8d5; }
@@ -103,8 +103,8 @@
   .domaine-imgs img:first-child { margin-top:40px; }
   .domaine-features { display:flex; gap:32px; margin-top:36px; }
   .feature { text-align:center; }
-  .feature-num { font-family:'Playfair Display',serif; font-size:44px; font-weight:300; color:var(--burgundy); }
-  .feature-label { font-size:13px; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted); }
+  .feature-num { font-family:'Playfair Display',serif; font-size:44px; font-weight:400; color:var(--burgundy); }
+  .feature-label { font-size:13px; letter-spacing:0.15em; text-transform:uppercase; color:#4a3020; }
 
   /* GITES */
   .gites { background:var(--warm-bg); }
@@ -123,11 +123,11 @@
   .gite-body { padding:24px; }
   .gite-name { font-family:'Playfair Display',serif; font-size:22px; font-weight:500; color:var(--earth); margin-bottom:6px; }
   .gite-specs { display:flex; gap:16px; margin-bottom:10px; }
-  .gite-spec { font-size:13px; color:var(--muted); }
-  .gite-desc { font-size:14px; font-weight:300; color:var(--muted); line-height:1.6; margin-bottom:18px; }
+  .gite-spec { font-size:13px; color:#4a3020; }
+  .gite-desc { font-size:14px; font-weight:400; color:#4a3020; line-height:1.6; margin-bottom:18px; }
   .gite-footer { display:flex; justify-content:space-between; align-items:center; border-top:1px solid #f0ebe3; padding-top:14px; }
   .gite-price { font-family:'Playfair Display',serif; font-size:22px; color:var(--burgundy); }
-  .gite-price span { font-size:13px; font-family:'Lato',sans-serif; color:var(--muted); }
+  .gite-price span { font-size:13px; font-family:'Lato',sans-serif; color:#4a3020; }
   .btn-sm { font-size:12px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; padding:9px 20px; background:var(--burgundy); color:white; border:none; border-radius:2px; cursor:pointer; transition:background 0.2s; font-family:'Cinzel',serif; }
   .btn-sm:hover { background:#4e1228; }
 
@@ -135,21 +135,21 @@
   .modal-overlay { display:none; position:fixed; inset:0; z-index:200; background:rgba(20,12,4,0.7); backdrop-filter:blur(4px); align-items:center; justify-content:center; }
   .modal-overlay.active { display:flex; }
   .modal { background:#fdf5ea; width:90%; max-width:580px; max-height:90vh; overflow-y:auto; border-radius:4px; padding:48px; position:relative; }
-  .modal-close { position:absolute; top:18px; right:22px; background:none; border:none; font-size:22px; cursor:pointer; color:var(--muted); }
-  .modal-title { font-family:'Playfair Display',serif; font-size:34px; font-weight:300; color:var(--earth); margin-bottom:4px; }
-  .modal-sub { font-size:14px; color:var(--muted); margin-bottom:28px; }
+  .modal-close { position:absolute; top:18px; right:22px; background:none; border:none; font-size:22px; cursor:pointer; color:#4a3020; }
+  .modal-title { font-family:'Playfair Display',serif; font-size:34px; font-weight:400; color:var(--earth); margin-bottom:4px; }
+  .modal-sub { font-size:14px; color:#4a3020; margin-bottom:28px; }
   .form-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px; }
   .form-group { margin-bottom:14px; }
   .form-group label { display:block; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:var(--earth); margin-bottom:5px; }
   .form-group input, .form-group select { width:100%; padding:12px 14px; border:1px solid #e0d8cc; border-radius:2px; font-family:'Lato',sans-serif; font-size:15px; background:var(--cream); color:var(--text); outline:none; transition:border-color 0.2s; }
   .form-group input:focus, .form-group select:focus { border-color:var(--burgundy); }
   .form-total { background:var(--warm-bg); border-radius:2px; padding:18px 20px; margin:18px 0; display:flex; justify-content:space-between; align-items:center; }
-  .form-total-label { font-size:13px; color:var(--muted); }
+  .form-total-label { font-size:13px; color:#4a3020; }
   .form-total-price { font-family:'Playfair Display',serif; font-size:28px; color:var(--earth); }
-  .payment-info { display:flex; align-items:center; gap:8px; font-size:13px; color:var(--muted); margin-bottom:18px; }
+  .payment-info { display:flex; align-items:center; gap:8px; font-size:13px; color:#4a3020; margin-bottom:18px; }
   .btn-reserve { width:100%; padding:16px; background:var(--burgundy); color:white; border:none; border-radius:2px; font-family:'Lato',sans-serif; font-size:14px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; cursor:pointer; transition:background 0.2s; }
   .btn-reserve:hover { background:#4e1228; }
-  .stripe-note { text-align:center; font-size:12px; color:var(--muted); margin-top:10px; }
+  .stripe-note { text-align:center; font-size:12px; color:#4a3020; margin-top:10px; }
 
   /* RESTAURANT */
   .restaurant { background:#f5e8d5; }
@@ -159,14 +159,14 @@
   .restaurant-img-badge { position:absolute; bottom:-20px; right:-20px; width:110px; height:110px; background:var(--burgundy); border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center; color:white; font-family:'Playfair Display',serif; }
   .restaurant-img-badge .big { font-size:28px; line-height:1; }
   .restaurant-img-badge .small { font-size:10px; letter-spacing:0.1em; text-transform:uppercase; text-align:center; margin-top:4px; }
-  .josper-badge { display:inline-flex; align-items:center; gap:8px; background:var(--cream); border:1px solid #d4b896; border-radius:2px; padding:8px 16px; margin-bottom:24px; font-size:14px; color:var(--muted); background:var(--warm-bg); }
+  .josper-badge { display:inline-flex; align-items:center; gap:8px; background:var(--cream); border:1px solid #d4b896; border-radius:2px; padding:8px 16px; margin-bottom:24px; font-size:14px; color:#4a3020; background:var(--warm-bg); }
   .menu-section { margin-top:32px; }
   .menu-category { font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--burgundy); margin-bottom:14px; margin-top:20px; padding-bottom:7px; border-bottom:1px solid #e8d4bc; font-family:'Cinzel',serif; }
   .menu-item { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px; }
   .menu-item-name { font-size:16px; color:var(--earth); }
   .menu-item-dots { flex:1; border-bottom:1px dotted #d0c8bc; margin:0 10px; }
   .menu-item-price { font-family:'Playfair Display',serif; font-size:18px; color:var(--burgundy); }
-  .menu-item-desc { font-size:13px; color:var(--muted); margin-top:-6px; margin-bottom:10px; }
+  .menu-item-desc { font-size:13px; color:#4a3020; margin-top:-6px; margin-bottom:10px; }
 
   /* GALERIE */
   .galerie { background:var(--warm-bg); padding:100px 0; }
@@ -189,7 +189,7 @@
   .contact-detail-text p:first-child { font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--stone); margin-bottom:2px; }
   .contact-detail-text p:last-child { font-size:15px; color:white; }
   .contact-form { background:rgba(255,255,255,0.06); border-radius:4px; padding:36px; border:1px solid rgba(200,185,154,0.15); }
-  .contact-form h3 { font-family:'Playfair Display',serif; font-size:22px; font-weight:300; color:white; margin-bottom:22px; }
+  .contact-form h3 { font-family:'Playfair Display',serif; font-size:22px; font-weight:400; color:white; margin-bottom:22px; }
   .contact-form .form-group input,
   .contact-form .form-group textarea { background:rgba(255,255,255,0.08); border-color:rgba(200,185,154,0.2); color:white; }
   .contact-form .form-group label { color:var(--stone); }
@@ -228,7 +228,7 @@
   }
   .nav-reviews-count {
     font-family: 'Lato', sans-serif; font-size: 11px; letter-spacing: 0.08em;
-    text-transform: uppercase; color: var(--muted); line-height: 1;
+    text-transform: uppercase; color: #4a3020; line-height: 1;
   }
   @media (max-width: 768px) { .nav-reviews { display: none; } }
 
@@ -241,7 +241,7 @@
   .lang-btn {
     padding:6px 11px; font-size:10px; letter-spacing:0.18em; text-transform:uppercase;
     font-family:'Lato',sans-serif; font-weight:500; cursor:pointer;
-    border:none; background:transparent; color:var(--muted);
+    border:none; background:transparent; color:#4a3020;
     transition:all 0.2s;
   }
   .lang-btn.active { background:#3d1f0a; color:white; }
@@ -303,7 +303,7 @@
     padding:13px 28px;
     border-radius:2px;
     font-family:'Cinzel',serif!important;
-    font-size:15px!important;
+    font-size:16px!important; font-weight:800!important; letter-spacing:0.2em!important;
     letter-spacing:0.15em!important;
     font-style:normal!important;
     font-weight:700!important;
@@ -462,7 +462,7 @@ body { padding-top: 0; }
 .resto-plat-placeholder span:first-child { font-size: 32px; opacity: 0.5; }
 .resto-plat-placeholder span:last-child {
   font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.15em;
-  text-transform: uppercase; color: var(--muted); text-align: center;
+  text-transform: uppercase; color: #4a3020; text-align: center;
 }
 .resto-plat.is-waiting { opacity: 0; transform: translate(32px, 20px); }
 .resto-plat.is-revealing {
@@ -554,7 +554,7 @@ body { padding-top: 0; }
   <div class="resto-hero-content">
     <p style="font-family:'Cinzel',serif; font-size:12px; letter-spacing:0.28em; text-transform:uppercase; color:#e8b87a; margin-bottom:14px;">Vallon-Pont-d'Arc · Ardèche</p>
     <h1 style="font-family:'Playfair Display',serif; font-size:clamp(38px,6vw,70px); font-weight:400; line-height:1.08; color:white; margin-bottom:18px;">Le Restaurant<br>du Domaine des Dames</h1>
-    <p style="font-size:16px; font-weight:300; color:rgba(255,255,255,0.82); line-height:1.75; margin-bottom:32px; max-width:460px;" data-i18n="resto-text">Cuisine de terroir ardéchois autour des braises du four Josper. Produits locaux, recettes d'antan, et vins de la région.</p>
+    <p style="font-size:16px; font-weight:400; color:rgba(255,255,255,0.82); line-height:1.75; margin-bottom:32px; max-width:460px;" data-i18n="resto-text">Cuisine de terroir ardéchois autour des braises du four Josper. Produits locaux, recettes d'antan, et vins de la région.</p>
     <div style="display:flex; gap:14px; flex-wrap:wrap;">
       <a href="#menu" class="btn-primary">Voir le menu</a>
       <a href="#reservation" class="btn-outline">Réserver une table</a>
@@ -625,22 +625,22 @@ body { padding-top: 0; }
       <div style="padding:20px; border:1px solid #d4b896; border-radius:2px; background:#ece0ce;">
         <div style="font-size:20px; margin-bottom:6px;">🕐</div>
         <div style="font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--earth); margin-bottom:4px;">Horaires</div>
-        <div style="font-size:13px; color:var(--muted); line-height:1.6;">Midi & Soir<br>Mai à Septembre</div>
+        <div style="font-size:13px; color:#4a3020; line-height:1.6;">Midi & Soir<br>Mai à Septembre</div>
       </div>
       <div style="padding:20px; border:1px solid #d4b896; border-radius:2px; background:#ece0ce;">
         <div style="font-size:20px; margin-bottom:6px;">📍</div>
         <div style="font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--earth); margin-bottom:4px;">Adresse</div>
-        <div style="font-size:13px; color:var(--muted); line-height:1.6;">316 route de la Roubine<br>07150 Vallon-Pont-d'Arc</div>
+        <div style="font-size:13px; color:#4a3020; line-height:1.6;">316 route de la Roubine<br>07150 Vallon-Pont-d'Arc</div>
       </div>
       <div style="padding:20px; border:1px solid #d4b896; border-radius:2px; background:#ece0ce;">
         <div style="font-size:20px; margin-bottom:6px;">📞</div>
         <div style="font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--earth); margin-bottom:4px;">Téléphone</div>
-        <div style="font-size:13px; color:var(--muted); line-height:1.6;">06 26 47 73 95</div>
+        <div style="font-size:13px; color:#4a3020; line-height:1.6;">06 26 47 73 95</div>
       </div>
       <div style="padding:20px; border:1px solid #d4b896; border-radius:2px; background:#ece0ce;">
         <div style="font-size:20px; margin-bottom:6px;">🔥</div>
         <div style="font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--earth); margin-bottom:4px;">Spécialité</div>
-        <div style="font-size:13px; color:var(--muted); line-height:1.6;">Four Josper<br>Grillades au feu de bois</div>
+        <div style="font-size:13px; color:#4a3020; line-height:1.6;">Four Josper<br>Grillades au feu de bois</div>
       </div>
     </div>
 
@@ -655,7 +655,7 @@ body { padding-top: 0; }
       </svg>
       <span data-i18n="resto-resa-btn">Réserver une table</span>
     </a>
-    <p style="font-size:12px; color:var(--muted); margin-top:10px; text-align:center; font-family:'Lato',sans-serif;" data-i18n="resto-resa-note">Réservation en ligne via ZenChef · Confirmation immédiate</p>
+    <p style="font-size:12px; color:#4a3020; margin-top:10px; text-align:center; font-family:'Lato',sans-serif;" data-i18n="resto-resa-note">Réservation en ligne via ZenChef · Confirmation immédiate</p>
   </div>
 
 </section>

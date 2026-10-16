@@ -10,9 +10,9 @@
 <style>
   :root {
     --stone: #c8a97a; --stone-dark: #8b6d40; --cream: #ede0cc;
-    --earth: #6b3a1f; --green: #5a6e3a; --burgundy: #6b1a35;
+    --earth: #4a2010; --green: #5a6e3a; --burgundy: #5a1228;
     --terracotta: #c4573a; --gold: #b8832a; --sage: #7a8c5a;
-    --warm-bg: #f0e4d0; --white: #ffffff; --text: #2e1a0e; --muted: #8a6a4a;
+    --warm-bg: #f0e4d0; --white: #ffffff; --text: #1a0a04; --muted: #5a3a20;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   html { scroll-behavior:smooth; }
@@ -32,7 +32,7 @@
   .nav-left { display:flex; align-items:center; gap:18px; justify-content:flex-end; padding-right:32px; }
   .nav-left a {
     text-decoration:none; font-size:16px; letter-spacing:0.12em;
-    text-transform:uppercase; color:#2e1a0e; font-weight:600;
+    text-transform:uppercase; color:#0d0604; font-weight:600;
     font-family:'Cinzel',serif; transition:color 0.2s;
   }
   .nav-left a:hover { color:var(--burgundy); }
@@ -49,11 +49,11 @@
     height:100%; width:auto; object-fit:contain; display:block;
   }
   .nav-brand { display:none; }
-  .nav-brand span { display:block; font-size:12px; font-family:'Lato',sans-serif; font-weight:300; letter-spacing:0.18em; text-transform:uppercase; color:var(--muted); margin-top:1px; }
+  .nav-brand span { display:block; font-size:12px; font-family:'Lato',sans-serif; font-weight:400; letter-spacing:0.18em; text-transform:uppercase; color:#4a3020; margin-top:1px; }
   .nav-right { display:flex; align-items:center; gap:18px; justify-content:flex-start; padding-left:32px; }
   .nav-right a {
     text-decoration:none; font-size:16px; letter-spacing:0.12em;
-    text-transform:uppercase; color:#2e1a0e; font-weight:600;
+    text-transform:uppercase; color:#0d0604; font-weight:600;
     font-family:'Cinzel',serif; transition:color 0.2s;
   }
   .nav-right a:hover { color:var(--burgundy); }
@@ -63,7 +63,7 @@
     padding:13px 28px;
     border-radius:2px;
     font-family:'Cinzel',serif!important;
-    font-size:15px!important;
+    font-size:16px!important; font-weight:800!important; letter-spacing:0.2em!important;
     letter-spacing:0.15em!important;
     font-style:normal!important;
     font-weight:700!important;
@@ -109,7 +109,7 @@
   .section-label { font-size:12px; letter-spacing:0.22em; text-transform:uppercase; color:var(--terracotta); margin-bottom:12px; font-weight:400; font-family:'Cinzel',serif; }
   .section-title { font-family:'Playfair Display',serif; font-size:clamp(36px,4vw,52px); font-weight:400; line-height:1.2; color:var(--earth); margin-bottom:20px; }
   .section-title em { font-style:italic; color:var(--burgundy); }
-  .section-text { font-size:16px; font-weight:300; line-height:1.8; color:var(--muted); max-width:560px; }
+  .section-text { font-size:16px; font-weight:400; line-height:1.8; color:#4a3020; max-width:560px; }
 
   /* DOMAINE */
   .domaine { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; background:#f5e8d5; }
@@ -118,8 +118,8 @@
   .domaine-imgs img:first-child { margin-top:40px; }
   .domaine-features { display:flex; gap:32px; margin-top:36px; }
   .feature { text-align:center; }
-  .feature-num { font-family:'Playfair Display',serif; font-size:44px; font-weight:300; color:var(--burgundy); }
-  .feature-label { font-size:13px; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted); }
+  .feature-num { font-family:'Playfair Display',serif; font-size:44px; font-weight:400; color:var(--burgundy); }
+  .feature-label { font-size:13px; letter-spacing:0.15em; text-transform:uppercase; color:#4a3020; }
 
   /* GITES */
   .gites { background:var(--warm-bg); }
@@ -138,11 +138,11 @@
   .gite-body { padding:24px; }
   .gite-name { font-family:'Playfair Display',serif; font-size:22px; font-weight:500; color:var(--earth); margin-bottom:6px; }
   .gite-specs { display:flex; gap:16px; margin-bottom:10px; }
-  .gite-spec { font-size:13px; color:var(--muted); }
-  .gite-desc { font-size:14px; font-weight:300; color:var(--muted); line-height:1.6; margin-bottom:18px; }
+  .gite-spec { font-size:13px; color:#4a3020; }
+  .gite-desc { font-size:14px; font-weight:400; color:#4a3020; line-height:1.6; margin-bottom:18px; }
   .gite-footer { display:flex; justify-content:space-between; align-items:center; border-top:1px solid #f0ebe3; padding-top:14px; }
   .gite-price { font-family:'Playfair Display',serif; font-size:22px; color:var(--burgundy); }
-  .gite-price span { font-size:13px; font-family:'Lato',sans-serif; color:var(--muted); }
+  .gite-price span { font-size:13px; font-family:'Lato',sans-serif; color:#4a3020; }
   .btn-sm { font-size:12px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; padding:9px 20px; background:var(--burgundy); color:white; border:none; border-radius:2px; cursor:pointer; transition:background 0.2s; font-family:'Cinzel',serif; }
   .btn-sm:hover { background:#4e1228; }
 
@@ -150,21 +150,21 @@
   .modal-overlay { display:none; position:fixed; inset:0; z-index:200; background:rgba(20,12,4,0.7); backdrop-filter:blur(4px); align-items:center; justify-content:center; }
   .modal-overlay.active { display:flex; }
   .modal { background:#fdf5ea; width:90%; max-width:580px; max-height:90vh; overflow-y:auto; border-radius:4px; padding:48px; position:relative; }
-  .modal-close { position:absolute; top:18px; right:22px; background:none; border:none; font-size:22px; cursor:pointer; color:var(--muted); }
-  .modal-title { font-family:'Playfair Display',serif; font-size:34px; font-weight:300; color:var(--earth); margin-bottom:4px; }
-  .modal-sub { font-size:14px; color:var(--muted); margin-bottom:28px; }
+  .modal-close { position:absolute; top:18px; right:22px; background:none; border:none; font-size:22px; cursor:pointer; color:#4a3020; }
+  .modal-title { font-family:'Playfair Display',serif; font-size:34px; font-weight:400; color:var(--earth); margin-bottom:4px; }
+  .modal-sub { font-size:14px; color:#4a3020; margin-bottom:28px; }
   .form-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px; }
   .form-group { margin-bottom:14px; }
   .form-group label { display:block; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:var(--earth); margin-bottom:5px; }
   .form-group input, .form-group select { width:100%; padding:12px 14px; border:1px solid #e0d8cc; border-radius:2px; font-family:'Lato',sans-serif; font-size:15px; background:var(--cream); color:var(--text); outline:none; transition:border-color 0.2s; }
   .form-group input:focus, .form-group select:focus { border-color:var(--burgundy); }
   .form-total { background:var(--warm-bg); border-radius:2px; padding:18px 20px; margin:18px 0; display:flex; justify-content:space-between; align-items:center; }
-  .form-total-label { font-size:13px; color:var(--muted); }
+  .form-total-label { font-size:13px; color:#4a3020; }
   .form-total-price { font-family:'Playfair Display',serif; font-size:28px; color:var(--earth); }
-  .payment-info { display:flex; align-items:center; gap:8px; font-size:13px; color:var(--muted); margin-bottom:18px; }
+  .payment-info { display:flex; align-items:center; gap:8px; font-size:13px; color:#4a3020; margin-bottom:18px; }
   .btn-reserve { width:100%; padding:16px; background:var(--burgundy); color:white; border:none; border-radius:2px; font-family:'Lato',sans-serif; font-size:14px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; cursor:pointer; transition:background 0.2s; }
   .btn-reserve:hover { background:#4e1228; }
-  .stripe-note { text-align:center; font-size:12px; color:var(--muted); margin-top:10px; }
+  .stripe-note { text-align:center; font-size:12px; color:#4a3020; margin-top:10px; }
 
   /* RESTAURANT */
   .restaurant { background:#f5e8d5; }
@@ -174,14 +174,14 @@
   .restaurant-img-badge { position:absolute; bottom:-20px; right:-20px; width:110px; height:110px; background:var(--burgundy); border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center; color:white; font-family:'Playfair Display',serif; }
   .restaurant-img-badge .big { font-size:28px; line-height:1; }
   .restaurant-img-badge .small { font-size:10px; letter-spacing:0.1em; text-transform:uppercase; text-align:center; margin-top:4px; }
-  .josper-badge { display:inline-flex; align-items:center; gap:8px; background:var(--cream); border:1px solid #d4b896; border-radius:2px; padding:8px 16px; margin-bottom:24px; font-size:14px; color:var(--muted); background:var(--warm-bg); }
+  .josper-badge { display:inline-flex; align-items:center; gap:8px; background:var(--cream); border:1px solid #d4b896; border-radius:2px; padding:8px 16px; margin-bottom:24px; font-size:14px; color:#4a3020; background:var(--warm-bg); }
   .menu-section { margin-top:32px; }
   .menu-category { font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--burgundy); margin-bottom:14px; margin-top:20px; padding-bottom:7px; border-bottom:1px solid #e8d4bc; font-family:'Cinzel',serif; }
   .menu-item { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px; }
   .menu-item-name { font-size:16px; color:var(--earth); }
   .menu-item-dots { flex:1; border-bottom:1px dotted #d0c8bc; margin:0 10px; }
   .menu-item-price { font-family:'Playfair Display',serif; font-size:18px; color:var(--burgundy); }
-  .menu-item-desc { font-size:13px; color:var(--muted); margin-top:-6px; margin-bottom:10px; }
+  .menu-item-desc { font-size:13px; color:#4a3020; margin-top:-6px; margin-bottom:10px; }
 
   /* GALERIE */
   .galerie { background:#f7ece0; padding:100px 0; }
@@ -204,7 +204,7 @@
   .contact-detail-text p:first-child { font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--stone); margin-bottom:2px; }
   .contact-detail-text p:last-child { font-size:15px; color:white; }
   .contact-form { background:rgba(255,255,255,0.06); border-radius:4px; padding:36px; border:1px solid rgba(200,185,154,0.15); }
-  .contact-form h3 { font-family:'Playfair Display',serif; font-size:22px; font-weight:300; color:white; margin-bottom:22px; }
+  .contact-form h3 { font-family:'Playfair Display',serif; font-size:22px; font-weight:400; color:white; margin-bottom:22px; }
   .contact-form .form-group input,
   .contact-form .form-group textarea { background:rgba(255,255,255,0.08); border-color:rgba(200,185,154,0.2); color:white; }
   .contact-form .form-group label { color:var(--stone); }
@@ -243,7 +243,7 @@
   }
   .nav-reviews-count {
     font-family: 'Lato', sans-serif; font-size: 11px; letter-spacing: 0.08em;
-    text-transform: uppercase; color: var(--muted); line-height: 1;
+    text-transform: uppercase; color: #4a3020; line-height: 1;
   }
   @media (max-width: 768px) { .nav-reviews { display: none; } }
 
@@ -256,7 +256,7 @@
   .lang-btn {
     padding:6px 11px; font-size:10px; letter-spacing:0.18em; text-transform:uppercase;
     font-family:'Lato',sans-serif; font-weight:500; cursor:pointer;
-    border:none; background:transparent; color:var(--muted);
+    border:none; background:transparent; color:#4a3020;
     transition:all 0.2s;
   }
   .lang-btn.active { background:#3d1f0a; color:white; }
@@ -318,7 +318,7 @@
     padding:13px 28px;
     border-radius:2px;
     font-family:'Cinzel',serif!important;
-    font-size:15px!important;
+    font-size:16px!important; font-weight:800!important; letter-spacing:0.2em!important;
     letter-spacing:0.15em!important;
     font-style:normal!important;
     font-weight:700!important;
@@ -467,7 +467,7 @@
   .ghc-dot.active { background: white; }
   .gites-home-text { }
   .gites-home-desc {
-    font-size: 16px; font-weight: 300; color: var(--muted);
+    font-size: 16px; font-weight: 400; color: #4a3020;
     line-height: 1.8; margin-bottom: 28px;
   }
   .gites-home-equip {
@@ -492,7 +492,7 @@
   .ghc-label {
     font-family: 'Cinzel', serif; font-size: 10px;
     letter-spacing: 0.15em; text-transform: uppercase;
-    color: var(--muted); margin-top: 4px;
+    color: #4a3020; margin-top: 4px;
   }
   @media (max-width: 768px) {
     #restaurant-home { padding: 48px 20px !important; }
@@ -652,8 +652,8 @@
     <div>
       <p class="section-label" data-i18n="resto-label">Gastronomie</p>
       <h2 class="section-title">Le Restaurant du Domaine</h2>
-      <p style="font-size:16px; font-weight:300; color:var(--muted); line-height:1.8; margin-bottom:24px;">Sous les voûtes en pierre du mas, notre restaurant vous propose une cuisine de terroir ardéchois ancrée dans les traditions du Sud. Grillades au four Josper, planche ardéchoise, caillette, picodo — des saveurs authentiques dans un cadre exceptionnel.</p>
-      <p style="font-size:16px; font-weight:300; color:var(--muted); line-height:1.8; margin-bottom:32px;">Ouvert de mai à septembre, midi et soir. Réservation conseillée.</p>
+      <p style="font-size:16px; font-weight:400; color:#4a3020; line-height:1.8; margin-bottom:24px;">Sous les voûtes en pierre du mas, notre restaurant vous propose une cuisine de terroir ardéchois ancrée dans les traditions du Sud. Grillades au four Josper, planche ardéchoise, caillette, picodo — des saveurs authentiques dans un cadre exceptionnel.</p>
+      <p style="font-size:16px; font-weight:400; color:#4a3020; line-height:1.8; margin-bottom:32px;">Ouvert de mai à septembre, midi et soir. Réservation conseillée.</p>
 
       <!-- Badges -->
       <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:36px;">
@@ -672,7 +672,7 @@
            style="width:100%; height:100%; object-fit:cover;">
       <div style="position:absolute; bottom:20px; left:-20px; background:#f7ece0; padding:16px 20px; border-radius:2px; border:1px solid #e0d4c0;">
         <div style="font-family:'Playfair Display',serif; font-size:32px; color:var(--burgundy); line-height:1;">🔥</div>
-        <div style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted); margin-top:4px;">Four Josper</div>
+        <div style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:#4a3020; margin-top:4px;">Four Josper</div>
       </div>
     </div>
 
@@ -690,22 +690,22 @@
         <div style="padding:20px; border:1px solid #e8d4bc; border-radius:2px;">
           <div style="font-family:'Playfair Display',serif; font-size:28px; color:var(--burgundy); margin-bottom:6px;">💍</div>
           <div style="font-size:13px; font-weight:500; color:var(--earth); margin-bottom:6px; letter-spacing:0.05em;">Mariages</div>
-          <div style="font-size:12px; color:var(--muted); line-height:1.6;">Cérémonie et réception dans un cadre provençal d'exception</div>
+          <div style="font-size:12px; color:#4a3020; line-height:1.6;">Cérémonie et réception dans un cadre provençal d'exception</div>
         </div>
         <div style="padding:20px; border:1px solid #e8d4bc; border-radius:2px;">
           <div style="font-family:'Playfair Display',serif; font-size:28px; color:var(--burgundy); margin-bottom:6px;">🤝</div>
           <div style="font-size:13px; font-weight:500; color:var(--earth); margin-bottom:6px; letter-spacing:0.05em;">Séminaires</div>
-          <div style="font-size:12px; color:var(--muted); line-height:1.6;">Séjours d'équipe au calme, ressourcement et cohésion</div>
+          <div style="font-size:12px; color:#4a3020; line-height:1.6;">Séjours d'équipe au calme, ressourcement et cohésion</div>
         </div>
         <div style="padding:20px; border:1px solid #e8d4bc; border-radius:2px;">
           <div style="font-family:'Playfair Display',serif; font-size:28px; color:var(--burgundy); margin-bottom:6px;">🎉</div>
           <div style="font-size:13px; font-weight:500; color:var(--earth); margin-bottom:6px; letter-spacing:0.05em;">Fêtes & anniversaires</div>
-          <div style="font-size:12px; color:var(--muted); line-height:1.6;">Privatisation du domaine pour vos célébrations</div>
+          <div style="font-size:12px; color:#4a3020; line-height:1.6;">Privatisation du domaine pour vos célébrations</div>
         </div>
         <div style="padding:20px; border:1px solid #e8d4bc; border-radius:2px;">
           <div style="font-family:'Playfair Display',serif; font-size:28px; color:var(--burgundy); margin-bottom:6px;">🍽️</div>
           <div style="font-size:13px; font-weight:500; color:var(--earth); margin-bottom:6px; letter-spacing:0.05em;">Repas de groupe</div>
-          <div style="font-size:12px; color:var(--muted); line-height:1.6;">Menus sur-mesure autour du four Josper pour vos groupes</div>
+          <div style="font-size:12px; color:#4a3020; line-height:1.6;">Menus sur-mesure autour du four Josper pour vos groupes</div>
         </div>
       </div>
       <div style="margin-top:36px;">
@@ -716,7 +716,7 @@
       <img src="/images/restaurant.jpg" alt="Événementiel au Domaine des Dames" style="width:100%; border-radius:2px; aspect-ratio:4/3; object-fit:cover;">
       <div style="position:absolute; bottom:24px; left:-24px; background:var(--cream); padding:20px 24px; border-radius:2px; border:1px solid #e8e0d4; max-width:200px;">
         <div style="font-family:'Playfair Display',serif; font-size:36px; color:var(--burgundy); line-height:1;">200</div>
-        <div style="font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted);" data-i18n="event-max">personnes max</div>
+        <div style="font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:#4a3020;" data-i18n="event-max">personnes max</div>
       </div>
     </div>
   </div>
