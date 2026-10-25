@@ -520,6 +520,86 @@ body { padding-top: 0; }
   .gite-page-name { font-size: 30px; }
   .common-infos { grid-template-columns: 1fr 1fr; padding: 40px 20px; gap: 24px; }
 }
+
+  @media (max-width: 768px) {
+
+    /* NAV */
+    nav { height:64px; padding:0 16px; }
+    .nav-left, .nav-right { display:none; }
+    .nav-logo-img img { height:50px; }
+    .nav-logo { border:none; padding:0; }
+    .nav-brand { display:none; }
+    .hamburger { display:flex; }
+    .mobile-menu { display:flex; }
+
+    /* HERO */
+    .hero-content { padding:0 20px 40px; }
+    .hero-eyebrow { font-size:12px; }
+    .hero-title { font-size:clamp(36px,10vw,56px); }
+    .hero-subtitle { font-size:16px; }
+    .hero-cta { flex-direction:column; gap:12px; }
+
+    /* SECTIONS */
+    section { padding:48px 20px !important; }
+    .section-title { font-size:clamp(28px,7vw,40px); }
+    .section-header { margin-bottom:32px; }
+
+    /* DOMAINE */
+    .domaine-inner { grid-template-columns:1fr !important; gap:36px !important; }
+    .domaine-stats { grid-template-columns:repeat(3,1fr); }
+
+    /* GITES HOME */
+    .gites-home { padding:48px 20px !important; }
+    .gites-home-inner { grid-template-columns:1fr !important; gap:36px !important; }
+    .gites-home-equip { grid-template-columns:1fr 1fr; }
+    .gites-home-caps { gap:20px; }
+
+    /* RESTAURANT HOME */
+    #restaurant-home { padding:48px 20px !important; }
+    #restaurant-home > div { grid-template-columns:1fr !important; gap:36px !important; }
+
+    /* EVENEMENTIEL */
+    .evenementiel { padding:48px 20px !important; }
+    .evenementiel > div { grid-template-columns:1fr !important; gap:36px !important; }
+    .event-cards { grid-template-columns:1fr !important; }
+
+    /* GALERIE */
+    .galerie { padding:48px 20px !important; }
+    .galerie-grid { grid-template-columns:1fr 1fr !important; }
+
+    /* CONTACT */
+    .contact-inner { grid-template-columns:1fr !important; gap:32px !important; }
+    .contact-details { gap:16px; }
+    .contact-form { padding:24px !important; }
+
+    /* GITES PAGE */
+    .gite-row { grid-template-columns:1fr !important; }
+    .gite-row-reverse { direction:ltr !important; }
+    .gite-gallery { height:260px; }
+    .gite-info { padding:32px 20px !important; }
+    .gite-page-name { font-size:28px; }
+    .gites-anchors { padding:14px 20px; top:64px; }
+    .anchor-btn { font-size:10px; padding:5px 10px; }
+
+    /* RESTAURANT PAGE */
+    .resto-menu-section { grid-template-columns:1fr !important; padding:48px 20px !important; gap:40px !important; }
+    .resto-plats { flex-direction:row; justify-content:center; }
+    .resto-plat-img { width:140px; height:140px; }
+
+    /* ACTIVITES PAGE */
+    .act-hero-content { padding:0 20px 40px; }
+    .act-grid { grid-template-columns:1fr !important; }
+    .act-card { grid-template-columns:1fr !important; }
+    .act-img-placeholder { height:200px; min-height:200px; width:100% !important; }
+    .sejours-grid { grid-template-columns:1fr !important; }
+
+    /* FOOTER */
+    footer { flex-direction:column; gap:12px; text-align:center; padding:24px 20px; }
+
+    /* MISC */
+    .common-infos { grid-template-columns:1fr 1fr !important; padding:40px 20px !important; gap:24px !important; }
+    .gites-hero-content { padding:0 20px 40px; }
+  }
 </style>
 </head>
 <body>
