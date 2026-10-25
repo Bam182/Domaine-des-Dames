@@ -553,6 +553,8 @@
     .contact-inner { grid-template-columns:1fr !important; gap:32px !important; }
     .contact-details { gap:16px; }
     .contact-form { padding:24px !important; }
+    .contact-inner > div:first-child > div:first-child { flex-direction:column !important; gap:16px !important; }
+    .contact-inner > div:first-child > div:first-child img { max-width:100% !important; margin-left:0 !important; width:80% !important; }
 
     /* GITES PAGE */
     .gite-row { grid-template-columns:1fr !important; }
@@ -828,7 +830,7 @@
         <h2 class="section-title" style="margin-bottom:0;">Venir au<br>Domaine</h2>
         <img src="/images/logoBlanc.png" alt="Domaine des Dames"
              onerror="this.src='/images/logo.png'; this.style.filter='brightness(0) invert(1)'"
-             style="max-width:520px; object-fit:contain; flex-shrink:0; margin-left:auto;">
+             style="max-width:min(520px, 45%); object-fit:contain; flex-shrink:1; margin-left:auto;">
       </div>
       <p class="section-text" data-i18n="contact-text">Situé à 5 minutes de Vallon-Pont-d'Arc, au cœur des Gorges de l'Ardèche.</p>
       <div class="contact-details">
