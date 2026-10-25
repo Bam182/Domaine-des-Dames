@@ -1024,10 +1024,24 @@ function goToSlide(id, index) {
 function updateCarousel(id) {
   var c = carousels[id];
   var track = document.getElementById('track-' + id);
-  track.style.transform = 'translateX(-' + (c.current * 100) + '%)';
+  var gallery = track.parentElement;
+  var slideWidth = gallery.offsetWidth;
+  // Set each slide to exact pixel width
+  var slides = track.querySelectorAll('.carousel-slide');
+  slides.forEach(function(slide) {
+    slide.style.width = slideWidth + 'px';
+    slide.style.minWidth = slideWidth + 'px';
+    slide.style.maxWidth = slideWidth + 'px';
+  });
+  track.style.transform = 'translateX(-' + (c.current * slideWidth) + 'px)';
   var dots = document.querySelectorAll('#dots-' + id + ' .carousel-dot');
   dots.forEach(function(d, i) { d.classList.toggle('active', i === c.current); });
 }
+
+// Recalculate on resize
+window.addEventListener('resize', function() {
+  Object.keys(carousels).forEach(function(id) { updateCarousel(id); });
+});
 
 // Init all carousels on load
 document.addEventListener('DOMContentLoaded', function() {
