@@ -32,7 +32,7 @@
   }
   .nav-left { display:flex; align-items:center; gap:18px; justify-content:flex-end; padding-right:32px; }
   .nav-left a {
-    text-decoration:none; font-size:13px; letter-spacing:0.12em;
+    text-decoration:none; font-size:16px; letter-spacing:0.12em;
     text-transform:uppercase; color:#2e1a0e; font-weight:600;
     font-family:'Cinzel',serif; transition:color 0.2s;
   }
@@ -53,7 +53,7 @@
   .nav-brand span { display:block; font-size:12px; font-family:'Lato',sans-serif; font-weight:300; letter-spacing:0.18em; text-transform:uppercase; color:var(--muted); margin-top:1px; }
   .nav-right { display:flex; align-items:center; gap:18px; justify-content:flex-start; padding-left:32px; }
   .nav-right a {
-    text-decoration:none; font-size:13px; letter-spacing:0.12em;
+    text-decoration:none; font-size:16px; letter-spacing:0.12em;
     text-transform:uppercase; color:#2e1a0e; font-weight:600;
     font-family:'Cinzel',serif; transition:color 0.2s;
   }
@@ -526,62 +526,71 @@ body { padding-top: 0; }
     /* NAV */
     nav { height:64px !important; padding:0 16px !important; }
     .nav-left, .nav-right { display:none !important; }
-    .nav-logo-img img { height:50px !important; }
     .nav-logo { border:none !important; padding:0 !important; }
+    .nav-logo-img img { height:50px !important; }
     .nav-brand { display:none !important; }
     .hamburger { display:flex !important; }
     .mobile-menu { display:flex !important; }
 
-    /* GITES PAGE LAYOUT */
-    .gite-row { 
-      grid-template-columns: 1fr !important; 
+    /* ANCHORS */
+    .gites-anchors { padding:10px 16px !important; top:64px !important; flex-wrap:wrap !important; gap:6px !important; }
+    .anchor-btn { font-size:10px !important; padding:4px 8px !important; }
+    .anchor-label { display:none !important; }
+
+    /* GITE ROW - photo top, text bottom */
+    .gite-row {
+      display: flex !important;
+      flex-direction: column !important;
       min-height: auto !important;
+    }
+    .gite-row-reverse {
+      display: flex !important;
+      flex-direction: column !important;
       direction: ltr !important;
     }
-    .gite-row-reverse { direction: ltr !important; }
-    .gite-info { padding: 28px 20px !important; direction: ltr !important; }
-    .gite-page-name { font-size: 26px !important; }
-    .equip-grid { gap: 6px !important; }
+    .gite-row-reverse .gite-gallery { order: 1 !important; }
+    .gite-row-reverse .gite-info { order: 2 !important; }
 
-    /* ANCHORS */
-    .gites-anchors { padding: 10px 16px !important; top: 64px !important; flex-wrap: wrap !important; gap: 6px !important; }
-    .anchor-btn { font-size: 10px !important; padding: 4px 8px !important; }
-    .anchor-label { display: none !important; }
-
-    /* CAROUSEL - Fix superposition */
+    /* GALLERY - always first, fixed height */
     .gite-gallery {
-      height: 260px !important;
+      width: 100% !important;
+      height: 250px !important;
+      min-height: 250px !important;
+      max-height: 250px !important;
       overflow: hidden !important;
+      position: relative !important;
     }
+
+    /* CAROUSEL */
     .carousel-track {
       display: flex !important;
       flex-direction: row !important;
       flex-wrap: nowrap !important;
-      height: 260px !important;
+      height: 250px !important;
+      width: 100% !important;
     }
     .carousel-slide {
-      min-width: 100% !important;
-      max-width: 100% !important;
-      width: 100% !important;
-      height: 260px !important;
-      flex-shrink: 0 !important;
-      flex-grow: 0 !important;
+      flex: 0 0 100vw !important;
+      width: 100vw !important;
+      height: 250px !important;
       overflow: hidden !important;
     }
     .carousel-slide img {
       width: 100% !important;
-      height: 260px !important;
+      height: 250px !important;
       object-fit: cover !important;
       display: block !important;
     }
 
+    /* INFO */
+    .gite-info { padding:28px 20px !important; }
+    .gite-page-name { font-size:26px !important; }
+
     /* COMMON INFOS */
-    .common-infos { grid-template-columns: 1fr 1fr !important; padding: 32px 16px !important; gap: 20px !important; }
-    .common-info-item h3 { font-size: 16px !important; }
-    .common-info-item p { font-size: 12px !important; }
+    .common-infos { grid-template-columns:1fr 1fr !important; padding:32px 16px !important; gap:20px !important; }
 
     /* FOOTER */
-    footer { flex-direction: column !important; gap: 12px !important; text-align: center !important; padding: 24px 20px !important; }
+    footer { flex-direction:column !important; gap:12px !important; text-align:center !important; padding:24px 20px !important; }
   }
 </style>
 </head>
@@ -1024,21 +1033,17 @@ function goToSlide(id, index) {
 function updateCarousel(id) {
   var c = carousels[id];
   var track = document.getElementById('track-' + id);
-  var gallery = track.parentElement;
-  var slideWidth = gallery.offsetWidth;
-  // Set each slide to exact pixel width
+  if (!track) return;
+  var slideWidth = track.parentElement.offsetWidth;
   var slides = track.querySelectorAll('.carousel-slide');
   slides.forEach(function(slide) {
+    slide.style.flex = '0 0 ' + slideWidth + 'px';
     slide.style.width = slideWidth + 'px';
-    slide.style.minWidth = slideWidth + 'px';
-    slide.style.maxWidth = slideWidth + 'px';
   });
   track.style.transform = 'translateX(-' + (c.current * slideWidth) + 'px)';
   var dots = document.querySelectorAll('#dots-' + id + ' .carousel-dot');
   dots.forEach(function(d, i) { d.classList.toggle('active', i === c.current); });
 }
-
-// Recalculate on resize
 window.addEventListener('resize', function() {
   Object.keys(carousels).forEach(function(id) { updateCarousel(id); });
 });
