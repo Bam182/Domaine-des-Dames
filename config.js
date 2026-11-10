@@ -8,9 +8,9 @@
 // 4. Uploade-le sur GitHub (remplace l'ancien)
 // 5. Le site se met à jour automatiquement en 30 secondes
 // ============================================================
-
+ 
 var CONFIG = {
-
+ 
   // ----------------------------------------------------------
   // INFORMATIONS GÉNÉRALES
   // ----------------------------------------------------------
@@ -23,7 +23,7 @@ var CONFIG = {
     facebook:  "https://www.facebook.com/ledomainedesdames/",
     zenchef:   "https://www.zenchef.com/VOTRE-ID-ZENCHEF", // ← remplace par ton vrai lien ZenChef
   },
-
+ 
   // ----------------------------------------------------------
   // TEXTES PAGE ACCUEIL
   // ----------------------------------------------------------
@@ -33,7 +33,7 @@ var CONFIG = {
     btn_gites:   "Réserver un gîte",
     btn_resto:   "Découvrir le restaurant",
   },
-
+ 
   // ----------------------------------------------------------
   // SECTION DOMAINE
   // ----------------------------------------------------------
@@ -44,7 +44,7 @@ var CONFIG = {
     nb_personnes:"30",
     siecle:      "17e",
   },
-
+ 
   // ----------------------------------------------------------
   // GÎTES
   // ----------------------------------------------------------
@@ -85,15 +85,15 @@ var CONFIG = {
       description: "Vue panoramique sur le rocher de Sampzon et les collines environnantes.",
     },
   },
-
+ 
   // ----------------------------------------------------------
   // RESTAURANT
   // ----------------------------------------------------------
   restaurant: {
-    description:  "Cuisine de terroir ardéchois autour des braises du four Josper. Produits locaux, recettes d'antan, et vins de la région.",
+    description:  "Cuisine de terroir ardéchois autour de la braise. Produits locaux, recettes d'antan, et vins de la région.",
     horaires:     "Ouvert de mai à septembre · Midi & Soir",
-    badge_josper: "🔥 Grillades au feu de bois · Four Josper",
-
+    badge_josper: "🔥 Cuisine à la braise",
+ 
     menu: {
       entrees: [
         { nom: "Planche ardéchoise",   description: "Caillette ardéchoise, picodo, charcuteries du pays, condiments maison", prix: 18 },
@@ -109,14 +109,14 @@ var CONFIG = {
       ],
     },
   },
-
+ 
   // ----------------------------------------------------------
   // ACTIVITÉS & SÉJOURS
   // ----------------------------------------------------------
   sejours: [
     {
       titre:       "Week-end Nature",
-      description: "2 nuits en gîte + journée canoë dans les Gorges + dîner au restaurant autour du feu Josper.",
+      description: "2 nuits en gîte + journée canoë dans les Gorges + dîner au restaurant, cuisine à la braise.",
       disponible:  false,   // ← passe à true quand l'offre est prête
       prix:        "",      // ← ex: "À partir de 350€ / personne"
     },
@@ -133,16 +133,16 @@ var CONFIG = {
       prix:        "",
     },
   ],
-
+ 
   // ----------------------------------------------------------
   // ÉVÉNEMENTIEL
   // ----------------------------------------------------------
   evenementiel: {
     description: "Le Domaine des Dames se prête magnifiquement à l'organisation de vos événements privés et professionnels. Mariages, séminaires, anniversaires ou repas de famille — nos espaces en pierre et notre cadre naturel exceptionnel créent une atmosphère inoubliable.",
-    capacite_max: "200",
+    capacite_max: "150",
   },
-
+ 
 };
 // ============================================================
 // NE PAS MODIFIER EN DESSOUS DE CETTE LIGNE
-// ============================================================
+// ===========================================================
