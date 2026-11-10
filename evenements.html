@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Événements de groupe à Vallon-Pont-d'Arc | Domaine des Dames</title>
+<meta name="description" content="Mariages, séminaires, anniversaires et repas de groupe en Ardèche : privatisez le restaurant ou le domaine, jusqu'à 150 personnes et 28 couchages.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Lato:wght@300;400;700&family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+  :root {
+    --stone: #c8a97a; --stone-dark: #8b6d40; --cream: #ede0cc;
+    --earth: #4a2010; --green: #5a6e3a; --burgundy: #5a1228;
+    --terracotta: #c4573a; --gold: #b8832a; --sage: #7a8c5a;
+    --warm-bg: #f0e4d0; --white: #ffffff; --text: #1a0a04; --muted: #3d2010;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'Lato',sans-serif; background:#f2e8d8; color:var(--text); overflow-x:hidden; padding-top:0; }
+
+  /* NAV */
+  nav {
+    position:fixed; top:0; width:100%; z-index:100;
+    display:grid; grid-template-columns:1fr auto 1fr;
+    align-items:center;
+    height:150px;
+    padding:0 48px;
+    background:rgba(235,222,202,0.98); backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(200,185,154,0.3);
+    overflow:hidden;
+  }
+  .nav-left { display:flex; align-items:center; gap:18px; justify-content:flex-end; padding-right:32px; }
+  .nav-left a {
+    text-decoration:none; font-size:16px; letter-spacing:0.12em;
+    text-transform:uppercase; color:#0d0604; font-weight:600;
+    font-family:'Cinzel',serif; transition:color 0.2s;
+  }
+  .nav-left a:hover { color:var(--burgundy); }
+  .nav-logo { display:flex; flex-direction:column; align-items:center; text-decoration:none; gap:4px; }
+  .nav-logo-img {
+    height:140px;
+    width:auto;
+    max-width:380px;
+    background:transparent;
+    display:flex; align-items:center; justify-content:center;
+    overflow:visible; padding:4px;
+  }
+  .nav-logo-img img {
+    height:100%; width:auto; object-fit:contain; display:block;
+  }
+  .nav-brand { display:none; }
+  .nav-brand span { display:block; font-size:12px; font-family:'Lato',sans-serif; font-weight:400; letter-spacing:0.18em; text-transform:uppercase; color:#4a3020; margin-top:1px; }
+  .nav-right { display:flex; align-items:center; gap:18px; justify-content:flex-start; padding-left:32px; }
+  .nav-right a {
+    text-decoration:none; font-size:16px; letter-spacing:0.12em;
+    text-transform:uppercase; color:#0d0604; font-weight:600;
+    font-family:'Cinzel',serif; transition:color 0.2s;
+  }
+  .nav-right a:hover { color:var(--burgundy); }
+  .nav-cta {
+    background:var(--burgundy)!important;
+    color:white!important;
+    padding:13px 28px;
+    border-radius:2px;
+    font-family:'Cinzel',serif!important;
+    font-size:16px!important; font-weight:800!important; letter-spacing:0.2em!important;
+    letter-spacing:0.15em!important;
+    font-style:normal!important;
+    font-weight:700!important;
+  }
+  .nav-cta:hover { background:var(--earth)!important; }
+
+  /* HERO */
+  .hero { height:100vh; position:relative; overflow:hidden; display:flex; align-items:flex-end; }
+  .hero-bg { position:absolute; inset:0; background:url('/images/hero.jpg') center/cover no-repeat; }
+  .hero-overlay { position:absolute; inset:0; background:linear-gradient(to top, rgba(20,12,4,0.82) 0%, rgba(20,12,4,0.15) 55%, transparent 100%); }
+  .hero-content { position:relative; z-index:2; padding:0 80px 80px; max-width:700px; }
+  .hero-eyebrow { font-size:13px; letter-spacing:0.25em; text-transform:uppercase; color:var(--stone); margin-bottom:16px; font-weight:400; }
+  .hero-title { font-family:'Playfair Display',serif; font-size:clamp(52px,7vw,88px); font-weight:400; line-height:1.05; color:white; margin-bottom:20px; }
+  .hero-title em { font-style:italic; color:#e8c080; }
+  .hero-subtitle { font-size:17px; font-weight:400; color:rgba(255,255,255,0.8); line-height:1.7; margin-bottom:36px; max-width:480px; }
+  .hero-btns { display:flex; gap:16px; flex-wrap:wrap; }
+  .btn-primary { display:inline-block; padding:14px 36px; background:var(--burgundy); color:white; text-decoration:none; font-size:12px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; border-radius:2px; transition:all 0.3s; font-family:'Cinzel',serif; }
+  .btn-primary:hover { background:#4e1228; transform:translateY(-2px); }
+  .btn-outline { display:inline-block; padding:14px 36px; border:1px solid rgba(255,255,255,0.5); color:white; text-decoration:none; font-size:12px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; border-radius:2px; transition:all 0.3s; font-family:'Cinzel',serif; }
+  .btn-outline:hover { background:rgba(255,255,255,0.1); }
+  .hero-scroll { position:absolute; bottom:32px; right:48px; z-index:2; display:flex; flex-direction:column; align-items:center; gap:8px; color:rgba(255,255,255,0.4); font-size:10px; letter-spacing:0.2em; text-transform:uppercase; }
+  .scroll-line { width:1px; height:48px; background:rgba(255,255,255,0.25); animation:scrollDown 2s infinite; }
+  @keyframes scrollDown { 0%,100%{transform:scaleY(1);opacity:1} 50%{transform:scaleY(0.5);opacity:0.4} }
+
+  /* SECTIONS */
+  section { padding:100px 80px; }
+  .section-label { font-size:12px; letter-spacing:0.22em; text-transform:uppercase; color:var(--terracotta); margin-bottom:12px; font-weight:400; font-family:'Cinzel',serif; }
+  .section-title { font-family:'Playfair Display',serif; font-size:clamp(36px,4vw,52px); font-weight:400; line-height:1.2; color:var(--earth); margin-bottom:20px; }
+  .section-title em { font-style:italic; color:var(--burgundy); }
+  .section-text { font-size:17px; font-weight:400; line-height:1.8; color:#3d2010; max-width:560px; }
+
+  /* DOMAINE */
+  .domaine { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; background:#f5e8d5; }
+  .domaine-imgs { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .domaine-imgs img { width:100%; aspect-ratio:3/4; object-fit:cover; border-radius:2px; }
+  .domaine-imgs img:first-child { margin-top:40px; }
+  .domaine-features { display:flex; gap:32px; margin-top:36px; }
+  .feature { text-align:center; }
+  .feature-num { font-family:'Playfair Display',serif; font-size:44px; font-weight:400; color:var(--burgundy); }
+  .feature-label { font-size:13px; letter-spacing:0.15em; text-transform:uppercase; color:#4a3020; }
+
+  /* GITES */
+  .gites { background:var(--warm-bg); }
+  .gites-header { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:56px; }
+  .gites-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  .gites-last-row { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; margin-top:24px; max-width:calc(66.66% + 12px); }
+  .gite-card { background:#f7ece0; border-radius:2px; overflow:hidden; transition:transform 0.3s; cursor:pointer; }
+  .gite-card:hover { transform:translateY(-6px); }
+  .gite-img { height:240px; overflow:hidden; position:relative; }
+  .gite-img > img { width:100%; height:100%; object-fit:cover; transition:transform 0.5s; position:relative; z-index:1; }
+  .gite-card:hover .gite-img > img { transform:scale(1.05); }
+  .gite-img-overlay { position:absolute; inset:0; z-index:2; opacity:0; transition:opacity 0.4s; }
+  .gite-img-overlay img { width:100%; height:100%; object-fit:cover; }
+  .gite-card:hover .gite-img-overlay { opacity:1; }
+  .gite-badge { position:absolute; top:12px; right:12px; z-index:3; background:var(--burgundy); color:white; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; padding:4px 10px; border-radius:2px; }
+  .gite-body { padding:24px; }
+  .gite-name { font-family:'Playfair Display',serif; font-size:22px; font-weight:500; color:var(--earth); margin-bottom:6px; }
+  .gite-specs { display:flex; gap:16px; margin-bottom:10px; }
+  .gite-spec { font-size:13px; color:#4a3020; }
+  .gite-desc { font-size:14px; font-weight:400; color:#4a3020; line-height:1.6; margin-bottom:18px; }
+  .gite-footer { display:flex; justify-content:space-between; align-items:center; border-top:1px solid #f0ebe3; padding-top:14px; }
+  .gite-price { font-family:'Playfair Display',serif; font-size:22px; color:var(--burgundy); }
+  .gite-price span { font-size:13px; font-family:'Lato',sans-serif; color:#4a3020; }
+  .btn-sm { font-size:12px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; padding:9px 20px; background:var(--burgundy); color:white; border:none; border-radius:2px; cursor:pointer; transition:background 0.2s; font-family:'Cinzel',serif; }
+  .btn-sm:hover { background:#4e1228; }
+
+  /* MODAL */
+  .modal-overlay { display:none; position:fixed; inset:0; z-index:200; background:rgba(20,12,4,0.7); backdrop-filter:blur(4px); align-items:center; justify-content:center; }
+  .modal-overlay.active { display:flex; }
+  .modal { background:#fdf5ea; width:90%; max-width:580px; max-height:90vh; overflow-y:auto; border-radius:4px; padding:48px; position:relative; }
+  .modal-close { position:absolute; top:18px; right:22px; background:none; border:none; font-size:22px; cursor:pointer; color:#4a3020; }
+  .modal-title { font-family:'Playfair Display',serif; font-size:34px; font-weight:400; color:var(--earth); margin-bottom:4px; }
+  .modal-sub { font-size:14px; color:#4a3020; margin-bottom:28px; }
+  .form-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px; }
+  .form-group { margin-bottom:14px; }
+  .form-group label { display:block; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:var(--earth); margin-bottom:5px; }
+  .form-group input, .form-group select { width:100%; padding:12px 14px; border:1px solid #e0d8cc; border-radius:2px; font-family:'Lato',sans-serif; font-size:15px; background:var(--cream); color:var(--text); outline:none; transition:border-color 0.2s; }
+  .form-group input:focus, .form-group select:focus { border-color:var(--burgundy); }
+  .form-total { background:var(--warm-bg); border-radius:2px; padding:18px 20px; margin:18px 0; display:flex; justify-content:space-between; align-items:center; }
+  .form-total-label { font-size:13px; color:#4a3020; }
+  .form-total-price { font-family:'Playfair Display',serif; font-size:28px; color:var(--earth); }
+  .payment-info { display:flex; align-items:center; gap:8px; font-size:13px; color:#4a3020; margin-bottom:18px; }
+  .btn-reserve { width:100%; padding:16px; background:var(--burgundy); color:white; border:none; border-radius:2px; font-family:'Lato',sans-serif; font-size:14px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; cursor:pointer; transition:background 0.2s; }
+  .btn-reserve:hover { background:#4e1228; }
+  .stripe-note { text-align:center; font-size:12px; color:#4a3020; margin-top:10px; }
+
+  /* RESTAURANT */
+  .restaurant { background:#f5e8d5; }
+  .restaurant-inner { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; }
+  .restaurant-img { position:relative; }
+  .restaurant-img img { width:100%; border-radius:2px; }
+  .restaurant-img-badge { position:absolute; bottom:-20px; right:-20px; width:110px; height:110px; background:var(--burgundy); border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center; color:white; font-family:'Playfair Display',serif; }
+  .restaurant-img-badge .big { font-size:28px; line-height:1; }
+  .restaurant-img-badge .small { font-size:10px; letter-spacing:0.1em; text-transform:uppercase; text-align:center; margin-top:4px; }
+  .josper-badge { display:inline-flex; align-items:center; gap:8px; background:var(--cream); border:1px solid #d4b896; border-radius:2px; padding:8px 16px; margin-bottom:24px; font-size:14px; color:#4a3020; background:var(--warm-bg); }
+  .menu-section { margin-top:32px; }
+  .menu-category { font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--burgundy); margin-bottom:14px; margin-top:20px; padding-bottom:7px; border-bottom:1px solid #e8d4bc; font-family:'Cinzel',serif; }
+  .menu-item { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px; }
+  .menu-item-name { font-size:16px; color:var(--earth); }
+  .menu-item-dots { flex:1; border-bottom:1px dotted #d0c8bc; margin:0 10px; }
+  .menu-item-price { font-family:'Playfair Display',serif; font-size:18px; color:var(--burgundy); }
+  .menu-item-desc { font-size:13px; color:#4a3020; margin-top:-6px; margin-bottom:10px; }
+
+  /* GALERIE */
+  .galerie { background:var(--warm-bg); padding:100px 0; }
+  .galerie-header { padding:0 80px; margin-bottom:40px; }
+  .galerie-grid { display:grid; grid-template-columns:2fr 1fr 1fr; grid-template-rows:280px 280px; gap:4px; }
+  .galerie-item { overflow:hidden; }
+  .galerie-item img { width:100%; height:100%; object-fit:cover; transition:transform 0.5s; }
+  .galerie-item:hover img { transform:scale(1.04); }
+  .galerie-item.tall { grid-row:span 2; }
+
+  /* CONTACT */
+  .contact { background:#3d1f0a; color:white; }
+  .contact-inner { display:grid; grid-template-columns:1fr 1fr; gap:80px; }
+  .contact .section-label { color:var(--stone); }
+  .contact .section-title { color:white; }
+  .contact .section-text { color:#3d2010; }
+  .contact-details { margin-top:28px; }
+  .contact-detail { display:flex; gap:14px; margin-bottom:18px; align-items:flex-start; }
+  .contact-icon { width:34px; height:34px; border:1px solid rgba(200,185,154,0.3); border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:13px; }
+  .contact-detail-text p:first-child { font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--stone); margin-bottom:2px; }
+  .contact-detail-text p:last-child { font-size:15px; color:white; }
+  .contact-form { background:rgba(255,255,255,0.06); border-radius:4px; padding:36px; border:1px solid rgba(200,185,154,0.15); }
+  .contact-form h3 { font-family:'Playfair Display',serif; font-size:22px; font-weight:400; color:white; margin-bottom:22px; }
+  .contact-form .form-group input,
+  .contact-form .form-group textarea { background:rgba(255,255,255,0.08); border-color:rgba(200,185,154,0.2); color:white; }
+  .contact-form .form-group label { color:var(--stone); }
+  .contact-form textarea { width:100%; padding:11px 13px; border:1px solid rgba(200,185,154,0.2); border-radius:2px; font-family:'Lato',sans-serif; font-size:14px; background:rgba(255,255,255,0.08); color:white; outline:none; resize:vertical; min-height:100px; }
+
+  /* FOOTER */
+  footer { background:#2a1005; color:rgba(255,255,255,0.35); padding:28px 80px; display:flex; justify-content:space-between; align-items:center; }
+  .footer-logo { font-family:'Playfair Display',serif; font-size:18px; color:rgba(255,255,255,0.6); }
+  footer a { color:rgba(255,255,255,0.35); text-decoration:none; font-size:12px; }
+
+  /* FADE */
+  .fade-up { opacity:0; transform:translateY(28px); transition:opacity 0.7s, transform 0.7s; }
+  .fade-up.visible { opacity:1; transform:translateY(0); }
+
+  /* NOTIF */
+  .notif { position:fixed; bottom:28px; left:50%; transform:translateX(-50%) translateY(60px); background:#4a5c3a; color:white; padding:14px 26px; border-radius:4px; font-size:14px; z-index:300; transition:transform 0.4s,opacity 0.4s; opacity:0; }
+  .notif.show { transform:translateX(-50%) translateY(0); opacity:1; }
+
+  /* GOOGLE REVIEWS */
+  .nav-reviews {
+    position: absolute; left: 200px; top: 50%; transform: translateY(-50%);
+  }
+  .nav-reviews-link {
+    display: flex; flex-direction: column; align-items: center;
+    text-decoration: none; gap: 3px;
+  }
+  .nav-reviews-stars {
+    color: #e8a020; font-size: 18px; letter-spacing: 2px; line-height: 1;
+  }
+  .nav-reviews-info {
+    display: flex; flex-direction: column; align-items: center; gap: 1px;
+  }
+  .nav-reviews-score {
+    font-family: 'Cinzel', serif; font-size: 18px; font-weight: 600;
+    color: var(--earth); line-height: 1.2;
+  }
+  .nav-reviews-count {
+    font-family: 'Lato', sans-serif; font-size: 11px; letter-spacing: 0.08em;
+    text-transform: uppercase; color: #4a3020; line-height: 1;
+  }
+  @media (max-width: 768px) { .nav-reviews { display: none; } }
+
+  /* LANG SWITCHER */
+  .lang-switcher {
+    position:absolute; left:56px; top:50%; transform:translateY(-50%);
+    display:flex; align-items:center; gap:0;
+    border:1px solid rgba(92,74,42,0.2); border-radius:2px; overflow:hidden;
+  }
+  .lang-btn {
+    padding:6px 11px; font-size:10px; letter-spacing:0.18em; text-transform:uppercase;
+    font-family:'Lato',sans-serif; font-weight:500; cursor:pointer;
+    border:none; background:transparent; color:#4a3020;
+    transition:all 0.2s;
+  }
+  .lang-btn.active { background:#3d1f0a; color:white; }
+  .lang-btn:hover:not(.active) { background:rgba(92,74,42,0.08); color:var(--earth); }
+  .lang-sep { width:1px; background:rgba(92,74,42,0.2); height:28px; }
+
+  /* ============================================
+     RESPONSIVE MOBILE
+  ============================================ */
+  @media (max-width: 768px) {
+
+    /* NAV */
+    nav {
+      display: flex; justify-content: center; align-items: center;
+      padding: 0 16px; height: 64px; position: relative;
+    }
+    .nav-left, .nav-right { display: none; }
+    .nav-logo { border: none; padding: 0; }
+    .nav-logo-img {
+    height:140px;
+    width:auto;
+    max-width:380px;
+    background:transparent;
+    display:flex; align-items:center; justify-content:center;
+    overflow:visible; padding:4px;
+  }
+    .nav-brand { font-size: 10px; letter-spacing: 0.08em; }
+    .nav-brand span { font-size: 8px; }
+    .lang-switcher { left: 12px; top: 50%; transform: translateY(-50%); position: absolute; }
+    .hamburger {
+      display: flex; flex-direction: column; justify-content: center;
+      gap: 5px; cursor: pointer; padding: 8px;
+      position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+      z-index: 101;
+    }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--earth); border-radius: 2px; transition: all 0.3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* MOBILE DRAWER */
+    .mobile-menu {
+      display: flex; flex-direction: column;
+      position: fixed; top: 64px; left: 0; right: 0; bottom: 0;
+      background: rgba(242,232,216,0.98); backdrop-filter: blur(12px);
+      z-index: 100; padding: 32px 28px;
+      transform: translateX(100%); transition: transform 0.35s ease;
+      overflow-y: auto;
+    }
+    .mobile-menu.open { transform: translateX(0); }
+    .mobile-menu a {
+      font-family: 'Cinzel', serif; font-size: 17px; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--earth); text-decoration: none;
+      padding: 16px 0; border-bottom: 1px solid rgba(200,180,150,0.3);
+    }
+    .mobile-menu .nav-cta {
+    background:var(--burgundy)!important;
+    color:white!important;
+    padding:13px 28px;
+    border-radius:2px;
+    font-family:'Cinzel',serif!important;
+    font-size:16px!important; font-weight:800!important; letter-spacing:0.2em!important;
+    letter-spacing:0.15em!important;
+    font-style:normal!important;
+    font-weight:700!important;
+  }
+
+    /* HERO */
+    .hero { height: 100svh; min-height: 600px; }
+    .hero-content { padding: 0 20px 48px; max-width: 100%; }
+    .hero-title { font-size: clamp(36px, 11vw, 56px); margin-bottom: 14px; }
+    .hero-subtitle { font-size: 14px; line-height: 1.65; margin-bottom: 28px; }
+    .hero-btns { flex-direction: column; gap: 10px; }
+    .btn-primary, .btn-outline { text-align: center; padding: 13px 20px; font-size: 11px; }
+    .hero-scroll { display: none; }
+
+    /* GENERAL SECTIONS */
+    section { padding: 48px 20px; }
+    .section-title { font-size: clamp(26px, 7vw, 38px) !important; }
+    .section-text { font-size: 14px !important; max-width: 100% !important; }
+    .section-label { font-size: 10px !important; }
+
+    /* DOMAINE */
+    .domaine { grid-template-columns: 1fr !important; gap: 28px !important; padding: 48px 20px !important; }
+    .domaine-imgs { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .domaine-imgs img { aspect-ratio: 4/3 !important; }
+    .domaine-imgs img:first-child { margin-top: 16px; }
+    .domaine-features { gap: 16px; margin-top: 24px; }
+    .feature-num { font-size: 30px; }
+    .feature-label { font-size: 11px; }
+
+    /* GITES */
+    .gites-header { flex-direction: column; gap: 8px; margin-bottom: 28px; }
+    .gites-grid { grid-template-columns: 1fr !important; gap: 16px; }
+    .gites-last-row { grid-template-columns: 1fr !important; max-width: 100%; gap: 16px; }
+    .gite-img { height: 200px; }
+    .gite-body { padding: 18px; }
+    .gite-name { font-size: 20px; }
+    .gite-desc { font-size: 13px; }
+
+    /* RESTAURANT */
+    .restaurant { padding: 48px 20px !important; }
+    .restaurant-inner { grid-template-columns: 1fr !important; gap: 32px !important; }
+    .restaurant-img-badge { width: 72px; height: 72px; bottom: 10px; right: 10px; }
+    .restaurant-img-badge .big { font-size: 18px; }
+    .restaurant-img-badge .small { font-size: 7px; }
+    .menu-item-name { font-size: 14px; }
+    .menu-item-desc { font-size: 12px; }
+
+    /* EVENEMENTIEL */
+    section.evenementiel > div,
+    .evenementiel > div { grid-template-columns: 1fr !important; gap: 28px !important; }
+
+    /* GALERIE */
+    .galerie { padding: 48px 0 !important; }
+    .galerie-header { padding: 0 20px; margin-bottom: 24px; }
+    .galerie-grid {
+      grid-template-columns: 1fr 1fr !important;
+      grid-template-rows: 150px 150px 150px !important;
+    }
+    .galerie-item.tall { grid-row: span 1 !important; }
+
+    /* CONTACT */
+    .contact { padding: 48px 20px !important; }
+    .contact-inner { grid-template-columns: 1fr !important; gap: 32px !important; }
+    .contact-form { padding: 20px; }
+    .contact-detail { gap: 10px; margin-bottom: 14px; }
+
+    /* MODAL */
+    .modal { padding: 24px 16px; width: 96%; border-radius: 4px; }
+    .modal-title { font-size: 24px; }
+    .form-row { grid-template-columns: 1fr !important; gap: 0; }
+
+    /* FOOTER */
+    footer { flex-direction: column; gap: 10px; text-align: center; padding: 20px 16px; }
+    footer > div { flex-direction: column; gap: 8px; }
+
+    /* MISC */
+    .josper-badge { font-size: 12px; padding: 6px 12px; }
+  }
+
+  @media (max-width: 420px) {
+    .hero-title { font-size: 34px; }
+    .domaine-imgs { grid-template-columns: 1fr; }
+    .domaine-imgs img:first-child { margin-top: 0; }
+    .galerie-grid { grid-template-columns: 1fr !important; grid-template-rows: auto !important; }
+    .galerie-item { height: 180px; }
+  }
+
+  /* HAMBURGER + MOBILE MENU hidden on desktop */
+  .hamburger { display: none; }
+  .mobile-menu { display: none; }
+  @media (max-width: 768px) {
+    .hamburger { display: flex; }
+    .mobile-menu { display: flex; }
+  }
+
+
+body { padding-top: 0; }
+@media (max-width: 768px) { body { padding-top: 0; } }
+
+/* HERO ACTIVITES */
+.act-hero {
+  height: 100vh; min-height: 440px;
+  position: relative; display: flex; align-items: flex-end; overflow: hidden;
+}
+.act-hero-bg {
+  position: absolute; inset: 0;
+  background: url('/images/activité.jpeg') center/cover no-repeat;
+}
+.act-hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(20,12,4,0.88) 0%, rgba(20,12,4,0.1) 55%, transparent 100%);
+}
+.act-hero-content {
+  position: relative; z-index: 2; padding: 0 80px 60px; max-width: 680px;
+}
+
+/* ACTIVITY CARDS */
+.act-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+  margin-top: 48px;
+}
+.act-card {
+  background: #ece0ce; border-radius: 2px;
+  overflow: hidden; transition: transform 0.3s;
+  display: grid; grid-template-columns: 240px 1fr;
+}
+.act-card:hover { transform: translateY(-4px); }
+.act-img-placeholder {
+  width: 240px; height: 240px; overflow: hidden; flex-shrink: 0;
+  background: #d4c4a8;
+}
+.act-img-placeholder img { width:100%; height:100%; object-fit:cover; transition: transform 0.5s; }
+.act-card:hover .act-img-placeholder img { transform: scale(1.04); }
+.act-card:hover { transform: translateY(-4px); }
+
+.act-body { padding: 24px; }
+.act-name {
+  font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 500;
+  color: var(--earth); margin-bottom: 10px;
+}
+.act-meta {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px;
+}
+.act-meta span {
+  font-size: 11px; font-family: 'Cinzel', serif; letter-spacing: 0.1em;
+  color: #4a3020; background: rgba(92,74,42,0.08);
+  padding: 3px 10px; border-radius: 2px;
+}
+.act-desc {
+  font-size: 14px; color: #4a3020; line-height: 1.7; font-weight: 400;
+}
+
+/* SEJOURS */
+.sejours-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  margin-top: 40px;
+}
+.sejour-card {
+  background: #ece0ce; border-radius: 2px; padding: 32px 24px;
+  border-top: 3px solid var(--burgundy); position: relative;
+}
+.sejour-badge {
+  position: absolute; top: -12px; left: 24px;
+  background: var(--burgundy); color: white;
+  font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.15em;
+  text-transform: uppercase; padding: 4px 12px; border-radius: 2px;
+}
+.sejour-title {
+  font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 400;
+  color: var(--earth); margin-bottom: 12px; margin-top: 8px;
+}
+.sejour-desc {
+  font-size: 14px; color: #4a3020; line-height: 1.7; font-weight: 400;
+  margin-bottom: 20px;
+}
+.sejour-soon {
+  display: inline-block; font-family: 'Cinzel', serif; font-size: 10px;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--burgundy);
+  border: 1px solid var(--burgundy); padding: 6px 14px; border-radius: 2px;
+}
+
+/* CTA SECTION */
+.act-cta-section {
+  background: var(--burgundy); padding: 80px; text-align: center; color: white;
+}
+
+@media (max-width: 768px) {
+  .act-hero-content { padding: 0 20px 40px; }
+  .act-card { grid-template-columns: 1fr; }
+  .act-img-placeholder { width: 100%; height: 200px; }
+  .act-grid { grid-template-columns: 1fr; gap: 16px; }
+  .sejours-grid { grid-template-columns: 1fr; gap: 16px; }
+  .act-cta-section { padding: 48px 20px; }
+  section { padding: 48px 20px; }
+}
+
+  @media (max-width: 768px) {
+
+    /* NAV */
+    nav { height:64px; padding:0 16px; }
+    .nav-left, .nav-right { display:none; }
+    .nav-logo-img img { height:50px; }
+    .nav-logo { border:none; padding:0; }
+    .nav-brand { display:none; }
+    .hamburger { display:flex; }
+    .mobile-menu { display:flex; }
+
+    /* HERO */
+    .hero-content { padding:0 20px 40px; }
+    .hero-eyebrow { font-size:12px; }
+    .hero-title { font-size:clamp(36px,10vw,56px); }
+    .hero-subtitle { font-size:16px; }
+    .hero-cta { flex-direction:column; gap:12px; }
+
+    /* SECTIONS */
+    section { padding:48px 20px !important; }
+    .section-title { font-size:clamp(28px,7vw,40px); }
+    .section-header { margin-bottom:32px; }
+
+    /* DOMAINE */
+    .domaine-inner { grid-template-columns:1fr !important; gap:36px !important; }
+    .domaine-stats { grid-template-columns:repeat(3,1fr); }
+
+    /* GITES HOME */
+    .gites-home { padding:48px 20px !important; }
+    .gites-home-inner { grid-template-columns:1fr !important; gap:36px !important; }
+    .gites-home-equip { grid-template-columns:1fr 1fr; }
+    .gites-home-caps { gap:20px; }
+
+    /* RESTAURANT HOME */
+    #restaurant-home { padding:48px 20px !important; }
+    #restaurant-home > div { grid-template-columns:1fr !important; gap:36px !important; }
+
+    /* EVENEMENTIEL */
+    .evenementiel { padding:48px 20px !important; }
+    .evenementiel > div { grid-template-columns:1fr !important; gap:36px !important; }
+    .event-cards { grid-template-columns:1fr !important; }
+
+    /* GALERIE */
+    .galerie { padding:48px 20px !important; }
+    .galerie-grid { grid-template-columns:1fr 1fr !important; }
+
+    /* CONTACT */
+    .contact-inner { grid-template-columns:1fr !important; gap:32px !important; }
+    .contact-details { gap:16px; }
+    .contact-form { padding:24px !important; }
+
+    /* GITES PAGE */
+    .gite-row { grid-template-columns:1fr !important; }
+    .gite-row-reverse { direction:ltr !important; }
+    .gite-gallery { height:260px; }
+    .gite-info { padding:32px 20px !important; }
+    .gite-page-name { font-size:28px; }
+    .gites-anchors { padding:14px 20px; top:64px; }
+    .anchor-btn { font-size:10px; padding:5px 10px; }
+
+    /* RESTAURANT PAGE */
+    .resto-menu-section { grid-template-columns:1fr !important; padding:48px 20px !important; gap:40px !important; }
+    .resto-plats { flex-direction:row; justify-content:center; }
+    .resto-plat-img { width:140px; height:140px; }
+
+    /* ACTIVITES PAGE */
+    .act-hero-content { padding:0 20px 40px; }
+    .act-grid { grid-template-columns:1fr !important; }
+    .act-card { grid-template-columns:1fr !important; }
+    .act-img-placeholder { height:200px; min-height:200px; width:100% !important; }
+    .sejours-grid { grid-template-columns:1fr !important; }
+
+    /* FOOTER */
+    footer { flex-direction:column; gap:12px; text-align:center; padding:24px 20px; }
+
+    /* MISC */
+    .common-infos { grid-template-columns:1fr 1fr !important; padding:40px 20px !important; gap:24px !important; }
+    .gites-hero-content { padding:0 20px 40px; }
+  }
+
+  /* NAVIGATION : écrans moyens (évite les chevauchements avec FR/EN et les avis) */
+  @media (min-width:1151px) and (max-width:1809px) { .nav-reviews { display:none; } }
+  @media (min-width:1151px) and (max-width:1469px) {
+    nav { padding:0 24px; }
+    .lang-switcher { left:20px; }
+    .nav-left, .nav-right { gap:14px; }
+    .nav-left { padding-right:16px; }
+    .nav-right { padding-left:16px; }
+    .nav-left a, .nav-right a { font-size:13px; letter-spacing:0.06em; }
+    .nav-cta { padding:10px 16px !important; font-size:12px !important; letter-spacing:0.1em !important; }
+    .nav-logo-img { height:110px; max-width:300px; }
+  }
+  @media (min-width:769px) and (max-width:1150px) {
+    nav { display:flex; justify-content:center; height:84px; padding:0 20px; }
+    .nav-left, .nav-right, .nav-reviews { display:none !important; }
+    .nav-logo-img { height:70px; }
+    .hamburger { display:flex !important; }
+    .mobile-menu { display:flex; }
+  }
+
+  /* ====== PAGE ÉVÉNEMENTS ====== */
+  .ev-wrap { max-width:1100px; margin:0 auto; }
+  .ev-btn { display:inline-block; padding:14px 32px; background:var(--burgundy); color:#fff; text-decoration:none; font-family:'Cinzel',serif; font-size:12px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; border-radius:2px; border:2px solid var(--burgundy); transition:all 0.3s; }
+  .ev-btn:hover { background:#3d0a1a; border-color:#3d0a1a; }
+  .ev-btn-light { background:rgba(0,0,0,0.28); border-color:#fff; text-shadow:0 1px 4px rgba(0,0,0,0.5); }
+  .ev-btn-light:hover { background:#fff; color:var(--burgundy); border-color:#fff; text-shadow:none; }
+  .ev-btn-white { background:#fff; color:var(--burgundy); border-color:#fff; }
+  .ev-btn-white:hover { background:transparent; color:#fff; }
+  .ev-btn-ghost { background:transparent; border-color:#fff; }
+  .ev-btn-ghost:hover { background:#fff; color:var(--burgundy); }
+  .ev-eyebrow { font-size:clamp(11px,3.1vw,15px); }
+  .ev-hero-btns { display:flex; gap:14px; flex-wrap:wrap; margin-top:30px; }
+
+  .ev-intro { background:#f7ece0; padding:80px 24px 72px; }
+  .ev-intro .ev-wrap { max-width:860px; text-align:center; }
+  .ev-intro p.ev-p { font-size:17px; line-height:1.85; color:#2e1208; margin-bottom:16px; }
+
+  .ev-stats { background:var(--burgundy); padding:52px 40px; display:grid; grid-template-columns:repeat(4,1fr); gap:24px; text-align:center; }
+  .ev-num { display:block; font-family:'Playfair Display',serif; font-size:clamp(38px,4.2vw,58px); color:#fff; line-height:1.1; }
+  .ev-lab { display:block; margin-top:10px; font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(255,255,255,0.85); }
+
+  .ev-section { padding:84px 40px; }
+  .ev-types { display:grid; grid-template-columns:repeat(2,1fr); gap:28px; margin-top:40px; }
+  .ev-grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-top:40px; }
+  .ev-card { background:#ece0ce; border-top:2px solid var(--burgundy); padding:30px 32px; }
+  .ev-grid-3 .ev-card { background:#f7ece0; }
+  .ev-card h3 { font-family:'Playfair Display',serif; font-size:26px; font-weight:400; color:var(--earth); margin-bottom:10px; }
+  .ev-card p { font-size:16px; line-height:1.8; color:#2e1208; }
+
+  .ev-split { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
+  .ev-split img { width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:2px; display:block; }
+  .ev-split p.ev-p { font-size:17px; line-height:1.85; color:#2e1208; margin-bottom:16px; }
+  .ev-link { color:var(--burgundy); text-decoration:none; border-bottom:1px solid var(--burgundy); font-weight:600; }
+
+  .ev-faq details { border-bottom:1px solid #d4b896; padding:20px 0; }
+  .ev-faq summary { cursor:pointer; list-style:none; font-family:'Playfair Display',serif; font-size:21px; color:var(--earth); display:flex; justify-content:space-between; align-items:center; gap:16px; }
+  .ev-faq summary::-webkit-details-marker { display:none; }
+  .ev-faq summary::after { content:'+'; font-size:28px; color:var(--burgundy); line-height:1; flex-shrink:0; }
+  .ev-faq details[open] summary::after { content:'–'; }
+  .ev-faq details p { margin-top:12px; font-size:16px; line-height:1.8; color:#2e1208; }
+
+  .ev-devis { background:var(--burgundy); color:#fff; padding:84px 40px; }
+  .ev-devis-grid { display:grid; grid-template-columns:1fr 1.2fr; gap:64px; align-items:center; max-width:1100px; margin:0 auto; }
+  .ev-devis h2 { font-family:'Playfair Display',serif; font-size:clamp(32px,3.6vw,46px); font-weight:400; line-height:1.15; color:#fff; margin-bottom:18px; }
+  .ev-devis p { font-size:17px; line-height:1.8; color:rgba(255,255,255,0.9); margin-bottom:12px; }
+  .ev-coords { margin-top:30px; display:flex; flex-direction:column; gap:14px; }
+  .ev-coords .k { font-family:'Cinzel',serif; font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(255,255,255,0.6); display:block; margin-bottom:2px; }
+  .ev-coords a, .ev-coords span.v { color:#fff; font-size:15px; text-decoration:none; }
+
+  @media (max-width:768px) {
+    .ev-intro { padding:52px 20px 44px !important; }
+    .ev-stats { grid-template-columns:1fr 1fr; padding:40px 20px; gap:28px 16px; }
+    .ev-section { padding:52px 20px !important; }
+    .ev-types, .ev-grid-3 { grid-template-columns:1fr; gap:20px; }
+    .ev-card { padding:24px 22px; }
+    .ev-split { grid-template-columns:1fr; gap:32px; }
+    .ev-faq summary { font-size:18px; }
+    .ev-devis { padding:52px 20px !important; }
+    .ev-devis-grid { grid-template-columns:1fr; gap:36px; }
+    .ev-hero-btns .ev-btn { width:100%; text-align:center; }
+  }
+</style>
+</head>
+<body>
+
+<nav style="position:relative;">
+  <div class="nav-reviews">
+    <a href="https://goo.gl/maps/ShNcgfNnu6GznUWe9" target="_blank" class="nav-reviews-link">
+      <div class="nav-reviews-stars">★★★★★</div>
+      <div class="nav-reviews-info">
+        <span class="nav-reviews-score">4.4</span>
+        <span class="nav-reviews-count" data-i18n="a9512fbe">657 avis Google</span>
+      </div>
+    </a>
+  </div>
+  <div class="lang-switcher">
+    <button class="lang-btn active" id="btn-fr" onclick="setLang('fr')">FR</button>
+    <div class="lang-sep"></div>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
+  <div class="nav-left">
+    <a href="index.html#domaine" data-i18n="a18d2557">Le Domaine</a>
+    <a href="gites.html" data-i18n="a476ba0e">Gîtes</a>
+    <a href="restaurant.html">Restaurant</a>
+  </div>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-img">
+      <img src="/images/logo.png" alt="Domaine des Dames">
+    </div>
+    <div class="nav-brand">Domaine des Dames<span>Vallon-Pont-d'Arc · Ardèche</span></div>
+  </a>
+  <div class="nav-right">
+    <a href="activites.html" data-i18n="a9c1f618">Activités</a>
+    <a href="evenements.html" style="color:var(--burgundy);" data-i18n="a1cde338">Événementiel</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="gites.html" class="nav-cta" data-i18n="a254b0ae">Réserver</a>
+  </div>
+  <div class="hamburger" id="hamburger" role="button" tabindex="0" aria-label="Menu" aria-controls="mobileMenu" aria-expanded="false" onclick="toggleMenu()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleMenu();}">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#domaine" onclick="closeMenu()" data-i18n="a18d2557">Le Domaine</a>
+  <a href="gites.html" onclick="closeMenu()" data-i18n="a476ba0e">Gîtes</a>
+  <a href="restaurant.html" onclick="closeMenu()">Restaurant</a>
+  <a href="activites.html" onclick="closeMenu()" data-i18n="a9c1f618">Activités</a>
+  <a href="evenements.html" onclick="closeMenu()" data-i18n="a1cde338">Événementiel</a>
+  <a href="index.html#contact" onclick="closeMenu()">Contact</a>
+  <a href="gites.html" class="nav-cta" onclick="closeMenu()" data-i18n="a254b0ae">Réserver</a>
+</div>
+
+<!-- HERO -->
+<div class="act-hero">
+  <div class="act-hero-bg" style="background:url('/images/evenementiel.jpg') center/cover no-repeat;"></div>
+  <div class="act-hero-overlay"></div>
+  <div class="act-hero-content" style="max-width:900px;">
+    <p class="ev-eyebrow" style="font-family:'Cinzel',serif; letter-spacing:0.25em; text-transform:uppercase; color:#ffffff; font-weight:700; margin-bottom:14px; text-shadow:0 1px 8px rgba(0,0,0,0.8);" data-i18n="a64f9846">Événements de groupe · Ardèche</p>
+    <h1 style="font-family:'Playfair Display',serif; font-size:clamp(38px,6vw,70px); font-weight:400; line-height:1.08; color:white; margin-bottom:18px;" data-i18n="a3af2748">Événements de groupe<br>à Vallon-Pont-d'Arc</h1>
+    <p style="font-size:19px; font-weight:400; color:#ffffff; line-height:1.75; max-width:580px; text-shadow:0 1px 6px rgba(0,0,0,0.7);" data-i18n="ad08e3bc">Mariages, séminaires, anniversaires, repas de famille ou week-ends entre amis : privatisez le restaurant ou le domaine entier, jusqu'à 150 personnes, avec hébergement et cuisine à la braise sur place.</p>
+    <div class="ev-hero-btns">
+      <a class="ev-btn" href="#devis" data-i18n="a8a1f1c6">Demander un devis</a>
+      <a class="ev-btn ev-btn-light" href="tel:0626477395">06 26 47 73 95</a>
+    </div>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section class="ev-intro">
+  <div class="ev-wrap">
+    <p class="section-label" data-i18n="a99720a5">Un seul lieu</p>
+    <h2 class="section-title" data-i18n="ab140123">Se réunir, dormir et bien manger au même endroit</h2>
+    <p class="ev-p" data-i18n="ae062cc9">Le Domaine des Dames est un mas en pierre du XVIIe siècle, à 10 minutes à pied de Vallon-Pont-d'Arc et aux portes des Gorges de l'Ardèche. Pour vos événements, tout le domaine est à votre disposition : restaurant, terrasse, espaces extérieurs, piscine et gîtes.</p>
+    <p class="ev-p" data-i18n="a2a870df">Vous choisissez le format : privatiser le restaurant le temps d'une soirée, ou le domaine entier pour un week-end ou plus. Le nombre de couchages est modulable, jusqu'à 28 personnes sur place.</p>
+  </div>
+</section>
+
+<!-- CHIFFRES -->
+<section class="ev-stats">
+  <div><span class="ev-num">150</span><span class="ev-lab" data-i18n="a58ea610">Personnes, capacité maximale</span></div>
+  <div><span class="ev-num">28</span><span class="ev-lab" data-i18n="aa9d03f4">Couchages modulables</span></div>
+  <div><span class="ev-num">5</span><span class="ev-lab" data-i18n="a6c861aa">Gîtes sur place</span></div>
+  <div><span class="ev-num">10 min</span><span class="ev-lab" data-i18n="af9a90f2">À pied de Vallon-Pont-d'Arc</span></div>
+</section>
+
+<!-- TYPES D'ÉVÉNEMENTS -->
+<section class="ev-section" style="background:#f7ece0;">
+  <div class="ev-wrap">
+    <p class="section-label" data-i18n="a90066f4">Événements</p>
+    <h2 class="section-title" data-i18n="a339c473">Pour quelles occasions ?</h2>
+    <div class="ev-types">
+      <div class="ev-card">
+        <h3 data-i18n="af221ea6">Mariages</h3>
+        <p data-i18n="ae25a655">Cérémonie et réception dans un cadre ardéchois d'exception, avec hébergement sur place pour vos invités. Les mariages sont organisés hors juillet et août.</p>
+      </div>
+      <div class="ev-card">
+        <h3 data-i18n="a159fc77">Séminaires</h3>
+        <p data-i18n="ae8a155d">Des séjours d'équipe au calme, pour travailler, se ressourcer et fédérer. Repas cuisinés à la braise et hébergement sur place dans nos gîtes.</p>
+      </div>
+      <div class="ev-card">
+        <h3 data-i18n="a15aa4c8">Anniversaires et fêtes</h3>
+        <p data-i18n="a79f7180">Une soirée, un week-end : nous privatisons le restaurant ou le domaine pour vos célébrations, entre amis ou en famille.</p>
+      </div>
+      <div class="ev-card">
+        <h3 data-i18n="a0d48411">Repas de groupe</h3>
+        <p data-i18n="a0bf8733">Repas d'entreprise, retrouvailles, repas de famille : un menu de groupe adapté à votre événement, cuisiné à la braise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRIVATISATION -->
+<section class="ev-section" style="background:#ece0ce;">
+  <div class="ev-wrap">
+    <p class="section-label" data-i18n="ab9b72d5">Sur mesure</p>
+    <h2 class="section-title" data-i18n="a12aeb0c">Privatisez le restaurant ou le domaine entier</h2>
+    <div class="ev-grid-3">
+      <div class="ev-card">
+        <h3 data-i18n="a5a587fe">Une soirée</h3>
+        <p data-i18n="abe3d723">Privatisation du restaurant pour un dîner, un anniversaire ou un repas d'entreprise.</p>
+      </div>
+      <div class="ev-card">
+        <h3 data-i18n="a41b9e5a">Un week-end</h3>
+        <p data-i18n="a2144478">Le domaine entier pour vous : réception, restaurant, piscine et gîtes, avec jusqu'à 28 couchages.</p>
+      </div>
+      <div class="ev-card">
+        <h3 data-i18n="a7f4dc1f">Votre projet</h3>
+        <p data-i18n="a73c6953">Une durée plus longue, une configuration particulière ? Dites-nous ce que vous imaginez, nous construisons l'événement avec vous.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESTAURATION -->
+<section class="ev-section" style="background:#f7ece0;">
+  <div class="ev-wrap ev-split">
+    <div>
+      <p class="section-label" data-i18n="aa71319a">Restauration</p>
+      <h2 class="section-title" data-i18n="a8512688">Des menus de groupe cuisinés à la braise</h2>
+      <p class="ev-p" data-i18n="a4561c87">Notre restaurant propose des menus de groupe spéciaux, adaptés à votre événement et cuisinés à la braise : viandes grillées, cuisine de terroir ardéchois et produits locaux.</p>
+      <p class="ev-p" data-i18n="acdbb79f">Pour un mariage, le menu se construit sur demande, ou vous pouvez faire appel à un traiteur autorisé.</p>
+      <p class="ev-p"><a class="ev-link" href="restaurant.html" data-i18n="a1663efb">Découvrir le restaurant</a></p>
+    </div>
+    <img src="/images/facade.jpg" alt="Façade en pierre du Domaine des Dames, Vallon-Pont-d'Arc" loading="lazy" decoding="async">
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="ev-section" style="background:#ece0ce;">
+  <div class="ev-wrap" style="max-width:860px;">
+    <p class="section-label" data-i18n="a1666468">Questions fréquentes</p>
+    <h2 class="section-title" style="margin-bottom:28px;" data-i18n="a420ad35">Organiser son événement</h2>
+    <div class="ev-faq">
+      <details>
+        <summary data-i18n="aa39bb7e">Combien de personnes pouvez-vous accueillir ?</summary>
+        <p data-i18n="a3213b15">Jusqu'à 150 personnes. Parlez-nous de votre événement, nous validons ensemble la configuration qui lui convient.</p>
+      </details>
+      <details>
+        <summary data-i18n="a4609bc7">Peut-on dormir sur place ?</summary>
+        <p data-i18n="a21008eb">Oui, dans nos cinq gîtes. Le nombre de couchages est modulable, jusqu'à 28 personnes.</p>
+      </details>
+      <details>
+        <summary data-i18n="a41365f9">Peut-on privatiser le domaine ?</summary>
+        <p data-i18n="ab6cdbd3">Oui. Vous pouvez privatiser le restaurant ou le domaine entier, pour une soirée, un week-end ou plus.</p>
+      </details>
+      <details>
+        <summary data-i18n="ac56ba97">À quelle période organisez-vous les mariages ?</summary>
+        <p data-i18n="aaf94dfd">Les mariages sont organisés hors juillet et août.</p>
+      </details>
+      <details>
+        <summary data-i18n="a4888338">Comment se passe la restauration ?</summary>
+        <p data-i18n="ae866070">Nous proposons des menus de groupe adaptés, cuisinés à la braise. Pour un mariage, le menu se construit sur demande, ou vous pouvez faire appel à un traiteur autorisé.</p>
+      </details>
+    </div>
+    <p style="margin-top:34px; font-size:16px; line-height:1.8; color:#2e1208;" data-i18n="a78d8853">Pour prolonger l'événement, l'Ardèche offre de quoi occuper vos invités : canoë dans les Gorges, canyoning, randonnée, vélo, grottes. <a class="ev-link" href="activites.html">Découvrir les activités</a></p>
+  </div>
+</section>
+
+<!-- DEVIS -->
+<section class="ev-devis" id="devis">
+  <div class="ev-devis-grid">
+    <div style="display:flex; flex-direction:column; align-items:center; gap:16px;">
+      <img src="/images/logoBlanc.png" alt="Logo du Domaine des Dames" onerror="this.src='/images/logo.png'; this.style.filter='brightness(0) invert(1)'" style="max-width:380px; width:100%; object-fit:contain;" loading="lazy" decoding="async">
+      <p style="font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:rgba(255,255,255,0.65); margin:0;">Vallon-Pont-d'Arc · Ardèche</p>
+    </div>
+    <div>
+      <p class="section-label" style="color:rgba(255,255,255,0.7);" data-i18n="aae703a2">Votre événement</p>
+      <h2 data-i18n="ae9aaba5">Parlons de votre projet</h2>
+      <p data-i18n="a260b86f">Indiquez-nous le type d'événement, la date envisagée et le nombre de personnes : nous vous répondons avec une proposition sur mesure.</p>
+      <div class="ev-hero-btns" style="margin-top:24px;">
+        <a class="ev-btn ev-btn-white" href="mailto:contact@ledomainedesdames.com?subject=Demande%20de%20devis%20-%20%C3%A9v%C3%A9nement%20de%20groupe&body=Bonjour%2C%0A%0AJe%20souhaite%20un%20devis%20pour%20un%20%C3%A9v%C3%A9nement%20au%20Domaine%20des%20Dames.%0A%0AType%20d%27%C3%A9v%C3%A9nement%20%3A%0ADate%28s%29%20envisag%C3%A9e%28s%29%20%3A%0ANombre%20de%20personnes%20%3A%0AH%C3%A9bergement%20sur%20place%20%28oui%20%2F%20non%29%20%3A%0A%0AMessage%20%3A%0A" data-i18n="a9f5230c">Écrire pour un devis</a>
+        <a class="ev-btn ev-btn-ghost" href="tel:0626477395">06 26 47 73 95</a>
+      </div>
+      <div class="ev-coords">
+        <div><span class="k" data-i18n="a522e146">Adresse</span><span class="v">316 route de la Roubine, 07150 Vallon-Pont-d'Arc</span></div>
+        <div><span class="k">Email</span><a href="mailto:contact@ledomainedesdames.com">contact@ledomainedesdames.com</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Domaine des Dames</div>
+  <p style="font-size:11px;">© 2026 · Vallon-Pont-d'Arc · <span data-i18n="footer-dev"></span></p>
+  <div style="display:flex;gap:18px;align-items:center;">
+    <a href="https://www.facebook.com/ledomainedesdames/" target="_blank" style="display:flex;align-items:center;gap:6px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Facebook</a>
+    <a href="mentions-legales.html" data-i18n="footer-legal">Mentions légales</a>
+    <a href="mentions-legales.html#donnees" data-i18n="footer-privacy">Confidentialité</a>
+  </div>
+</footer>
+
+<div class="notif" id="notif"></div>
+<script src="/config.js"></script>
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, {threshold:0.1});
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  function showNotif(msg) {
+    const n = document.getElementById('notif');
+    n.textContent = msg;
+    n.classList.add('show');
+    setTimeout(() => n.classList.remove('show'), 4000);
+  }
+</script>
+<script>
+var LANG = {
+  fr: {
+    "nav-domaine":"Le Domaine","nav-gites":"Gîtes","nav-restaurant":"Restaurant",
+    "nav-evenementiel":"Événementiel","nav-galerie":"Galerie","nav-contact":"Contact",
+    "nav-reserver":"Réserver",
+    "hero-eyebrow":"Vallon-Pont-d\'Arc · Ardèche",
+    "hero-title":"Domaine<br>des Dames",
+    "hero-subtitle":"Un mas ardéchois du XVIIe siècle niché au coeur des Gorges de l\'Ardèche. Gîtes de charme, piscine et restaurant de terroir.",
+    "hero-btn1":"Réserver un gîte","hero-btn2":"Découvrir le restaurant","hero-scroll":"Défiler",
+    "domaine-label":"Le Domaine","domaine-title":"Un mas ardéchois<br>hors du temps",
+    "domaine-text":"Perché sur les hauteurs de Vallon-Pont-d\'Arc, à deux pas des Gorges de l\'Ardèche et de la Grotte Chauvet, le Domaine des Dames est un mas en pierre du XVIIe siècle entièrement restauré. Cinq gîtes indépendants, une piscine, un restaurant de terroir et des hectares de nature sauvage vous attendent.",
+    "domaine-f1":"Gîtes","domaine-f2":"Personnes max","domaine-f3":"Siècle",
+    "gites-label":"Hébergement","gites-title":"Nos Gîtes",
+    "gites-sub":"Chaque gîte a sa propre personnalité, tout en partageant le charme authentique de la pierre ardéchoise.",
+    "glycine-desc":"Studio cosy et romantique, idéal pour un séjour en duo au coeur du mas.",
+    "chapelle-desc":"Plafonds voûtés, murs en pierre taillée — un espace chargé d\'histoire et de caractère.",
+    "vignes-desc":"Le plus grand gîte du domaine, avec mezzanine et grand séjour pour familles et groupes.",
+    "laurier-desc":"Lumineux et fleuri, avec terrasse privée et vue sur la garrigue ardéchoise.",
+    "sampzon-desc":"Vue panoramique sur le rocher de Sampzon et les collines environnantes.",
+    "btn-reserver":"Réserver","from":"à partir de","per-night":"/nuit",
+    "modal-label":"Réservation","modal-arrival":"Arrivée","modal-departure":"Départ",
+    "modal-firstname":"Prénom","modal-lastname":"Nom","modal-email":"Email","modal-phone":"Téléphone",
+    "modal-select-dates":"Sélectionnez vos dates",
+    "modal-payment-info":"🔒 Paiement sécurisé · Annulation gratuite 30 jours avant",
+    "modal-pay-btn":"Procéder au paiement →","modal-stripe":"Powered by Stripe · Données protégées",
+    "resto-label":"Gastronomie","resto-title":"Le Restaurant<br>du Domaine",
+    "resto-text":"Cuisine de terroir ardéchois autour de la braise. Produits locaux, recettes d\'antan, et vins de la région.",
+    "josper-badge":"🔥 Cuisine à la braise",
+    "event-label":"Événementiel","event-title":"Célébrez au<br>Domaine des Dames",
+    "event-text":"Le Domaine des Dames se prête magnifiquement à l\'organisation de vos événements privés et professionnels. Mariages, séminaires, anniversaires ou repas de famille — nos espaces en pierre et notre cadre naturel exceptionnel créent une atmosphère inoubliable.",
+    "event-btn":"Nous contacter pour un devis","event-max":"personnes max",
+    "galerie-label":"Galerie","galerie-title":"Le Domaine en images",
+    "contact-label":"Nous trouver","contact-title":"Venir au<br>Domaine",
+    "contact-text":"Situé à 10 minutes à pied de Vallon-Pont-d\'Arc, au coeur des Gorges de l\'Ardèche.",
+    "contact-addr-label":"Adresse","contact-addr":"Route des Gorges, 07150 Vallon-Pont-d\'Arc",
+    "contact-phone-label":"Téléphone","contact-email-label":"Email",
+    "contact-hours-label":"Restaurant","contact-hours":"Ouvert de mai à septembre · Midi & Soir",
+    "contact-form-title":"Nous écrire","contact-msg":"Message",
+    "contact-placeholder":"Votre message...","contact-send":"Envoyer le message",
+    "footer-dev":"",
+    "footer-legal":"Mentions légales","footer-privacy":"Confidentialité",
+    "resto-resa-label":"Réservation table",
+    "resto-resa-title":"Réservez votre table",
+    "resto-resa-text":"Ouvert de mai à septembre, midi et soir. Réservation conseillée, en particulier le week-end.",
+    "resto-resa-btn":"Réserver une table",
+    "resto-resa-note":"Réservation en ligne via ZenChef · Confirmation immédiate",
+    "a9512fbe":"657 avis Google",
+    "a18d2557":"Le Domaine",
+    "a476ba0e":"Gîtes",
+    "a9c1f618":"Activités",
+    "a1cde338":"Événementiel",
+    "a254b0ae":"Réserver",
+    "a64f9846":"Événements de groupe · Ardèche",
+    "a3af2748":"Événements de groupe<br>à Vallon-Pont-d'Arc",
+    "ad08e3bc":"Mariages, séminaires, anniversaires, repas de famille ou week-ends entre amis : privatisez le restaurant ou le domaine entier, jusqu'à 150 personnes, avec hébergement et cuisine à la braise sur place.",
+    "a8a1f1c6":"Demander un devis",
+    "a99720a5":"Un seul lieu",
+    "ab140123":"Se réunir, dormir et bien manger au même endroit",
+    "ae062cc9":"Le Domaine des Dames est un mas en pierre du XVIIe siècle, à 10 minutes à pied de Vallon-Pont-d'Arc et aux portes des Gorges de l'Ardèche. Pour vos événements, tout le domaine est à votre disposition : restaurant, terrasse, espaces extérieurs, piscine et gîtes.",
+    "a2a870df":"Vous choisissez le format : privatiser le restaurant le temps d'une soirée, ou le domaine entier pour un week-end ou plus. Le nombre de couchages est modulable, jusqu'à 28 personnes sur place.",
+    "a58ea610":"Personnes, capacité maximale",
+    "aa9d03f4":"Couchages modulables",
+    "a6c861aa":"Gîtes sur place",
+    "af9a90f2":"À pied de Vallon-Pont-d'Arc",
+    "a90066f4":"Événements",
+    "a339c473":"Pour quelles occasions ?",
+    "af221ea6":"Mariages",
+    "ae25a655":"Cérémonie et réception dans un cadre ardéchois d'exception, avec hébergement sur place pour vos invités. Les mariages sont organisés hors juillet et août.",
+    "a159fc77":"Séminaires",
+    "ae8a155d":"Des séjours d'équipe au calme, pour travailler, se ressourcer et fédérer. Repas cuisinés à la braise et hébergement sur place dans nos gîtes.",
+    "a15aa4c8":"Anniversaires et fêtes",
+    "a79f7180":"Une soirée, un week-end : nous privatisons le restaurant ou le domaine pour vos célébrations, entre amis ou en famille.",
+    "a0d48411":"Repas de groupe",
+    "a0bf8733":"Repas d'entreprise, retrouvailles, repas de famille : un menu de groupe adapté à votre événement, cuisiné à la braise.",
+    "ab9b72d5":"Sur mesure",
+    "a12aeb0c":"Privatisez le restaurant ou le domaine entier",
+    "a5a587fe":"Une soirée",
+    "abe3d723":"Privatisation du restaurant pour un dîner, un anniversaire ou un repas d'entreprise.",
+    "a41b9e5a":"Un week-end",
+    "a2144478":"Le domaine entier pour vous : réception, restaurant, piscine et gîtes, avec jusqu'à 28 couchages.",
+    "a7f4dc1f":"Votre projet",
+    "a73c6953":"Une durée plus longue, une configuration particulière ? Dites-nous ce que vous imaginez, nous construisons l'événement avec vous.",
+    "aa71319a":"Restauration",
+    "a8512688":"Des menus de groupe cuisinés à la braise",
+    "a4561c87":"Notre restaurant propose des menus de groupe spéciaux, adaptés à votre événement et cuisinés à la braise : viandes grillées, cuisine de terroir ardéchois et produits locaux.",
+    "acdbb79f":"Pour un mariage, le menu se construit sur demande, ou vous pouvez faire appel à un traiteur autorisé.",
+    "a1663efb":"Découvrir le restaurant",
+    "a1666468":"Questions fréquentes",
+    "a420ad35":"Organiser son événement",
+    "aa39bb7e":"Combien de personnes pouvez-vous accueillir ?",
+    "a3213b15":"Jusqu'à 150 personnes. Parlez-nous de votre événement, nous validons ensemble la configuration qui lui convient.",
+    "a4609bc7":"Peut-on dormir sur place ?",
+    "a21008eb":"Oui, dans nos cinq gîtes. Le nombre de couchages est modulable, jusqu'à 28 personnes.",
+    "a41365f9":"Peut-on privatiser le domaine ?",
+    "ab6cdbd3":"Oui. Vous pouvez privatiser le restaurant ou le domaine entier, pour une soirée, un week-end ou plus.",
+    "ac56ba97":"À quelle période organisez-vous les mariages ?",
+    "aaf94dfd":"Les mariages sont organisés hors juillet et août.",
+    "a4888338":"Comment se passe la restauration ?",
+    "ae866070":"Nous proposons des menus de groupe adaptés, cuisinés à la braise. Pour un mariage, le menu se construit sur demande, ou vous pouvez faire appel à un traiteur autorisé.",
+    "a78d8853":"Pour prolonger l'événement, l'Ardèche offre de quoi occuper vos invités : canoë dans les Gorges, canyoning, randonnée, vélo, grottes. <a class=\"ev-link\" href=\"activites.html\">Découvrir les activités</a>",
+    "aae703a2":"Votre événement",
+    "ae9aaba5":"Parlons de votre projet",
+    "a260b86f":"Indiquez-nous le type d'événement, la date envisagée et le nombre de personnes : nous vous répondons avec une proposition sur mesure.",
+    "a9f5230c":"Écrire pour un devis",
+    "a522e146":"Adresse",
+    "_title":"Événements de groupe à Vallon-Pont-d'Arc | Domaine des Dames",
+  },
+  en: {
+    "nav-domaine":"The Estate","nav-gites":"Cottages","nav-restaurant":"Restaurant",
+    "nav-evenementiel":"Events","nav-galerie":"Gallery","nav-contact":"Contact",
+    "nav-reserver":"Book now",
+    "hero-eyebrow":"Vallon-Pont-d\'Arc · Ardèche, France",
+    "hero-title":"Domaine<br>des Dames",
+    "hero-subtitle":"A 17th-century Ardèche farmhouse nestled in the heart of the Ardèche Gorges. Charming cottages, pool and farm-to-table restaurant.",
+    "hero-btn1":"Book a cottage","hero-btn2":"Discover the restaurant","hero-scroll":"Scroll",
+    "domaine-label":"The Estate","domaine-title":"An Ardèche farmhouse<br>outside of time",
+    "domaine-text":"Nestled in the hills above Vallon-Pont-d\'Arc, steps from the Ardèche Gorges and the Chauvet Cave, Domaine des Dames is a fully restored 17th-century stone farmhouse. Five independent cottages, a swimming pool, a farm-to-table restaurant and acres of wild nature await you.",
+    "domaine-f1":"Cottages","domaine-f2":"Max guests","domaine-f3":"Century",
+    "gites-label":"Accommodation","gites-title":"Our Cottages",
+    "gites-sub":"Each cottage has its own personality, while sharing the authentic charm of Ardèche stone.",
+    "glycine-desc":"A cosy and romantic studio, ideal for a getaway for two in the heart of the estate.",
+    "chapelle-desc":"Vaulted ceilings, dressed stone walls — a space full of history and character.",
+    "vignes-desc":"The largest cottage on the estate, with mezzanine and large living area for families and groups.",
+    "laurier-desc":"Light-filled and flowering, with a private terrace overlooking the Ardèche garrigue.",
+    "sampzon-desc":"Panoramic view of the Sampzon rock and the surrounding Ardèche hills.",
+    "btn-reserver":"Book","from":"from","per-night":"/night",
+    "modal-label":"Booking","modal-arrival":"Check-in","modal-departure":"Check-out",
+    "modal-firstname":"First name","modal-lastname":"Last name","modal-email":"Email","modal-phone":"Phone",
+    "modal-select-dates":"Select your dates",
+    "modal-payment-info":"🔒 Secure payment · Free cancellation 30 days before",
+    "modal-pay-btn":"Proceed to payment →","modal-stripe":"Powered by Stripe · Your data is protected",
+    "resto-label":"Gastronomy","resto-title":"The Restaurant<br>of the Estate",
+    "resto-text":"Ardèche farmhouse cuisine cooked over embers. Local produce, timeless recipes, and regional wines.",
+    "josper-badge":"🔥 Cooking over embers",
+    "event-label":"Events","event-title":"Celebrate at<br>Domaine des Dames",
+    "event-text":"Domaine des Dames is a magnificent setting for your private and professional events. Weddings, seminars, birthdays or family gatherings — our stone spaces and exceptional natural surroundings create an unforgettable atmosphere.",
+    "event-btn":"Contact us for a quote","event-max":"guests max",
+    "galerie-label":"Gallery","galerie-title":"The Estate in pictures",
+    "contact-label":"Find us","contact-title":"Visit the<br>Estate",
+    "contact-text":"Located a 10-minute walk from Vallon-Pont-d\'Arc, in the heart of the Ardèche Gorges.",
+    "contact-addr-label":"Address","contact-addr":"Route des Gorges, 07150 Vallon-Pont-d\'Arc, France",
+    "contact-phone-label":"Phone","contact-email-label":"Email",
+    "contact-hours-label":"Restaurant","contact-hours":"Open May to September · Lunch & Dinner",
+    "contact-form-title":"Write to us","contact-msg":"Message",
+    "contact-placeholder":"Your message...","contact-send":"Send message",
+    "footer-dev":"",
+    "footer-legal":"Legal notice","footer-privacy":"Privacy policy",
+    "resto-resa-label":"Table reservation",
+    "resto-resa-title":"Book your table",
+    "resto-resa-text":"Open May to September, lunch and dinner. Booking recommended, especially on weekends.",
+    "resto-resa-btn":"Book a table",
+    "resto-resa-note":"Online booking via ZenChef · Instant confirmation",
+    "a9512fbe":"657 Google reviews",
+    "a18d2557":"The Estate",
+    "a476ba0e":"Cottages",
+    "a9c1f618":"Activities",
+    "a1cde338":"Events",
+    "a254b0ae":"Book",
+    "a64f9846":"Group events · Ardèche",
+    "a3af2748":"Group events<br>in Vallon-Pont-d'Arc",
+    "ad08e3bc":"Weddings, seminars, birthdays, family meals or weekends with friends: hire the restaurant or the whole estate, for up to 150 guests, with accommodation and cooking over embers on site.",
+    "a8a1f1c6":"Request a quote",
+    "a99720a5":"One place for everything",
+    "ab140123":"Gather, sleep and dine well in the same place",
+    "ae062cc9":"Domaine des Dames is a 17th-century stone farmhouse, a 10-minute walk from Vallon-Pont-d'Arc and at the gateway to the Ardèche Gorges. For your events, the whole estate is at your disposal: restaurant, terrace, outdoor spaces, pool and cottages.",
+    "a2a870df":"You choose the format: hire the restaurant for an evening, or the whole estate for a weekend or longer. The number of beds is flexible, up to 28 guests on site.",
+    "a58ea610":"Guests, maximum capacity",
+    "aa9d03f4":"Flexible number of beds",
+    "a6c861aa":"Cottages on site",
+    "af9a90f2":"On foot from Vallon-Pont-d'Arc",
+    "a90066f4":"Events",
+    "a339c473":"For which occasions?",
+    "af221ea6":"Weddings",
+    "ae25a655":"Ceremony and reception in an exceptional Ardèche setting, with on-site accommodation for your guests. Weddings are held outside July and August.",
+    "a159fc77":"Seminars",
+    "ae8a155d":"Quiet team stays, to work, recharge and bring people together. Meals cooked over embers and on-site accommodation in our cottages.",
+    "a15aa4c8":"Birthdays and parties",
+    "a79f7180":"An evening, a weekend: we hire out the restaurant or the estate for your celebrations, with friends or family.",
+    "a0d48411":"Group meals",
+    "a0bf8733":"Company meals, reunions, family meals: a group menu tailored to your event, cooked over embers.",
+    "ab9b72d5":"Tailor-made",
+    "a12aeb0c":"Hire the restaurant or the whole estate",
+    "a5a587fe":"An evening",
+    "abe3d723":"Exclusive hire of the restaurant for a dinner, a birthday or a company meal.",
+    "a41b9e5a":"A weekend",
+    "a2144478":"The whole estate to yourselves: reception, restaurant, pool and cottages, with up to 28 beds.",
+    "a7f4dc1f":"Your project",
+    "a73c6953":"A longer stay, a special setup? Tell us what you have in mind and we'll build the event with you.",
+    "aa71319a":"Dining",
+    "a8512688":"Group menus cooked over embers",
+    "a4561c87":"Our restaurant offers special group menus, tailored to your event and cooked over embers: grilled meats, Ardèche country cooking and local produce.",
+    "acdbb79f":"For a wedding, the menu is built on request, or you can bring in an authorised caterer.",
+    "a1663efb":"Discover the restaurant",
+    "a1666468":"Frequently asked questions",
+    "a420ad35":"Organising your event",
+    "aa39bb7e":"How many guests can you host?",
+    "a3213b15":"Up to 150 people. Tell us about your event and we'll confirm together the setup that suits it.",
+    "a4609bc7":"Can guests stay on site?",
+    "a21008eb":"Yes, in our five cottages. The number of beds is flexible, up to 28 guests.",
+    "a41365f9":"Can we hire the whole estate?",
+    "ab6cdbd3":"Yes. You can hire the restaurant or the whole estate, for an evening, a weekend or longer.",
+    "ac56ba97":"When can weddings be held?",
+    "aaf94dfd":"Weddings are held outside July and August.",
+    "a4888338":"How does catering work?",
+    "ae866070":"We offer tailored group menus, cooked over embers. For a wedding, the menu is built on request, or you can bring in an authorised caterer.",
+    "a78d8853":"To extend the event, the Ardèche has plenty to keep your guests busy: canoeing in the Gorges, canyoning, hiking, cycling, caves. <a class=\"ev-link\" href=\"activites.html\">Discover the activities</a>",
+    "aae703a2":"Your event",
+    "ae9aaba5":"Let's talk about your project",
+    "a260b86f":"Tell us the type of event, the planned date and the number of guests: we'll reply with a tailor-made proposal.",
+    "a9f5230c":"Write for a quote",
+    "a522e146":"Address",
+    "_title":"Group events in Vallon-Pont-d'Arc | Domaine des Dames",
+  }
+};
+
+function setLang(lang) {
+  if (lang !== 'en') lang = 'fr';
+  try { localStorage.setItem('ddd-lang', lang); } catch (e) {}
+  document.documentElement.lang = lang;
+  var bf = document.getElementById('btn-fr'), be = document.getElementById('btn-en');
+  if (bf) { bf.classList.toggle('active', lang === 'fr'); bf.setAttribute('aria-pressed', lang === 'fr' ? 'true' : 'false'); }
+  if (be) { be.classList.toggle('active', lang === 'en'); be.setAttribute('aria-pressed', lang === 'en' ? 'true' : 'false'); }
+  var t = LANG[lang] || LANG.fr;
+  document.querySelectorAll('[data-i18n]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n'), v = t[key];
+    if (v === undefined || v === '') return;
+    if (el.hasAttribute('placeholder')) { el.placeholder = v; }
+    else if (/[<&]/.test(v)) { el.innerHTML = v; }
+    else { el.textContent = v; }
+  });
+  if (t._title) document.title = t._title;
+  window.CURRENT_LANG = lang;
+  if (typeof renderMenu === 'function') renderMenu(lang);
+}
+(function () {
+  var saved = null;
+  try { saved = localStorage.getItem('ddd-lang'); } catch (e) {}
+  if (saved === 'en') document.addEventListener('DOMContentLoaded', function () { setTimeout(function () { setLang('en'); }, 0); });
+})();
+</script>
+<script>
+function toggleMenu() {
+  const h = document.getElementById('hamburger');
+  const m = document.getElementById('mobileMenu');
+  h.classList.toggle('open');
+  m.classList.toggle('open');
+  h.setAttribute('aria-expanded', m.classList.contains('open') ? 'true' : 'false');
+  document.body.style.overflow = m.classList.contains('open') ? 'hidden' : '';
+}
+function closeMenu() {
+  document.getElementById('hamburger').classList.remove('open');
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.getElementById('hamburger').setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+// Close menu on outside click
+document.addEventListener('click', function(e) {
+  const m = document.getElementById('mobileMenu');
+  const h = document.getElementById('hamburger');
+  if (m.classList.contains('open') && !m.contains(e.target) && !h.contains(e.target)) {
+    closeMenu();
+  }
+});
+</script>
+
+</body>
+</html>

@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Restaurant du Domaine des Dames — Cuisine ardéchoise & Four Josper, Vallon-Pont-d'Arc</title>
-<meta name="description" content="Restaurant de terroir ardéchois au Domaine des Dames. Grillades au four Josper, planche ardéchoise, caillette, picodo. Ouvert mai-septembre à Vallon-Pont-d'Arc.">
-<meta name="keywords" content="restaurant Vallon-Pont-d'Arc, restaurant Ardèche, four Josper, cuisine ardéchoise, planche ardéchoise, caillette ardéchoise">
+<title>Restaurant à la braise, Vallon-Pont-d'Arc | Domaine des Dames</title>
+<meta name="description" content="Cuisine à la braise et terroir ardéchois au Domaine des Dames : viandes grillées, planche ardéchoise, terrasse. Ouvert de mai à septembre, midi et soir.">
+<meta name="keywords" content="restaurant Vallon-Pont-d'Arc, restaurant Ardèche, four à braise, cuisine ardéchoise, planche ardéchoise, caillette ardéchoise">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Lato:wght@300;400;700&family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
 <style>
 
@@ -82,7 +82,7 @@
   .hero-subtitle { font-size:17px; font-weight:400; color:rgba(255,255,255,0.8); line-height:1.7; margin-bottom:36px; max-width:480px; }
   .hero-btns { display:flex; gap:16px; flex-wrap:wrap; }
   .btn-primary { display:inline-block; padding:14px 36px; background:var(--burgundy); color:white; text-decoration:none; font-size:12px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; border-radius:2px; transition:all 0.3s; font-family:'Cinzel',serif; }
-  .btn-primary:hover { background:#4e1228; }   transform:translateY(-2px); }
+  .btn-primary:hover { background:#4e1228; transform:translateY(-2px); }
   .btn-outline { display:inline-block; padding:14px 36px; border:1px solid rgba(255,255,255,0.5); color:white; text-decoration:none; font-size:12px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; border-radius:2px; transition:all 0.3s; font-family:'Cinzel',serif; }
   .btn-outline:hover { background:rgba(255,255,255,0.1); }
   .hero-scroll { position:absolute; bottom:32px; right:48px; z-index:2; display:flex; flex-direction:column; align-items:center; gap:8px; color:rgba(255,255,255,0.4); font-size:10px; letter-spacing:0.2em; text-transform:uppercase; }
@@ -574,9 +574,52 @@ body { padding-top: 0; }
     .common-infos { grid-template-columns:1fr 1fr !important; padding:40px 20px !important; gap:24px !important; }
     .gites-hero-content { padding:0 20px 40px; }
   }
+
+  /* NOTRE CUISINE */
+  .resto-cuisine { background:#ece0ce; padding:72px 80px; }
+  .resto-cuisine-inner { max-width:1100px; margin:0 auto; }
+  .resto-pillars { display:grid; grid-template-columns:repeat(3,1fr); gap:40px; }
+  .resto-pillar { border-top:2px solid var(--burgundy); padding-top:18px; }
+  .resto-pillar h3 { font-family:'Playfair Display',serif; font-size:24px; font-weight:400; color:var(--earth); margin-bottom:10px; }
+  .resto-pillar p { font-size:16px; line-height:1.8; color:#2e1208; }
+  @media (max-width:768px) {
+    .resto-cuisine { padding:48px 20px !important; }
+    .resto-pillars { grid-template-columns:1fr; gap:28px; }
+  }
+
+  /* NAVIGATION : écrans moyens (évite les chevauchements avec FR/EN et les avis) */
+  @media (min-width:1151px) and (max-width:1809px) { .nav-reviews { display:none; } }
+  @media (min-width:1151px) and (max-width:1469px) {
+    nav { padding:0 24px; }
+    .lang-switcher { left:20px; }
+    .nav-left, .nav-right { gap:14px; }
+    .nav-left { padding-right:16px; }
+    .nav-right { padding-left:16px; }
+    .nav-left a, .nav-right a { font-size:13px; letter-spacing:0.06em; }
+    .nav-cta { padding:10px 16px !important; font-size:12px !important; letter-spacing:0.1em !important; }
+    .nav-logo-img { height:110px; max-width:300px; }
+  }
+  @media (min-width:769px) and (max-width:1150px) {
+    nav { display:flex; justify-content:center; height:84px; padding:0 20px; }
+    .nav-left, .nav-right, .nav-reviews { display:none !important; }
+    .nav-logo-img { height:70px; }
+    .hamburger { display:flex !important; }
+    .mobile-menu { display:flex; }
+  }
+
+  .resto-groups { margin-top:36px; font-size:16px; line-height:1.8; color:#2e1208; }
+  .resto-groups a { color:var(--burgundy); border-bottom:1px solid var(--burgundy); text-decoration:none; font-weight:600; }
+
+  /* Correctif mobile : les deux photos de plats tiennent dans l'écran */
+  @media (max-width:768px) {
+    .resto-plats { flex-direction:row !important; justify-content:space-between !important; gap:12px !important; padding:0 !important; min-width:0; }
+    .resto-plat { width:calc(50% - 6px) !important; max-width:none !important; min-width:0 !important; }
+    .resto-plat-img { width:100% !important; height:100% !important; }
+  }
+
+  @media (max-width:768px) { .resto-plat.is-waiting { transform: translateY(20px) !important; } }
 </style>
 <script src="/config.js"></script>
-<script async src="https://storage.googleapis.com/lodgify-public-assets/search-bar/stable/bundle.js"></script>
 </head>
 <body>
 
@@ -586,7 +629,7 @@ body { padding-top: 0; }
       <div class="nav-reviews-stars">★★★★★</div>
       <div class="nav-reviews-info">
         <span class="nav-reviews-score">4.4</span>
-        <span class="nav-reviews-count">657 avis Google</span>
+        <span class="nav-reviews-count" data-i18n="a9512fbe">657 avis Google</span>
       </div>
     </a>
   </div>
@@ -608,11 +651,11 @@ body { padding-top: 0; }
   </a>
   <div class="nav-right">
     <a href="activites.html" data-i18n="nav-activites">Activités</a>
-    <a href="index.html#evenementiel" data-i18n="nav-evenementiel">Événementiel</a>
+    <a href="evenements.html" data-i18n="nav-evenementiel">Événementiel</a>
     <a href="index.html#contact" data-i18n="nav-contact">Contact</a>
     <a href="gites.html" class="nav-cta" data-i18n="nav-reserver">Réserver</a>
   </div>
-  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+  <div class="hamburger" id="hamburger" role="button" tabindex="0" aria-label="Menu" aria-controls="mobileMenu" aria-expanded="false" onclick="toggleMenu()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleMenu();}">
     <span></span><span></span><span></span>
   </div>
 </nav>
@@ -621,7 +664,7 @@ body { padding-top: 0; }
   <a href="gites.html" data-i18n="nav-gites" onclick="closeMenu()">Gîtes</a>
   <a href="restaurant.html" data-i18n="nav-restaurant" onclick="closeMenu()">Restaurant</a>
   <a href="activites.html" data-i18n="nav-activites" onclick="closeMenu()">Activités</a>
-  <a href="index.html#evenementiel" data-i18n="nav-evenementiel" onclick="closeMenu()">Événementiel</a>
+  <a href="evenements.html" data-i18n="nav-evenementiel" onclick="closeMenu()">Événementiel</a>
   <a href="index.html#galerie" data-i18n="nav-galerie" onclick="closeMenu()">Galerie</a>
   <a href="index.html#contact" data-i18n="nav-contact" onclick="closeMenu()">Contact</a>
   <a href="gites.html" class="nav-cta" data-i18n="nav-reserver" onclick="closeMenu()">Réserver</a>
@@ -633,14 +676,37 @@ body { padding-top: 0; }
   <div class="resto-hero-overlay"></div>
   <div class="resto-hero-content">
     <p style="font-family:'Cinzel',serif; font-size:12px; letter-spacing:0.28em; text-transform:uppercase; color:#e8b87a; margin-bottom:14px;">Vallon-Pont-d'Arc · Ardèche</p>
-    <h1 style="font-family:'Playfair Display',serif; font-size:clamp(38px,6vw,70px); font-weight:400; line-height:1.08; color:white; margin-bottom:18px;">Le Restaurant<br>du Domaine des Dames</h1>
-    <p style="font-size:16px; font-weight:400; color:rgba(255,255,255,0.82); line-height:1.75; margin-bottom:32px; max-width:460px;" data-i18n="resto-text">Cuisine de terroir ardéchois autour des braises du four Josper. Produits locaux, recettes d'antan, et vins de la région.</p>
+    <h1 style="font-family:'Playfair Display',serif; font-size:clamp(38px,6vw,70px); font-weight:400; line-height:1.08; color:white; margin-bottom:18px;" data-i18n="aab11640">Le Restaurant<br>du Domaine des Dames</h1>
+    <p style="font-size:16px; font-weight:400; color:rgba(255,255,255,0.82); line-height:1.75; margin-bottom:32px; max-width:460px;" data-i18n="resto-hero-sub">Viandes grillées au four à braise, produits locaux et terrasse aux beaux jours, à Vallon-Pont-d'Arc.</p>
     <div style="display:flex; gap:14px; flex-wrap:wrap;">
-      <a href="#menu" class="btn-primary">Voir le menu</a>
-      <a href="#reservation" class="btn-outline">Réserver une table</a>
+      <a href="#menu" class="btn-primary" data-i18n="a90f2d9f">Voir le menu</a>
+      <a href="#reservation" class="btn-outline" data-i18n="a877bf8e">Réserver une table</a>
     </div>
   </div>
 </div>
+
+<!-- NOTRE CUISINE -->
+<section class="resto-cuisine">
+  <div class="resto-cuisine-inner">
+    <p class="section-label" data-i18n="a623cfc2">Notre cuisine</p>
+    <h2 class="section-title" style="margin-bottom:36px;" data-i18n="aebfb475">Cuisine à la braise,<br>en Ardèche</h2>
+    <div class="resto-pillars">
+      <div class="resto-pillar">
+        <h3 data-i18n="a3b56fcd">Le four à braise</h3>
+        <p data-i18n="a75fc5d3">Dans notre cuisine, le four à braise saisit les viandes d'une cuisson vive et leur donne un goût fumé. C'est le cœur de notre carte.</p>
+      </div>
+      <div class="resto-pillar">
+        <h3 data-i18n="a96cfa04">Les viandes</h3>
+        <p data-i18n="a28dccb7">Côte de bœuf à partager, agneau de l'Ardèche… nos viandes sont grillées à la braise et servies avec leurs accompagnements. Pour les entrées et les desserts, place à la cuisine de terroir ardéchois.</p>
+      </div>
+      <div class="resto-pillar">
+        <h3 data-i18n="af816346">La terrasse</h3>
+        <p data-i18n="ac5c46b5">Aux beaux jours, déjeunez ou dînez en terrasse, à 10 minutes à pied de Vallon-Pont-d'Arc. Ouvert de mai à septembre, midi et soir ; réservation conseillée.</p>
+      </div>
+    </div>
+    <p class="resto-groups" data-i18n="a0fdcbab">Vous êtes un groupe ? Nous proposons des menus de groupe adaptés à votre événement, cuisinés à la braise. <a href="evenements.html">Découvrir les événements de groupe</a></p>
+  </div>
+</section>
 
 <!-- MENU + RESERVATION -->
 <section class="resto-menu-section" id="menu">
@@ -651,16 +717,16 @@ body { padding-top: 0; }
     <div class="resto-heading">
       <h2 class="section-title" data-i18n="resto-title">Le Restaurant<br>du Domaine</h2>
     </div>
-    <p class="section-text" data-i18n="resto-text">Cuisine de terroir ardéchois autour des braises du four Josper. Produits locaux, recettes d'antan, et vins de la région.</p>
-    <div class="josper-badge" style="margin-top:22px;" data-i18n="josper-badge">🔥 Grillades au feu de bois · Four Josper</div>
+    <p class="section-text" data-i18n="resto-text">Cuisine de terroir ardéchois autour de la braise. Produits locaux, recettes d'antan, et vins de la région.</p>
+    <div class="josper-badge" style="margin-top:22px;" data-i18n="josper-badge">🔥 Cuisine à la braise</div>
     <div class="menu-section">
-      <div class="menu-category">Entrées du terroir</div><div id="menu-entrees">
+      <div class="menu-category" data-i18n="a5d2d579">Entrées du terroir</div><div id="menu-entrees">
       <div class="menu-item"><span class="menu-item-name">Planche ardéchoise</span><span class="menu-item-dots"></span><span class="menu-item-price">18€</span></div>
       <p class="menu-item-desc">Caillette ardéchoise, picodo, charcuteries du pays, condiments maison</p>
       <div class="menu-item"><span class="menu-item-name">Soupe de châtaignes</span><span class="menu-item-dots"></span><span class="menu-item-price">12€</span></div>
       <p class="menu-item-desc">Crème de châtaigne, lardons fumés, huile de noix</p>
 
-      </div><div class="menu-category">Grillades au Josper</div><div id="menu-grillades">
+      </div><div class="menu-category" data-i18n="a9bfc032">Grillades à la braise</div><div id="menu-grillades">
       <div class="menu-item"><span class="menu-item-name">Côte de bœuf au feu de bois</span><span class="menu-item-dots"></span><span class="menu-item-price">34€</span></div>
       <p class="menu-item-desc">Pour 2 · sauce bordelaise · gratin dauphinois</p>
       <div class="menu-item"><span class="menu-item-name">Agneau de l'Ardèche</span><span class="menu-item-dots"></span><span class="menu-item-price">28€</span></div>
@@ -681,7 +747,7 @@ body { padding-top: 0; }
          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" loading="lazy" decoding="async">
     <div class="resto-plat-placeholder" style="display:none;">
       <span>🍽️</span>
-      <span>Photo<br>Plat 1</span>
+      <span data-i18n="a60d78c1">Photo<br>Plat 1</span>
     </div>
     </figure>
     <figure class="resto-plat">
@@ -689,7 +755,7 @@ body { padding-top: 0; }
          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" loading="lazy" decoding="async">
     <div class="resto-plat-placeholder" style="display:none;">
       <span>🍽️</span>
-      <span>Photo<br>Plat 2</span>
+      <span data-i18n="a2ac2796">Photo<br>Plat 2</span>
     </div>
     </figure>
   </div>
@@ -704,23 +770,23 @@ body { padding-top: 0; }
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:36px;">
       <div style="padding:20px; border:1px solid #d4b896; border-radius:2px; background:#ece0ce;">
         <div style="font-size:20px; margin-bottom:6px;">🕐</div>
-        <div style="font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--earth); margin-bottom:4px;">Horaires</div>
-        <div style="font-size:13px; color:#4a3020; line-height:1.6;">Midi & Soir<br>Mai à Septembre</div>
+        <div style="font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--earth); margin-bottom:4px;" data-i18n="af2ad387">Horaires</div>
+        <div style="font-size:13px; color:#4a3020; line-height:1.6;" data-i18n="acedb8b9">Midi & Soir<br>Mai à Septembre</div>
       </div>
       <div style="padding:20px; border:1px solid #d4b896; border-radius:2px; background:#ece0ce;">
         <div style="font-size:20px; margin-bottom:6px;">📍</div>
-        <div style="font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--earth); margin-bottom:4px;">Adresse</div>
+        <div style="font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--earth); margin-bottom:4px;" data-i18n="a522e146">Adresse</div>
         <div style="font-size:13px; color:#4a3020; line-height:1.6;">316 route de la Roubine<br>07150 Vallon-Pont-d'Arc</div>
       </div>
       <div style="padding:20px; border:1px solid #d4b896; border-radius:2px; background:#ece0ce;">
         <div style="font-size:20px; margin-bottom:6px;">📞</div>
-        <div style="font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--earth); margin-bottom:4px;">Téléphone</div>
+        <div style="font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--earth); margin-bottom:4px;" data-i18n="ad3b023e">Téléphone</div>
         <div style="font-size:13px; color:#4a3020; line-height:1.6;">06 26 47 73 95</div>
       </div>
       <div style="padding:20px; border:1px solid #d4b896; border-radius:2px; background:#ece0ce;">
         <div style="font-size:20px; margin-bottom:6px;">🔥</div>
-        <div style="font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--earth); margin-bottom:4px;">Spécialité</div>
-        <div style="font-size:13px; color:#4a3020; line-height:1.6;">Four Josper<br>Grillades au feu de bois</div>
+        <div style="font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--earth); margin-bottom:4px;" data-i18n="acbaf96a">Spécialité</div>
+        <div style="font-size:13px; color:#4a3020; line-height:1.6;" data-i18n="a03da914">Four à braise<br>Viandes à la braise</div>
       </div>
     </div>
 
@@ -744,7 +810,7 @@ body { padding-top: 0; }
 <section style="background:#f0e4d0; padding:80px 0;">
   <div style="padding:0 80px; margin-bottom:36px;">
     <p class="section-label" data-i18n="galerie-label">Galerie</p>
-    <h2 class="section-title">L'Ambiance du restaurant</h2>
+    <h2 class="section-title" data-i18n="a96e52b9">L'Ambiance du restaurant</h2>
   </div>
   <div class="resto-ambiance-grid">
     <img src="/images/restaurant.jpg" alt="Le restaurant du Domaine des Dames, Vallon-Pont-d'Arc" loading="lazy" decoding="async">
@@ -755,10 +821,10 @@ body { padding-top: 0; }
 
 <!-- CTA GITES -->
 <div class="cta-gites">
-  <p class="section-label" style="text-align:center; margin-bottom:8px;">Hébergement</p>
-  <h2 class="section-title" style="text-align:center; margin-bottom:16px;">Prolongez votre séjour</h2>
-  <p class="section-text" style="text-align:center; margin:0 auto 32px; max-width:480px;">Nos 5 gîtes de charme vous accueillent pour une nuit ou une semaine, à deux pas du restaurant.</p>
-  <a href="gites.html" class="btn-primary">Découvrir les gîtes</a>
+  <p class="section-label" style="text-align:center; margin-bottom:8px;" data-i18n="a1b47631">Hébergement</p>
+  <h2 class="section-title" style="text-align:center; margin-bottom:16px;" data-i18n="a709e74c">Prolongez votre séjour</h2>
+  <p class="section-text" style="text-align:center; margin:0 auto 32px; max-width:480px;" data-i18n="aa2d2065">Nos 5 gîtes de charme vous accueillent pour une nuit ou une semaine, à deux pas du restaurant.</p>
+  <a href="gites.html" class="btn-primary" data-i18n="a899c4dc">Découvrir les gîtes</a>
 </div>
 
 <!-- FOOTER -->
@@ -768,7 +834,7 @@ body { padding-top: 0; }
   <div style="display:flex;gap:18px;align-items:center;">
     <a href="https://www.facebook.com/ledomainedesdames/" target="_blank" style="display:flex;align-items:center;gap:6px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Facebook</a>
     <a href="mentions-legales.html" data-i18n="footer-legal">Mentions légales</a>
-    <a href="#" data-i18n="footer-privacy">Confidentialité</a>
+    <a href="mentions-legales.html#donnees" data-i18n="footer-privacy">Confidentialité</a>
   </div>
 </footer>
 
@@ -864,13 +930,13 @@ var LANG = {
     "nav-evenementiel":"Événementiel","nav-galerie":"Galerie","nav-contact":"Contact",
     "nav-reserver":"Réserver","nav-activites":"Activités",
     "hero-eyebrow":"Vallon-Pont-d\'Arc · Ardèche",
-    "hero-title"":"Domaine<br>des Dames",
+    "hero-title":"Domaine<br>des Dames",
     "hero-subtitle":"Un mas ardéchois du XVIIe siècle niché au coeur des Gorges de l\'Ardèche. Gîtes de charme, piscine et restaurant de terroir.",
     "hero-btn1":"Réserver un gîte","hero-btn2":"Découvrir le restaurant","hero-scroll":"Défiler",
-    "domaine-label":"Le Domaine","domaine-title"":"Un mas ardéchois<br>hors du temps",
+    "domaine-label":"Le Domaine","domaine-title":"Un mas ardéchois<br>hors du temps",
     "domaine-text":"Perché sur les hauteurs de Vallon-Pont-d\'Arc, à deux pas des Gorges de l\'Ardèche et de la Grotte Chauvet, le Domaine des Dames est un mas en pierre du XVIIe siècle entièrement restauré. Cinq gîtes indépendants, une piscine, un restaurant de terroir et des hectares de nature sauvage vous attendent.",
     "domaine-f1":"Gîtes","domaine-f2":"Personnes max","domaine-f3":"Siècle",
-    "gites-label":"Hébergement","gites-title"":"Nos Gîtes",
+    "gites-label":"Hébergement","gites-title":"Nos Gîtes",
     "gites-sub":"Chaque gîte a sa propre personnalité, tout en partageant le charme authentique de la pierre ardéchoise.",
     "glycine-desc":"Studio cosy et romantique, idéal pour un séjour en duo au coeur du mas.",
     "chapelle-desc":"Plafonds voûtés, murs en pierre taillée — un espace chargé d\'histoire et de caractère.",
@@ -883,15 +949,15 @@ var LANG = {
     "modal-select-dates":"Sélectionnez vos dates",
     "modal-payment-info":"🔒 Paiement sécurisé · Annulation gratuite 30 jours avant",
     "modal-pay-btn":"Procéder au paiement →","modal-stripe":"Powered by Stripe · Données protégées",
-    "resto-label":"Gastronomie","resto-title"":"Le Restaurant<br>du Domaine",
-    "resto-text":"Cuisine de terroir ardéchois autour des braises du four Josper. Produits locaux, recettes d\'antan, et vins de la région.",
-    "josper-badge":"🔥 Grillades au feu de bois · Four Josper",
-    "event-label":"Événementiel","event-title"":"Célébrez au<br>Domaine des Dames",
+    "resto-label":"Gastronomie","resto-title":"Le Restaurant<br>du Domaine",
+    "resto-hero-sub":"Viandes grillées au four à braise, produits locaux et terrasse aux beaux jours, à Vallon-Pont-d'Arc.","resto-text":"Cuisine de terroir ardéchois autour de la braise. Produits locaux, recettes d\'antan, et vins de la région.",
+    "josper-badge":"🔥 Cuisine à la braise",
+    "event-label":"Événementiel","event-title":"Célébrez au<br>Domaine des Dames",
     "event-text":"Le Domaine des Dames se prête magnifiquement à l\'organisation de vos événements privés et professionnels. Mariages, séminaires, anniversaires ou repas de famille — nos espaces en pierre et notre cadre naturel exceptionnel créent une atmosphère inoubliable.",
     "event-btn":"Nous contacter pour un devis","event-max":"personnes max",
-    "galerie-label":"Galerie","galerie-title"":"Le Domaine en images",
-    "contact-label":"Nous trouver","contact-title"":"Venir au<br>Domaine",
-    "contact-text":"Situé à 5 minutes de Vallon-Pont-d\'Arc, au coeur des Gorges de l\'Ardèche.",
+    "galerie-label":"Galerie","galerie-title":"Le Domaine en images",
+    "contact-label":"Nous trouver","contact-title":"Venir au<br>Domaine",
+    "contact-text":"Situé à 10 minutes à pied de Vallon-Pont-d\'Arc, au coeur des Gorges de l\'Ardèche.",
     "contact-addr-label":"Adresse","contact-addr":"Route des Gorges, 07150 Vallon-Pont-d\'Arc",
     "contact-phone-label":"Téléphone","contact-email-label":"Email",
     "contact-hours-label":"Restaurant","contact-hours":"Ouvert de mai à septembre · Midi & Soir",
@@ -900,23 +966,52 @@ var LANG = {
     "footer-dev":"",
     "footer-legal":"Mentions légales","footer-privacy":"Confidentialité",
     "resto-resa-label":"Réservation table",
-    "resto-resa-title"":"Réservez votre table",
+    "resto-resa-title":"Réservez votre table",
     "resto-resa-text":"Ouvert de mai à septembre, midi et soir. Réservation conseillée, en particulier le week-end.",
     "resto-resa-btn":"Réserver une table",
-    "resto-resa-note":"Réservation en ligne via ZenChef · Confirmation immédiate"
+    "resto-resa-note":"Réservation en ligne via ZenChef · Confirmation immédiate",
+    "a9512fbe":"657 avis Google",
+    "aab11640":"Le Restaurant<br>du Domaine des Dames",
+    "a90f2d9f":"Voir le menu",
+    "a877bf8e":"Réserver une table",
+    "a623cfc2":"Notre cuisine",
+    "aebfb475":"Cuisine à la braise,<br>en Ardèche",
+    "a3b56fcd":"Le four à braise",
+    "a75fc5d3":"Dans notre cuisine, le four à braise saisit les viandes d'une cuisson vive et leur donne un goût fumé. C'est le cœur de notre carte.",
+    "a96cfa04":"Les viandes",
+    "a28dccb7":"Côte de bœuf à partager, agneau de l'Ardèche… nos viandes sont grillées à la braise et servies avec leurs accompagnements. Pour les entrées et les desserts, place à la cuisine de terroir ardéchois.",
+    "af816346":"La terrasse",
+    "ac5c46b5":"Aux beaux jours, déjeunez ou dînez en terrasse, à 10 minutes à pied de Vallon-Pont-d'Arc. Ouvert de mai à septembre, midi et soir ; réservation conseillée.",
+    "a0fdcbab":"Vous êtes un groupe ? Nous proposons des menus de groupe adaptés à votre événement, cuisinés à la braise. <a href=\"evenements.html\">Découvrir les événements de groupe</a>",
+    "a5d2d579":"Entrées du terroir",
+    "a9bfc032":"Grillades à la braise",
+    "a60d78c1":"Photo<br>Plat 1",
+    "a2ac2796":"Photo<br>Plat 2",
+    "af2ad387":"Horaires",
+    "acedb8b9":"Midi & Soir<br>Mai à Septembre",
+    "a522e146":"Adresse",
+    "ad3b023e":"Téléphone",
+    "acbaf96a":"Spécialité",
+    "a03da914":"Four à braise<br>Viandes à la braise",
+    "a96e52b9":"L'Ambiance du restaurant",
+    "a1b47631":"Hébergement",
+    "a709e74c":"Prolongez votre séjour",
+    "aa2d2065":"Nos 5 gîtes de charme vous accueillent pour une nuit ou une semaine, à deux pas du restaurant.",
+    "a899c4dc":"Découvrir les gîtes",
+    "_title":"Restaurant à la braise, Vallon-Pont-d'Arc | Domaine des Dames",
   },
   en: {
     "nav-domaine":"The Estate","nav-gites":"Cottages","nav-restaurant":"Restaurant",
     "nav-evenementiel":"Events","nav-galerie":"Gallery","nav-contact":"Contact",
     "nav-reserver":"Book now","nav-activites":"Activities",
     "hero-eyebrow":"Vallon-Pont-d\'Arc · Ardèche, France",
-    "hero-title"":"Domaine<br>des Dames",
+    "hero-title":"Domaine<br>des Dames",
     "hero-subtitle":"A 17th-century Ardèche farmhouse nestled in the heart of the Ardèche Gorges. Charming cottages, pool and farm-to-table restaurant.",
     "hero-btn1":"Book a cottage","hero-btn2":"Discover the restaurant","hero-scroll":"Scroll",
-    "domaine-label":"The Estate","domaine-title"":"An Ardèche farmhouse<br>outside of time",
+    "domaine-label":"The Estate","domaine-title":"An Ardèche farmhouse<br>outside of time",
     "domaine-text":"Nestled in the hills above Vallon-Pont-d\'Arc, steps from the Ardèche Gorges and the Chauvet Cave, Domaine des Dames is a fully restored 17th-century stone farmhouse. Five independent cottages, a swimming pool, a farm-to-table restaurant and acres of wild nature await you.",
     "domaine-f1":"Cottages","domaine-f2":"Max guests","domaine-f3":"Century",
-    "gites-label":"Accommodation","gites-title"":"Our Cottages",
+    "gites-label":"Accommodation","gites-title":"Our Cottages",
     "gites-sub":"Each cottage has its own personality, while sharing the authentic charm of Ardèche stone.",
     "glycine-desc":"A cosy and romantic studio, ideal for a getaway for two in the heart of the estate.",
     "chapelle-desc":"Vaulted ceilings, dressed stone walls — a space full of history and character.",
@@ -929,15 +1024,15 @@ var LANG = {
     "modal-select-dates":"Select your dates",
     "modal-payment-info":"🔒 Secure payment · Free cancellation 30 days before",
     "modal-pay-btn":"Proceed to payment →","modal-stripe":"Powered by Stripe · Your data is protected",
-    "resto-label":"Gastronomy","resto-title"":"The Restaurant<br>of the Estate",
-    "resto-text":"Ardèche farmhouse cuisine cooked over the embers of a Josper oven. Local produce, timeless recipes, and regional wines.",
-    "josper-badge":"🔥 Wood-fired grills · Josper Oven",
-    "event-label":"Events","event-title"":"Celebrate at<br>Domaine des Dames",
+    "resto-label":"Gastronomy","resto-title":"The Restaurant<br>of the Estate",
+    "resto-hero-sub":"Meats grilled in our ember oven, local produce and a terrace in fine weather, in Vallon-Pont-d'Arc.","resto-text":"Ardèche farmhouse cuisine cooked over embers. Local produce, timeless recipes, and regional wines.",
+    "josper-badge":"🔥 Cooking over embers",
+    "event-label":"Events","event-title":"Celebrate at<br>Domaine des Dames",
     "event-text":"Domaine des Dames is a magnificent setting for your private and professional events. Weddings, seminars, birthdays or family gatherings — our stone spaces and exceptional natural surroundings create an unforgettable atmosphere.",
     "event-btn":"Contact us for a quote","event-max":"guests max",
-    "galerie-label":"Gallery","galerie-title"":"The Estate in pictures",
-    "contact-label":"Find us","contact-title"":"Visit the<br>Estate",
-    "contact-text":"Located 5 minutes from Vallon-Pont-d\'Arc, in the heart of the Ardèche Gorges.",
+    "galerie-label":"Gallery","galerie-title":"The Estate in pictures",
+    "contact-label":"Find us","contact-title":"Visit the<br>Estate",
+    "contact-text":"Located a 10-minute walk from Vallon-Pont-d\'Arc, in the heart of the Ardèche Gorges.",
     "contact-addr-label":"Address","contact-addr":"Route des Gorges, 07150 Vallon-Pont-d\'Arc, France",
     "contact-phone-label":"Phone","contact-email-label":"Email",
     "contact-hours-label":"Restaurant","contact-hours":"Open May to September · Lunch & Dinner",
@@ -946,29 +1041,66 @@ var LANG = {
     "footer-dev":"",
     "footer-legal":"Legal notice","footer-privacy":"Privacy policy",
     "resto-resa-label":"Table reservation",
-    "resto-resa-title"":"Book your table",
+    "resto-resa-title":"Book your table",
     "resto-resa-text":"Open May to September, lunch and dinner. Booking recommended, especially on weekends.",
     "resto-resa-btn":"Book a table",
-    "resto-resa-note":"Online booking via ZenChef · Instant confirmation"
+    "resto-resa-note":"Online booking via ZenChef · Instant confirmation",
+    "a9512fbe":"657 Google reviews",
+    "aab11640":"The Restaurant<br>at Domaine des Dames",
+    "a90f2d9f":"See the menu",
+    "a877bf8e":"Book a table",
+    "a623cfc2":"Our cuisine",
+    "aebfb475":"Cooking over embers,<br>in the Ardèche",
+    "a3b56fcd":"The ember oven",
+    "a75fc5d3":"In our kitchen, the ember oven sears the meats with intense heat and gives them a smoky flavour. It is the heart of our menu.",
+    "a96cfa04":"The meats",
+    "a28dccb7":"Côte de bœuf to share, Ardèche lamb… our meats are grilled over embers and served with their sides. For starters and desserts, it's Ardèche country cooking.",
+    "af816346":"The terrace",
+    "ac5c46b5":"In fine weather, have lunch or dinner on the terrace, a 10-minute walk from Vallon-Pont-d'Arc. Open from May to September, lunch and dinner; booking recommended.",
+    "a0fdcbab":"Coming as a group? We offer group menus tailored to your event, cooked over embers. <a href=\"evenements.html\">Discover our group events</a>",
+    "a5d2d579":"Local starters",
+    "a9bfc032":"Ember-grilled dishes",
+    "a60d78c1":"Photo<br>Dish 1",
+    "a2ac2796":"Photo<br>Dish 2",
+    "af2ad387":"Opening hours",
+    "acedb8b9":"Lunch &amp; Dinner<br>May to September",
+    "a522e146":"Address",
+    "ad3b023e":"Phone",
+    "acbaf96a":"Speciality",
+    "a03da914":"Ember oven<br>Ember-grilled meats",
+    "a96e52b9":"The restaurant's atmosphere",
+    "a1b47631":"Accommodation",
+    "a709e74c":"Extend your stay",
+    "aa2d2065":"Our 5 charming cottages welcome you for a night or a week, a stone's throw from the restaurant.",
+    "a899c4dc":"Discover the cottages",
+    "_title":"Restaurant cooking over embers, Vallon-Pont-d'Arc | Domaine des Dames",
   }
 };
 
 function setLang(lang) {
-  document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
-  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-  var t = LANG[lang];
+  if (lang !== 'en') lang = 'fr';
+  try { localStorage.setItem('ddd-lang', lang); } catch (e) {}
+  document.documentElement.lang = lang;
+  var bf = document.getElementById('btn-fr'), be = document.getElementById('btn-en');
+  if (bf) { bf.classList.toggle('active', lang === 'fr'); bf.setAttribute('aria-pressed', lang === 'fr' ? 'true' : 'false'); }
+  if (be) { be.classList.toggle('active', lang === 'en'); be.setAttribute('aria-pressed', lang === 'en' ? 'true' : 'false'); }
+  var t = LANG[lang] || LANG.fr;
   document.querySelectorAll('[data-i18n]').forEach(function(el) {
-    var key = el.getAttribute('data-i18n');
-    if (!t[key]) return;
-    if (el.hasAttribute('placeholder')) {
-      el.placeholder = t[key];
-    } else if (key.indexOf('-title') > -1 || key === 'josper-badge' || key === 'gites-title' || key === 'event-title' || key === 'galerie-title' || key === 'resto-title' || key === 'hero-title' || key === 'domaine-title' || key === 'contact-title') {
-      el.innerHTML = t[key];
-    } else {
-      el.textContent = t[key];
-    }
+    var key = el.getAttribute('data-i18n'), v = t[key];
+    if (v === undefined || v === '') return;
+    if (el.hasAttribute('placeholder')) { el.placeholder = v; }
+    else if (/[<&]/.test(v)) { el.innerHTML = v; }
+    else { el.textContent = v; }
   });
+  if (t._title) document.title = t._title;
+  window.CURRENT_LANG = lang;
+  if (typeof renderMenu === 'function') renderMenu(lang);
 }
+(function () {
+  var saved = null;
+  try { saved = localStorage.getItem('ddd-lang'); } catch (e) {}
+  if (saved === 'en') document.addEventListener('DOMContentLoaded', function () { setTimeout(function () { setLang('en'); }, 0); });
+})();
 </script>
 <script>
 function toggleMenu() {
@@ -976,11 +1108,13 @@ function toggleMenu() {
   const m = document.getElementById('mobileMenu');
   h.classList.toggle('open');
   m.classList.toggle('open');
+  h.setAttribute('aria-expanded', m.classList.contains('open') ? 'true' : 'false');
   document.body.style.overflow = m.classList.contains('open') ? 'hidden' : '';
 }
 function closeMenu() {
   document.getElementById('hamburger').classList.remove('open');
   document.getElementById('mobileMenu').classList.remove('open');
+  document.getElementById('hamburger').setAttribute('aria-expanded', 'false');
   document.body.style.overflow = '';
 }
 // Close menu on outside click
