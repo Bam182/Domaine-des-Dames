@@ -17,7 +17,7 @@ var CONFIG = {
   domaine: {
     nom:       "Domaine des Dames",
     slogan:    "Vallon-Pont-d'Arc · Ardèche",
-    adresse:   "316 route de la Roubine, 07150 Vallon-Pont-d'Arc",
+    adresse:   "316 Chemin de la Roubine, 07150 Vallon-Pont-d'Arc",
     telephone: "06 26 47 73 95",
     email:     "contact@ledomainedesdames.com",
     facebook:  "https://www.facebook.com/ledomainedesdames/",
@@ -66,7 +66,7 @@ var CONFIG = {
     vignes: {
       nom:         "Les Vignes",
       superficie:  "90 m²",
-      capacite:    "8 personnes",
+      capacite:    "7 personnes",
       prix:        260,
       description: "Le plus grand gîte du domaine, avec mezzanine et grand séjour pour familles et groupes.",
     },
@@ -91,7 +91,7 @@ var CONFIG = {
   // ----------------------------------------------------------
   restaurant: {
     description:  "Cuisine de terroir ardéchois autour de la braise. Produits locaux, recettes d'antan, et vins de la région.",
-    horaires:     "Ouvert de mai à septembre · Midi & Soir",
+    horaires:     "Ouvert d'avril à novembre · 12h–14h30 & 19h–23h",
     badge_josper: "🔥 Cuisine à la braise",
 
     menu: {
