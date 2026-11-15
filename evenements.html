@@ -11,7 +11,7 @@
   :root {
     --stone: #c8a97a; --stone-dark: #8b6d40; --cream: #ede0cc;
     --earth: #4a2010; --green: #5a6e3a; --burgundy: #5a1228;
-    --terracotta: #c4573a; --gold: #b8832a; --sage: #7a8c5a;
+    --terracotta: #a64329; --gold: #b8832a; --sage: #7a8c5a;
     --warm-bg: #f0e4d0; --white: #ffffff; --text: #1a0a04; --muted: #3d2010;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -195,9 +195,9 @@
   .contact-form textarea { width:100%; padding:11px 13px; border:1px solid rgba(200,185,154,0.2); border-radius:2px; font-family:'Lato',sans-serif; font-size:14px; background:rgba(255,255,255,0.08); color:white; outline:none; resize:vertical; min-height:100px; }
 
   /* FOOTER */
-  footer { background:#2a1005; color:rgba(255,255,255,0.35); padding:28px 80px; display:flex; justify-content:space-between; align-items:center; }
+  footer { background:#2a1005; color:rgba(255,255,255,0.72); padding:28px 80px; display:flex; justify-content:space-between; align-items:center; }
   .footer-logo { font-family:'Playfair Display',serif; font-size:18px; color:rgba(255,255,255,0.6); }
-  footer a { color:rgba(255,255,255,0.35); text-decoration:none; font-size:12px; }
+  footer a { color:rgba(255,255,255,0.72); text-decoration:none; font-size:12px; }
 
   /* FADE */
   .fade-up { opacity:0; transform:translateY(28px); transition:opacity 0.7s, transform 0.7s; }
@@ -661,6 +661,19 @@ body { padding-top: 0; }
     .ev-hero-btns .ev-btn { width:100%; text-align:center; }
   }
 </style>
+<style id="a11y">
+  /* LISIBILITE / CONTRASTE */
+  .ghc-dot,.carousel-dot{position:relative;}
+  .ghc-dot::after,.carousel-dot::after{content:'';position:absolute;inset:-12px;}
+  .contact-detail-text p:first-child,.contact .form-group label{color:#dcc39a!important;}
+  .event-badge,.badge-exemple,[class*="exemple"]{background:#a64329;}
+  @media (max-width:768px){
+    body{font-size:16px;}
+    .section-label,.feature-label,.menu-category,.anchor-btn,.nav-brand,.gite-badge,.restaurant-img-badge .small,footer p,footer a{font-size:12px!important;}
+    .contact-detail-text p:first-child{font-size:12px!important;}
+    span[style*="font-size:10px"],div[style*="font-size:10px"],span[style*="font-size:11px"],div[style*="font-size:11px"],p[style*="font-size:11px"]{font-size:12px!important;}
+  }
+</style>
 </head>
 <body>
 
@@ -918,6 +931,7 @@ var LANG = {
     "event-text":"Le Domaine des Dames se prête magnifiquement à l\'organisation de vos événements privés et professionnels. Mariages, séminaires, anniversaires ou repas de famille — nos espaces en pierre et notre cadre naturel exceptionnel créent une atmosphère inoubliable.",
     "event-btn":"Nous contacter pour un devis","event-max":"personnes max",
     "galerie-label":"Galerie","galerie-title":"Le Domaine en images",
+    "nav-activites":"Activités",
     "contact-label":"Nous trouver","contact-title":"Venir au<br>Domaine",
     "contact-text":"Situé à 10 minutes à pied de Vallon-Pont-d\'Arc, au coeur des Gorges de l\'Ardèche.",
     "contact-addr-label":"Adresse","contact-addr":"Route des Gorges, 07150 Vallon-Pont-d\'Arc",
@@ -1024,6 +1038,7 @@ var LANG = {
     "event-text":"Domaine des Dames is a magnificent setting for your private and professional events. Weddings, seminars, birthdays or family gatherings — our stone spaces and exceptional natural surroundings create an unforgettable atmosphere.",
     "event-btn":"Contact us for a quote","event-max":"guests max",
     "galerie-label":"Gallery","galerie-title":"The Estate in pictures",
+    "nav-activites":"Activities",
     "contact-label":"Find us","contact-title":"Visit the<br>Estate",
     "contact-text":"Located a 10-minute walk from Vallon-Pont-d\'Arc, in the heart of the Ardèche Gorges.",
     "contact-addr-label":"Address","contact-addr":"Route des Gorges, 07150 Vallon-Pont-d\'Arc, France",
@@ -1151,5 +1166,59 @@ document.addEventListener('click', function(e) {
 });
 </script>
 
+<!-- BARRE FIXE (apparait au défilement) -->
+<style>
+  .sticky-bar{position:fixed;top:0;left:0;right:0;height:60px;z-index:102;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 24px;background:rgba(235,222,202,0.98);backdrop-filter:blur(12px);border-bottom:1px solid rgba(200,185,154,0.5);box-shadow:0 2px 14px rgba(46,26,14,0.12);transform:translateY(-110%);transition:transform .3s ease;}
+  .sticky-bar.show{transform:translateY(0);}
+  .sticky-bar img{height:48px;width:auto;display:block;}
+  .sticky-links{display:flex;align-items:center;gap:22px;}
+  .sticky-links a{font-family:'Cinzel',serif;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#2e1a0e;text-decoration:none;white-space:nowrap;}
+  .sticky-links a:hover{color:#6b1a35;}
+  .sticky-links a.nav-cta{background:#6b1a35;color:#fff!important;padding:10px 18px;border-radius:2px;}
+  .sticky-mobile{display:none;align-items:center;gap:10px;}
+  .sticky-call,.sticky-book{font-family:'Cinzel',serif;font-size:12px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;padding:10px 14px;border-radius:2px;min-height:40px;display:inline-flex;align-items:center;}
+  .sticky-call{border:2px solid #6b1a35;color:#6b1a35;}
+  .sticky-book{background:#6b1a35;color:#fff;}
+  .sticky-burger{background:none;border:0;padding:10px;cursor:pointer;display:flex;flex-direction:column;gap:5px;min-width:44px;min-height:44px;justify-content:center;}
+  .sticky-burger span{display:block;width:22px;height:2px;background:#2e1a0e;border-radius:2px;}
+  @media (max-width:1150px){.sticky-links{display:none;}.sticky-mobile{display:flex;}.sticky-bar{padding:0 12px;}.sticky-bar img{height:42px;}}
+  @media (max-width:380px){.sticky-call{padding:10px 10px;}.sticky-book{padding:10px 10px;}}
+  @media (min-width:1151px){.sticky-bar{padding:0 48px;}}
+  .mobile-menu{top:60px!important;z-index:101!important;}
+  html{scroll-padding-top:72px;}
+</style>
+<div class="sticky-bar" id="stickyBar" aria-hidden="true">
+  <a href="index.html" aria-label="Domaine des Dames"><img src="/images/logo.png" alt="Domaine des Dames"></a>
+  <div class="sticky-links" id="stickyLinks">
+    <a href="index.html#domaine" data-i18n="nav-domaine">Le Domaine</a>
+    <a href="gites.html" data-i18n="nav-gites">Gîtes</a>
+    <a href="restaurant.html" data-i18n="nav-restaurant">Restaurant</a>
+    <a href="activites.html" data-i18n="nav-activites">Activités</a>
+    <a href="evenements.html" data-i18n="nav-evenementiel">Événementiel</a>
+    <a href="index.html#contact" data-i18n="nav-contact">Contact</a>
+    <a href="gites.html" class="nav-cta" data-i18n="nav-reserver">Réserver</a>
+  </div>
+  <div class="sticky-mobile">
+    <a class="sticky-call" id="stickyCall" href="tel:+33626477395" data-i18n="sticky-call">Appeler</a>
+    <a class="sticky-book" href="gites.html" data-i18n="nav-reserver">Réserver</a>
+    <button class="sticky-burger" id="stickyBurger" type="button" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</div>
+<script>
+(function(){
+  var bar=document.getElementById('stickyBar'), burger=document.getElementById('stickyBurger');
+  function onScroll(){
+    var show=(window.pageYOffset||document.documentElement.scrollTop)>220;
+    bar.classList.toggle('show',show); bar.setAttribute('aria-hidden',show?'false':'true');
+    bar.querySelectorAll('a,button').forEach(function(el){el.tabIndex=show?0:-1;});
+  }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  burger.addEventListener('click',function(e){e.stopPropagation();var m=document.getElementById('mobileMenu');if(!m)return;
+    if(m.classList.contains('open')){closeMenu();}else{m.classList.add('open');var h=document.getElementById('hamburger');if(h){h.classList.add('open');h.setAttribute('aria-expanded','true');}document.body.style.overflow='hidden';}
+  });
+  try{ if(typeof LANG!=='undefined'){ LANG.fr['sticky-call']='Appeler'; LANG.en['sticky-call']='Call'; if(window.CURRENT_LANG==='en') setLang('en'); } }catch(e){}
+  try{ if(typeof CONFIG!=='undefined'&&CONFIG.domaine&&CONFIG.domaine.telephone){document.getElementById('stickyCall').href='tel:'+CONFIG.domaine.telephone.replace(/[^+\d]/g,'').replace(/^0/,'+33');} }catch(e){}
+})();
+</script>
 </body>
 </html>

@@ -11,7 +11,7 @@
   :root {
     --stone: #c8a97a; --stone-dark: #8b6d40; --cream: #ede0cc;
     --earth: #4a2010; --green: #5a6e3a; --burgundy: #5a1228;
-    --terracotta: #c4573a; --gold: #b8832a; --sage: #7a8c5a;
+    --terracotta: #a64329; --gold: #b8832a; --sage: #7a8c5a;
     --warm-bg: #f0e4d0; --white: #ffffff; --text: #1a0a04; --muted: #3d2010;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -211,9 +211,9 @@
   .contact-form textarea { width:100%; padding:11px 13px; border:1px solid rgba(200,185,154,0.2); border-radius:2px; font-family:'Lato',sans-serif; font-size:14px; background:rgba(255,255,255,0.08); color:white; outline:none; resize:vertical; min-height:100px; }
 
   /* FOOTER */
-  footer { background:#2a1005; color:rgba(255,255,255,0.35); padding:28px 80px; display:flex; justify-content:space-between; align-items:center; }
+  footer { background:#2a1005; color:rgba(255,255,255,0.72); padding:28px 80px; display:flex; justify-content:space-between; align-items:center; }
   .footer-logo { font-family:'Playfair Display',serif; font-size:18px; color:rgba(255,255,255,0.6); }
-  footer a { color:rgba(255,255,255,0.35); text-decoration:none; font-size:12px; }
+  footer a { color:rgba(255,255,255,0.72); text-decoration:none; font-size:12px; }
 
   /* FADE */
   .fade-up { opacity:0; transform:translateY(28px); transition:opacity 0.7s, transform 0.7s; }
@@ -610,6 +610,19 @@
   .btn-line:hover { background:var(--burgundy); color:#fff; }
 </style>
 <script src="/config.js"></script>
+<style id="a11y">
+  /* LISIBILITE / CONTRASTE */
+  .ghc-dot,.carousel-dot{position:relative;}
+  .ghc-dot::after,.carousel-dot::after{content:'';position:absolute;inset:-12px;}
+  .contact-detail-text p:first-child,.contact .form-group label{color:#dcc39a!important;}
+  .event-badge,.badge-exemple,[class*="exemple"]{background:#a64329;}
+  @media (max-width:768px){
+    body{font-size:16px;}
+    .section-label,.feature-label,.menu-category,.anchor-btn,.nav-brand,.gite-badge,.restaurant-img-badge .small,footer p,footer a{font-size:12px!important;}
+    .contact-detail-text p:first-child{font-size:12px!important;}
+    span[style*="font-size:10px"],div[style*="font-size:10px"],span[style*="font-size:11px"],div[style*="font-size:11px"],p[style*="font-size:11px"]{font-size:12px!important;}
+  }
+</style>
 </head>
 <body>
 <nav style="position:relative;">
@@ -723,7 +736,7 @@
     <!-- Texte -->
     <div class="gites-home-text">
       <p class="section-label" data-i18n="gites-label">Hébergement</p>
-      <h2 class="section-title" data-i18n="ab0f74f9">Nos gîtes à Vallon-Pont-d'Arc</h2>
+      <h2 class="section-title" data-i18n="ab0f74f9">Nos gîtes au cœur de l'Ardèche</h2>
       <p class="gites-home-desc" style="margin-bottom:14px;" data-i18n="abc5ae7b">Cinq gîtes indépendants, chacun avec sa personnalité et le charme de la pierre ardéchoise, pour séjourner à Vallon-Pont-d'Arc en couple, en famille ou entre amis. Du gîte pour deux au grand gîte de 8 personnes, tous ont accès à la piscine du domaine.</p>
       <p class="gites-home-desc" data-i18n="a82c62e4">Vous êtes nombreux ? Le domaine peut être privatisé pour vos séjours de groupe et vos événements.</p>
 
@@ -744,7 +757,7 @@
         <div class="ghc-cap"><span class="ghc-num">28</span><span class="ghc-label" data-i18n="a9c565d8">Max. total</span></div>
       </div>
 
-      <a href="gites.html" class="btn-primary" style="display:inline-block; margin-top:32px;" data-i18n="hero-btn1">Découvrir nos gîtes</a>
+      <a href="gites.html" class="btn-primary" style="display:inline-block; margin-top:32px;" data-i18n="hero-btn1b">Découvrir nos gîtes</a>
     </div>
 
   </div>
@@ -757,7 +770,7 @@
     <!-- Texte -->
     <div>
       <p class="section-label" data-i18n="resto-label">Gastronomie</p>
-      <h2 class="section-title" data-i18n="a44cb178">Restaurant à la braise<br>à Vallon-Pont-d'Arc</h2>
+      <h2 class="section-title" data-i18n="a44cb178">Restaurant<br>à la braise</h2>
       <p style="font-size:16px; font-weight:400; color:#4a3020; line-height:1.8; margin-bottom:24px;" data-i18n="a781b0d9">La braise est au cœur de notre carte. Notre four à braise saisit les viandes — côte de bœuf à partager, agneau de l'Ardèche — et leur donne un goût fumé. À côté, une cuisine de terroir ardéchois : planche ardéchoise, caillette, picodo, soupe de châtaignes.</p>
       <p style="font-size:16px; font-weight:400; color:#4a3020; line-height:1.8; margin-bottom:32px;" data-i18n="a4257998">Aux beaux jours, installez-vous en terrasse pour déjeuner ou dîner dehors. Ouvert de mai à septembre, midi et soir. Réservation conseillée.</p>
 
@@ -791,7 +804,7 @@
   <div style="display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center;">
     <div>
       <p class="section-label" data-i18n="event-label">Événementiel</p>
-      <h2 class="section-title" data-i18n="event-title">Événements de groupe<br>à Vallon-Pont-d'Arc</h2>
+      <h2 class="section-title" data-i18n="event-title">Événements<br>de groupe</h2>
       <p class="section-text"><span data-i18n="event-text">Mariages, séminaires, anniversaires, repas de famille ou week-ends entre amis : le Domaine des Dames accueille vos groupes en Ardèche, jusqu'à 150 personnes. Privatisez le restaurant ou le domaine entier, avec hébergement sur place dans nos cinq gîtes (jusqu'à 28 couchages) : tout est réuni en un seul lieu.</span></p>
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:36px;">
         <div style="padding:20px; border:1px solid #e8d4bc; border-radius:2px;">
@@ -915,7 +928,7 @@ var LANG = {
     "hero-eyebrow":"Vallon-Pont-d\'Arc · Ardèche",
     "hero-title":"Domaine<br>des Dames",
     "hero-subtitle":"Gîtes de charme, restaurant à la braise et événements de groupe, aux portes des Gorges de l'Ardèche.",
-    "hero-btn1":"Réserver un gîte","hero-btn2":"Découvrir le restaurant","hero-scroll":"Défiler",
+    "hero-btn1":"Réserver un gîte","hero-btn1b":"Découvrir nos gîtes","hero-btn2":"Découvrir le restaurant","hero-scroll":"Défiler",
     "domaine-label":"Le Domaine","domaine-title":"Un mas ardéchois<br>hors du temps",
     "domaine-text":"À Vallon-Pont-d'Arc, aux portes des Gorges de l'Ardèche et à proximité du Pont d'Arc, le Domaine des Dames est un mas en pierre du XVIIe siècle. Cinq gîtes de charme avec piscine, un restaurant qui cuisine à la braise et des espaces pour vos événements de groupe : un seul lieu pour séjourner, bien manger et célébrer en Ardèche.",
     "domaine-f1":"Gîtes","domaine-f2":"Personnes max","domaine-f3":"Siècle",
@@ -935,13 +948,13 @@ var LANG = {
     "resto-label":"Gastronomie","resto-title":"Le Restaurant<br>du Domaine",
     "resto-text":"Cuisine de terroir ardéchois autour de la braise. Produits locaux, recettes d\'antan, et vins de la région.",
     "josper-badge":"🔥 Cuisine à la braise",
-    "event-label":"Événementiel","event-title":"Événements de groupe<br>à Vallon-Pont-d'Arc",
+    "event-label":"Événementiel","event-title":"Événements<br>de groupe",
     "event-text":"Mariages, séminaires, anniversaires, repas de famille ou week-ends entre amis : le Domaine des Dames accueille vos groupes en Ardèche, jusqu'à 150 personnes. Privatisez le restaurant ou le domaine entier, avec hébergement sur place dans nos cinq gîtes (jusqu'à 28 couchages) : tout est réuni en un seul lieu.",
     "event-btn":"Nous contacter pour un devis","event-max":"personnes max",
     "galerie-label":"Galerie","galerie-title":"Le Domaine en images",
     "contact-label":"Nous trouver","contact-title":"Venir au<br>Domaine",
-    "contact-text":"Situé à 10 minutes à pied de Vallon-Pont-d\'Arc, au coeur des Gorges de l\'Ardèche.",
-    "contact-addr-label":"Adresse","contact-addr":"Route des Gorges, 07150 Vallon-Pont-d\'Arc",
+    "contact-text":"Situé à 10 minutes à pied de Vallon-Pont-d\'Arc, au cœur des Gorges de l\'Ardèche.",
+    "contact-addr-label":"Adresse","contact-addr":"316 route de la Roubine, 07150 Vallon-Pont-d\'Arc",
     "contact-phone-label":"Téléphone","contact-email-label":"Email",
     "contact-hours-label":"Restaurant","contact-hours":"Ouvert de mai à septembre · Midi & Soir",
     "contact-form-title":"Nous écrire","contact-msg":"Message",
@@ -954,7 +967,7 @@ var LANG = {
     "resto-resa-btn":"Réserver une table",
     "resto-resa-note":"Réservation en ligne via ZenChef · Confirmation immédiate",
     "a9512fbe":"657 avis Google",
-    "ab0f74f9":"Nos gîtes à Vallon-Pont-d'Arc",
+    "ab0f74f9":"Nos gîtes au cœur de l'Ardèche",
     "abc5ae7b":"Cinq gîtes indépendants, chacun avec sa personnalité et le charme de la pierre ardéchoise, pour séjourner à Vallon-Pont-d'Arc en couple, en famille ou entre amis. Du gîte pour deux au grand gîte de 8 personnes, tous ont accès à la piscine du domaine.",
     "a82c62e4":"Vous êtes nombreux ? Le domaine peut être privatisé pour vos séjours de groupe et vos événements.",
     "aaadf5b8":"Cuisine équipée",
@@ -966,7 +979,7 @@ var LANG = {
     "a476ba0e":"Gîtes",
     "a357bf4d":"Personnes",
     "a9c565d8":"Max. total",
-    "a44cb178":"Restaurant à la braise<br>à Vallon-Pont-d'Arc",
+    "a44cb178":"Restaurant<br>à la braise",
     "a781b0d9":"La braise est au cœur de notre carte. Notre four à braise saisit les viandes — côte de bœuf à partager, agneau de l'Ardèche — et leur donne un goût fumé. À côté, une cuisine de terroir ardéchois : planche ardéchoise, caillette, picodo, soupe de châtaignes.",
     "a4257998":"Aux beaux jours, installez-vous en terrasse pour déjeuner ou dîner dehors. Ouvert de mai à septembre, midi et soir. Réservation conseillée.",
     "a17d2e1a":"🔥 Four à braise",
@@ -995,7 +1008,7 @@ var LANG = {
     "hero-eyebrow":"Vallon-Pont-d\'Arc · Ardèche, France",
     "hero-title":"Domaine<br>des Dames",
     "hero-subtitle":"Charming holiday cottages, a restaurant cooking over embers and group events, at the gateway to the Ardèche Gorges.",
-    "hero-btn1":"Book a cottage","hero-btn2":"Discover the restaurant","hero-scroll":"Scroll",
+    "hero-btn1":"Book a cottage","hero-btn1b":"Discover our cottages","hero-btn2":"Discover the restaurant","hero-scroll":"Scroll",
     "domaine-label":"The Estate","domaine-title":"An Ardèche farmhouse<br>outside of time",
     "domaine-text":"In Vallon-Pont-d'Arc, at the gateway to the Ardèche Gorges and close to the Pont d'Arc, Domaine des Dames is a 17th-century stone farmhouse. Five charming holiday cottages with a pool, a restaurant cooking over embers and spaces for group events: one place to stay, eat well and celebrate in the Ardèche.",
     "domaine-f1":"Cottages","domaine-f2":"Max guests","domaine-f3":"Century",
@@ -1015,13 +1028,13 @@ var LANG = {
     "resto-label":"Gastronomy","resto-title":"The Restaurant<br>of the Estate",
     "resto-text":"Ardèche farmhouse cuisine cooked over embers. Local produce, timeless recipes, and regional wines.",
     "josper-badge":"🔥 Cooking over embers",
-    "event-label":"Events","event-title":"Group events<br>in Vallon-Pont-d'Arc",
+    "event-label":"Events","event-title":"Group<br>events",
     "event-text":"Weddings, seminars, birthdays, family meals or weekends with friends: Domaine des Dames welcomes groups of up to 150 people in the Ardèche. Hire the restaurant or the whole estate, with on-site accommodation in our five cottages (up to 28 beds): everything in one place.",
     "event-btn":"Contact us for a quote","event-max":"guests max",
     "galerie-label":"Gallery","galerie-title":"The Estate in pictures",
     "contact-label":"Find us","contact-title":"Visit the<br>Estate",
     "contact-text":"Located a 10-minute walk from Vallon-Pont-d\'Arc, in the heart of the Ardèche Gorges.",
-    "contact-addr-label":"Address","contact-addr":"Route des Gorges, 07150 Vallon-Pont-d\'Arc, France",
+    "contact-addr-label":"Address","contact-addr":"316 route de la Roubine, 07150 Vallon-Pont-d\'Arc, France",
     "contact-phone-label":"Phone","contact-email-label":"Email",
     "contact-hours-label":"Restaurant","contact-hours":"Open May to September · Lunch & Dinner",
     "contact-form-title":"Write to us","contact-msg":"Message",
@@ -1034,7 +1047,7 @@ var LANG = {
     "resto-resa-btn":"Book a table",
     "resto-resa-note":"Online booking via ZenChef · Instant confirmation",
     "a9512fbe":"657 Google reviews",
-    "ab0f74f9":"Our cottages in Vallon-Pont-d'Arc",
+    "ab0f74f9":"Our cottages in the heart of the Ardèche",
     "abc5ae7b":"Five independent cottages, each with its own personality and the charm of Ardèche stone, for a stay in Vallon-Pont-d'Arc as a couple, with family or with friends. From the cottage for two to the large cottage for 8, all have access to the estate's pool.",
     "a82c62e4":"Coming as a big group? The estate can be hired exclusively for group stays and events.",
     "aaadf5b8":"Equipped kitchen",
@@ -1046,7 +1059,7 @@ var LANG = {
     "a476ba0e":"Cottages",
     "a357bf4d":"Guests",
     "a9c565d8":"Max. total",
-    "a44cb178":"Restaurant cooking over embers<br>in Vallon-Pont-d'Arc",
+    "a44cb178":"Restaurant<br>cooking over embers",
     "a781b0d9":"Embers are at the heart of our menu. Our ember oven sears the meats — côte de bœuf to share, Ardèche lamb — and gives them a smoky flavour. Alongside, Ardèche country cooking: charcuterie board, caillette, picodo, chestnut soup.",
     "a4257998":"In fine weather, settle in on the terrace for lunch or dinner outdoors. Open from May to September, lunch and dinner. Booking recommended.",
     "a17d2e1a":"🔥 Ember oven",
@@ -1200,6 +1213,60 @@ function ghcUpdate() {
 }
 // Auto-advance every 4s
 setInterval(function() { ghcSlide(1); }, 4000);
+</script>
+<!-- BARRE FIXE (apparait au défilement) -->
+<style>
+  .sticky-bar{position:fixed;top:0;left:0;right:0;height:60px;z-index:102;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 24px;background:rgba(235,222,202,0.98);backdrop-filter:blur(12px);border-bottom:1px solid rgba(200,185,154,0.5);box-shadow:0 2px 14px rgba(46,26,14,0.12);transform:translateY(-110%);transition:transform .3s ease;}
+  .sticky-bar.show{transform:translateY(0);}
+  .sticky-bar img{height:48px;width:auto;display:block;}
+  .sticky-links{display:flex;align-items:center;gap:22px;}
+  .sticky-links a{font-family:'Cinzel',serif;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#2e1a0e;text-decoration:none;white-space:nowrap;}
+  .sticky-links a:hover{color:#6b1a35;}
+  .sticky-links a.nav-cta{background:#6b1a35;color:#fff!important;padding:10px 18px;border-radius:2px;}
+  .sticky-mobile{display:none;align-items:center;gap:10px;}
+  .sticky-call,.sticky-book{font-family:'Cinzel',serif;font-size:12px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;padding:10px 14px;border-radius:2px;min-height:40px;display:inline-flex;align-items:center;}
+  .sticky-call{border:2px solid #6b1a35;color:#6b1a35;}
+  .sticky-book{background:#6b1a35;color:#fff;}
+  .sticky-burger{background:none;border:0;padding:10px;cursor:pointer;display:flex;flex-direction:column;gap:5px;min-width:44px;min-height:44px;justify-content:center;}
+  .sticky-burger span{display:block;width:22px;height:2px;background:#2e1a0e;border-radius:2px;}
+  @media (max-width:1150px){.sticky-links{display:none;}.sticky-mobile{display:flex;}.sticky-bar{padding:0 12px;}.sticky-bar img{height:42px;}}
+  @media (max-width:380px){.sticky-call{padding:10px 10px;}.sticky-book{padding:10px 10px;}}
+  @media (min-width:1151px){.sticky-bar{padding:0 48px;}}
+  .mobile-menu{top:60px!important;z-index:101!important;}
+  html{scroll-padding-top:72px;}
+</style>
+<div class="sticky-bar" id="stickyBar" aria-hidden="true">
+  <a href="index.html" aria-label="Domaine des Dames"><img src="/images/logo.png" alt="Domaine des Dames"></a>
+  <div class="sticky-links" id="stickyLinks">
+    <a href="index.html#domaine" data-i18n="nav-domaine">Le Domaine</a>
+    <a href="gites.html" data-i18n="nav-gites">Gîtes</a>
+    <a href="restaurant.html" data-i18n="nav-restaurant">Restaurant</a>
+    <a href="activites.html" data-i18n="nav-activites">Activités</a>
+    <a href="evenements.html" data-i18n="nav-evenementiel">Événementiel</a>
+    <a href="index.html#contact" data-i18n="nav-contact">Contact</a>
+    <a href="gites.html" class="nav-cta" data-i18n="nav-reserver">Réserver</a>
+  </div>
+  <div class="sticky-mobile">
+    <a class="sticky-call" id="stickyCall" href="tel:+33626477395" data-i18n="sticky-call">Appeler</a>
+    <a class="sticky-book" href="gites.html" data-i18n="nav-reserver">Réserver</a>
+    <button class="sticky-burger" id="stickyBurger" type="button" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</div>
+<script>
+(function(){
+  var bar=document.getElementById('stickyBar'), burger=document.getElementById('stickyBurger');
+  function onScroll(){
+    var show=(window.pageYOffset||document.documentElement.scrollTop)>220;
+    bar.classList.toggle('show',show); bar.setAttribute('aria-hidden',show?'false':'true');
+    bar.querySelectorAll('a,button').forEach(function(el){el.tabIndex=show?0:-1;});
+  }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  burger.addEventListener('click',function(e){e.stopPropagation();var m=document.getElementById('mobileMenu');if(!m)return;
+    if(m.classList.contains('open')){closeMenu();}else{m.classList.add('open');var h=document.getElementById('hamburger');if(h){h.classList.add('open');h.setAttribute('aria-expanded','true');}document.body.style.overflow='hidden';}
+  });
+  try{ if(typeof LANG!=='undefined'){ LANG.fr['sticky-call']='Appeler'; LANG.en['sticky-call']='Call'; if(window.CURRENT_LANG==='en') setLang('en'); } }catch(e){}
+  try{ if(typeof CONFIG!=='undefined'&&CONFIG.domaine&&CONFIG.domaine.telephone){document.getElementById('stickyCall').href='tel:'+CONFIG.domaine.telephone.replace(/[^+\d]/g,'').replace(/^0/,'+33');} }catch(e){}
+})();
 </script>
 </body>
 </html>
