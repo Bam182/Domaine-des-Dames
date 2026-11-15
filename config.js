@@ -8,9 +8,9 @@
 // 4. Uploade-le sur GitHub (remplace l'ancien)
 // 5. Le site se met à jour automatiquement en 30 secondes
 // ============================================================
- 
+
 var CONFIG = {
- 
+
   // ----------------------------------------------------------
   // INFORMATIONS GÉNÉRALES
   // ----------------------------------------------------------
@@ -23,7 +23,7 @@ var CONFIG = {
     facebook:  "https://www.facebook.com/ledomainedesdames/",
     zenchef:   "https://www.zenchef.com/VOTRE-ID-ZENCHEF", // ← remplace par ton vrai lien ZenChef
   },
- 
+
   // ----------------------------------------------------------
   // TEXTES PAGE ACCUEIL
   // ----------------------------------------------------------
@@ -33,7 +33,7 @@ var CONFIG = {
     btn_gites:   "Réserver un gîte",
     btn_resto:   "Découvrir le restaurant",
   },
- 
+
   // ----------------------------------------------------------
   // SECTION DOMAINE
   // ----------------------------------------------------------
@@ -44,7 +44,7 @@ var CONFIG = {
     nb_personnes:"30",
     siecle:      "17e",
   },
- 
+
   // ----------------------------------------------------------
   // GÎTES
   // ----------------------------------------------------------
@@ -85,7 +85,7 @@ var CONFIG = {
       description: "Vue panoramique sur le rocher de Sampzon et les collines environnantes.",
     },
   },
- 
+
   // ----------------------------------------------------------
   // RESTAURANT
   // ----------------------------------------------------------
@@ -93,23 +93,23 @@ var CONFIG = {
     description:  "Cuisine de terroir ardéchois autour de la braise. Produits locaux, recettes d'antan, et vins de la région.",
     horaires:     "Ouvert de mai à septembre · Midi & Soir",
     badge_josper: "🔥 Cuisine à la braise",
- 
+
     menu: {
       entrees: [
-        { nom: "Planche ardéchoise",   description: "Caillette ardéchoise, picodo, charcuteries du pays, condiments maison", prix: 18 },
-        { nom: "Soupe de châtaignes",  description: "Crème de châtaigne, lardons fumés, huile de noix",                     prix: 12 },
+        { nom: "Planche ardéchoise",   description: "Caillette ardéchoise, picodon, charcuteries du pays, condiments maison", nom_en: "Ardèche platter", description_en: "Ardèche caillette, picodon cheese, local charcuterie, homemade condiments", prix: 18 },
+        { nom: "Soupe de châtaignes",  description: "Crème de châtaigne, lardons fumés, huile de noix",                     nom_en: "Chestnut soup", description_en: "Chestnut cream, smoked bacon, walnut oil", prix: 12 },
       ],
       grillades: [
-        { nom: "Côte de bœuf au feu de bois", description: "Pour 2 · sauce bordelaise · gratin dauphinois", prix: 34 },
-        { nom: "Agneau de l'Ardèche",          description: "Épaule confite, herbes de garrigue, ratatouille provençale",  prix: 28 },
+        { nom: "Côte de bœuf au feu de bois", description: "Pour 2 · sauce bordelaise · gratin dauphinois", nom_en: "Wood-fired rib of beef", description_en: "For 2 · bordelaise sauce · potato gratin", prix: 34 },
+        { nom: "Agneau de l'Ardèche",          description: "Épaule confite, herbes de garrigue, ratatouille provençale",  nom_en: "Ardèche lamb", description_en: "Confit shoulder, garrigue herbs, Provençal ratatouille", prix: 28 },
       ],
       desserts: [
-        { nom: "Mont Blanc revisité",        description: "", prix: 10 },
-        { nom: "Tarte aux myrtilles sauvages", description: "", prix: 9  },
+        { nom: "Mont Blanc revisité",        description: "", nom_en: "Mont Blanc, our way", description_en: "", prix: 10 },
+        { nom: "Tarte aux myrtilles sauvages", description: "", nom_en: "Wild blueberry tart", description_en: "", prix: 9  },
       ],
     },
   },
- 
+
   // ----------------------------------------------------------
   // ACTIVITÉS & SÉJOURS
   // ----------------------------------------------------------
@@ -133,7 +133,7 @@ var CONFIG = {
       prix:        "",
     },
   ],
- 
+
   // ----------------------------------------------------------
   // ÉVÉNEMENTIEL
   // ----------------------------------------------------------
@@ -141,8 +141,8 @@ var CONFIG = {
     description: "Le Domaine des Dames se prête magnifiquement à l'organisation de vos événements privés et professionnels. Mariages, séminaires, anniversaires ou repas de famille — nos espaces en pierre et notre cadre naturel exceptionnel créent une atmosphère inoubliable.",
     capacite_max: "150",
   },
- 
+
 };
 // ============================================================
 // NE PAS MODIFIER EN DESSOUS DE CETTE LIGNE
-// ===========================================================
+// ============================================================
