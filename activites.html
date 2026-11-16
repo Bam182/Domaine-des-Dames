@@ -1259,6 +1259,7 @@ document.addEventListener('click', function(e) {
   burger.addEventListener('click',function(e){e.stopPropagation();var m=document.getElementById('mobileMenu');if(!m)return;
     if(m.classList.contains('open')){closeMenu();}else{m.classList.add('open');var h=document.getElementById('hamburger');if(h){h.classList.add('open');h.setAttribute('aria-expanded','true');}document.body.style.overflow='hidden';}
   });
+  document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.toggle('active',b.getAttribute('data-lang')===(window.CURRENT_LANG||'fr'));});
   try{ if(typeof LANG!=='undefined'){ LANG.fr['sticky-call']='Appeler'; LANG.en['sticky-call']='Call'; if(window.CURRENT_LANG==='en') setLang('en'); } }catch(e){}
   try{ if(typeof CONFIG!=='undefined'&&CONFIG.domaine&&CONFIG.domaine.telephone){document.getElementById('stickyCall').href='tel:'+CONFIG.domaine.telephone.replace(/[^+\d]/g,'').replace(/^0/,'+33');} }catch(e){}
 })();

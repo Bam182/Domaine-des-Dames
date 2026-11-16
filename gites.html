@@ -675,7 +675,7 @@ body { padding-top: 0; }
     "https://www.facebook.com/ledomainedesdames/"
    ],
    "petsAllowed": true,
-   "checkinTime": "15:00",
+   "checkinTime": "16:00",
    "checkoutTime": "10:00",
    "numberOfRooms": 5,
    "availableLanguage": [
@@ -685,7 +685,7 @@ body { padding-top: 0; }
    "amenityFeature": [
     {
      "@type": "LocationFeatureSpecification",
-     "name": "Piscine",
+     "name": "Piscine chauffée selon la saison",
      "value": true
     },
     {
@@ -705,18 +705,24 @@ body { padding-top: 0; }
     },
     {
      "@type": "LocationFeatureSpecification",
-     "name": "Animaux acceptés",
+     "name": "Animaux acceptés (moyennant supplément)",
      "value": true
     },
     {
      "@type": "LocationFeatureSpecification",
-     "name": "Draps de lit fournis",
+     "name": "Draps de lit inclus",
+     "value": true
+    },
+    {
+     "@type": "LocationFeatureSpecification",
+     "name": "Panier petit-déjeuner sur réservation",
      "value": true
     }
    ],
    "containsPlace": {
     "@id": "https://www.ledomainedesdames.com/#restaurant"
-   }
+   },
+   "smokingAllowed": false
   },
   {
    "@type": "ItemList",
@@ -859,7 +865,7 @@ body { padding-top: 0; }
      "name": "Les animaux sont-ils acceptés ?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Oui, les animaux de compagnie sont acceptés dans nos gîtes."
+      "text": "Oui, les animaux de compagnie sont acceptés dans nos gîtes, moyennant un supplément."
      }
     },
     {
@@ -867,7 +873,7 @@ body { padding-top: 0; }
      "name": "Quels sont les horaires d'arrivée et de départ ?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "L'arrivée se fait à partir de 15h et le départ avant 10h."
+      "text": "L'arrivée se fait à partir de 16h et le départ au plus tard à 10h."
      }
     },
     {
@@ -875,7 +881,7 @@ body { padding-top: 0; }
      "name": "Les draps sont-ils fournis ?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Oui, les draps de lit sont fournis."
+      "text": "Oui, les draps de lit sont inclus."
      }
     },
     {
@@ -883,7 +889,7 @@ body { padding-top: 0; }
      "name": "Quels équipements sont à disposition ?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Wifi, climatisation, parking privatif gratuit et accès libre à la piscine du domaine pour tous les locataires."
+      "text": "Wifi, climatisation, parking privatif gratuit et accès libre à la piscine du domaine (chauffée selon la saison) pour tous les locataires."
      }
     },
     {
@@ -970,7 +976,7 @@ body { padding-top: 0; }
   <div class="gites-hero-content">
     <p style="font-family:'Cinzel',serif; font-size:18px; letter-spacing:0.3em; text-transform:uppercase; color:#ffffff; margin-bottom:14px; font-weight:600; text-shadow:0 1px 8px rgba(0,0,0,0.8);" data-i18n="aac2667b">Hébergements · Ardèche</p>
     <h1 style="font-family:'Playfair Display',serif; font-size:clamp(38px,6vw,70px); font-weight:400; line-height:1.08; color:white; margin-bottom:18px;" data-i18n="ab0f74f9">Nos gîtes à Vallon-Pont-d'Arc</h1>
-    <p style="font-size:19px; font-weight:400; color:#ffffff; line-height:1.75; max-width:520px; text-shadow:0 1px 6px rgba(0,0,0,0.7);" data-i18n="a2cf1db0">Cinq gîtes de charme dans un mas ardéchois du XVIIe siècle, avec piscine chauffée, aux portes des Gorges de l'Ardèche.</p>
+    <p style="font-size:19px; font-weight:400; color:#ffffff; line-height:1.75; max-width:520px; text-shadow:0 1px 6px rgba(0,0,0,0.7);" data-i18n="a2cf1db0">Cinq gîtes de charme dans un mas ardéchois du XVIIe siècle, avec piscine chauffée selon la saison, aux portes des Gorges de l'Ardèche.</p>
   </div>
 </div>
 
@@ -1118,41 +1124,41 @@ body { padding-top: 0; }
       <a href="gites.html" class="btn-primary" style="margin-top:32px; display:inline-block;" data-i18n="a52a88d8">Réserver ce gîte</a>
     </div></div>
 
-<!-- INFOS COMMUNES -->
-<div class="common-infos">
-  <div class="common-info-item">
-    <h3 data-i18n="aa1862f7">🏊 Piscine</h3>
-    <p data-i18n="a04a2d93">Accès libre à la piscine du domaine pour tous les locataires</p>
+<!-- INFORMATIONS PRATIQUES -->
+<style>
+  .ip-wrap{background:#f7ece0;padding:72px 24px 64px;}
+  .ip-head{text-align:center;max-width:720px;margin:0 auto 36px;}
+  .ip-head .section-title{margin-bottom:12px;}
+  .ip-head p.sub{font-size:17px;color:#4a3020;line-height:1.7;}
+  .ip-grid{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:center;gap:16px;}
+  .ip-card{flex:0 0 calc((100% - 32px) / 3);}
+  .ip-card{background:#efe3d1;border:1px solid #e0d0b8;border-radius:12px;padding:22px 24px;}
+  .ip-ic{color:#6b1a35;margin-bottom:14px;display:flex;}
+  .ip-card h3{font-family:'Lato',sans-serif;font-size:18px;font-weight:700;color:#2e1a0e;margin:0 0 6px;}
+  .ip-card p{font-size:16px;line-height:1.6;color:#4a3020;margin:0;}
+  @media (max-width:980px){.ip-card{flex-basis:calc((100% - 16px) / 2);}}
+  @media (max-width:640px){.ip-card{flex-basis:100%;}}
+  @media (max-width:768px){.ip-wrap{padding:48px 16px 44px;}.ip-grid{gap:12px;}.ip-card{padding:18px 20px;}.ip-head p.sub{font-size:16px;}}
+</style>
+<section class="ip-wrap">
+  <div class="ip-head">
+    <p class="section-label" data-i18n="ip-label">Préparez votre séjour</p>
+    <h2 class="section-title" data-i18n="ip-title">Informations pratiques</h2>
+    <p class="sub" data-i18n="ip-sub">Tout ce qu'il faut savoir avant votre arrivée au Domaine des Dames.</p>
   </div>
-  <div class="common-info-item">
-    <h3>🍽️ Restaurant</h3>
-    <p data-i18n="a6379078">Le restaurant du domaine est ouvert midi et soir d'avril à novembre</p>
+  <div class="ip-grid">
+    <div class="ip-card"><div class="ip-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3 data-i18n="ipc0t">Arrivée & départ</h3><p data-i18n="ipc0d">Arrivée dès 16h<br>Départ avant 10h</p></div>
+    <div class="ip-card"><div class="ip-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9"/><path d="M9.5 4.5 12 6.5l2.5-2M9.5 19.5 12 17.5l2.5 2"/></svg></div><h3 data-i18n="ipc1t">Climatisation</h3><p data-i18n="ipc1d">Tous nos gîtes sont climatisés.</p></div>
+    <div class="ip-card"><div class="ip-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18V7M3 14h18v4M21 14v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="11" r="1.6"/></svg></div><h3 data-i18n="ipc2t">Linge de lit</h3><p data-i18n="ipc2d">Inclus pour votre séjour.</p></div>
+    <div class="ip-card"><div class="ip-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.2" r=".9"/></svg></div><h3 data-i18n="ipc3t">Wifi</h3><p data-i18n="ipc3d">Wifi disponible dans tous nos gîtes.</p></div>
+    <div class="ip-card"><div class="ip-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7" cy="10" r="1.6"/><circle cx="11" cy="6.5" r="1.6"/><circle cx="16" cy="7" r="1.6"/><circle cx="19" cy="11.5" r="1.6"/><path d="M12 12c-3 0-6 3-5 6 .8 2 3 1.5 5 1.5s4.2.5 5-1.5c1-3-2-6-5-6z"/></svg></div><h3 data-i18n="ipc4t">Animaux acceptés</h3><p data-i18n="ipc4d">Vos compagnons sont les bienvenus, moyennant supplément.</p></div>
+    <div class="ip-card"><div class="ip-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8c1.5-1.5 3-1.5 4.5 0s3 1.5 4.5 0 3-1.5 4.5 0 3 1.5 4.5 0"/><path d="M3 13c1.5-1.5 3-1.5 4.5 0s3 1.5 4.5 0 3-1.5 4.5 0 3 1.5 4.5 0"/><path d="M3 18c1.5-1.5 3-1.5 4.5 0s3 1.5 4.5 0 3-1.5 4.5 0 3 1.5 4.5 0"/></svg></div><h3 data-i18n="ipc5t">Piscine chauffée</h3><p data-i18n="ipc5d">Chauffée selon la saison, accès libre pour tous les locataires.</p></div>
+    <div class="ip-card"><div class="ip-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3l18 18"/><path d="M4 15h11v3H4z"/><path d="M18 15v3M21 15v3M18 10c0-2 3-2 3-5"/></svg></div><h3 data-i18n="ipc6t">Gîtes non-fumeurs</h3><p data-i18n="ipc6d">Il est interdit de fumer à l'intérieur des logements.</p></div>
+    <div class="ip-card"><div class="ip-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 16v4M17 18h4"/></svg></div><h3 data-i18n="ipc7t">Ménage de fin de séjour</h3><p data-i18n="ipc7d">À effectuer par vos soins, ou forfait ménage optionnel de 100 € par gîte.</p></div>
+    <div class="ip-card"><div class="ip-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 8-8 9-4.8-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></div><h3 data-i18n="ipc8t">Caution</h3><p data-i18n="ipc8d">450 € par gîte, restitués sous réserve de l'état du logement.</p></div>
+    <div class="ip-card"><div class="ip-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M17 11h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M8 3v3M12 3v3"/></svg></div><h3 data-i18n="ipc9t">Panier petit-déjeuner</h3><p data-i18n="ipc9d">Sur réservation, 12 € par personne.</p></div>
   </div>
-  <div class="common-info-item">
-    <h3 data-i18n="ac2a7c68">🚗 Parking</h3>
-    <p data-i18n="adf538fe">Parking privatif gratuit à disposition sur le domaine</p>
-  </div>
-  <div class="common-info-item">
-    <h3 data-i18n="acd6039d">📍 Situation</h3>
-    <p data-i18n="ae22b27d">À 10 minutes à pied de Vallon-Pont-d'Arc</p>
-  </div>
-  <div class="common-info-item">
-    <h3 data-i18n="gi-arr-t">🕒 Arrivée & départ</h3>
-    <p data-i18n="gi-arr">Arrivée à partir de 15h, départ avant 10h</p>
-  </div>
-  <div class="common-info-item">
-    <h3 data-i18n="gi-conf-t">📶 Confort</h3>
-    <p data-i18n="gi-conf">Wifi et climatisation dans les gîtes</p>
-  </div>
-  <div class="common-info-item">
-    <h3 data-i18n="gi-lin-t">🛏️ Linge de lit</h3>
-    <p data-i18n="gi-lin">Draps de lit fournis</p>
-  </div>
-  <div class="common-info-item">
-    <h3 data-i18n="af8ed211">🐾 Animaux</h3>
-    <p data-i18n="a31f79b6">Animaux de compagnie acceptés</p>
-  </div>
-</div>
+</section>
 
 <!-- FOOTER -->
 <style>
@@ -1172,19 +1178,19 @@ body { padding-top: 0; }
   <div class="g-faq">
     <details>
       <summary data-i18n="gf1q">Les animaux sont-ils acceptés ?</summary>
-      <p data-i18n="gf1a">Oui, les animaux de compagnie sont acceptés dans nos gîtes.</p>
+      <p data-i18n="gf1a">Oui, les animaux de compagnie sont acceptés dans nos gîtes, moyennant un supplément.</p>
     </details>
     <details>
       <summary data-i18n="gf2q">Quels sont les horaires d'arrivée et de départ ?</summary>
-      <p data-i18n="gf2a">L'arrivée se fait à partir de 15h et le départ avant 10h.</p>
+      <p data-i18n="gf2a">L'arrivée se fait à partir de 16h et le départ au plus tard à 10h.</p>
     </details>
     <details>
       <summary data-i18n="gf3q">Les draps sont-ils fournis ?</summary>
-      <p data-i18n="gf3a">Oui, les draps de lit sont fournis.</p>
+      <p data-i18n="gf3a">Oui, les draps de lit sont inclus.</p>
     </details>
     <details>
       <summary data-i18n="gf4q">Quels équipements sont à disposition ?</summary>
-      <p data-i18n="gf4a">Wifi, climatisation, parking privatif gratuit et accès libre à la piscine du domaine pour tous les locataires.</p>
+      <p data-i18n="gf4a">Wifi, climatisation, parking privatif gratuit et accès libre à la piscine du domaine (chauffée selon la saison) pour tous les locataires.</p>
     </details>
     <details>
       <summary data-i18n="gf5q">Peut-on manger sur place ?</summary>
@@ -1251,14 +1257,22 @@ var LANG = {
     "event-btn":"Nous contacter pour un devis","event-max":"personnes max",
     "galerie-label":"Galerie","galerie-title":"Le Domaine en images",
     "nav-activites":"Activités",
-    "gi-arr-t":"🕒 Arrivée & départ","gi-arr":"Arrivée à partir de 15h, départ avant 10h",
-    "gi-conf-t":"📶 Confort","gi-conf":"Wifi et climatisation dans les gîtes",
-    "gi-lin-t":"🛏️ Linge de lit","gi-lin":"Draps de lit fournis",
+    "ip-label":"Préparez votre séjour","ip-title":"Informations pratiques","ip-sub":"Tout ce qu'il faut savoir avant votre arrivée au Domaine des Dames.",
+    "ipc0t":"Arrivée & départ","ipc0d":"Arrivée dès 16h<br>Départ avant 10h",
+    "ipc1t":"Climatisation","ipc1d":"Tous nos gîtes sont climatisés.",
+    "ipc2t":"Linge de lit","ipc2d":"Inclus pour votre séjour.",
+    "ipc3t":"Wifi","ipc3d":"Wifi disponible dans tous nos gîtes.",
+    "ipc4t":"Animaux acceptés","ipc4d":"Vos compagnons sont les bienvenus, moyennant supplément.",
+    "ipc5t":"Piscine chauffée","ipc5d":"Chauffée selon la saison, accès libre pour tous les locataires.",
+    "ipc6t":"Gîtes non-fumeurs","ipc6d":"Il est interdit de fumer à l'intérieur des logements.",
+    "ipc7t":"Ménage de fin de séjour","ipc7d":"À effectuer par vos soins, ou forfait ménage optionnel de 100 € par gîte.",
+    "ipc8t":"Caution","ipc8d":"450 € par gîte, restitués sous réserve de l'état du logement.",
+    "ipc9t":"Panier petit-déjeuner","ipc9d":"Sur réservation, 12 € par personne.",
     "gf-label":"Questions fréquentes","gf-title":"Avant de réserver",
-    "gf1q":"Les animaux sont-ils acceptés ?","gf1a":"Oui, les animaux de compagnie sont acceptés dans nos gîtes.",
-    "gf2q":"Quels sont les horaires d'arrivée et de départ ?","gf2a":"L'arrivée se fait à partir de 15h et le départ avant 10h.",
-    "gf3q":"Les draps sont-ils fournis ?","gf3a":"Oui, les draps de lit sont fournis.",
-    "gf4q":"Quels équipements sont à disposition ?","gf4a":"Wifi, climatisation, parking privatif gratuit et accès libre à la piscine du domaine pour tous les locataires.",
+    "gf1q":"Les animaux sont-ils acceptés ?","gf1a":"Oui, les animaux de compagnie sont acceptés dans nos gîtes, moyennant un supplément.",
+    "gf2q":"Quels sont les horaires d'arrivée et de départ ?","gf2a":"L'arrivée se fait à partir de 16h et le départ au plus tard à 10h.",
+    "gf3q":"Les draps sont-ils fournis ?","gf3a":"Oui, les draps de lit sont inclus.",
+    "gf4q":"Quels équipements sont à disposition ?","gf4a":"Wifi, climatisation, parking privatif gratuit et accès libre à la piscine du domaine (chauffée selon la saison) pour tous les locataires.",
     "gf5q":"Peut-on manger sur place ?","gf5a":"Oui, le restaurant à la braise du domaine est ouvert d'avril à novembre, midi et soir. Réservation conseillée.",
     "contact-label":"Nous trouver","contact-title":"Venir au<br>Domaine",
     "contact-text":"Situé à 10 minutes à pied de Vallon-Pont-d\'Arc, au coeur des Gorges de l\'Ardèche.",
@@ -1282,7 +1296,7 @@ var LANG = {
     "a254b0ae":"Réserver",
     "aac2667b":"Hébergements · Ardèche",
     "ab0f74f9":"Nos gîtes à Vallon-Pont-d'Arc",
-    "a2cf1db0":"Cinq gîtes de charme dans un mas ardéchois du XVIIe siècle, avec piscine chauffée, aux portes des Gorges de l'Ardèche.",
+    "a2cf1db0":"Cinq gîtes de charme dans un mas ardéchois du XVIIe siècle, avec piscine chauffée selon la saison, aux portes des Gorges de l'Ardèche.",
     "adabd5df":"Accès direct :",
     "af1be10a":"Séjourner en Ardèche",
     "ac87ea9d":"Vos vacances au cœur de l'Ardèche",
@@ -1364,14 +1378,22 @@ var LANG = {
     "event-btn":"Contact us for a quote","event-max":"guests max",
     "galerie-label":"Gallery","galerie-title":"The Estate in pictures",
     "nav-activites":"Activities",
-    "gi-arr-t":"🕒 Check-in & check-out","gi-arr":"Check-in from 3 pm, check-out by 10 am",
-    "gi-conf-t":"📶 Comfort","gi-conf":"Wifi and air conditioning in the cottages",
-    "gi-lin-t":"🛏️ Bed linen","gi-lin":"Bed sheets provided",
+    "ip-label":"Prepare your stay","ip-title":"Practical information","ip-sub":"Everything you need to know before you arrive at Domaine des Dames.",
+    "ipc0t":"Check-in & check-out","ipc0d":"Check-in from 4 pm<br>Check-out by 10 am",
+    "ipc1t":"Air conditioning","ipc1d":"All our cottages are air-conditioned.",
+    "ipc2t":"Bed linen","ipc2d":"Included for your stay.",
+    "ipc3t":"Wifi","ipc3d":"Wifi available in all our cottages.",
+    "ipc4t":"Pets welcome","ipc4d":"Your companions are welcome, for an additional charge.",
+    "ipc5t":"Heated pool","ipc5d":"Heated depending on the season, free access for all guests.",
+    "ipc6t":"Non-smoking cottages","ipc6d":"Smoking is not allowed inside the cottages.",
+    "ipc7t":"End-of-stay cleaning","ipc7d":"To be done by guests, or optional cleaning package at €100 per cottage.",
+    "ipc8t":"Security deposit","ipc8d":"€450 per cottage, refunded subject to the condition of the accommodation.",
+    "ipc9t":"Breakfast basket","ipc9d":"On request, €12 per person.",
     "gf-label":"Frequently asked questions","gf-title":"Before you book",
-    "gf1q":"Are pets allowed?","gf1a":"Yes, pets are welcome in our cottages.",
-    "gf2q":"What are the check-in and check-out times?","gf2a":"Check-in is from 3 pm and check-out is by 10 am.",
-    "gf3q":"Are bed sheets provided?","gf3a":"Yes, bed sheets are provided.",
-    "gf4q":"What facilities are available?","gf4a":"Wifi, air conditioning, free private parking and free access to the estate's pool for all guests.",
+    "gf1q":"Are pets allowed?","gf1a":"Yes, pets are welcome in our cottages, for an additional charge.",
+    "gf2q":"What are the check-in and check-out times?","gf2a":"Check-in is from 4 pm and check-out is by 10 am at the latest.",
+    "gf3q":"Are bed sheets provided?","gf3a":"Yes, bed sheets are included.",
+    "gf4q":"What facilities are available?","gf4a":"Wifi, air conditioning, free private parking and free access to the estate's pool (heated depending on the season) for all guests.",
     "gf5q":"Can we eat on site?","gf5a":"Yes, the estate's wood-fired restaurant is open from April to November, for lunch and dinner. Booking recommended.",
     "contact-label":"Find us","contact-title":"Visit the<br>Estate",
     "contact-text":"Located a 10-minute walk from Vallon-Pont-d\'Arc, in the heart of the Ardèche Gorges.",
@@ -1395,7 +1417,7 @@ var LANG = {
     "a254b0ae":"Book",
     "aac2667b":"Accommodation · Ardèche",
     "ab0f74f9":"Our cottages in Vallon-Pont-d'Arc",
-    "a2cf1db0":"Five charming cottages in a 17th-century Ardèche farmhouse, with a heated pool, at the gateway to the Ardèche Gorges.",
+    "a2cf1db0":"Five charming cottages in a 17th-century Ardèche farmhouse, with a pool heated depending on the season, at the gateway to the Ardèche Gorges.",
     "adabd5df":"Quick access:",
     "af1be10a":"Stay in the Ardèche",
     "ac87ea9d":"Your holidays in the heart of the Ardèche",
@@ -1590,6 +1612,7 @@ document.addEventListener('DOMContentLoaded', function() {
   burger.addEventListener('click',function(e){e.stopPropagation();var m=document.getElementById('mobileMenu');if(!m)return;
     if(m.classList.contains('open')){closeMenu();}else{m.classList.add('open');var h=document.getElementById('hamburger');if(h){h.classList.add('open');h.setAttribute('aria-expanded','true');}document.body.style.overflow='hidden';}
   });
+  document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.toggle('active',b.getAttribute('data-lang')===(window.CURRENT_LANG||'fr'));});
   try{ if(typeof LANG!=='undefined'){ LANG.fr['sticky-call']='Appeler'; LANG.en['sticky-call']='Call'; if(window.CURRENT_LANG==='en') setLang('en'); } }catch(e){}
   try{ if(typeof CONFIG!=='undefined'&&CONFIG.domaine&&CONFIG.domaine.telephone){document.getElementById('stickyCall').href='tel:'+CONFIG.domaine.telephone.replace(/[^+\d]/g,'').replace(/^0/,'+33');} }catch(e){}
 })();
