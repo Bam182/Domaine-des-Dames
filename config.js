@@ -28,8 +28,8 @@ var CONFIG = {
   // TEXTES PAGE ACCUEIL
   // ----------------------------------------------------------
   accueil: {
-    titre:       "Domaine des Dames",
-    sous_titre:  "Un mas ardéchois du XVIIe siècle niché au cœur des Gorges de l'Ardèche. Gîtes de charme, piscine et restaurant de terroir.",
+    titre:       "Le Domaine des Dames",
+    sous_titre:  "Gîtes de charme et de caractère, restaurant à la braise et événements de groupes, aux portes des Gorges de l\'Ardèche.",
     btn_gites:   "Réserver un gîte",
     btn_resto:   "Découvrir le restaurant",
   },
@@ -39,10 +39,9 @@ var CONFIG = {
   // ----------------------------------------------------------
   presentation: {
     titre:       "Un mas ardéchois hors du temps",
-    description: "Perché sur les hauteurs de Vallon-Pont-d'Arc, à deux pas des Gorges de l'Ardèche et de la Grotte Chauvet, le Domaine des Dames est un mas en pierre du XVIIe siècle entièrement restauré. Cinq gîtes indépendants, une piscine, un restaurant de terroir et des hectares de nature sauvage vous attendent.",
+    description: "À Vallon-Pont-d'Arc, aux portes des Gorges de l'Ardèche et à proximité du Pont d'Arc, le Domaine des Dames est un mas en pierre du XVIIe siècle niché au cœur des vignes. À la fois au calme et à proximité immédiate des activités, le domaine se situe à seulement 10 minutes à pied du centre de Vallon-Pont-d'Arc. Cinq gîtes de charme avec piscine, un restaurant aux saveurs de la braise et des espaces pour vos événements de groupe : un seul lieu pour séjourner, savourer une cuisine de caractère et célébrer en Ardèche.",
     nb_gites:    "5",
-    nb_personnes:"30",
-    siecle:      "17e",
+    nb_personnes:"28",
   },
 
   // ----------------------------------------------------------
