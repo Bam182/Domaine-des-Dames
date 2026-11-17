@@ -89,7 +89,7 @@ var CONFIG = {
   // RESTAURANT
   // ----------------------------------------------------------
   restaurant: {
-    description:  "Cuisine de terroir ardéchois autour de la braise. Produits locaux, recettes d'antan, et vins de la région.",
+    description:  "Cuisine autour de la braise.",
     horaires:     "Ouvert d'avril à novembre · 12h–14h30 & 19h–23h",
     badge_josper: "🔥 Cuisine à la braise",
 
