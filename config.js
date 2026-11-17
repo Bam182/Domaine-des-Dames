@@ -95,16 +95,31 @@ var CONFIG = {
 
     menu: {
       entrees: [
-        { nom: "Planche ardéchoise",   description: "Caillette ardéchoise, picodon, charcuteries du pays, condiments maison", nom_en: "Ardèche platter", description_en: "Ardèche caillette, picodon cheese, local charcuterie, homemade condiments", prix: 18 },
-        { nom: "Soupe de châtaignes",  description: "Crème de châtaigne, lardons fumés, huile de noix",                     nom_en: "Chestnut soup", description_en: "Chestnut cream, smoked bacon, walnut oil", prix: 12 },
+        { nom: "Planche mixte", description: "Fromages et charcuteries", nom_en: "Mixed platter", description_en: "Cheese and charcuterie", prix: 24 },
+        { nom: "Courgette grillée façon bruschetta", description: "Coupée dans la longueur, stracciatella, pesto", nom_en: "Grilled courgette bruschetta-style", description_en: "Cut lengthways, stracciatella, pesto", prix: 12 },
+        { nom: "Tacos du domaine", description: "", nom_en: "Domaine tacos", description_en: "", prix: 13 },
+        { nom: "Croquettes de parmesan", description: "", nom_en: "Parmesan croquettes", description_en: "", prix: 12 },
+        { nom: "Chipirons à la braise", description: "", nom_en: "Ember-grilled baby squid", description_en: "", prix: 14 },
       ],
       grillades: [
-        { nom: "Côte de bœuf au feu de bois", description: "Pour 2 · sauce bordelaise · gratin dauphinois", nom_en: "Wood-fired rib of beef", description_en: "For 2 · bordelaise sauce · potato gratin", prix: 34 },
-        { nom: "Agneau de l'Ardèche",          description: "Épaule confite, herbes de garrigue, ratatouille provençale",  nom_en: "Ardèche lamb", description_en: "Confit shoulder, garrigue herbs, Provençal ratatouille", prix: 28 },
+        { nom: "Saucisse de porc", description: "", nom_en: "Pork sausage", description_en: "", prix: 18 },
+        { nom: "Pluma", description: "", nom_en: "Pluma (Iberian pork)", description_en: "", prix: 24 },
+        { nom: "Brochette de poulet et chorizo", description: "", nom_en: "Chicken and chorizo skewer", description_en: "", prix: 20 },
+        { nom: "Entrecôte", description: "", nom_en: "Rib steak", description_en: "", prix: 30 },
+        { nom: "Tentacule de poulpe", description: "Sur écrasé de pommes de terre", nom_en: "Octopus tentacle", description_en: "On crushed potatoes", prix: 28 },
+        { nom: "Poisson", description: "Sur écrasé de pommes de terre", nom_en: "Fish", description_en: "On crushed potatoes", prix: 24 },
+        { note: "Les viandes sont accompagnées de légumes et de pommes de terre grenailles grillées au feu de bois. Sauces maison : chimichurri, poivre, moutarde.", note_en: "Meats are served with vegetables and new potatoes grilled over the wood fire. Homemade sauces: chimichurri, pepper, mustard." },
       ],
       desserts: [
-        { nom: "Mont Blanc revisité",        description: "", nom_en: "Mont Blanc, our way", description_en: "", prix: 10 },
-        { nom: "Tarte aux myrtilles sauvages", description: "", nom_en: "Wild blueberry tart", description_en: "", prix: 9  },
+        { nom: "Soupe de fraises", description: "Ou autre fruit selon la saison", nom_en: "Strawberry soup", description_en: "Or another fruit depending on the season", prix: "9,5" },
+        { nom: "Crème brûlée", description: "", nom_en: "Crème brûlée", description_en: "", prix: "9,5" },
+        { nom: "Mousse au chocolat", description: "", nom_en: "Chocolate mousse", description_en: "", prix: "9,5" },
+        { nom: "Coupe de glace", description: "Glace artisanale d'Ardèche", nom_en: "Ice cream sundae", description_en: "Artisan ice cream from the Ardèche", prix: "9,5" },
+      ],
+      enfants: [
+        { note: "Menu enfant : 12 €", note_en: "Kids' menu: €12" },
+        { nom: "Saucisse", description: "Légumes et écrasé de pommes de terre", nom_en: "Sausage", description_en: "Vegetables and crushed potatoes", prix: "" },
+        { nom: "Petit poisson grillé", description: "Légumes et écrasé de pommes de terre", nom_en: "Small grilled fish", description_en: "Vegetables and crushed potatoes", prix: "" },
       ],
     },
   },
