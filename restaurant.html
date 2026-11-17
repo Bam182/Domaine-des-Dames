@@ -161,6 +161,7 @@
   .restaurant-img-badge .small { font-size:10px; letter-spacing:0.1em; text-transform:uppercase; text-align:center; margin-top:4px; }
   .josper-badge { display:inline-flex; align-items:center; gap:8px; background:var(--cream); border:1px solid #d4b896; border-radius:2px; padding:8px 16px; margin-bottom:24px; font-size:14px; color:#4a3020; background:var(--warm-bg); }
   .menu-section { margin-top:32px; }
+  .menu-note { font-style:italic; margin-top:10px; }
   .menu-category { font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--burgundy); margin-bottom:14px; margin-top:20px; padding-bottom:7px; border-bottom:1px solid #e8d4bc; font-family:'Cinzel',serif; }
   .menu-item { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px; }
   .menu-item-name { font-size:16px; color:var(--earth); }
@@ -839,21 +840,37 @@ body { padding-top: 0; }
     <div class="josper-badge" style="margin-top:22px;" data-i18n="josper-badge">🔥 Cuisine à la braise</div>
     <div class="menu-section">
       <div class="menu-category" data-i18n="a5d2d579">Entrées du terroir</div><div id="menu-entrees">
-      <div class="menu-item"><span class="menu-item-name">Planche ardéchoise</span><span class="menu-item-dots"></span><span class="menu-item-price">18€</span></div>
-      <p class="menu-item-desc">Caillette ardéchoise, picodo, charcuteries du pays, condiments maison</p>
-      <div class="menu-item"><span class="menu-item-name">Soupe de châtaignes</span><span class="menu-item-dots"></span><span class="menu-item-price">12€</span></div>
-      <p class="menu-item-desc">Crème de châtaigne, lardons fumés, huile de noix</p>
-
+      <div class="menu-item"><span class="menu-item-name">Planche mixte</span><span class="menu-item-dots"></span></div>
+      <p class="menu-item-desc">Fromages et charcuteries</p>
+      <div class="menu-item"><span class="menu-item-name">Courgette grillée façon bruschetta</span><span class="menu-item-dots"></span></div>
+      <p class="menu-item-desc">Coupée dans la longueur, stracciatella, pesto</p>
+      <div class="menu-item"><span class="menu-item-name">Tacos du domaine</span><span class="menu-item-dots"></span></div>
+      <div class="menu-item"><span class="menu-item-name">Croquettes de parmesan</span><span class="menu-item-dots"></span></div>
+      <div class="menu-item"><span class="menu-item-name">Chipirons à la braise</span><span class="menu-item-dots"></span></div>
       </div><div class="menu-category" data-i18n="a9bfc032">Grillades à la braise</div><div id="menu-grillades">
-      <div class="menu-item"><span class="menu-item-name">Côte de bœuf au feu de bois</span><span class="menu-item-dots"></span><span class="menu-item-price">34€</span></div>
-      <p class="menu-item-desc">Pour 2 · sauce bordelaise · gratin dauphinois</p>
-      <div class="menu-item"><span class="menu-item-name">Agneau de l'Ardèche</span><span class="menu-item-dots"></span><span class="menu-item-price">28€</span></div>
-      <p class="menu-item-desc">Épaule confite, herbes de garrigue, ratatouille provençale</p>
-
-      </div><div class="menu-category">Desserts</div><div id="menu-desserts">
-      <div class="menu-item"><span class="menu-item-name">Mont Blanc revisité</span><span class="menu-item-dots"></span><span class="menu-item-price">10€</span></div>
-      <div class="menu-item"><span class="menu-item-name">Tarte aux myrtilles sauvages</span><span class="menu-item-dots"></span><span class="menu-item-price">9€</span></div>
-    </div>
+      <div class="menu-item"><span class="menu-item-name">Saucisse de porc</span><span class="menu-item-dots"></span></div>
+            <div class="menu-item"><span class="menu-item-name">Pluma</span><span class="menu-item-dots"></span></div>
+      <div class="menu-item"><span class="menu-item-name">Brochette de poulet et chorizo</span><span class="menu-item-dots"></span></div>
+      <div class="menu-item"><span class="menu-item-name">Entrecôte</span><span class="menu-item-dots"></span></div>
+      <div class="menu-item"><span class="menu-item-name">Tentacule de poulpe</span><span class="menu-item-dots"></span></div>
+      <p class="menu-item-desc">Sur écrasé de pommes de terre</p>
+      <div class="menu-item"><span class="menu-item-name">Poisson</span><span class="menu-item-dots"></span></div>
+      <p class="menu-item-desc">Sur écrasé de pommes de terre</p>
+      <p class="menu-item-desc menu-note">Les viandes sont accompagnées de légumes et de pommes de terre grenailles grillées au feu de bois. Sauces maison : chimichurri, poivre, moutarde.</p>
+      </div><div class="menu-category" data-i18n="rm-des">Desserts</div><div id="menu-desserts">
+      <div class="menu-item"><span class="menu-item-name">Soupe de fraises</span><span class="menu-item-dots"></span></div>
+      <p class="menu-item-desc">Ou autre fruit selon la saison</p>
+      <div class="menu-item"><span class="menu-item-name">Crème brûlée</span><span class="menu-item-dots"></span></div>
+      <div class="menu-item"><span class="menu-item-name">Mousse au chocolat</span><span class="menu-item-dots"></span></div>
+      <div class="menu-item"><span class="menu-item-name">Coupe de glace</span><span class="menu-item-dots"></span></div>
+      <p class="menu-item-desc">Glace artisanale d'Ardèche</p>
+      </div><div class="menu-category" data-i18n="rm-kids">Menu enfant</div><div id="menu-enfants">
+      <p class="menu-item-desc menu-note">Menu enfant : 12 €</p>
+      <div class="menu-item"><span class="menu-item-name">Saucisse</span><span class="menu-item-dots"></span></div>
+      <p class="menu-item-desc">Légumes et écrasé de pommes de terre</p>
+      <div class="menu-item"><span class="menu-item-name">Petit poisson grillé</span><span class="menu-item-dots"></span></div>
+      <p class="menu-item-desc">Légumes et écrasé de pommes de terre</p>
+      </div>
   </div>
 
   </div><!-- fin du bloc menu -->
@@ -972,14 +989,15 @@ document.addEventListener('DOMContentLoaded', function() {
   // Rebuild menu from config (bilingue)
   var MENU_CFG = c.restaurant.menu;
   window.renderMenu = function(lang) {
-    [['menu-entrees','entrees'],['menu-grillades','grillades'],['menu-desserts','desserts']].forEach(function(p) {
+    [['menu-entrees','entrees'],['menu-grillades','grillades'],['menu-desserts','desserts'],['menu-enfants','enfants']].forEach(function(p) {
       var container = document.getElementById(p[0]), items = MENU_CFG[p[1]];
       if (!container || !items) return;
       var html = '';
       items.forEach(function(item) {
+        if (item.note) { html += '<p class="menu-item-desc menu-note">' + ((lang === 'en' && item.note_en) ? item.note_en : item.note) + '</p>'; return; }
         var nom = (lang === 'en' && item.nom_en) ? item.nom_en : item.nom;
         var desc = (lang === 'en' && item.nom_en) ? item.description_en : item.description;
-        html += '<div class="menu-item"><span class="menu-item-name">' + nom + '</span><span class="menu-item-dots"></span><span class="menu-item-price">' + item.prix + '€</span></div>' +
+        html += '<div class="menu-item"><span class="menu-item-name">' + nom + '</span><span class="menu-item-dots"></span>' + (item.prix !== '' && item.prix != null ? '<span class="menu-item-price">' + item.prix + '€</span>' : '') + '</div>' +
           (desc ? '<p class="menu-item-desc">' + desc + '</p>' : '');
       });
       container.innerHTML = html;
@@ -1110,6 +1128,7 @@ var LANG = {
     "ac5c46b5":"Aux beaux jours, déjeunez ou dînez en terrasse, à 10 minutes à pied de Vallon-Pont-d'Arc. Ouvert d'avril à novembre, midi et soir ; réservation conseillée.",
     "a0fdcbab":"Vous êtes un groupe ? Nous proposons des menus de groupe adaptés à votre événement, cuisinés à la braise. <a href=\"evenements.html\">Découvrir les événements de groupe</a>",
     "a5d2d579":"Entrées du terroir",
+    "rm-des":"Desserts","rm-kids":"Menu enfant",
     "a9bfc032":"Grillades à la braise",
     "a60d78c1":"Photo<br>Plat 1",
     "a2ac2796":"Photo<br>Plat 2",
@@ -1189,6 +1208,7 @@ var LANG = {
     "ac5c46b5":"In fine weather, have lunch or dinner on the terrace, a 10-minute walk from Vallon-Pont-d'Arc. Open from April to November, lunch and dinner; booking recommended.",
     "a0fdcbab":"Coming as a group? We offer group menus tailored to your event, cooked over embers. <a href=\"evenements.html\">Discover our group events</a>",
     "a5d2d579":"Local starters",
+    "rm-des":"Desserts","rm-kids":"Kids' menu",
     "a9bfc032":"Ember-grilled dishes",
     "a60d78c1":"Photo<br>Dish 1",
     "a2ac2796":"Photo<br>Dish 2",
