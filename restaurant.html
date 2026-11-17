@@ -582,6 +582,22 @@ body { padding-top: 0; }
   .resto-pillar { border-top:2px solid var(--burgundy); padding-top:18px; }
   .resto-pillar h3 { font-family:'Playfair Display',serif; font-size:24px; font-weight:400; color:var(--earth); margin-bottom:10px; }
   .resto-pillar p { font-size:16px; line-height:1.8; color:#2e1208; }
+  .resto-cuisine .section-label { display:flex; align-items:center; gap:18px; }
+  .resto-cuisine .section-label::after { content:""; flex:0 0 90px; height:1px; background:#b9a58a; }
+  .resto-cuisine .section-title { white-space:normal; }
+  .resto-pillars { gap:0; }
+  .resto-pillar { border-top:0; padding:6px 36px; border-left:1px solid #cdbba2; }
+  .resto-pillar:first-child { border-left:0; padding-left:0; }
+  .resto-pillar:last-child { padding-right:0; }
+  .rc-ic { width:56px; height:56px; border-radius:50%; background:#e3d0b6; display:flex; align-items:center; justify-content:center; margin-bottom:20px; }
+  .rc-ic svg { width:28px; height:28px; stroke:var(--burgundy); fill:none; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
+  .resto-pillar h3 { font-size:22px; line-height:1.3; }
+  .resto-pillar p { font-size:15px; line-height:1.7; }
+  @media (max-width:768px) { .resto-pillar,.resto-pillar:first-child,.resto-pillar:last-child { border-left:0; padding:0; border-top:1px solid #cdbba2; padding-top:20px; } .resto-pillar:first-child { border-top:0; padding-top:0; } .resto-pillars { gap:28px; } }
+  .resto-cuisine { position:relative; overflow:hidden; padding:72px 28px 120px !important; }
+  .resto-cuisine-inner { max-width:1560px !important; position:relative; z-index:1; }
+  .rc-olive { position:absolute; left:-30px; bottom:-95px; width:440px; height:auto; opacity:.7; pointer-events:none; z-index:0; transform:rotate(-12deg); }
+  @media (max-width:768px) { .resto-cuisine { padding:48px 20px !important; } .rc-olive { width:200px; } }
   @media (max-width:768px) {
     .resto-cuisine { padding:48px 20px !important; }
     .resto-pillars { grid-template-columns:1fr; gap:28px; }
@@ -607,7 +623,7 @@ body { padding-top: 0; }
     .mobile-menu { display:flex; }
   }
 
-  .resto-groups { margin-top:36px; font-size:16px; line-height:1.8; color:#2e1208; }
+  .resto-groups { text-align:center; margin-top:36px; font-size:16px; line-height:1.8; color:#2e1208; }
   .resto-groups a { color:var(--burgundy); border-bottom:1px solid var(--burgundy); text-decoration:none; font-weight:600; }
 
   /* Correctif mobile : les deux photos de plats tiennent dans l'écran */
@@ -785,24 +801,28 @@ body { padding-top: 0; }
 
 <!-- NOTRE CUISINE -->
 <section class="resto-cuisine">
+  <img class="rc-olive" src="/images/olivier.png" alt="" aria-hidden="true">
   <div class="resto-cuisine-inner">
     <p class="section-label" data-i18n="a623cfc2">Notre cuisine</p>
-    <h2 class="section-title" style="margin-bottom:36px;" data-i18n="aebfb475">Cuisine à la braise,<br>en Ardèche</h2>
+    <h2 class="section-title" style="margin-bottom:36px;" data-i18n="rc-title">La cuisine à la braise, au cœur de l'Ardèche</h2>
     <div class="resto-pillars">
       <div class="resto-pillar">
-        <h3 data-i18n="a3b56fcd">Le four à braise</h3>
-        <p data-i18n="a75fc5d3">Dans notre cuisine, le four à braise saisit les viandes d'une cuisson vive et leur donne un goût fumé. C'est le cœur de notre carte.</p>
+        <div class="rc-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1 3.5 5 5.5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 .2 1.5 1 2.2 1.8 2.5C10.5 8.5 10.5 5.5 12 3z"/></svg></div>
+        <h3 data-i18n="rc1t">Le goût de la braise</h3>
+        <p data-i18n="rc1d">Au Domaine des Dames, la braise est au cœur de notre cuisine. Les grillades sont préparées dans notre four à charbon de bois, qui leur apporte une cuisson savoureuse et ce goût fumé si particulier. Une cuisine généreuse, où le produit reste à l'honneur.</p>
       </div>
       <div class="resto-pillar">
-        <h3 data-i18n="a96cfa04">Les viandes</h3>
-        <p data-i18n="a28dccb7">Côte de bœuf à partager, agneau de l'Ardèche… nos viandes sont grillées à la braise et servies avec leurs accompagnements. Pour les entrées et les desserts, place à la cuisine de terroir ardéchois.</p>
+        <div class="rc-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10M17 3c-2 1.5-3 4-3 7 0 1.5 1 2.5 3 2.5V21"/></svg></div>
+        <h3 data-i18n="rc2t">Des produits sélectionnés avec soin</h3>
+        <p data-i18n="rc2d">De belles pièces de viande, des spécialités à partager et des produits choisis pour leur qualité. Notre carte mêle grillades, saveurs du terroir et inspirations gourmandes, pour satisfaire toutes les envies.</p>
       </div>
       <div class="resto-pillar">
-        <h3 data-i18n="af816346">La terrasse</h3>
-        <p data-i18n="ac5c46b5">Aux beaux jours, déjeunez ou dînez en terrasse, à 10 minutes à pied de Vallon-Pont-d'Arc. Ouvert d'avril à novembre, midi et soir ; réservation conseillée.</p>
+        <div class="rc-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7M5.5 9.5V20h13V9.5M10 20v-5h4v5"/></svg></div>
+        <h3 data-i18n="rc3t">Une atmosphère unique au cœur de l'Ardèche</h3>
+        <p data-i18n="rc3d">Installé dans les anciennes écuries du domaine, à l'ombre des vieilles pierres de notre mas ardéchois, notre restaurant a conservé tout le charme de son histoire et son atmosphère chaleureuse. Aux beaux jours, profitez de notre grande terrasse pour déjeuner au soleil ou dîner sous les étoiles, dans un cadre typiquement ardéchois. Pour les journées les plus chaudes, notre salle intérieure climatisée vous accueille dans un environnement confortable et convivial.</p>
       </div>
     </div>
-    <p class="resto-groups" data-i18n="a0fdcbab">Vous êtes un groupe ? Nous proposons des menus de groupe adaptés à votre événement, cuisinés à la braise. <a href="evenements.html">Découvrir les événements de groupe</a></p>
+    <p class="resto-groups" data-i18n="rc-grp">Vous venez en groupe ? Anniversaire, réunion de famille ou événement privé : nous proposons des menus adaptés à vos envies et à votre occasion.<br><a href="evenements.html">Découvrir nos offres pour les groupes</a></p>
   </div>
 </section>
 
@@ -1078,6 +1098,10 @@ var LANG = {
     "a877bf8e":"Réserver une table",
     "a623cfc2":"Notre cuisine",
     "aebfb475":"Cuisine à la braise,<br>en Ardèche",
+    "rc-title":"La cuisine à la braise, au cœur de l'Ardèche","rc-grp":"Vous venez en groupe ? Anniversaire, réunion de famille ou événement privé : nous proposons des menus adaptés à vos envies et à votre occasion.<br><a href=\"evenements.html\">Découvrir nos offres pour les groupes</a>",
+    "rc1t":"Le goût de la braise","rc1d":"Au Domaine des Dames, la braise est au cœur de notre cuisine. Les grillades sont préparées dans notre four à charbon de bois, qui leur apporte une cuisson savoureuse et ce goût fumé si particulier. Une cuisine généreuse, où le produit reste à l'honneur.",
+    "rc2t":"Des produits sélectionnés avec soin","rc2d":"De belles pièces de viande, des spécialités à partager et des produits choisis pour leur qualité. Notre carte mêle grillades, saveurs du terroir et inspirations gourmandes, pour satisfaire toutes les envies.",
+    "rc3t":"Une atmosphère unique au cœur de l'Ardèche","rc3d":"Installé dans les anciennes écuries du domaine, à l'ombre des vieilles pierres de notre mas ardéchois, notre restaurant a conservé tout le charme de son histoire et son atmosphère chaleureuse. Aux beaux jours, profitez de notre grande terrasse pour déjeuner au soleil ou dîner sous les étoiles, dans un cadre typiquement ardéchois. Pour les journées les plus chaudes, notre salle intérieure climatisée vous accueille dans un environnement confortable et convivial.",
     "a3b56fcd":"Le four à braise",
     "a75fc5d3":"Dans notre cuisine, le four à braise saisit les viandes d'une cuisson vive et leur donne un goût fumé. C'est le cœur de notre carte.",
     "a96cfa04":"Les viandes",
@@ -1153,6 +1177,10 @@ var LANG = {
     "a877bf8e":"Book a table",
     "a623cfc2":"Our cuisine",
     "aebfb475":"Cooking over embers,<br>in the Ardèche",
+    "rc-title":"Ember-grilled cooking, in the heart of the Ardèche","rc-grp":"Coming as a group? Birthday, family gathering or private event: we offer menus tailored to your wishes and your occasion.<br><a href=\"evenements.html\">Discover our group offers</a>",
+    "rc1t":"The taste of the embers","rc1d":"At Domaine des Dames, embers are at the heart of our cooking. Our grills are prepared in our charcoal oven, which gives them a delicious cook and that distinctive smoky flavour. Generous cooking where the produce takes centre stage.",
+    "rc2t":"Carefully selected produce","rc2d":"Fine cuts of meat, specialities to share and produce chosen for its quality. Our menu combines grills, local flavours and gourmet inspirations to satisfy every craving.",
+    "rc3t":"A unique atmosphere in the heart of the Ardèche","rc3d":"Set in the estate's former stables, in the shade of the old stones of our Ardèche farmhouse, our restaurant has kept all the charm of its history and its warm atmosphere. In fine weather, enjoy our large terrace for lunch in the sun or dinner under the stars, in a typically Ardèche setting. On the hottest days, our air-conditioned dining room welcomes you in a comfortable and friendly environment.",
     "a3b56fcd":"The ember oven",
     "a75fc5d3":"In our kitchen, the ember oven sears the meats with intense heat and gives them a smoky flavour. It is the heart of our menu.",
     "a96cfa04":"The meats",
