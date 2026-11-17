@@ -440,21 +440,32 @@ body { padding-top: 0; }
   .resto-logo { width: 100px; }
 }
 .resto-plats {
-  display: flex; flex-direction: column; justify-content: space-between;
-  align-self: stretch; gap: 40px; padding: 36px 0 8px;
-  min-width: 0;
+  display: grid; grid-template-columns: repeat(12, 1fr); align-content: center;
+  gap: 0; padding: 0; min-width: 0; align-self: start; position: relative;
+  width: 100%; max-width: 540px; justify-self: center; margin-top: 90px;
 }
 .resto-plat {
-  width: 64%; max-width: 390px; aspect-ratio: 6 / 5;
-  margin: 0; border-radius: 3px;
-  box-shadow: 0 12px 32px rgba(107,58,31,0.13);
+  position: relative; margin: 0; z-index: 1;
+  box-shadow: 0 14px 34px rgba(107,58,31,0.16);
 }
-.resto-plat:nth-child(2) { align-self: flex-end; }
+.resto-plat::after {
+  content: ""; position: absolute; inset: -9px; border: 1px solid #e3cdb2;
+  border-radius: inherit; pointer-events: none; z-index: -1;
+}
+.resto-plat:nth-child(1) { grid-column: 1 / 9;  grid-row: 1; aspect-ratio: 1.25; border-radius: 58% 42% 50% 50% / 55% 62% 38% 45%; }
+.resto-plat:nth-child(2) { grid-column: 9 / 13; grid-row: 1; aspect-ratio: 1; margin: 6% 0 0 -4%; border-radius: 42% 58% 38% 62% / 55% 40% 60% 45%; z-index: 2; }
+.resto-plat:nth-child(3) { grid-column: 6 / 13; grid-row: 2; aspect-ratio: 1.2; margin-top: -3%; border-radius: 50% 50% 45% 55% / 55% 48% 52% 45%; z-index: 3; }
+.resto-plat:nth-child(4) { grid-column: 1 / 7;  grid-row: 2; aspect-ratio: 1.15; margin-top: 6%; border-radius: 55% 45% 50% 50% / 48% 52% 48% 52%; z-index: 2; }
+.resto-plat:nth-child(5) { grid-column: 4 / 11; grid-row: 3; aspect-ratio: 1.3; margin-top: -4%; border-radius: 50% 50% 55% 45% / 58% 55% 45% 42%; z-index: 4; }
+.resto-plat { overflow: hidden; }
+.resto-plat-placeholder { border-radius: inherit; }
+.resto-plat::after { display:none; }
+.resto-plat { outline: 1px solid #e3cdb2; outline-offset: 9px; }
 .resto-plat-img {
   display: block; width: 100%; height: 100%; object-fit: cover;
   border-radius: inherit; transition: transform 0.4s ease;
 }
-.resto-plat-img:hover { transform: scale(1.025); }
+.resto-plat-img:hover { transform: scale(1.04); }
 .resto-plat-placeholder {
   width: 100%; height: 100%; background: #e0d0b8; border-radius: inherit;
   display: flex; align-items: center; justify-content: center;
@@ -472,9 +483,6 @@ body { padding-top: 0; }
 #reservation { grid-column: 1; min-width: 0; scroll-margin-top: 24px; }
 @media (max-width: 768px) {
   .resto-menu-section { grid-template-columns: minmax(0, 1fr); padding: 48px 20px; gap: 36px; }
-  .resto-plats { flex-direction: row; align-items: flex-start; gap: 16px; padding: 0; }
-  .resto-plat { width: calc(50% - 8px); max-width: none; }
-  .resto-plat:nth-child(2) { margin-top: 32px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .resto-plat.is-waiting { opacity: 1; transform: none; }
@@ -558,8 +566,6 @@ body { padding-top: 0; }
 
     /* RESTAURANT PAGE */
     .resto-menu-section { grid-template-columns:1fr !important; padding:48px 20px !important; gap:40px !important; }
-    .resto-plats { flex-direction:row; justify-content:center; }
-    .resto-plat-img { width:140px; height:140px; }
 
     /* ACTIVITES PAGE */
     .act-hero-content { padding:0 20px 40px; }
@@ -627,12 +633,6 @@ body { padding-top: 0; }
   .resto-groups { text-align:center; margin-top:36px; font-size:16px; line-height:1.8; color:#2e1208; }
   .resto-groups a { color:var(--burgundy); border-bottom:1px solid var(--burgundy); text-decoration:none; font-weight:600; }
 
-  /* Correctif mobile : les deux photos de plats tiennent dans l'écran */
-  @media (max-width:768px) {
-    .resto-plats { flex-direction:row !important; justify-content:space-between !important; gap:12px !important; padding:0 !important; min-width:0; }
-    .resto-plat { width:calc(50% - 6px) !important; max-width:none !important; min-width:0 !important; }
-    .resto-plat-img { width:100% !important; height:100% !important; }
-  }
 
   @media (max-width:768px) { .resto-plat.is-waiting { transform: translateY(20px) !important; } }
 </style>
@@ -836,33 +836,32 @@ body { padding-top: 0; }
     <div class="resto-heading">
       <h2 class="section-title" data-i18n="resto-title">Le Restaurant<br>du Domaine</h2>
     </div>
-    <p class="section-text" data-i18n="resto-text">Cuisine de terroir ardéchois autour de la braise. Produits locaux, recettes d'antan, et vins de la région.</p>
-    <div class="josper-badge" style="margin-top:22px;" data-i18n="josper-badge">🔥 Cuisine à la braise</div>
+    <p class="section-text" data-i18n="resto-text">Cuisine autour de la braise.</p>
     <div class="menu-section">
       <div class="menu-category" data-i18n="a5d2d579">Entrées</div><div id="menu-entrees">
-      <div class="menu-item"><span class="menu-item-name">Planche mixte</span><span class="menu-item-dots"></span></div>
+      <div class="menu-item"><span class="menu-item-name">Planche mixte</span><span class="menu-item-dots"></span><span class="menu-item-price">24€</span></div>
       <p class="menu-item-desc">Fromages et charcuteries</p>
-      <div class="menu-item"><span class="menu-item-name">Courgette grillée façon bruschetta</span><span class="menu-item-dots"></span></div>
+      <div class="menu-item"><span class="menu-item-name">Courgette grillée façon bruschetta</span><span class="menu-item-dots"></span><span class="menu-item-price">12€</span></div>
       <p class="menu-item-desc">Coupée dans la longueur, stracciatella, pesto</p>
-      <div class="menu-item"><span class="menu-item-name">Tacos du domaine</span><span class="menu-item-dots"></span></div>
-      <div class="menu-item"><span class="menu-item-name">Croquettes de parmesan</span><span class="menu-item-dots"></span></div>
-      <div class="menu-item"><span class="menu-item-name">Chipirons à la braise</span><span class="menu-item-dots"></span></div>
+      <div class="menu-item"><span class="menu-item-name">Tacos du domaine</span><span class="menu-item-dots"></span><span class="menu-item-price">13€</span></div>
+      <div class="menu-item"><span class="menu-item-name">Croquettes de parmesan</span><span class="menu-item-dots"></span><span class="menu-item-price">12€</span></div>
+      <div class="menu-item"><span class="menu-item-name">Chipirons à la braise</span><span class="menu-item-dots"></span><span class="menu-item-price">14€</span></div>
       </div><div class="menu-category" data-i18n="a9bfc032">Grillades à la braise</div><div id="menu-grillades">
-      <div class="menu-item"><span class="menu-item-name">Saucisse de porc</span><span class="menu-item-dots"></span></div>
-            <div class="menu-item"><span class="menu-item-name">Pluma</span><span class="menu-item-dots"></span></div>
-      <div class="menu-item"><span class="menu-item-name">Brochette de poulet et chorizo</span><span class="menu-item-dots"></span></div>
-      <div class="menu-item"><span class="menu-item-name">Entrecôte</span><span class="menu-item-dots"></span></div>
-      <div class="menu-item"><span class="menu-item-name">Tentacule de poulpe</span><span class="menu-item-dots"></span></div>
+      <div class="menu-item"><span class="menu-item-name">Saucisse de porc</span><span class="menu-item-dots"></span><span class="menu-item-price">18€</span></div>
+            <div class="menu-item"><span class="menu-item-name">Pluma</span><span class="menu-item-dots"></span><span class="menu-item-price">24€</span></div>
+      <div class="menu-item"><span class="menu-item-name">Brochette de poulet et chorizo</span><span class="menu-item-dots"></span><span class="menu-item-price">20€</span></div>
+      <div class="menu-item"><span class="menu-item-name">Entrecôte</span><span class="menu-item-dots"></span><span class="menu-item-price">30€</span></div>
+      <div class="menu-item"><span class="menu-item-name">Tentacule de poulpe</span><span class="menu-item-dots"></span><span class="menu-item-price">28€</span></div>
       <p class="menu-item-desc">Sur écrasé de pommes de terre</p>
-      <div class="menu-item"><span class="menu-item-name">Poisson</span><span class="menu-item-dots"></span></div>
+      <div class="menu-item"><span class="menu-item-name">Poisson</span><span class="menu-item-dots"></span><span class="menu-item-price">24€</span></div>
       <p class="menu-item-desc">Sur écrasé de pommes de terre</p>
       <p class="menu-item-desc menu-note">Les viandes sont accompagnées de légumes et de pommes de terre grenailles grillées au feu de bois. Sauces maison : chimichurri, poivre, moutarde.</p>
       </div><div class="menu-category" data-i18n="rm-des">Desserts</div><div id="menu-desserts">
-      <div class="menu-item"><span class="menu-item-name">Soupe de fraises</span><span class="menu-item-dots"></span></div>
+      <div class="menu-item"><span class="menu-item-name">Soupe de fraises</span><span class="menu-item-dots"></span><span class="menu-item-price">9,5€</span></div>
       <p class="menu-item-desc">Ou autre fruit selon la saison</p>
-      <div class="menu-item"><span class="menu-item-name">Crème brûlée</span><span class="menu-item-dots"></span></div>
-      <div class="menu-item"><span class="menu-item-name">Mousse au chocolat</span><span class="menu-item-dots"></span></div>
-      <div class="menu-item"><span class="menu-item-name">Coupe de glace</span><span class="menu-item-dots"></span></div>
+      <div class="menu-item"><span class="menu-item-name">Crème brûlée</span><span class="menu-item-dots"></span><span class="menu-item-price">9,5€</span></div>
+      <div class="menu-item"><span class="menu-item-name">Mousse au chocolat</span><span class="menu-item-dots"></span><span class="menu-item-price">9,5€</span></div>
+      <div class="menu-item"><span class="menu-item-name">Coupe de glace</span><span class="menu-item-dots"></span><span class="menu-item-price">9,5€</span></div>
       <p class="menu-item-desc">Glace artisanale d'Ardèche</p>
       </div><div class="menu-category" data-i18n="rm-kids">Menu enfant</div><div id="menu-enfants">
       <p class="menu-item-desc menu-note">Menu enfant : 12 €</p>
@@ -891,6 +890,30 @@ body { padding-top: 0; }
     <div class="resto-plat-placeholder" style="display:none;">
       <span>🍽️</span>
       <span data-i18n="a2ac2796">Photo<br>Plat 2</span>
+    </div>
+    </figure>
+    <figure class="resto-plat">
+    <img src="/images/plat3.jpg" alt="Courgette grillée façon bruschetta, stracciatella et pesto maison" class="resto-plat-img"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" loading="lazy" decoding="async">
+    <div class="resto-plat-placeholder" style="display:none;">
+      <span>🍽️</span>
+      <span>Photo<br>Plat 3</span>
+    </div>
+    </figure>
+    <figure class="resto-plat">
+    <img src="/images/plat4.jpg" alt="Plat du restaurant du Domaine des Dames" class="resto-plat-img"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" loading="lazy" decoding="async">
+    <div class="resto-plat-placeholder" style="display:none;">
+      <span>🍽️</span>
+      <span>Photo<br>Plat 4</span>
+    </div>
+    </figure>
+    <figure class="resto-plat">
+    <img src="/images/plat5.jpg" alt="Ambiance du restaurant du Domaine des Dames" class="resto-plat-img"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" loading="lazy" decoding="async">
+    <div class="resto-plat-placeholder" style="display:none;">
+      <span>🍽️</span>
+      <span>Photo<br>Plat 5</span>
     </div>
     </figure>
   </div>
@@ -1090,7 +1113,7 @@ var LANG = {
     "modal-payment-info":"🔒 Paiement sécurisé · Annulation gratuite 30 jours avant",
     "modal-pay-btn":"Procéder au paiement →","modal-stripe":"Powered by Stripe · Données protégées",
     "resto-label":"Gastronomie","resto-title":"Le Restaurant<br>du Domaine",
-    "resto-hero-sub":"Viandes grillées au four à braise, produits locaux et terrasse aux beaux jours, à Vallon-Pont-d'Arc.","resto-text":"Cuisine de terroir ardéchois autour de la braise. Produits locaux, recettes d\'antan, et vins de la région.",
+    "resto-hero-sub":"Viandes grillées au four à braise, produits locaux et terrasse aux beaux jours, à Vallon-Pont-d'Arc.","resto-text":"Cuisine autour de la braise.",
     "josper-badge":"🔥 Cuisine à la braise",
     "event-label":"Événementiel","event-title":"Célébrez au<br>Domaine des Dames",
     "event-text":"Le Domaine des Dames se prête magnifiquement à l\'organisation de vos événements privés et professionnels. Mariages, séminaires, anniversaires ou repas de famille — nos espaces en pierre et notre cadre naturel exceptionnel créent une atmosphère inoubliable.",
@@ -1170,7 +1193,7 @@ var LANG = {
     "modal-payment-info":"🔒 Secure payment · Free cancellation 30 days before",
     "modal-pay-btn":"Proceed to payment →","modal-stripe":"Powered by Stripe · Your data is protected",
     "resto-label":"Gastronomy","resto-title":"The Restaurant<br>of the Estate",
-    "resto-hero-sub":"Meats grilled in our ember oven, local produce and a terrace in fine weather, in Vallon-Pont-d'Arc.","resto-text":"Ardèche farmhouse cuisine cooked over embers. Local produce, timeless recipes, and regional wines.",
+    "resto-hero-sub":"Meats grilled in our ember oven, local produce and a terrace in fine weather, in Vallon-Pont-d'Arc.","resto-text":"Cooking around the embers.",
     "josper-badge":"🔥 Cooking over embers",
     "event-label":"Events","event-title":"Celebrate at<br>Domaine des Dames",
     "event-text":"Domaine des Dames is a magnificent setting for your private and professional events. Weddings, seminars, birthdays or family gatherings — our stone spaces and exceptional natural surroundings create an unforgettable atmosphere.",
