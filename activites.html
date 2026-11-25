@@ -459,6 +459,22 @@ body { padding-top: 0; }
 }
 
 /* SEJOURS */
+.sej-card{display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;background:var(--burgundy);border-radius:22px;padding:20px;align-items:stretch;max-width:1200px;margin:0 auto;box-shadow:0 18px 40px rgba(74,32,16,.18);}
+.sej-text{padding:28px 20px 28px 32px;color:#fff;display:flex;flex-direction:column;justify-content:center;}
+.sej-label{font-family:'Cinzel',serif;font-size:13px;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:14px;}
+.sej-title{font-family:'Playfair Display',serif;font-size:36px;font-weight:400;line-height:1.2;color:#fff;margin-bottom:18px;}
+.sej-p{font-size:16px;line-height:1.7;color:rgba(255,255,255,.92);margin-bottom:16px;}
+.sej-p + .sej-btn,.sej-p:last-of-type{margin-bottom:28px;}
+.sej-list{list-style:none;margin:0 0 28px;padding:0;display:flex;flex-direction:column;gap:12px;}
+.sej-list li{position:relative;padding-left:20px;font-size:15px;line-height:1.6;color:rgba(255,255,255,.88);}
+.sej-list li::before{content:"";position:absolute;left:0;top:.65em;width:7px;height:7px;border-radius:50%;background:var(--gold);}
+.sej-list strong{display:block;font-family:'Playfair Display',serif;font-weight:500;font-size:17px;color:#fff;}
+.sej-btn{align-self:flex-start;display:inline-block;padding:14px 36px;background:var(--terracotta);color:#fff;text-decoration:none;font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;border-radius:2px;transition:background .3s,transform .3s;}
+.sej-btn:hover{background:#8e3722;transform:translateY(-2px);}
+.sej-img{border-radius:16px;overflow:hidden;min-height:420px;}
+.sej-img img{width:100%;height:100%;object-fit:cover;display:block;}
+@media (max-width:900px){.sej-wrap{padding:40px 20px!important;}.sej-card{grid-template-columns:1fr;gap:12px;}.sej-text{padding:20px 12px;}.sej-title{font-size:28px;}.sej-img{min-height:280px;}.sej-btn{align-self:stretch;text-align:center;}}
+
 .sejours-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
   margin-top: 40px;
@@ -842,33 +858,21 @@ body { padding-top: 0; }
 </section>
 
 <!-- SEJOURS -->
-<section style="background:#f0e4d0; padding:80px 80px;">
-  <div style="max-width:600px; margin-bottom:48px;">
-    <p class="section-label" data-i18n="a3c2cce8">Séjours & Escapades</p>
-    <h2 class="section-title" data-i18n="a6c956c7">Des séjours sur mesure</h2>
-    <p class="section-text" data-i18n="ad104b3c">Ces exemples vous donnent un aperçu de ce qu'il est possible de composer, pour un couple, une famille ou un groupe. Hébergement, activités, restauration — dites-nous ce qui vous fait envie et nous construisons votre séjour ensemble.</p>
-  </div>
-  <div class="sejours-grid">
-    <div class="sejour-card">
-      <span class="sejour-badge" style="background:var(--terracotta);" data-i18n="ac11a17d">Exemple</span>
-      <h3 class="sejour-title" data-i18n="a566378e">Week-end Nature</h3>
-      <p class="sejour-desc" data-i18n="a2d34ea0">2 nuits en gîte + journée canoë dans les Gorges + dîner au restaurant, cuisine à la braise.</p>
+<section style="background:#f0e4d0; padding:80px;" class="sej-wrap">
+  <div class="sej-card">
+    <div class="sej-text">
+      <p class="sej-label" data-i18n="a3c2cce8">Séjours & Escapades</p>
+      <h2 class="sej-title" data-i18n="a6c956c7">Des séjours sur mesure</h2>
+      <p class="sej-p" data-i18n="ad104b3c">Que vous soyez en quête de détente, d’aventure ou de découvertes, le Domaine des Dames est le point de départ idéal pour profiter pleinement de l’Ardèche.</p>
+      <p class="sej-p" data-i18n="sej-p2">En couple, en famille ou entre amis, nous vous accompagnons dans l’organisation de votre séjour et vous conseillons sur les activités, les bonnes adresses et les lieux incontournables de la région.</p>
+      <a href="#contact" class="sej-btn" data-i18n="sej-btn">Contactez-nous</a>
     </div>
-    <div class="sejour-card">
-      <span class="sejour-badge" style="background:var(--terracotta);" data-i18n="ac11a17d">Exemple</span>
-      <h3 class="sejour-title" data-i18n="a76e00ce">Escapade Gourmande</h3>
-      <p class="sejour-desc" data-i18n="ab1da9e4">1 nuit en gîte + demi-pension + visite des Grottes. Idéal en basse saison.</p>
-    </div>
-    <div class="sejour-card">
-      <span class="sejour-badge" style="background:var(--terracotta);" data-i18n="ac11a17d">Exemple</span>
-      <h3 class="sejour-title" data-i18n="a079939e">Séjour Aventure</h3>
-      <p class="sejour-desc" data-i18n="a34d3481">3 nuits + canyoning + accrobranche + randonnée guidée + petit-déjeuner inclus.</p>
-    </div>
+    <div class="sej-img"><img src="/images/pont-darc.jpg" alt="Le Pont d'Arc, Gorges de l'Ardèche" loading="lazy" decoding="async"></div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section style="background:var(--burgundy); padding:80px; color:white;">
+<section id="contact" style="background:var(--burgundy); padding:80px; color:white;">
   <div class="act-contact-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center;">
     
     <!-- Logo blanc + nom -->
@@ -1008,6 +1012,7 @@ var LANG = {
     "m-canoe":"D’avril à octobre",
     "mk-name":"Marchés locaux",
     "mk-desc":"Flânez au cœur des marchés emblématiques du sud de l’Ardèche. Rencontrez les producteurs et artisans locaux, découvrez les spécialités du terroir et profitez de l’ambiance chaleureuse des marchés traditionnels. En été, les marchés nocturnes prolongent ces moments de découverte et de convivialité.",
+    "sej-btn":"Contactez-nous",
     "a1a1099f":"Canoë",
     "ac07075f":"📅 Avril — Octobre",
     "aae5776a":"⭐ Tous niveaux",
@@ -1036,7 +1041,8 @@ var LANG = {
     "a19f92b1":"Partez à la découverte des villages de caractère du sud de l’Ardèche. Flânez dans les ruelles pittoresques de Balazuc, Vogüé, Labeaume ou encore Ruoms, entre maisons en pierre, patrimoine médiéval et petites places pleines de charme. Chaque village possède sa propre identité et vous invite à découvrir l’histoire, les traditions et l’authenticité de la région.",
     "a3c2cce8":"Séjours & Escapades",
     "a6c956c7":"Des séjours sur mesure",
-    "ad104b3c":"Ces exemples vous donnent un aperçu de ce qu'il est possible de composer, pour un couple, une famille ou un groupe. Hébergement, activités, restauration — dites-nous ce qui vous fait envie et nous construisons votre séjour ensemble.",
+    "ad104b3c":"Que vous soyez en quête de détente, d’aventure ou de découvertes, le Domaine des Dames est le point de départ idéal pour profiter pleinement de l’Ardèche.",
+    "sej-p2":"En couple, en famille ou entre amis, nous vous accompagnons dans l’organisation de votre séjour et vous conseillons sur les activités, les bonnes adresses et les lieux incontournables de la région.",
     "ac11a17d":"Exemple",
     "a566378e":"Week-end Nature",
     "a2d34ea0":"2 nuits en gîte + journée canoë dans les Gorges + dîner au restaurant, cuisine à la braise.",
@@ -1113,6 +1119,7 @@ var LANG = {
     "m-canoe":"April to October",
     "mk-name":"Local markets",
     "mk-desc":"Stroll through the emblematic markets of southern Ardèche. Meet local producers and artisans, discover regional specialities and enjoy the warm atmosphere of traditional markets. In summer, night markets extend these moments of discovery and conviviality.",
+    "sej-btn":"Contact us",
     "a1a1099f":"Canoeing",
     "ac07075f":"📅 April — October",
     "aae5776a":"⭐ All levels",
@@ -1141,7 +1148,8 @@ var LANG = {
     "a19f92b1":"Discover the characterful villages of southern Ardèche. Stroll the picturesque lanes of Balazuc, Vogüé, Labeaume or Ruoms, among stone houses, medieval heritage and charming little squares. Each village has its own identity and invites you to discover the history, traditions and authenticity of the region.",
     "a3c2cce8":"Stays &amp; Getaways",
     "a6c956c7":"Tailor-made stays",
-    "ad104b3c":"These examples give you an idea of what we can put together, for a couple, a family or a group. Accommodation, activities, dining — tell us what you fancy and we'll build your stay together.",
+    "ad104b3c":"Whether you are looking for relaxation, adventure or discovery, Domaine des Dames is the ideal starting point to make the most of the Ardèche.",
+    "sej-p2":"As a couple, with family or friends, we help you organise your stay and advise you on activities, good addresses and the must-see places in the region.",
     "ac11a17d":"Example",
     "a566378e":"Nature Weekend",
     "a2d34ea0":"2 nights in a cottage + a day's canoeing in the Gorges + dinner at the restaurant, cooked over embers.",
