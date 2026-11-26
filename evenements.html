@@ -723,9 +723,55 @@ body { padding-top: 0; }
    "provider": {
     "@id": "https://www.ledomainedesdames.com/#domaine"
    },
-   "areaServed": "Ardèche",
+   "areaServed": [
+    {
+     "@type": "AdministrativeArea",
+     "name": "Ardèche"
+    },
+    {
+     "@type": "Place",
+     "name": "Vallon-Pont-d'Arc"
+    }
+   ],
    "url": "https://www.ledomainedesdames.com/evenements",
-   "description": "Privatisation du restaurant ou du domaine entier, jusqu'à 100 personnes et 25 couchages, menus de groupe à la braise."
+   "description": "Privatisation du restaurant ou du domaine entier, jusqu'à 100 personnes et 25 couchages, menus de groupe à la braise.",
+   "location": {
+    "@type": "Place",
+    "name": "Domaine des Dames",
+    "address": {
+     "@type": "PostalAddress",
+     "streetAddress": "316 Chemin de la Roubine",
+     "postalCode": "07150",
+     "addressLocality": "Vallon-Pont-d'Arc",
+     "addressRegion": "Ardèche",
+     "addressCountry": "FR"
+    },
+    "geo": {
+     "@type": "GeoCoordinates",
+     "latitude": 44.409044,
+     "longitude": 4.379085
+    },
+    "hasMap": "https://www.google.com/maps?q=44.409044,4.379085",
+    "maximumAttendeeCapacity": 100
+   },
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "Capacité maximale du restaurant",
+     "value": 100,
+     "unitText": "personnes"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "Couchages sur place",
+     "value": 25
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "Gîtes",
+     "value": 5
+    }
+   ]
   },
   {
    "@type": "BreadcrumbList",
