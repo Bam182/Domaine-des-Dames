@@ -1,8 +1,143 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.ledomainedesdames.com/</loc><lastmod>2026-11-26</lastmod><priority>1.0</priority></url>
-  <url><loc>https://www.ledomainedesdames.com/gites</loc><lastmod>2026-11-26</lastmod><priority>0.9</priority></url>
-  <url><loc>https://www.ledomainedesdames.com/restaurant</loc><lastmod>2026-11-26</lastmod><priority>0.9</priority></url>
-  <url><loc>https://www.ledomainedesdames.com/evenements</loc><lastmod>2026-11-26</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.ledomainedesdames.com/activites</loc><lastmod>2026-11-26</lastmod><priority>0.6</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+ <url>
+  <loc>https://www.ledomainedesdames.com/</loc>
+  <lastmod>2026-11-26</lastmod>
+  <priority>1.0</priority>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://www.ledomainedesdames.com/"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://www.ledomainedesdames.com/en/"/>
+  <xhtml:link rel="alternate" hreflang="nl" href="https://www.ledomainedesdames.com/nl/"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ledomainedesdames.com/"/>
+ </url>
+ <url>
+  <loc>https://www.ledomainedesdames.com/en/</loc>
+  <lastmod>2026-11-26</lastmod>
+  <priority>1.0</priority>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://www.ledomainedesdames.com/"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://www.ledomainedesdames.com/en/"/>
+  <xhtml:link rel="alternate" hreflang="nl" href="https://www.ledomainedesdames.com/nl/"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ledomainedesdames.com/"/>
+ </url>
+ <url>
+  <loc>https://www.ledomainedesdames.com/nl/</loc>
+  <lastmod>2026-11-26</lastmod>
+  <priority>1.0</priority>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://www.ledomainedesdames.com/"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://www.ledomainedesdames.com/en/"/>
+  <xhtml:link rel="alternate" hreflang="nl" href="https://www.ledomainedesdames.com/nl/"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ledomainedesdames.com/"/>
+ </url>
+ <url>
+  <loc>https://www.ledomainedesdames.com/gites</loc>
+  <lastmod>2026-11-26</lastmod>
+  <priority>0.8</priority>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://www.ledomainedesdames.com/gites"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://www.ledomainedesdames.com/en/cottages"/>
+  <xhtml:link rel="alternate" hreflang="nl" href="https://www.ledomainedesdames.com/nl/vakantiehuizen"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ledomainedesdames.com/gites"/>
+ </url>
+ <url>
+  <loc>https://www.ledomainedesdames.com/en/cottages</loc>
+  <lastmod>2026-11-26</lastmod>
+  <priority>0.8</priority>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://www.ledomainedesdames.com/gites"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://www.ledomainedesdames.com/en/cottages"/>
+  <xhtml:link rel="alternate" hreflang="nl" href="https://www.ledomainedesdames.com/nl/vakantiehuizen"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ledomainedesdames.com/gites"/>
+ </url>
+ <url>
+  <loc>https://www.ledomainedesdames.com/nl/vakantiehuizen</loc>
+  <lastmod>2026-11-26</lastmod>
+  <priority>0.8</priority>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://www.ledomainedesdames.com/gites"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://www.ledomainedesdames.com/en/cottages"/>
+  <xhtml:link rel="alternate" hreflang="nl" href="https://www.ledomainedesdames.com/nl/vakantiehuizen"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ledomainedesdames.com/gites"/>
+ </url>
+ <url>
+  <loc>https://www.ledomainedesdames.com/restaurant</loc>
+  <lastmod>2026-11-26</lastmod>
+  <priority>0.8</priority>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://www.ledomainedesdames.com/restaurant"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://www.ledomainedesdames.com/en/restaurant"/>
+  <xhtml:link rel="alternate" hreflang="nl" href="https://www.ledomainedesdames.com/nl/restaurant"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ledomainedesdames.com/restaurant"/>
+ </url>
+ <url>
+  <loc>https://www.ledomainedesdames.com/en/restaurant</loc>
+  <lastmod>2026-11-26</lastmod>
+  <priority>0.8</priority>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://www.ledomainedesdames.com/restaurant"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://www.ledomainedesdames.com/en/restaurant"/>
+  <xhtml:link rel="alternate" hreflang="nl" href="https://www.ledomainedesdames.com/nl/restaurant"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ledomainedesdames.com/restaurant"/>
+ </url>
+ <url>
+  <loc>https://www.ledomainedesdames.com/nl/restaurant</loc>
+  <lastmod>2026-11-26</lastmod>
+  <priority>0.8</priority>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://www.ledomainedesdames.com/restaurant"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://www.ledomainedesdames.com/en/restaurant"/>
+  <xhtml:link rel="alternate" hreflang="nl" href="https://www.ledomainedesdames.com/nl/restaurant"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ledomainedesdames.com/restaurant"/>
+ </url>
+ <url>
+  <loc>https://www.ledomainedesdames.com/activites</loc>
+  <lastmod>2026-11-26</lastmod>
+  <priority>0.8</priority>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://www.ledomainedesdames.com/activites"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://www.ledomainedesdames.com/en/activities"/>
+  <xhtml:link rel="alternate" hreflang="nl" href="https://www.ledomainedesdames.com/nl/activiteiten"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ledomainedesdames.com/activites"/>
+ </url>
+ <url>
+  <loc>https://www.ledomainedesdames.com/en/activities</loc>
+  <lastmod>2026-11-26</lastmod>
+  <priority>0.8</priority>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://www.ledomainedesdames.com/activites"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://www.ledomainedesdames.com/en/activities"/>
+  <xhtml:link rel="alternate" hreflang="nl" href="https://www.ledomainedesdames.com/nl/activiteiten"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ledomainedesdames.com/activites"/>
+ </url>
+ <url>
+  <loc>https://www.ledomainedesdames.com/nl/activiteiten</loc>
+  <lastmod>2026-11-26</lastmod>
+  <priority>0.8</priority>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://www.ledomainedesdames.com/activites"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://www.ledomainedesdames.com/en/activities"/>
+  <xhtml:link rel="alternate" hreflang="nl" href="https://www.ledomainedesdames.com/nl/activiteiten"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ledomainedesdames.com/activites"/>
+ </url>
+ <url>
+  <loc>https://www.ledomainedesdames.com/evenements</loc>
+  <lastmod>2026-11-26</lastmod>
+  <priority>0.8</priority>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://www.ledomainedesdames.com/evenements"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://www.ledomainedesdames.com/en/events"/>
+  <xhtml:link rel="alternate" hreflang="nl" href="https://www.ledomainedesdames.com/nl/evenementen"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ledomainedesdames.com/evenements"/>
+ </url>
+ <url>
+  <loc>https://www.ledomainedesdames.com/en/events</loc>
+  <lastmod>2026-11-26</lastmod>
+  <priority>0.8</priority>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://www.ledomainedesdames.com/evenements"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://www.ledomainedesdames.com/en/events"/>
+  <xhtml:link rel="alternate" hreflang="nl" href="https://www.ledomainedesdames.com/nl/evenementen"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ledomainedesdames.com/evenements"/>
+ </url>
+ <url>
+  <loc>https://www.ledomainedesdames.com/nl/evenementen</loc>
+  <lastmod>2026-11-26</lastmod>
+  <priority>0.8</priority>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://www.ledomainedesdames.com/evenements"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://www.ledomainedesdames.com/en/events"/>
+  <xhtml:link rel="alternate" hreflang="nl" href="https://www.ledomainedesdames.com/nl/evenementen"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ledomainedesdames.com/evenements"/>
+ </url>
+ <url>
+  <loc>https://www.ledomainedesdames.com/mentions-legales</loc>
+  <lastmod>2026-11-26</lastmod>
+  <priority>0.1</priority>
+ </url>
 </urlset>

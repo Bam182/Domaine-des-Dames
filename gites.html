@@ -637,10 +637,15 @@ body { padding-top: 0; }
 </style>
 <!-- SEO START -->
 <link rel="canonical" href="https://www.ledomainedesdames.com/gites">
+<link rel="alternate" hreflang="fr" href="https://www.ledomainedesdames.com/gites">
+<link rel="alternate" hreflang="en" href="https://www.ledomainedesdames.com/en/cottages">
+<link rel="alternate" hreflang="nl" href="https://www.ledomainedesdames.com/nl/vakantiehuizen">
+<link rel="alternate" hreflang="x-default" href="https://www.ledomainedesdames.com/gites">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Domaine des Dames">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:locale:alternate" content="en_GB">
+<meta property="og:locale:alternate" content="nl_NL">
 <meta property="og:title" content="Gîtes avec piscine à Vallon-Pont-d'Arc | Domaine des Dames">
 <meta property="og:description" content="5 gîtes de charme avec piscine à Vallon-Pont-d'Arc, animaux acceptés : La Glycine, La Chapelle, Les Vignes, Le Laurier Rose et Sampzon.">
 <meta property="og:url" content="https://www.ledomainedesdames.com/gites">
@@ -657,7 +662,7 @@ body { padding-top: 0; }
    "@type": "LodgingBusiness",
    "@id": "https://www.ledomainedesdames.com/#domaine",
    "name": "Domaine des Dames",
-   "description": "Mas en pierre du XVIIe siècle à Vallon-Pont-d'Arc, aux portes des Gorges de l'Ardèche : 5 gîtes de charme avec piscine, restaurant à la braise et accueil de groupes jusqu'à 150 personnes.",
+   "description": "Mas en pierre du XVIIe siècle à Vallon-Pont-d'Arc, aux portes des Gorges de l'Ardèche : 5 gîtes de charme avec piscine, restaurant à la braise et accueil de groupes jusqu'à 100 personnes.",
    "url": "https://www.ledomainedesdames.com/",
    "image": [
     "https://www.ledomainedesdames.com/images/hero.jpg",
@@ -665,7 +670,11 @@ body { padding-top: 0; }
     "https://www.ledomainedesdames.com/images/piscine.jpg"
    ],
    "logo": "https://www.ledomainedesdames.com/images/logo.png",
-   "geo": {"@type": "GeoCoordinates", "latitude": 44.409044, "longitude": 4.379085},
+   "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 44.409044,
+    "longitude": 4.379085
+   },
    "hasMap": "https://www.google.com/maps?q=44.409044,4.379085",
    "telephone": "+33626477395",
    "email": "contact@ledomainedesdames.com",
@@ -1278,6 +1287,7 @@ body { padding-top: 0; }
   @media (min-width:1151px) and (max-width:1199px){.nav-social{left:12px;gap:6px;}.nav-social a{padding:2px;}.nav-social svg{width:18px;height:18px;}}
   @media (max-width:1150px){.nav-social{display:none;}.lang-switcher.lang-mob{display:flex;}}
 </style>
+<style>a.lang-btn{text-decoration:none;display:inline-flex;align-items:center;justify-content:center}</style>
 </head>
 <body>
 
@@ -1292,7 +1302,7 @@ body { padding-top: 0; }
     </a>
   </div>
   <div class="nav-social"><a href="https://www.instagram.com/ledomainedesdames/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".8" fill="currentColor"/></svg></a><a href="https://www.facebook.com/ledomainedesdames/" target="_blank" rel="noopener" aria-label="Facebook"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h-2.5A4 4 0 0 0 8.5 7v2.5H6V13h2.5v8H12v-8h2.8l.6-3.5H12V7.3c0-.7.5-1.3 1.3-1.3H15z"/></svg></a></div>
-  <div class="lang-switcher lang-mob"><button class="lang-btn" id="btn-fr" data-lang="fr" onclick="setLang('fr')">FR</button><div class="lang-sep"></div><button class="lang-btn" id="btn-en" data-lang="en" onclick="setLang('en')">EN</button></div>
+  <div class="lang-switcher lang-mob"><a class="lang-btn active" data-lang="fr" href="/gites" hreflang="fr" lang="fr">FR</a><div class="lang-sep"></div><a class="lang-btn" data-lang="en" href="/en/cottages" hreflang="en" lang="en">EN</a><div class="lang-sep"></div><a class="lang-btn" data-lang="nl" href="/nl/vakantiehuizen" hreflang="nl" lang="nl">NL</a></div>
   <div class="nav-left">
     <a href="index.html#domaine" data-i18n="a18d2557">Le Domaine</a>
     <a href="gites.html" style="color:var(--burgundy);" data-i18n="a476ba0e">Gîtes</a>
@@ -1308,7 +1318,7 @@ body { padding-top: 0; }
     <a href="evenements.html" data-i18n="a1cde338">Événementiel</a>
     <a href="index.html#contact">Contact</a>
     <a href="gites.html" class="nav-cta" data-i18n="a254b0ae">Réserver</a>
-    <div class="lang-switcher lang-desk"><button class="lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button><div class="lang-sep"></div><button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button></div>
+    <div class="lang-switcher lang-desk"><a class="lang-btn active" data-lang="fr" href="/gites" hreflang="fr" lang="fr">FR</a><div class="lang-sep"></div><a class="lang-btn" data-lang="en" href="/en/cottages" hreflang="en" lang="en">EN</a><div class="lang-sep"></div><a class="lang-btn" data-lang="nl" href="/nl/vakantiehuizen" hreflang="nl" lang="nl">NL</a></div>
   </div>
   <div class="hamburger" id="hamburger" role="button" tabindex="0" aria-label="Menu" aria-controls="mobileMenu" aria-expanded="false" onclick="toggleMenu()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleMenu();}">
     <span></span><span></span><span></span>
@@ -1322,7 +1332,7 @@ body { padding-top: 0; }
   <a href="evenements.html" onclick="closeMenu()" data-i18n="a1cde338">Événementiel</a>
   <a href="index.html#contact" onclick="closeMenu()">Contact</a>
   <a href="gites.html" class="nav-cta" onclick="closeMenu()" data-i18n="a254b0ae">Réserver</a>
-  <div class="mm-extra"><div class="lang-switcher"><button class="lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button><div class="lang-sep"></div><button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button></div><div class="mm-social"><a href="https://www.instagram.com/ledomainedesdames/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".8" fill="currentColor"/></svg></a><a href="https://www.facebook.com/ledomainedesdames/" target="_blank" rel="noopener" aria-label="Facebook"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h-2.5A4 4 0 0 0 8.5 7v2.5H6V13h2.5v8H12v-8h2.8l.6-3.5H12V7.3c0-.7.5-1.3 1.3-1.3H15z"/></svg></a></div></div>
+  <div class="mm-extra"><div class="lang-switcher"><a class="lang-btn active" data-lang="fr" href="/gites" hreflang="fr" lang="fr">FR</a><div class="lang-sep"></div><a class="lang-btn" data-lang="en" href="/en/cottages" hreflang="en" lang="en">EN</a><div class="lang-sep"></div><a class="lang-btn" data-lang="nl" href="/nl/vakantiehuizen" hreflang="nl" lang="nl">NL</a></div><div class="mm-social"><a href="https://www.instagram.com/ledomainedesdames/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".8" fill="currentColor"/></svg></a><a href="https://www.facebook.com/ledomainedesdames/" target="_blank" rel="noopener" aria-label="Facebook"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h-2.5A4 4 0 0 0 8.5 7v2.5H6V13h2.5v8H12v-8h2.8l.6-3.5H12V7.3c0-.7.5-1.3 1.3-1.3H15z"/></svg></a></div></div>
 </div>
 
 <!-- HERO -->
@@ -1926,11 +1936,6 @@ function setLang(lang) {
   window.CURRENT_LANG = lang;
   if (typeof renderMenu === 'function') renderMenu(lang);
 }
-(function () {
-  var saved = null;
-  try { saved = localStorage.getItem('ddd-lang'); } catch (e) {}
-  if (saved === 'en') document.addEventListener('DOMContentLoaded', function () { setTimeout(function () { setLang('en'); }, 0); });
-})();
 </script>
 <script>
 function toggleMenu() {
@@ -2032,7 +2037,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <a href="evenements.html" data-i18n="nav-evenementiel">Événementiel</a>
     <a href="index.html#contact" data-i18n="nav-contact">Contact</a>
     <a href="gites.html" class="nav-cta" data-i18n="nav-reserver">Réserver</a>
-    <div class="lang-switcher lang-sticky"><button class="lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button><div class="lang-sep"></div><button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button></div>
+    <div class="lang-switcher lang-sticky"><a class="lang-btn active" data-lang="fr" href="/gites" hreflang="fr" lang="fr">FR</a><div class="lang-sep"></div><a class="lang-btn" data-lang="en" href="/en/cottages" hreflang="en" lang="en">EN</a><div class="lang-sep"></div><a class="lang-btn" data-lang="nl" href="/nl/vakantiehuizen" hreflang="nl" lang="nl">NL</a></div>
   </div>
   <div class="sticky-mobile">
     <a class="sticky-call" id="stickyCall" href="tel:+33626477395" data-i18n="sticky-call">Appeler</a>

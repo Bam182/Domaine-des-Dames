@@ -669,10 +669,15 @@ body { padding-top: 0; }
 </style>
 <!-- SEO START -->
 <link rel="canonical" href="https://www.ledomainedesdames.com/restaurant">
+<link rel="alternate" hreflang="fr" href="https://www.ledomainedesdames.com/restaurant">
+<link rel="alternate" hreflang="en" href="https://www.ledomainedesdames.com/en/restaurant">
+<link rel="alternate" hreflang="nl" href="https://www.ledomainedesdames.com/nl/restaurant">
+<link rel="alternate" hreflang="x-default" href="https://www.ledomainedesdames.com/restaurant">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Domaine des Dames">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:locale:alternate" content="en_GB">
+<meta property="og:locale:alternate" content="nl_NL">
 <meta property="og:title" content="Restaurant à la braise, Vallon-Pont-d'Arc | Domaine des Dames">
 <meta property="og:description" content="Cuisine à la braise et terroir ardéchois au Domaine des Dames : viandes grillées, planche ardéchoise, terrasse. Ouvert d'avril à novembre, midi et soir.">
 <meta property="og:url" content="https://www.ledomainedesdames.com/restaurant">
@@ -695,7 +700,11 @@ body { padding-top: 0; }
     "https://www.ledomainedesdames.com/images/restaurant.jpg",
     "https://www.ledomainedesdames.com/images/terrasse.jpg"
    ],
-   "geo": {"@type": "GeoCoordinates", "latitude": 44.409044, "longitude": 4.379085},
+   "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 44.409044,
+    "longitude": 4.379085
+   },
    "hasMap": "https://www.google.com/maps?q=44.409044,4.379085",
    "priceRange": "30-40 €",
    "telephone": "+33626477395",
@@ -756,6 +765,7 @@ body { padding-top: 0; }
   @media (min-width:1151px) and (max-width:1199px){.nav-social{left:12px;gap:6px;}.nav-social a{padding:2px;}.nav-social svg{width:18px;height:18px;}}
   @media (max-width:1150px){.nav-social{display:none;}.lang-switcher.lang-mob{display:flex;}}
 </style>
+<style>a.lang-btn{text-decoration:none;display:inline-flex;align-items:center;justify-content:center}</style>
 </head>
 <body>
 
@@ -770,7 +780,7 @@ body { padding-top: 0; }
     </a>
   </div>
   <div class="nav-social"><a href="https://www.instagram.com/ledomainedesdames/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".8" fill="currentColor"/></svg></a><a href="https://www.facebook.com/ledomainedesdames/" target="_blank" rel="noopener" aria-label="Facebook"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h-2.5A4 4 0 0 0 8.5 7v2.5H6V13h2.5v8H12v-8h2.8l.6-3.5H12V7.3c0-.7.5-1.3 1.3-1.3H15z"/></svg></a></div>
-  <div class="lang-switcher lang-mob"><button class="lang-btn" id="btn-fr" data-lang="fr" onclick="setLang('fr')">FR</button><div class="lang-sep"></div><button class="lang-btn" id="btn-en" data-lang="en" onclick="setLang('en')">EN</button></div>
+  <div class="lang-switcher lang-mob"><a class="lang-btn active" data-lang="fr" href="/restaurant" hreflang="fr" lang="fr">FR</a><div class="lang-sep"></div><a class="lang-btn" data-lang="en" href="/en/restaurant" hreflang="en" lang="en">EN</a><div class="lang-sep"></div><a class="lang-btn" data-lang="nl" href="/nl/restaurant" hreflang="nl" lang="nl">NL</a></div>
   <div class="nav-left">
     <a href="index.html#domaine" data-i18n="nav-domaine">Le Domaine</a>
     <a href="gites.html" data-i18n="nav-gites">Gîtes</a>
@@ -787,7 +797,7 @@ body { padding-top: 0; }
     <a href="evenements.html" data-i18n="nav-evenementiel">Événementiel</a>
     <a href="index.html#contact" data-i18n="nav-contact">Contact</a>
     <a href="gites.html" class="nav-cta" data-i18n="nav-reserver">Réserver</a>
-    <div class="lang-switcher lang-desk"><button class="lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button><div class="lang-sep"></div><button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button></div>
+    <div class="lang-switcher lang-desk"><a class="lang-btn active" data-lang="fr" href="/restaurant" hreflang="fr" lang="fr">FR</a><div class="lang-sep"></div><a class="lang-btn" data-lang="en" href="/en/restaurant" hreflang="en" lang="en">EN</a><div class="lang-sep"></div><a class="lang-btn" data-lang="nl" href="/nl/restaurant" hreflang="nl" lang="nl">NL</a></div>
   </div>
   <div class="hamburger" id="hamburger" role="button" tabindex="0" aria-label="Menu" aria-controls="mobileMenu" aria-expanded="false" onclick="toggleMenu()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleMenu();}">
     <span></span><span></span><span></span>
@@ -802,7 +812,7 @@ body { padding-top: 0; }
   <a href="index.html#galerie" data-i18n="nav-galerie" onclick="closeMenu()">Galerie</a>
   <a href="index.html#contact" data-i18n="nav-contact" onclick="closeMenu()">Contact</a>
   <a href="gites.html" class="nav-cta" data-i18n="nav-reserver" onclick="closeMenu()">Réserver</a>
-  <div class="mm-extra"><div class="lang-switcher"><button class="lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button><div class="lang-sep"></div><button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button></div><div class="mm-social"><a href="https://www.instagram.com/ledomainedesdames/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".8" fill="currentColor"/></svg></a><a href="https://www.facebook.com/ledomainedesdames/" target="_blank" rel="noopener" aria-label="Facebook"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h-2.5A4 4 0 0 0 8.5 7v2.5H6V13h2.5v8H12v-8h2.8l.6-3.5H12V7.3c0-.7.5-1.3 1.3-1.3H15z"/></svg></a></div></div>
+  <div class="mm-extra"><div class="lang-switcher"><a class="lang-btn active" data-lang="fr" href="/restaurant" hreflang="fr" lang="fr">FR</a><div class="lang-sep"></div><a class="lang-btn" data-lang="en" href="/en/restaurant" hreflang="en" lang="en">EN</a><div class="lang-sep"></div><a class="lang-btn" data-lang="nl" href="/nl/restaurant" hreflang="nl" lang="nl">NL</a></div><div class="mm-social"><a href="https://www.instagram.com/ledomainedesdames/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".8" fill="currentColor"/></svg></a><a href="https://www.facebook.com/ledomainedesdames/" target="_blank" rel="noopener" aria-label="Facebook"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h-2.5A4 4 0 0 0 8.5 7v2.5H6V13h2.5v8H12v-8h2.8l.6-3.5H12V7.3c0-.7.5-1.3 1.3-1.3H15z"/></svg></a></div></div>
 </div>
 
 <!-- HERO -->
@@ -1044,9 +1054,9 @@ document.addEventListener('DOMContentLoaded', function() {
       if (!container || !items) return;
       var html = '';
       items.forEach(function(item) {
-        if (item.note) { html += '<p class="menu-item-desc menu-note">' + ((lang === 'en' && item.note_en) ? item.note_en : item.note) + '</p>'; return; }
-        var nom = (lang === 'en' && item.nom_en) ? item.nom_en : item.nom;
-        var desc = (lang === 'en' && item.nom_en) ? item.description_en : item.description;
+        if (item.note) { html += '<p class="menu-item-desc menu-note">' + (item['note_' + lang] || item.note) + '</p>'; return; }
+        var nom = item['nom_' + lang] || item.nom;
+        var desc = item['nom_' + lang] ? item['description_' + lang] : item.description;
         html += '<div class="menu-item"><span class="menu-item-name">' + nom + '</span><span class="menu-item-dots"></span>' + (item.prix !== '' && item.prix != null ? '<span class="menu-item-price">' + item.prix + '€</span>' : '') + '</div>' +
           (desc ? '<p class="menu-item-desc">' + desc + '</p>' : '');
       });
@@ -1296,11 +1306,6 @@ function setLang(lang) {
   window.CURRENT_LANG = lang;
   if (typeof renderMenu === 'function') renderMenu(lang);
 }
-(function () {
-  var saved = null;
-  try { saved = localStorage.getItem('ddd-lang'); } catch (e) {}
-  if (saved === 'en') document.addEventListener('DOMContentLoaded', function () { setTimeout(function () { setLang('en'); }, 0); });
-})();
 </script>
 <script>
 function toggleMenu() {
@@ -1377,7 +1382,7 @@ document.addEventListener('click', function(e) {
     <a href="evenements.html" data-i18n="nav-evenementiel">Événementiel</a>
     <a href="index.html#contact" data-i18n="nav-contact">Contact</a>
     <a href="gites.html" class="nav-cta" data-i18n="nav-reserver">Réserver</a>
-    <div class="lang-switcher lang-sticky"><button class="lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button><div class="lang-sep"></div><button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button></div>
+    <div class="lang-switcher lang-sticky"><a class="lang-btn active" data-lang="fr" href="/restaurant" hreflang="fr" lang="fr">FR</a><div class="lang-sep"></div><a class="lang-btn" data-lang="en" href="/en/restaurant" hreflang="en" lang="en">EN</a><div class="lang-sep"></div><a class="lang-btn" data-lang="nl" href="/nl/restaurant" hreflang="nl" lang="nl">NL</a></div>
   </div>
   <div class="sticky-mobile">
     <a class="sticky-call" id="stickyCall" href="tel:+33626477395" data-i18n="sticky-call">Appeler</a>

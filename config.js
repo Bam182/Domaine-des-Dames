@@ -41,7 +41,7 @@ var CONFIG = {
     titre:       "Un mas ardéchois hors du temps",
     description: "À Vallon-Pont-d'Arc, aux portes des Gorges de l'Ardèche et à proximité du Pont d'Arc, le Domaine des Dames est un mas en pierre du XVIIe siècle niché au cœur des vignes. À la fois au calme et à proximité immédiate des activités, le domaine se situe à seulement 10 minutes à pied du centre de Vallon-Pont-d'Arc. Cinq gîtes de charme avec piscine, un restaurant aux saveurs de la braise et des espaces pour vos événements de groupe : un seul lieu pour séjourner, savourer une cuisine de caractère et célébrer en Ardèche.",
     nb_gites:    "5",
-    nb_personnes:"28",
+    nb_personnes:"25",
   },
 
   // ----------------------------------------------------------
@@ -90,36 +90,36 @@ var CONFIG = {
   // ----------------------------------------------------------
   restaurant: {
     description:  "Cuisine autour de la braise.",
-    horaires:     "Ouvert d'avril à novembre · 12h–14h30 & 19h–23h",
+    horaires:     "Ouvert d'avril à novembre · 12h–13h30 & 19h–21h30",
     badge_josper: "🔥 Cuisine à la braise",
 
     menu: {
       entrees: [
-        { nom: "Planche mixte", description: "Fromages et charcuteries", nom_en: "Mixed platter", description_en: "Cheese and charcuterie", prix: 24 },
-        { nom: "Courgette grillée façon bruschetta", description: "Coupée dans la longueur, stracciatella, pesto", nom_en: "Grilled courgette bruschetta-style", description_en: "Cut lengthways, stracciatella, pesto", prix: 12 },
-        { nom: "Tacos du domaine", description: "", nom_en: "Domaine tacos", description_en: "", prix: 13 },
-        { nom: "Croquettes de parmesan", description: "", nom_en: "Parmesan croquettes", description_en: "", prix: 12 },
-        { nom: "Chipirons à la braise", description: "", nom_en: "Ember-grilled baby squid", description_en: "", prix: 14 },
+        { nom: "Planche mixte", description: "Fromages et charcuteries", nom_en: "Mixed platter", description_en: "Cheese and charcuterie", nom_nl: "Gemengde plank", description_nl: "Kaas en charcuterie", prix: 24 },
+        { nom: "Courgette grillée façon bruschetta", description: "Coupée dans la longueur, stracciatella, pesto", nom_en: "Grilled courgette bruschetta-style", description_en: "Cut lengthways, stracciatella, pesto", nom_nl: "Gegrilde courgette op bruschetta-wijze", description_nl: "In de lengte gesneden, stracciatella, pesto", prix: 12 },
+        { nom: "Tacos du domaine", description: "", nom_en: "Domaine tacos", description_en: "", nom_nl: "Tacos van het domein", description_nl: "", prix: 13 },
+        { nom: "Croquettes de parmesan", description: "", nom_en: "Parmesan croquettes", description_en: "", nom_nl: "Parmezaankroketten", description_nl: "", prix: 12 },
+        { nom: "Chipirons à la braise", description: "", nom_en: "Ember-grilled baby squid", description_en: "", nom_nl: "Babyinktvisjes van de houtskoolgrill", description_nl: "", prix: 14 },
       ],
       grillades: [
-        { nom: "Saucisse de porc", description: "", nom_en: "Pork sausage", description_en: "", prix: 18 },
-        { nom: "Pluma", description: "", nom_en: "Pluma (Iberian pork)", description_en: "", prix: 24 },
-        { nom: "Brochette de poulet et chorizo", description: "", nom_en: "Chicken and chorizo skewer", description_en: "", prix: 20 },
-        { nom: "Entrecôte", description: "", nom_en: "Rib steak", description_en: "", prix: 30 },
-        { nom: "Tentacule de poulpe", description: "Sur écrasé de pommes de terre", nom_en: "Octopus tentacle", description_en: "On crushed potatoes", prix: 28 },
-        { nom: "Poisson", description: "Sur écrasé de pommes de terre", nom_en: "Fish", description_en: "On crushed potatoes", prix: 24 },
-        { note: "Les viandes sont accompagnées de légumes et de pommes de terre grenailles grillées au feu de bois. Sauces maison : chimichurri, poivre, moutarde.", note_en: "Meats are served with vegetables and new potatoes grilled over the wood fire. Homemade sauces: chimichurri, pepper, mustard." },
+        { nom: "Saucisse de porc", description: "", nom_en: "Pork sausage", description_en: "", nom_nl: "Varkensworst", description_nl: "", prix: 18 },
+        { nom: "Pluma", description: "", nom_en: "Pluma (Iberian pork)", description_en: "", nom_nl: "Pluma (Iberisch varkensvlees)", description_nl: "", prix: 24 },
+        { nom: "Brochette de poulet et chorizo", description: "", nom_en: "Chicken and chorizo skewer", description_en: "", nom_nl: "Spies van kip en chorizo", description_nl: "", prix: 20 },
+        { nom: "Entrecôte", description: "", nom_en: "Rib steak", description_en: "", nom_nl: "Entrecôte", description_nl: "", prix: 30 },
+        { nom: "Tentacule de poulpe", description: "Sur écrasé de pommes de terre", nom_en: "Octopus tentacle", description_en: "On crushed potatoes", nom_nl: "Octopustentakel", description_nl: "Op gestampte aardappelen", prix: 28 },
+        { nom: "Poisson", description: "Sur écrasé de pommes de terre", nom_en: "Fish", description_en: "On crushed potatoes", nom_nl: "Vis", description_nl: "Op gestampte aardappelen", prix: 24 },
+        { note: "Les viandes sont accompagnées de légumes et de pommes de terre grenailles grillées au feu de bois. Sauces maison : chimichurri, poivre, moutarde.", note_en: "Meats are served with vegetables and new potatoes grilled over the wood fire. Homemade sauces: chimichurri, pepper, mustard.", note_nl: "Het vlees wordt geserveerd met groenten en op houtvuur gegrilde krieltjes. Huisgemaakte sauzen: chimichurri, peper, mosterd." },
       ],
       desserts: [
-        { nom: "Soupe de fraises", description: "Ou autre fruit selon la saison", nom_en: "Strawberry soup", description_en: "Or another fruit depending on the season", prix: "9,5" },
-        { nom: "Crème brûlée", description: "", nom_en: "Crème brûlée", description_en: "", prix: "9,5" },
-        { nom: "Mousse au chocolat", description: "", nom_en: "Chocolate mousse", description_en: "", prix: "9,5" },
-        { nom: "Coupe de glace", description: "Glace artisanale d'Ardèche", nom_en: "Ice cream sundae", description_en: "Artisan ice cream from the Ardèche", prix: "9,5" },
+        { nom: "Soupe de fraises", description: "Ou autre fruit selon la saison", nom_en: "Strawberry soup", description_en: "Or another fruit depending on the season", nom_nl: "Aardbeiensoep", description_nl: "Of ander fruit naargelang het seizoen", prix: "9,5" },
+        { nom: "Crème brûlée", description: "", nom_en: "Crème brûlée", description_en: "", nom_nl: "Crème brûlée", description_nl: "", prix: "9,5" },
+        { nom: "Mousse au chocolat", description: "", nom_en: "Chocolate mousse", description_en: "", nom_nl: "Chocolademousse", description_nl: "", prix: "9,5" },
+        { nom: "Coupe de glace", description: "Glace artisanale d'Ardèche", nom_en: "Ice cream sundae", description_en: "Artisan ice cream from the Ardèche", nom_nl: "Ijscoupe", description_nl: "Ambachtelijk ijs uit de Ardèche", prix: "9,5" },
       ],
       enfants: [
-        { note: "Menu enfant : 12 €", note_en: "Kids' menu: €12" },
-        { nom: "Saucisse", description: "Légumes et écrasé de pommes de terre", nom_en: "Sausage", description_en: "Vegetables and crushed potatoes", prix: "" },
-        { nom: "Petit poisson grillé", description: "Légumes et écrasé de pommes de terre", nom_en: "Small grilled fish", description_en: "Vegetables and crushed potatoes", prix: "" },
+        { note: "Menu enfant : 12 €", note_en: "Kids' menu: €12", note_nl: "Kindermenu: € 12" },
+        { nom: "Saucisse", description: "Légumes et écrasé de pommes de terre", nom_en: "Sausage", description_en: "Vegetables and crushed potatoes", nom_nl: "Worstje", description_nl: "Groenten en gestampte aardappelen", prix: "" },
+        { nom: "Petit poisson grillé", description: "Légumes et écrasé de pommes de terre", nom_en: "Small grilled fish", description_en: "Vegetables and crushed potatoes", nom_nl: "Visje van de grill", description_nl: "Groenten en gestampte aardappelen", prix: "" },
       ],
     },
   },
@@ -153,7 +153,7 @@ var CONFIG = {
   // ----------------------------------------------------------
   evenementiel: {
     description: "Le Domaine des Dames se prête magnifiquement à l'organisation de vos événements privés et professionnels. Mariages, séminaires, anniversaires ou repas de famille — nos espaces en pierre et notre cadre naturel exceptionnel créent une atmosphère inoubliable.",
-    capacite_max: "150",
+    capacite_max: "25",
   },
 
 };

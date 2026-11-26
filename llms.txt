@@ -14,3 +14,17 @@
 - [Restaurant](https://www.ledomainedesdames.com/restaurant)
 - [Événements de groupe](https://www.ledomainedesdames.com/evenements)
 - [Activités autour de Vallon-Pont-d'Arc](https://www.ledomainedesdames.com/activites)
+
+## English version (/en/)
+- [Home](https://www.ledomainedesdames.com/en/)
+- [Cottages](https://www.ledomainedesdames.com/en/cottages)
+- [Restaurant](https://www.ledomainedesdames.com/en/restaurant)
+- [Group events](https://www.ledomainedesdames.com/en/events)
+- [Things to do around Vallon-Pont-d'Arc](https://www.ledomainedesdames.com/en/activities)
+
+## Nederlandse versie (/nl/)
+- [Home](https://www.ledomainedesdames.com/nl/)
+- [Vakantiehuizen](https://www.ledomainedesdames.com/nl/vakantiehuizen)
+- [Restaurant](https://www.ledomainedesdames.com/nl/restaurant)
+- [Groepsevenementen](https://www.ledomainedesdames.com/nl/evenementen)
+- [Activiteiten rond Vallon-Pont-d'Arc](https://www.ledomainedesdames.com/nl/activiteiten)
