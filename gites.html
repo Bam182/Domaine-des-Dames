@@ -6,6 +6,8 @@
 <title>Gîtes avec piscine à Vallon-Pont-d'Arc | Domaine des Dames</title>
 <meta name="description" content="5 gîtes de charme avec piscine à Vallon-Pont-d'Arc, animaux acceptés : La Glycine, La Chapelle, Les Vignes, Le Laurier Rose et Sampzon.">
 <meta name="keywords" content="gîtes Vallon-Pont-d'Arc, location gîte Ardèche, gîte charme Gorges Ardèche, hébergement Vallon Pont d'Arc">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Lato:wght@300;400;700&family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
 <style>
 
@@ -663,6 +665,8 @@ body { padding-top: 0; }
     "https://www.ledomainedesdames.com/images/piscine.jpg"
    ],
    "logo": "https://www.ledomainedesdames.com/images/logo.png",
+   "geo": {"@type": "GeoCoordinates", "latitude": 44.409044, "longitude": 4.379085},
+   "hasMap": "https://www.google.com/maps?q=44.409044,4.379085",
    "telephone": "+33626477395",
    "email": "contact@ledomainedesdames.com",
    "address": {
@@ -1279,7 +1283,7 @@ body { padding-top: 0; }
 
 <nav style="position:relative;">
   <div class="nav-reviews">
-    <a href="https://goo.gl/maps/ShNcgfNnu6GznUWe9" target="_blank" class="nav-reviews-link">
+    <a href="https://goo.gl/maps/ShNcgfNnu6GznUWe9" target="_blank" class="nav-reviews-link" rel="noopener">
       <div class="nav-reviews-stars">★★★★★</div>
       <div class="nav-reviews-info">
         <span class="nav-reviews-score">4.4</span>
@@ -1554,7 +1558,7 @@ body { padding-top: 0; }
   <div class="footer-logo">Domaine des Dames</div>
   <p style="font-size:11px;">© 2026 · Vallon-Pont-d'Arc · <span data-i18n="footer-dev"></span></p>
   <div style="display:flex;gap:18px;align-items:center;">
-    <a href="https://www.facebook.com/ledomainedesdames/" target="_blank" style="display:flex;align-items:center;gap:6px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Facebook</a>
+    <a href="https://www.facebook.com/ledomainedesdames/" target="_blank" style="display:flex;align-items:center;gap:6px;" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Facebook</a>
     <a href="mentions-legales.html" data-i18n="footer-legal">Mentions légales</a>
     <a href="mentions-legales.html#donnees" data-i18n="footer-privacy">Confidentialité</a>
   </div>
@@ -1620,7 +1624,7 @@ var LANG = {
     "ipc7t":"Ménage de fin de séjour","ipc7d":"À effectuer par vos soins, ou forfait ménage optionnel de 100 € par gîte.",
     "ipc8t":"Caution","ipc8d":"450 € par gîte, restitués sous réserve de l'état du logement.",
     "ipc9t":"Panier petit-déjeuner","ipc9d":"Sur réservation, 12 € par personne.",
-    "gl-lab":"45 m² · 2 personnes et un enfant","gl-pers":"👥 2 personnes et un enfant","gl-studio":"🛏 Studio","gl-desc":"Idéal pour une escapade à deux, notre gîte Glycine vous accueille dans un cadre calme et authentique.<br><span class="pgap"></span>Ce studio de 45 m² dispose d'un agréable espace de vie avec un lit double (140 × 200 cm), ainsi que d'un couchage d'appoint pouvant accueillir un enfant.<br><span class="pgap"></span>Vous profiterez également d'une cuisine indépendante entièrement équipée, d'une salle d'eau composée d'une douche et d'un WC séparé.<br><span class="pgap"></span>Climatisé, il est situé à l'étage, et est accessible par un escalier extérieur.",
+    "gl-lab":"45 m² · 2 personnes et un enfant","gl-pers":"👥 2 personnes et un enfant","gl-studio":"🛏 Studio","gl-desc":"Idéal pour une escapade à deux, notre gîte Glycine vous accueille dans un cadre calme et authentique.<br><span class=\"pgap\"></span>Ce studio de 45 m² dispose d'un agréable espace de vie avec un lit double (140 × 200 cm), ainsi que d'un couchage d'appoint pouvant accueillir un enfant.<br><span class=\"pgap\"></span>Vous profiterez également d'une cuisine indépendante entièrement équipée, d'une salle d'eau composée d'une douche et d'un WC séparé.<br><span class=\"pgap\"></span>Climatisé, il est situé à l'étage, et est accessible par un escalier extérieur.",
     "gl-t1":"✓ Télévision",
     "gl-t2":"✓ Climatisé",
     "gl-t3":"✓ Salle de bain/douche",
@@ -1629,7 +1633,7 @@ var LANG = {
     "gl-t6":"✓ Cafetière Nespresso",
     "gl-t7":"✓ Bouilloire électrique",
     "gl-t8":"✓ Terrasse commune aménagée",
-    "ch-lab":"70 m² · 4 personnes","ch-pers":"👥 4 personnes","ch-desc":"Spacieux et accueillant, ce gîte de 70 m² dispose d'une belle pièce de vie avec cuisine ouverte entièrement équipée, parfaite pour partager des moments de convivialité. Il se situe au rez-de-chaussée du mas.<br><span class="pgap"></span>L'espace nuit se compose de deux chambres confortables, chacune équipée d'un lit double (140 × 190 cm). Vous trouverez également une salle de bain disposant d'une baignoire, de toilettes séparées ainsi qu'une petite buanderie.<br><span class="pgap"></span>Un lit bébé peut être mis à votre disposition sur demande, à réserver à l'avance.",
+    "ch-lab":"70 m² · 4 personnes","ch-pers":"👥 4 personnes","ch-desc":"Spacieux et accueillant, ce gîte de 70 m² dispose d'une belle pièce de vie avec cuisine ouverte entièrement équipée, parfaite pour partager des moments de convivialité. Il se situe au rez-de-chaussée du mas.<br><span class=\"pgap\"></span>L'espace nuit se compose de deux chambres confortables, chacune équipée d'un lit double (140 × 190 cm). Vous trouverez également une salle de bain disposant d'une baignoire, de toilettes séparées ainsi qu'une petite buanderie.<br><span class=\"pgap\"></span>Un lit bébé peut être mis à votre disposition sur demande, à réserver à l'avance.",
     "ch-t1":"✓ Salle de bain/baignoire",
     "ch-t2":"✓ Télévision",
     "ch-t3":"✓ Terrasse commune aménagée",
@@ -1639,7 +1643,7 @@ var LANG = {
     "ch-t7":"✓ Cafetière Nespresso",
     "ch-t8":"✓ Bouilloire électrique",
     "ch-t9":"✓ Lave-vaisselle",
-    "vi-ch":"🛏 2 chambres + mezzanine","vi-desc":"Spacieux et plein de charme, ce gîte de 90 m² dispose d'une entrée et d'une terrasse privative avec vue sur les vignes, pour vos repas en plein air ou vos instants de détente.<br><span class="pgap"></span>Il dispose d'une agréable pièce de vie avec cuisine ouverte entièrement équipée, parfaite pour partager des moments de convivialité.<br><span class="pgap"></span>L'espace nuit se compose de deux chambres :<br>• Une première chambre équipée d'un lit double et d'un lit simple destiné à un enfant.<br>• Une seconde chambre disposant également d'un lit double et d'un lit simple destiné à un enfant.<br><span class="pgap"></span>Une mezzanine ouverte sur l'espace de vie complète les couchages avec un canapé-lit. Cet espace ne constitue pas une chambre indépendante, mais offre une possibilité de couchage supplémentaire.<br><span class="pgap"></span>Vous trouverez également une salle d'eau avec douche, deux lavabos et des toilettes séparées.<br><span class="pgap"></span>Avec ses beaux volumes, sa climatisation et ses espaces pensés pour se retrouver, Vignes vous invite à profiter pleinement de votre séjour en Ardèche.<br><span class="pgap"></span>Un lit bébé peut également être mis à disposition sur demande, à réserver à l'avance.",
+    "vi-ch":"🛏 2 chambres + mezzanine","vi-desc":"Spacieux et plein de charme, ce gîte de 90 m² dispose d'une entrée et d'une terrasse privative avec vue sur les vignes, pour vos repas en plein air ou vos instants de détente.<br><span class=\"pgap\"></span>Il dispose d'une agréable pièce de vie avec cuisine ouverte entièrement équipée, parfaite pour partager des moments de convivialité.<br><span class=\"pgap\"></span>L'espace nuit se compose de deux chambres :<br>• Une première chambre équipée d'un lit double et d'un lit simple destiné à un enfant.<br>• Une seconde chambre disposant également d'un lit double et d'un lit simple destiné à un enfant.<br><span class=\"pgap\"></span>Une mezzanine ouverte sur l'espace de vie complète les couchages avec un canapé-lit. Cet espace ne constitue pas une chambre indépendante, mais offre une possibilité de couchage supplémentaire.<br><span class=\"pgap\"></span>Vous trouverez également une salle d'eau avec douche, deux lavabos et des toilettes séparées.<br><span class=\"pgap\"></span>Avec ses beaux volumes, sa climatisation et ses espaces pensés pour se retrouver, Vignes vous invite à profiter pleinement de votre séjour en Ardèche.<br><span class=\"pgap\"></span>Un lit bébé peut également être mis à disposition sur demande, à réserver à l'avance.",
     "vi-t1":"✓ Cuisine équipée",
     "vi-t2":"✓ 1 salle de bain/douche",
     "vi-t3":"✓ Terrasse privative",
@@ -1650,7 +1654,7 @@ var LANG = {
     "vi-t8":"✓ Cafetière Nespresso",
     "vi-t9":"✓ Bouilloire électrique",
     "vi-t10":"✓ Canapé convertible",
-    "la-lab":"70 m² · 4 personnes","la-pers":"👥 4 personnes","la-desc":"Spacieux et lumineux, ce gîte de 70 m², situé au premier étage du mas, dispose d'une agréable pièce de vie avec vue sur la cour du domaine, ainsi que d'une cuisine ouverte entièrement équipée pour profiter de votre séjour en toute autonomie.<br><span class="pgap"></span>L'espace nuit se compose de deux chambres :<br>• Une première chambre confortable équipée d'un grand lit double.<br>• Une seconde chambre disposant également d'un grand lit double.<br><span class="pgap"></span>Vous trouverez également une salle d'eau avec douche et des toilettes séparées.<br><span class="pgap"></span>Un lit bébé peut également être mis à disposition sur demande, à réserver à l'avance.",
+    "la-lab":"70 m² · 4 personnes","la-pers":"👥 4 personnes","la-desc":"Spacieux et lumineux, ce gîte de 70 m², situé au premier étage du mas, dispose d'une agréable pièce de vie avec vue sur la cour du domaine, ainsi que d'une cuisine ouverte entièrement équipée pour profiter de votre séjour en toute autonomie.<br><span class=\"pgap\"></span>L'espace nuit se compose de deux chambres :<br>• Une première chambre confortable équipée d'un grand lit double.<br>• Une seconde chambre disposant également d'un grand lit double.<br><span class=\"pgap\"></span>Vous trouverez également une salle d'eau avec douche et des toilettes séparées.<br><span class=\"pgap\"></span>Un lit bébé peut également être mis à disposition sur demande, à réserver à l'avance.",
     "la-t1":"✓ Salle de bain/douche",
     "la-t2":"✓ Télévision",
     "la-t3":"✓ Terrasse commune aménagée",
@@ -1660,7 +1664,7 @@ var LANG = {
     "la-t7":"✓ Cafetière Nespresso",
     "la-t8":"✓ Bouilloire électrique",
     "la-t9":"✓ Lave-vaisselle",
-    "sa-lab":"75 m² · 6 personnes","sa-pers":"👥 6 personnes","sa-desc":"Spacieux et lumineux, ce gîte de 75 m², situé à l'étage du mas, dispose d'une agréable pièce de vie. Sa cuisine ouverte entièrement équipée vous permet de profiter de votre séjour en toute autonomie.<br><span class="pgap"></span>L'espace nuit se compose de deux chambres :<br>• Une première chambre spacieuse équipée d'un lit double et de deux lits simples, idéale pour accueillir une famille avec enfants.<br>• Une seconde chambre disposant d'un grand lit double (160 × 190 cm).<br><span class="pgap"></span>Vous trouverez également une salle d'eau avec douche et des toilettes séparées.<br><span class="pgap"></span>Avec ses beaux volumes, sa climatisation et son atmosphère accueillante, Sampzon offre tout le confort nécessaire pour profiter pleinement de vos vacances en Ardèche.<br><span class="pgap"></span>Un lit bébé peut également être mis à disposition sur demande, à réserver à l'avance.",
+    "sa-lab":"75 m² · 6 personnes","sa-pers":"👥 6 personnes","sa-desc":"Spacieux et lumineux, ce gîte de 75 m², situé à l'étage du mas, dispose d'une agréable pièce de vie. Sa cuisine ouverte entièrement équipée vous permet de profiter de votre séjour en toute autonomie.<br><span class=\"pgap\"></span>L'espace nuit se compose de deux chambres :<br>• Une première chambre spacieuse équipée d'un lit double et de deux lits simples, idéale pour accueillir une famille avec enfants.<br>• Une seconde chambre disposant d'un grand lit double (160 × 190 cm).<br><span class=\"pgap\"></span>Vous trouverez également une salle d'eau avec douche et des toilettes séparées.<br><span class=\"pgap\"></span>Avec ses beaux volumes, sa climatisation et son atmosphère accueillante, Sampzon offre tout le confort nécessaire pour profiter pleinement de vos vacances en Ardèche.<br><span class=\"pgap\"></span>Un lit bébé peut également être mis à disposition sur demande, à réserver à l'avance.",
     "eq-linge":"✓ Linge de lit inclus",
     "gf-label":"Questions fréquentes","gf-title":"Avant de réserver",
     "gf1q":"Les animaux sont-ils acceptés ?","gf1a":"Oui, les animaux de compagnie sont acceptés dans nos gîtes, moyennant un supplément.",
@@ -1670,7 +1674,7 @@ var LANG = {
     "gf5q":"Peut-on manger sur place ?","gf5a":"Oui, le restaurant à la braise du domaine est ouvert d'avril à novembre, midi et soir. Réservation conseillée.",
     "contact-label":"Nous trouver","contact-title":"Venir au<br>Domaine",
     "contact-text":"Situé à 10 minutes à pied de Vallon-Pont-d\'Arc, au coeur des Gorges de l\'Ardèche.",
-    "contact-addr-label":"Adresse","contact-addr":"Route des Gorges, 07150 Vallon-Pont-d\'Arc",
+    "contact-addr-label":"Adresse","contact-addr":"316 Chemin de la Roubine, 07150 Vallon-Pont-d\'Arc",
     "contact-phone-label":"Téléphone","contact-email-label":"Email",
     "contact-hours-label":"Restaurant","contact-hours":"Ouvert d'avril à novembre · 12h–13h30 & 19h–21h30",
     "contact-form-title":"Nous écrire","contact-msg":"Message",
@@ -1783,7 +1787,7 @@ var LANG = {
     "ipc7t":"End-of-stay cleaning","ipc7d":"To be done by guests, or optional cleaning package at €100 per cottage.",
     "ipc8t":"Security deposit","ipc8d":"€450 per cottage, refunded subject to the condition of the accommodation.",
     "ipc9t":"Breakfast basket","ipc9d":"On request, €12 per person.",
-    "gl-lab":"45 m² · 2 guests and a child","gl-pers":"👥 2 guests and a child","gl-studio":"🛏 Studio","gl-desc":"Ideal for a getaway for two, our Glycine cottage welcomes you in a calm and authentic setting.<br><span class="pgap"></span>This 45 m² studio has a pleasant living area with a double bed (140 × 200 cm), as well as an extra bed for a child.<br><span class="pgap"></span>You will also enjoy a fully equipped separate kitchen, a shower room and a separate toilet.<br><span class="pgap"></span>Air-conditioned, it is located upstairs and is reached by an outside staircase.",
+    "gl-lab":"45 m² · 2 guests and a child","gl-pers":"👥 2 guests and a child","gl-studio":"🛏 Studio","gl-desc":"Ideal for a getaway for two, our Glycine cottage welcomes you in a calm and authentic setting.<br><span class=\"pgap\"></span>This 45 m² studio has a pleasant living area with a double bed (140 × 200 cm), as well as an extra bed for a child.<br><span class=\"pgap\"></span>You will also enjoy a fully equipped separate kitchen, a shower room and a separate toilet.<br><span class=\"pgap\"></span>Air-conditioned, it is located upstairs and is reached by an outside staircase.",
     "gl-t1":"✓ Television",
     "gl-t2":"✓ Air-conditioned",
     "gl-t3":"✓ Bathroom/shower",
@@ -1792,7 +1796,7 @@ var LANG = {
     "gl-t6":"✓ Nespresso coffee machine",
     "gl-t7":"✓ Electric kettle",
     "gl-t8":"✓ Landscaped shared terrace",
-    "ch-lab":"70 m² · 4 guests","ch-pers":"👥 4 guests","ch-desc":"Spacious and welcoming, this 70 m² cottage has a lovely living area with a fully equipped open kitchen, perfect for sharing convivial moments. It is located on the ground floor of the farmhouse.<br><span class="pgap"></span>The sleeping area consists of two comfortable bedrooms, each with a double bed (140 × 190 cm). There is also a bathroom with a bathtub, a separate toilet and a small laundry room.<br><span class="pgap"></span>A baby cot can be provided on request, to be booked in advance.",
+    "ch-lab":"70 m² · 4 guests","ch-pers":"👥 4 guests","ch-desc":"Spacious and welcoming, this 70 m² cottage has a lovely living area with a fully equipped open kitchen, perfect for sharing convivial moments. It is located on the ground floor of the farmhouse.<br><span class=\"pgap\"></span>The sleeping area consists of two comfortable bedrooms, each with a double bed (140 × 190 cm). There is also a bathroom with a bathtub, a separate toilet and a small laundry room.<br><span class=\"pgap\"></span>A baby cot can be provided on request, to be booked in advance.",
     "ch-t1":"✓ Bathroom/bathtub",
     "ch-t2":"✓ Television",
     "ch-t3":"✓ Landscaped shared terrace",
@@ -1802,7 +1806,7 @@ var LANG = {
     "ch-t7":"✓ Nespresso coffee machine",
     "ch-t8":"✓ Electric kettle",
     "ch-t9":"✓ Dishwasher",
-    "vi-ch":"🛏 2 bedrooms + mezzanine","vi-desc":"Spacious and full of charm, this 90 m² cottage has its own entrance and a private terrace overlooking the vineyards, for outdoor meals or moments of relaxation.<br><span class="pgap"></span>It has a pleasant living area with a fully equipped open kitchen, perfect for sharing convivial moments.<br><span class="pgap"></span>The sleeping area consists of two bedrooms:<br>• A first bedroom with a double bed and a single bed for a child.<br>• A second bedroom, also with a double bed and a single bed for a child.<br><span class="pgap"></span>A mezzanine open to the living space completes the sleeping arrangements with a sofa bed. This area is not a separate bedroom, but offers an additional sleeping option.<br><span class="pgap"></span>You will also find a shower room with two washbasins and a separate toilet.<br><span class="pgap"></span>With its generous volumes, air conditioning and spaces designed for getting together, Vignes invites you to make the most of your stay in the Ardèche.<br><span class="pgap"></span>A baby cot can also be provided on request, to be booked in advance.",
+    "vi-ch":"🛏 2 bedrooms + mezzanine","vi-desc":"Spacious and full of charm, this 90 m² cottage has its own entrance and a private terrace overlooking the vineyards, for outdoor meals or moments of relaxation.<br><span class=\"pgap\"></span>It has a pleasant living area with a fully equipped open kitchen, perfect for sharing convivial moments.<br><span class=\"pgap\"></span>The sleeping area consists of two bedrooms:<br>• A first bedroom with a double bed and a single bed for a child.<br>• A second bedroom, also with a double bed and a single bed for a child.<br><span class=\"pgap\"></span>A mezzanine open to the living space completes the sleeping arrangements with a sofa bed. This area is not a separate bedroom, but offers an additional sleeping option.<br><span class=\"pgap\"></span>You will also find a shower room with two washbasins and a separate toilet.<br><span class=\"pgap\"></span>With its generous volumes, air conditioning and spaces designed for getting together, Vignes invites you to make the most of your stay in the Ardèche.<br><span class=\"pgap\"></span>A baby cot can also be provided on request, to be booked in advance.",
     "vi-t1":"✓ Equipped kitchen",
     "vi-t2":"✓ 1 bathroom/shower",
     "vi-t3":"✓ Private terrace",
@@ -1813,7 +1817,7 @@ var LANG = {
     "vi-t8":"✓ Nespresso coffee machine",
     "vi-t9":"✓ Electric kettle",
     "vi-t10":"✓ Sofa bed",
-    "la-lab":"70 m² · 4 guests","la-pers":"👥 4 guests","la-desc":"Spacious and bright, this 70 m² cottage, located on the first floor of the farmhouse, has a pleasant living area overlooking the estate's courtyard, as well as a fully equipped open kitchen so you can enjoy your stay in complete independence.<br><span class="pgap"></span>The sleeping area consists of two bedrooms:<br>• A first comfortable bedroom with a large double bed.<br>• A second bedroom, also with a large double bed.<br><span class="pgap"></span>You will also find a shower room and a separate toilet.<br><span class="pgap"></span>A baby cot can also be provided on request, to be booked in advance.",
+    "la-lab":"70 m² · 4 guests","la-pers":"👥 4 guests","la-desc":"Spacious and bright, this 70 m² cottage, located on the first floor of the farmhouse, has a pleasant living area overlooking the estate's courtyard, as well as a fully equipped open kitchen so you can enjoy your stay in complete independence.<br><span class=\"pgap\"></span>The sleeping area consists of two bedrooms:<br>• A first comfortable bedroom with a large double bed.<br>• A second bedroom, also with a large double bed.<br><span class=\"pgap\"></span>You will also find a shower room and a separate toilet.<br><span class=\"pgap\"></span>A baby cot can also be provided on request, to be booked in advance.",
     "la-t1":"✓ Bathroom/shower",
     "la-t2":"✓ Television",
     "la-t3":"✓ Landscaped shared terrace",
@@ -1823,7 +1827,7 @@ var LANG = {
     "la-t7":"✓ Nespresso coffee machine",
     "la-t8":"✓ Electric kettle",
     "la-t9":"✓ Dishwasher",
-    "sa-lab":"75 m² · 6 guests","sa-pers":"👥 6 guests","sa-desc":"Spacious and bright, this 75 m² cottage, located on the upper floor of the farmhouse, has a pleasant living area. Its fully equipped open kitchen lets you enjoy your stay in complete independence.<br><span class="pgap"></span>The sleeping area consists of two bedrooms:<br>• A first spacious bedroom with a double bed and two single beds, ideal for a family with children.<br>• A second bedroom with a large double bed (160 × 190 cm).<br><span class="pgap"></span>You will also find a shower room and a separate toilet.<br><span class="pgap"></span>With its generous volumes, air conditioning and welcoming atmosphere, Sampzon offers all the comfort you need to make the most of your holiday in the Ardèche.<br><span class="pgap"></span>A baby cot can also be provided on request, to be booked in advance.",
+    "sa-lab":"75 m² · 6 guests","sa-pers":"👥 6 guests","sa-desc":"Spacious and bright, this 75 m² cottage, located on the upper floor of the farmhouse, has a pleasant living area. Its fully equipped open kitchen lets you enjoy your stay in complete independence.<br><span class=\"pgap\"></span>The sleeping area consists of two bedrooms:<br>• A first spacious bedroom with a double bed and two single beds, ideal for a family with children.<br>• A second bedroom with a large double bed (160 × 190 cm).<br><span class=\"pgap\"></span>You will also find a shower room and a separate toilet.<br><span class=\"pgap\"></span>With its generous volumes, air conditioning and welcoming atmosphere, Sampzon offers all the comfort you need to make the most of your holiday in the Ardèche.<br><span class=\"pgap\"></span>A baby cot can also be provided on request, to be booked in advance.",
     "eq-linge":"✓ Bed linen included",
     "gf-label":"Frequently asked questions","gf-title":"Before you book",
     "gf1q":"Are pets allowed?","gf1a":"Yes, pets are welcome in our cottages, for an additional charge.",
@@ -1833,7 +1837,7 @@ var LANG = {
     "gf5q":"Can we eat on site?","gf5a":"Yes, the estate's wood-fired restaurant is open from April to November, for lunch and dinner. Booking recommended.",
     "contact-label":"Find us","contact-title":"Visit the<br>Estate",
     "contact-text":"Located a 10-minute walk from Vallon-Pont-d\'Arc, in the heart of the Ardèche Gorges.",
-    "contact-addr-label":"Address","contact-addr":"Route des Gorges, 07150 Vallon-Pont-d\'Arc, France",
+    "contact-addr-label":"Address","contact-addr":"316 Chemin de la Roubine, 07150 Vallon-Pont-d\'Arc, France",
     "contact-phone-label":"Phone","contact-email-label":"Email",
     "contact-hours-label":"Restaurant","contact-hours":"Open April to November · 12–1:30 pm & 7–9:30 pm",
     "contact-form-title":"Write to us","contact-msg":"Message",
